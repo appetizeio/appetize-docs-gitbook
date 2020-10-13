@@ -4,7 +4,7 @@ Appetize.io supports SSO integrations using either OpenID Connect \(OIDC\) or SA
 
 Once SSO is enabled for your account, all user access and role assignments are managed entirely by your SSO provider. 
 
-### Roles
+### Role assignments
 
 | Role | Permissions |
 | :--- | :--- |
