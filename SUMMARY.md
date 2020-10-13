@@ -16,9 +16,9 @@
 * [Create new app](api/create-new-app.md)
 * [Update existing app](api/update-existing-app.md)
 * [Direct file uploads](api/direct-file-uploads.md)
-* [Deleting apps](api/deleting-apps.md)
+* [Delete app](api/delete-app.md)
 * [API response](api/api-response.md)
-* [Listing apps](api/listing-apps.md)
+* [List apps](api/list-apps.md)
 * [Usage summary](api/usage-summary.md)
 * [Sample code](api/sample-code.md)
 
