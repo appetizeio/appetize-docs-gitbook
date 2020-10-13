@@ -2,6 +2,8 @@
 
 The Appetize.io API is designed to be user friendly. Please see a few example API calls below. 
 
+### Create new app
+
 {% tabs %}
 {% tab title="Curl" %}
 ```bash

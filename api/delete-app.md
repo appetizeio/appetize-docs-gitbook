@@ -24,11 +24,13 @@ publicKey for the app
 
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+// N/A
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
