@@ -1,6 +1,8 @@
 # Custom launch pages
 
-Our various embed and cross-document messaging options enable you to create a customized "launch page" front-end for your apps. We are happy to assist you in designing and implementing such as page for your specific business use.
+Our playback, embedding, and cross-document messages enable customers to create highly customized integrations using Appetize.io virtual devices. 
+
+For convenience, we also provide templated "launch pages" that can provide a simple bookmark-friendly page for your team. We are happy to assist you in designing and implementing such as page for your specific business use.
 
 Please find a sample launch page using our demo app at [https://uswest.appetize.io/sample-launch-page](https://uswest.appetize.io/sample-launch-page).
 
