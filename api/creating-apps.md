@@ -4,28 +4,20 @@ Send an HTTP POST request to: _https://APITOKEN@api.appetize.io/v1/apps_
 
 {% api-method method="post" host="https://APITOKEN@api.appetize.io/v1/apps" path="" %}
 {% api-method-summary %}
-Create new app
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new app, returns a new publicKey
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="fileType" type="string" required=false %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
 
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="platform" type="string" required=true %}
-`ios` or `android`
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="url" type="string" required=true %}
-A publicly accessible link to your `.zip`, `.tar.gz` or `.apk` file
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
+{% endapi-method-path-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
