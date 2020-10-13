@@ -1,54 +1,45 @@
 # OpenID Connect
 
-## **Overview**
+_Note: Every SSO provider is a little bit different. Please_ [_contact us_](mailto:hello@appetize.io) _with any questions!_
 
-The OKTA integration uses OAuth2 for authorization, and OpenID Connect \(OIDC\) for authentication \(admin vs. developer vs. non-admin roles\). 
+### Create a new application
 
-### **Users and Roles:**
+![Example creating new &quot;Web&quot; application in OKTA](../../.gitbook/assets/image.png)
 
-All user access and roles can be managed by OKTA. Within OKTA, you can configure which groups of users have access to the Appetize.io app. Please create a new group within OKTA, "appetize\_admin", which can be assigned to any admin users. Please also create a new group "appetize\_developer" , which can be assigned to any developer users.
+### Configure app settings
 
-NOTE: If mapping groups from Active Directory, they may appear as Okta-Appetize\_Admins and Okta-Appetize\_Developers, which are also supported. 
+| Field | Value |
+| :--- | :--- |
+| Allowed grant types | Authorization Code |
+| Login redirect URIs | TBD - specified by Appetize.io |
+| Initiate login URI | TBD - specified by Appetize.io |
 
-**OKTA App Setup:**
+![Example app settings in OKTA](../../.gitbook/assets/image%20%281%29.png)
 
-Please create a new Application within OKTA, type is "Web". 
+### Add group assignments to claims
 
-![](file:////Users/jcsnyder/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
+We will need to configure your SSO provider to send over the user's groups assignments after a successful login. 
 
-NOTE: There is a OKTA bug on the next screen where you set initial settings. If so, please click Done with default settings, then go back and edit afterwards. 
+The following example shows how to pass through groups with prefix appetize\_\* as a groups claim within OKTA. This can be done by adding the groups claim to your authorization server at API -&gt; Authorization Servers. For some OKTA clients, this can also be done under the "Sign On" section in your app's configuration, where you can add groups the same way. 
 
-The settings for the app should match the following:
+![Example including appetize\_\* group assignments claim in OKTA](../../.gitbook/assets/image%20%282%29.png)
 
-![](file:////Users/jcsnyder/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png)
 
-Finally, we will need to configure OKTA to send over the user's groups with prefix appetize\_ after successful login. This can be done by adding the groups claim to your authorization server at API -&gt; Authorization Servers. 
 
-![](file:////Users/jcsnyder/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.png)
-
-For some OKTA clients, this can also be done under the "Sign On" section in your app's configuration, where you can add groups the same way. 
-
-**OKTA Settings for Appetize.io:**
+### **Provide client information to Appetize.io**
 
 1. We will need the "Client ID" and "Client secret" for the app you just created. 
 
-![](file:////Users/jcsnyder/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)
+![](../../.gitbook/assets/image%20%283%29.png)
 
-2. We will need the endpoint URLs for your OKTA authorization servers, including:
+2. We will also need your metadata endpoint, often called "Discovery URL". For example: [https://dev-548472.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server](https://dev-548472.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server)
 
-authorization\_endpoint
+If the metadata endpoint is not available, you may also specify the required fields below:
 
-token\_endpoint
-
-userinfo\_endpoint
-
-jwks\_uri
-
-issuer
-
-introspection\_endpoint. 
-
-These can be specified manually, but OKTA also provides a metadata endpoint \("Discovery URL"\) for convenience. For example, [https://dev-548472.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server](https://dev-548472.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server). 
-
-Please let us know if any questions. We are also happy to assist setup via screen share if helpful.
+* authorization\_endpoint
+* token\_endpoint
+* userinfo\_endpoint
+* jwks\_uri
+* issuer
+* introspection\_endpoint. 
 
