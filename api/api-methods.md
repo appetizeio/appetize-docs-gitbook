@@ -53,10 +53,15 @@ Specify a deep link to bring your users to a specific location when your app is 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="appPermissions" type="object" required=false %}
-A JSON object. Values can be "authenticated", "public", or null to reset to default.   
+Values for each field determine who can perform the specified action.   
   
-Keys can be:   
-run: run your app   
+**Values**  
+"authenticated" - must be authenticated into your account  
+"public" - anybody with app's publicKey \(26-character unguessable string\)  
+null - resets to default  
+  
+**Fields can be:**   
+`run`: run your app   
 `networkProxy`: specify a network proxy when running app   
 `networkIntercept`: use Appetize.io's intercepting proxy when running the app   
 `debugLog`: view your app's NSLog or Logcat output   
