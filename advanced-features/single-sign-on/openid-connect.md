@@ -11,8 +11,8 @@ _Note: Every SSO provider is a little bit different. Please_ [_contact us_](mail
 | Field | Value |
 | :--- | :--- |
 | Allowed grant types | Authorization Code |
-| Login redirect URIs | TBD - specified by Appetize.io |
-| Initiate login URI | TBD - specified by Appetize.io |
+| Login redirect URIs | TBD - provided by Appetize.io |
+| Initiate login URI | TBD - provided by Appetize.io |
 
 ![Example app settings in OKTA](../../.gitbook/assets/image%20%281%29.png)
 
@@ -26,7 +26,7 @@ The following example shows how to pass through groups with prefix appetize\_\* 
 
 
 
-### **Provide client information to Appetize.io**
+### **Information to provide to Appetize.io**
 
 1. We will need the "Client ID" and "Client secret" for the app you just created. 
 
