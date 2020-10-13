@@ -2,7 +2,7 @@
 
 Send an HTTP POST request to: _https://APITOKEN@api.appetize.io/v1/apps_
 
-{% api-method method="post" host="https://APITOKEN@api.appetize.io/v1/apps" path="" %}
+{% api-method method="post" host="https://APITOKEN@api.appetize.io" path="/v1/apps" %}
 {% api-method-summary %}
 
 {% endapi-method-summary %}
