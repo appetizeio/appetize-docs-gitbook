@@ -60,7 +60,7 @@ Values for each field determine who can perform the specified action.
 "public" - anybody with app's publicKey \(26-character unguessable string\)  
 null - resets to default  
   
-**Fields can be:**   
+**Fields**   
 `run`: run your app   
 `networkProxy`: specify a network proxy when running app   
 `networkIntercept`: use Appetize.io's intercepting proxy when running the app   
