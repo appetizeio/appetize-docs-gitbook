@@ -2,13 +2,13 @@
 
 * [Getting started](README.md)
 
-## Core features <a id="running-apps"></a>
+## Core features
 
-* [Uploading apps](running-apps/uploading-apps.md)
-* [Playback options](running-apps/playback-options.md)
-* [Embed your app](running-apps/embed-your-app.md)
-* [Cross-document messages](running-apps/cross-document-messages.md)
-* [Custom launch pages](running-apps/custom-launch-pages.md)
+* [Uploading apps](core-features/uploading-apps.md)
+* [Playback options](core-features/playback-options.md)
+* [Embed your app](core-features/embed-your-app.md)
+* [Cross-document messages](core-features/cross-document-messages.md)
+* [Custom launch pages](core-features/custom-launch-pages.md)
 
 ## API
 
