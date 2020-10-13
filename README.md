@@ -20,14 +20,6 @@ Try our **online demo** at [https://appetize.io/demo](https://appetize.io/demo).
 
 {% page-ref page="core-features/custom-launch-pages.md" %}
 
-### Advanced features
-
-{% page-ref page="advanced-features/custom-branding.md" %}
-
-{% page-ref page="advanced-features/reserved-devices.md" %}
-
-{% page-ref page="advanced-features/single-sign-on/" %}
-
 {% hint style="success" %}
 Any questions at all? Please email us at [hello@appetize.io](mailto:hello@appetize.io).
 {% endhint %}
