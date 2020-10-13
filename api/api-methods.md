@@ -25,6 +25,47 @@ ios or android
 The type of file that the url points to. Must be zip, tar.gz, or apk. Default is zip for ios, apk for android.
 {% endapi-method-parameter %}
 
+{% api-method-parameter name="timeout" type="number" required=false %}
+The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300 or 600, default is 120.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="disabled" type="boolean" required=false %}
+Disables streaming for this app.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="disableHome" type="boolean" required=false %}
+Disables the home button on the iOS simulator when available.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="useLastFrame" type="boolean" required=false %}
+Show the last image on the screen in the simulator after session ends.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="buttonText" type="string" required=false %}
+Customize the message prompting the user to start the session, default is "Tap to play".
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="postSessionButtonText" type="string" required=false %}
+Customize the message prompting the user to restart the session, default is "Tap to play".
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="launchUrl" type="string" required=false %}
+Specify a deep link to bring your users to a specific location when your app is launched.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="appPermissions" type="object" required=false %}
+A JSON object. Values can be "authenticated", "public", or null to reset to default. Keys can be:
+run: run your app
+networkProxy: specify a network proxy when running app
+networkIntercept: use Appetize.io's intercepting proxy when running the app
+debugLog: view your app's NSLog or Logcat output
+adbConnect: debug your app by connecting ADB to the hosted emulator
+androidPackageManager: allow the installation of additional APK's while your app is running
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="note" type="string" required=false %}
+A note for your own purposes, will appear on your management dashboard.
+{% endapi-method-parameter %}
 
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
