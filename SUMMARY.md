@@ -26,8 +26,8 @@
 * [Custom branding](advanced-features/custom-branding.md)
 * [Reserved devices](advanced-features/reserved-devices.md)
 * [Single sign-on](advanced-features/single-sign-on/README.md)
-  * [SAML](advanced-features/single-sign-on/saml.md)
   * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
+  * [SAML](advanced-features/single-sign-on/saml.md)
 
 ## App recorder \(beta\) <a id="app-recorder"></a>
 
