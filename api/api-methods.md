@@ -12,7 +12,6 @@ Creates new app, returns new publicKey.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
-
 {% api-method-parameter name="url" type="string" required=true %}
 A publicly accessible link to your .zip, .tar.gz, or .apk file.
 {% endapi-method-parameter %}
@@ -54,19 +53,18 @@ Specify a deep link to bring your users to a specific location when your app is 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="appPermissions" type="object" required=false %}
-A JSON object. Values can be "authenticated", "public", or null to reset to default. Keys can be:
-run: run your app
-networkProxy: specify a network proxy when running app
-networkIntercept: use Appetize.io's intercepting proxy when running the app
-debugLog: view your app's NSLog or Logcat output
-adbConnect: debug your app by connecting ADB to the hosted emulator
-androidPackageManager: allow the installation of additional APK's while your app is running
+A JSON object. Values can be "authenticated", "public", or null to reset to default. Keys can be:   
+run: run your app   
+`networkProxy`: specify a network proxy when running app   
+`networkIntercept`: use Appetize.io's intercepting proxy when running the app   
+`debugLog`: view your app's NSLog or Logcat output   
+`adbConnect`: debug your app by connecting ADB to the hosted emulator   
+`androidPackageManager`: allow the installation of additional APK's while your app is running
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="note" type="string" required=false %}
 A note for your own purposes, will appear on your management dashboard.
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -114,7 +112,7 @@ Updates existing app, maintains same publicKey.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -146,7 +144,7 @@ Retrieves information about a single app.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -160,7 +158,7 @@ Get all apps
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Retrieves information about all apps in the account, with associated metadata. 
+Retrieves information about all apps in the account, with associated metadata.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -178,7 +176,7 @@ Retrieves information about all apps in the account, with associated metadata.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -210,7 +208,7 @@ Deletes an app.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -242,10 +240,11 @@ Gets usage summary of all sessions for your account, including number of session
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
