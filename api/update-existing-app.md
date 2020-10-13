@@ -89,7 +89,7 @@ null - resets to default**Fields**
     "created": "2016-02-10T17:46:14.089Z",
     "updated": "2016-02-10T17:46:14.089Z",
     "platform": "ios",
-    "versionCode": 1 // increments with each update
+    "versionCode": 2 // increments with each update
 }
 ```
 {% endapi-method-response-example %}

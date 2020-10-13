@@ -6,7 +6,7 @@ Delete app
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes an app.
+Deletes an app. Your API token must be provisioned to the same account where the app was uploaded.
 {% endapi-method-description %}
 
 {% api-method-spec %}
