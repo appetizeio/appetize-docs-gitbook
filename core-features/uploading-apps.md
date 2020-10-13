@@ -1,5 +1,9 @@
 # Uploading apps
 
+You may upload apps directly via your web browser at [https://appetize.io/upload](https://appetize.io/upload), or you may upload programmatically via our [API](../api/api-overview.md). 
+
+We also have many 3rd party integrations with tools such as [fastlane](https://docs.fastlane.tools/actions/appetize/), [Bitrise](https://www.bitrise.io/integrations/steps/appetize-deploy), and [Expo](https://expo.io/). 
+
 {% tabs %}
 {% tab title="iOS" %}
 For iOS, upload a `.zip` or `.tar.gz` file containing your compressed `.app` bundle.

@@ -12,7 +12,7 @@
 
 ## API
 
-* [Overview](api/overview.md)
+* [Overview](api/api-overview.md)
 * [Creating apps](api/creating-apps.md)
 * [Updating apps](api/updating-apps.md)
 * [Deleting apps](api/deleting-apps.md)
