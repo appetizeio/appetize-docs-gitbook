@@ -13,9 +13,9 @@
 ## API
 
 * [Overview](api/overview.md)
-* [API methods](api/api-methods.md)
+* [Create new app](api/create-new-app.md)
+* [Update existing app](api/update-existing-app.md)
 * [Direct file uploads](api/direct-file-uploads.md)
-* [Updating apps](api/updating-apps.md)
 * [Deleting apps](api/deleting-apps.md)
 * [API response](api/api-response.md)
 * [Listing apps](api/listing-apps.md)

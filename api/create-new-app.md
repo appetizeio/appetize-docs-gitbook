@@ -1,4 +1,4 @@
-# API methods
+# Create new app
 
 {% api-method method="post" host="https://APITOKEN@api.appetize.io" path="/v1/apps" %}
 {% api-method-summary %}
