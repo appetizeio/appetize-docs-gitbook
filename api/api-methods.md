@@ -11,11 +11,15 @@ Creates new app, returns new publicKey.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-body-parameters %}
+{% api-method-parameter name="test2" type="string" required=false %}
+test2
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+
+{% api-method-parameter name="test1" type="string" required=true %}
+test1
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -24,8 +28,14 @@ Creates new app, returns new publicKey.
 
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+    "publicKey": "p7nww3n6ubq73r1nh9jtauqy8w",
+    "created": "2016-02-10T17:46:14.089Z",
+    "updated": "2016-02-10T17:46:14.089Z",
+    "platform": "ios",
+    "versionCode": 1
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}

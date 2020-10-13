@@ -13,7 +13,7 @@
 ## API
 
 * [Overview](api/overview.md)
-* [API methods](api/creating-apps.md)
+* [API methods](api/api-methods.md)
 * [Direct file uploads](api/direct-file-uploads.md)
 * [Updating apps](api/updating-apps.md)
 * [Deleting apps](api/deleting-apps.md)
