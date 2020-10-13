@@ -30,7 +30,7 @@
   * [SAML](advanced-features/single-sign-on/saml.md)
   * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
 
-## App recorder
+## App recorder \(experimental\) <a id="app-recorder"></a>
 
 * [Record events](app-recorder/record-events.md)
 * [Playback events](app-recorder/playback-events.md)
