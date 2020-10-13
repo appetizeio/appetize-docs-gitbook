@@ -12,13 +12,20 @@ Creates new app, returns new publicKey.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
-{% api-method-parameter name="test2" type="string" required=false %}
-test2
+
+{% api-method-parameter name="url" type="string" required=true %}
+A publicly accessible link to your .zip, .tar.gz, or .apk file.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="test1" type="string" required=true %}
-test1
+{% api-method-parameter name="platform" type="string" required=true %}
+ios or android
 {% endapi-method-parameter %}
+
+{% api-method-parameter name="fileType" type="string" required=false %}
+The type of file that the url points to. Must be zip, tar.gz, or apk. Default is zip for ios, apk for android.
+{% endapi-method-parameter %}
+
+
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -201,4 +208,3 @@ Gets usage summary of all sessions for your account, including number of session
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
