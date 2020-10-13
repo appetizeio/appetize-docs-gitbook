@@ -1,7 +1,7 @@
 # Uploading apps
 
-## **iOS**
-
+{% tabs %}
+{% tab title="iOS" %}
 For iOS, upload a `.zip` or `.tar.gz` file containing your compressed `.app` bundle.
 
 Your `.app` bundle must represent a iOS Simulator build of your app. A simulator build can be run in the iOS Simulator via Xcode. This is different than a IPA file, which is compiled for ARM architecture CPUs and can only be run on physical iOS devices. 
@@ -37,9 +37,9 @@ If you are using Xamarin to develop your apps, please see our specific instructi
 When building via the command line with Xcode 12, some users are encountering an issue with Apple's new arm64 architecture support in simulator builds. You may find the following troubleshooting steps useful:
 
 [https://stackoverflow.com/questions/64036180/error-module-was-created-for-incompatible-target-arm64-apple-ios8-0/64048460\#64048460](https://stackoverflow.com/questions/64036180/error-module-was-created-for-incompatible-target-arm64-apple-ios8-0/64048460#64048460)
+{% endtab %}
 
-## **Android**
-
+{% tab title="Android" %}
 For Android, upload the `.apk` containing your app. 
 
 After your app is built, either via Android Studio or by running the command `./gradlew assembleDebug` in your project directory, look in:
@@ -49,4 +49,8 @@ After your app is built, either via Android Studio or by running the command `./
 If you are having trouble running your uploaded Android app in Appetize.io, we recommend trying to run the same APK on a physical Android device. If that works, you can also try running the APK in the Android x86 emulators provided by Google. More information on Android emulators at [https://developer.android.com/studio/run/emulator](https://developer.android.com/studio/run/emulator). 
 
 If your app can run on physical devices, but not on the x86 emulators, please see [https://support.appetize.io/help/why-does-my-android-app-require-a-physical-device-to-run](https://support.appetize.io/help/why-does-my-android-app-require-a-physical-device-to-run).
+{% endtab %}
+{% endtabs %}
+
+
 
