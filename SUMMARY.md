@@ -1,4 +1,38 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Getting started](README.md)
+
+## Core features <a id="running-apps"></a>
+
+* [Uploading apps](running-apps/uploading-apps.md)
+* [Playback options](running-apps/playback-options.md)
+* [Embed your app](running-apps/embed-your-app.md)
+* [Cross-document messages](running-apps/cross-document-messages.md)
+* [Custom launch pages](running-apps/custom-launch-pages.md)
+
+## API
+
+* [Overview](api/overview.md)
+* [Creating apps](api/creating-apps.md)
+* [Updating apps](api/updating-apps.md)
+* [Deleting apps](api/deleting-apps.md)
+* [Direct file uploads](api/direct-file-uploads.md)
+* [API response](api/api-response.md)
+* [Listing apps](api/listing-apps.md)
+* [Usage summary](api/usage-summary.md)
+* [Sample code](api/sample-code.md)
+
+## Advanced features
+
+* [Custom branding](advanced-features/custom-branding.md)
+* [Reserved devices](advanced-features/reserved-devices.md)
+* [Single sign-on](advanced-features/single-sign-on/README.md)
+  * [SAML](advanced-features/single-sign-on/saml.md)
+  * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
+
+## App recorder
+
+* [Record events](app-recorder/record-events.md)
+* [Playback events](app-recorder/playback-events.md)
+* [Retrieving the user interface](app-recorder/retrieving-the-user-interface.md)
 
