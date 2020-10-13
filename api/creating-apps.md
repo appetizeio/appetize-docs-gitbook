@@ -1,10 +1,46 @@
 # Creating apps
 
-When uploading a new app, a successful upload \(response code in the 200's\) will return JSON containing your new app's publicKey, which identifies your app. Save this identifier for future use.
-
 Send an HTTP POST request to: _https://APITOKEN@api.appetize.io/v1/apps_
 
-Replace `APITOKEN` with your API token. The POST body must be a JSON object with the fields:
+{% api-method method="post" host="https://APITOKEN@api.appetize.io/v1/apps" path="" %}
+{% api-method-summary %}
+Create new app
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Creates a new app, returns a new publicKey
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="fileType" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="platform" type="string" required=true %}
+`ios` or `android`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="url" type="string" required=true %}
+A publicly accessible link to your `.zip`, `.tar.gz` or `.apk` file
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 **Required Fields**
 
@@ -30,10 +66,9 @@ Replace `APITOKEN` with your API token. The POST body must be a JSON object with
   * `androidPackageManager`: allow the installation of additional APK's while your app is running
 * `note`: \(string\) a note for your own purposes, will appear on your management dashboard.
 
-**Example request object**
+### **Example request object**
 
-```text
-
+```javascript
 {
     "url": "http://www.example.com/my_app.zip",
     "platform": "ios",
@@ -41,4 +76,10 @@ Replace `APITOKEN` with your API token. The POST body must be a JSON object with
     "note": "CI build #42"
 }
 ```
+
+### **Example response object**
+
+When uploading a new app, a successful upload \(response code in the 200's\) will return JSON containing your new app's publicKey, which identifies your app. Save this identifier for future use.
+
+
 

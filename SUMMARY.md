@@ -14,9 +14,9 @@
 
 * [Overview](api/overview.md)
 * [Creating apps](api/creating-apps.md)
+* [Direct file uploads](api/direct-file-uploads.md)
 * [Updating apps](api/updating-apps.md)
 * [Deleting apps](api/deleting-apps.md)
-* [Direct file uploads](api/direct-file-uploads.md)
 * [API response](api/api-response.md)
 * [Listing apps](api/listing-apps.md)
 * [Usage summary](api/usage-summary.md)
