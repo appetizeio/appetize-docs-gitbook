@@ -8,8 +8,6 @@ Welcome to Appetize.io!
 
 Try our **online demo** at [https://appetize.io/demo](https://appetize.io/demo). 
 
-### Core features
-
 {% page-ref page="core-features/uploading-apps.md" %}
 
 {% page-ref page="core-features/playback-options.md" %}
