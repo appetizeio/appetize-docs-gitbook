@@ -1,24 +1,24 @@
 ---
-description: Interact with the virtual device via aJavascript post-message API
+description: Interact with the virtual device via a Javascript post-message API
 ---
 
 # Cross-document messages
 
-Cross-document messaging, when enabled above, allows you to issue commands to the embedded iFrame via the javascript window [`postMessage(message, targetOrigin)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) function.
+Cross-document messaging, when enabled via the `&xdocMsg=true` query parameter, allows you to issue commands to the embedded iFrame via Javascript via [`postMessage(message, targetOrigin)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
 Messages without any parameters can be passed directly as strings, e.g. `postMessage('requestSession', '*')`. 
 
 Messages with parameters should be passed as objects with the message name in the `type` field. E.g. `postMessage({type: 'mouseclick', x: 100, y:100}, '*')`
 
 * `requestSession` - equivalent to clicking play
-* `emitHomeButton` - taps the home button for iOS apps
+* `emitHomeButton` - taps the home button for iOS apps when available
 * `rotateLeft` - rotates counter-clockwise
 * `rotateRight` - rotates clockwise
 * `setScale(value)` - sets device scale, values between 10 and 100
 * `saveScreenshot` - prompts user to download screenshot
-* `getScreenshot` - sends screenshot data directly to parent window. See the `screenshot` event the iframe posts to the parent.
-* `heartbeat` - sends heartbeat to prevent timeout
-* `mouseclick(x, y)` - sends click event at point \(x,y\)
+* `getScreenshot` - sends screenshot data directly to parent window. See the `screenshot` event the iFrame posts to the parent.
+* `heartbeat` - sends heartbeat to prevent inactivity timeout
+* `mouseclick(x, y)` - sends click event at point \(x, y\)
 * `pasteText(value)` - pastes text. `value` should be a string.
 * `keypress(key, shiftKey)` - sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
 * `language(value)` - sets language, restarts app
@@ -33,7 +33,7 @@ Messages with parameters should be passed as objects with the message name in th
 * `restartApp` - kills and restarts app in same session
 * `endSession` - ends the session
 
-The iframe also posts messages to the parent window.
+The iFrame also posts messages to the parent window.
 
 * `userInteractionReceived` - interaction received
 * `heartbeatReceived` - heartbeat received
