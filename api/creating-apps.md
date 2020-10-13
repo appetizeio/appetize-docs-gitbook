@@ -1,10 +1,8 @@
 # Creating apps
 
-Send an HTTP POST request to
+When uploading a new app, a successful upload \(response code in the 200's\) will return JSON containing your new app's publicKey, which identifies your app. Save this identifier for future use.
 
-```text
-https://APITOKEN@api.appetize.io/v1/apps
-```
+Send an HTTP POST request to: _https://APITOKEN@api.appetize.io/v1/apps_
 
 Replace `APITOKEN` with your API token. The POST body must be a JSON object with the fields:
 
