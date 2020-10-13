@@ -11,6 +11,12 @@ Updates existing app, maintains same publicKey. Your API token must be provision
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="publicKey" type="string" required=true %}
+publicKey for the app
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
 {% api-method-body-parameters %}
 {% api-method-parameter name="url" type="string" required=false %}
 A publicly accessible link to your .zip, .tar.gz, or .apk file.

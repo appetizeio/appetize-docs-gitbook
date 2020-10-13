@@ -12,8 +12,8 @@ Deletes an app.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="publicKey" type="string" required=true %}
+publicKey for the app
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -31,3 +31,4 @@ Deletes an app.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
