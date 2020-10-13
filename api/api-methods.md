@@ -6,7 +6,7 @@ Create new app
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates new app, returns new publicKey.
+Creates new app, returns new publicKey. The POST body must be a JSON object.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -57,22 +57,17 @@ Specify a deep link to bring your users to a specific location when your app is 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="appPermissions" type="object" required=false %}
-Values for each field determine who can perform the specified action.   
-  
-**Values**  
+Values for each field determine who can perform the specified action.**Values**  
 "authenticated" - must be authenticated into your account  
 "public" - anybody with app's publicKey \(26-character unguessable string\)  
-null - resets to default  
-  
-**Fields**   
-`run`: run your app   
-`networkProxy`: specify a network proxy when running app   
-`networkIntercept`: use Appetize.io's intercepting proxy when running the app   
-`debugLog`: view your app's NSLog or Logcat output   
-`adbConnect`: debug your app by connecting ADB to the hosted emulator   
+null - resets to default**Fields**  
+`run`: run your app  
+`networkProxy`: specify a network proxy when running app  
+`networkIntercept`: use Appetize.io's intercepting proxy when running the app  
+`debugLog`: view your app's NSLog or Logcat output  
+`adbConnect`: debug your app by connecting ADB to the hosted emulator  
 `androidPackageManager`: allow the installation of additional APK's while your app is running
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -102,7 +97,7 @@ Update existing app
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates existing app, maintains same publicKey. Your API token must be provisioned to the same account where the app was uploaded. To replace a previously set field, use a value of `null`.
+Updates existing app, maintains same publicKey. Your API token must be provisioned to the same account where the app was uploaded. To replace a previously set field, use a value of `null`. The POST body must be a JSON object.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -153,22 +148,17 @@ Specify a deep link to bring your users to a specific location when your app is 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="appPermissions" type="object" required=false %}
-Values for each field determine who can perform the specified action.   
-  
-**Values**  
+Values for each field determine who can perform the specified action.**Values**  
 "authenticated" - must be authenticated into your account  
 "public" - anybody with app's publicKey \(26-character unguessable string\)  
-null - resets to default  
-  
-**Fields**   
-`run`: run your app   
-`networkProxy`: specify a network proxy when running app   
-`networkIntercept`: use Appetize.io's intercepting proxy when running the app   
-`debugLog`: view your app's NSLog or Logcat output   
-`adbConnect`: debug your app by connecting ADB to the hosted emulator   
+null - resets to default**Fields**  
+`run`: run your app  
+`networkProxy`: specify a network proxy when running app  
+`networkIntercept`: use Appetize.io's intercepting proxy when running the app  
+`debugLog`: view your app's NSLog or Logcat output  
+`adbConnect`: debug your app by connecting ADB to the hosted emulator  
 `androidPackageManager`: allow the installation of additional APK's while your app is running
 {% endapi-method-parameter %}
-
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
@@ -178,8 +168,14 @@ null - resets to default
 
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+{
+    "publicKey": "p7nww3n6ubq73r1nh9jtauqy8w",
+    "created": "2016-02-10T17:46:14.089Z",
+    "updated": "2016-02-10T17:46:14.089Z",
+    "platform": "ios",
+    "versionCode": 1 // increments with each update
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -313,3 +309,4 @@ Gets usage summary of all sessions for your account, including number of session
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
