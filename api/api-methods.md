@@ -20,12 +20,16 @@ A publicly accessible link to your .zip, .tar.gz, or .apk file.
 ios or android
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="fileType" type="string" required=false %}
-The type of file that the url points to. Must be zip, tar.gz, or apk. Default is zip for ios, apk for android.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="timeout" type="number" required=false %}
 The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300 or 600, default is 120.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="note" type="string" required=false %}
+A note for your own purposes, will appear on your management dashboard.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="fileType" type="string" required=false %}
+The type of file that the url points to. Must be zip, tar.gz, or apk. Default is zip for ios, apk for android.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="disabled" type="boolean" required=false %}
@@ -69,9 +73,6 @@ null - resets to default
 `androidPackageManager`: allow the installation of additional APK's while your app is running
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="note" type="string" required=false %}
-A note for your own purposes, will appear on your management dashboard.
-{% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
