@@ -1,6 +1,34 @@
+---
+description: Run native mobile apps in your browser
+---
+
 # Getting started
 
 Welcome to Appetize.io!
 
-The best way to get acquainted with Appetize.io is to try our demo at [https://appetize.io/demo](https://appetize.io/demo). 
+Try our **online demo** at [https://appetize.io/demo](https://appetize.io/demo). 
+
+### Core features
+
+{% page-ref page="core-features/uploading-apps.md" %}
+
+{% page-ref page="core-features/playback-options.md" %}
+
+{% page-ref page="core-features/embed-your-app.md" %}
+
+{% page-ref page="core-features/cross-document-messages.md" %}
+
+{% page-ref page="core-features/custom-launch-pages.md" %}
+
+### Advanced features
+
+{% page-ref page="advanced-features/custom-branding.md" %}
+
+{% page-ref page="advanced-features/reserved-devices.md" %}
+
+{% page-ref page="advanced-features/single-sign-on/" %}
+
+{% hint style="success" %}
+Any questions at all? Please email us at [hello@appetize.io](mailto:hello@appetize.io).
+{% endhint %}
 
