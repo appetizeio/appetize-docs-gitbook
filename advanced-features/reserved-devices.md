@@ -12,7 +12,7 @@ Reserved devices are offered for our Premium and Enterprise customers. When requ
 
 For example, our iOS demo app is reserved on iPhone 8 running iOS 13, but not on the iPhone 5s running iOS 11.4. 
 
-**Reserved \(faster in most cases\)** - [https://appetize.io/demo?device=iphone11pro&scale=75&orientation=portrait&osVersion=13.3](https://appetize.io/demo?device=iphone11pro&scale=75&orientation=portrait&osVersion=13.3)
+**Reserved \(faster in most cases\)** - [https://appetize.io/demo?device=iphone8&osVersion=13.3](https://appetize.io/demo?device=iphone8&osVersion=13.3)
 
 **Not-reserved \(slower in most cases\)** - [https://appetize.io/demo?device=iphone5s&osVersion=11.4](https://appetize.io/demo?device=iphone5s&osVersion=11.4)
 
