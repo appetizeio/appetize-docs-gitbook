@@ -31,6 +31,7 @@
 
 ## App recorder \(beta\) <a id="app-recorder"></a>
 
+* [Overview](app-recorder/overview.md)
 * [Record events](app-recorder/record-events.md)
 * [Playback events](app-recorder/playback-events.md)
 * [Retrieving the user interface](app-recorder/retrieving-the-user-interface.md)
