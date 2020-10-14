@@ -57,10 +57,14 @@ Specify a deep link to bring your users to a specific location when your app is 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="appPermissions" type="object" required=false %}
-Values for each field determine who can perform the specified action.**Values**  
+Values for each field determine who can perform the specified action.  
+  
+**Values**  
 "authenticated" - must be authenticated into your account  
 "public" - anybody with app's publicKey \(26-character unguessable string\)  
-null - resets to default**Fields**  
+null - resets to default  
+  
+**Fields**  
 `run`: run your app  
 `networkProxy`: specify a network proxy when running app  
 `networkIntercept`: use Appetize.io's intercepting proxy when running the app  
