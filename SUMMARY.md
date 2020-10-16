@@ -19,6 +19,7 @@
 * [Delete app](api/delete-app.md)
 * [List apps](api/list-apps.md)
 * [Usage summary](api/usage-summary.md)
+* [Devices and IPs](api/devices-and-ips.md)
 * [Sample code](api/sample-code.md)
 
 ## Advanced features
