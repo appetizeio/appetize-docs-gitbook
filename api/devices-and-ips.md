@@ -10,7 +10,7 @@ Get the list of available devices and operating systems.
 {% endapi-method-description %}
 
 {% api-method-spec %}
-
+{% api-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
@@ -49,7 +49,6 @@ Get the list of available devices and operating systems.
         "hammerhead": ["6.0.1"]
     }
 }
-
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
