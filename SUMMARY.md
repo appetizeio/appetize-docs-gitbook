@@ -7,6 +7,7 @@
 * [Uploading apps](core-features/uploading-apps.md)
 * [Playback options](core-features/playback-options.md)
 * [Embed your app](core-features/embed-your-app.md)
+* [App permissions](core-features/app-permissions.md)
 * [Cross-document messages](core-features/cross-document-messages.md)
 * [Custom launch pages](core-features/custom-launch-pages.md)
 

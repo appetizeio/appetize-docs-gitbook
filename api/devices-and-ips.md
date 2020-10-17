@@ -61,7 +61,7 @@ Get IP blocks
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get IP blocks for Appetize.io streaming servers
+Get IP blocks for Appetize.io streaming servers. These are the IPs from which your running apps will be making network calls. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
