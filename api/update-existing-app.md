@@ -35,7 +35,7 @@ A note for your own purposes, will appear on your management dashboard.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="timeout" type="number" required=false %}
-The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300 or 600, default is 120.
+The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200, default is 120.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="disabled" type="boolean" required=false %}
