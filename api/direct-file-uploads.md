@@ -4,7 +4,7 @@
 
 If you would prefer to directly upload the app as part of the API call, our endpoints also accept multipart/form-data requests.
 
-You may use the field name `file` to specify a file location on the local filesystem, rather than using the field `url`. All other field names are identical. To delete a field, set it to an empty string.
+You may use the field name `file` to send a direct upload from the local filesystem, rather than using the field `url`. All other field names are identical. To delete a field, set it to an empty string.
 
 The `appPermissions` field is an object in the JSON API. For direct uploads, you should specify the fields as "appPermissions.run", "appPermissions.networkProxy", etc.
 

@@ -6,7 +6,7 @@ Update existing app
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates existing app, maintains same publicKey. Your API token must be provisioned to the same account where the app was uploaded. To replace a previously set field, use a value of `null`. The POST body must be a JSON object.
+Updates existing app with a new build while maintaining same publicKey, or changes app settings. Your API token must be provisioned to the same account where the app was uploaded. To unset a previously set field, use a value of `null`. The POST body must be a JSON object.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -35,7 +35,7 @@ A note for your own purposes, will appear on your management dashboard.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="timeout" type="number" required=false %}
-The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200, default is 120.
+The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200. Default is 120.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="disabled" type="boolean" required=false %}
