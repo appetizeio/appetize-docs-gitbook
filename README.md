@@ -8,7 +8,7 @@ Welcome to Appetize.io!
 
 Appetize.io enables you to run native iOS and Android mobile apps directly in your browser. No downloads, plugins, or extra permissions needed. 
 
-Our customers use Appetize.io for app demos, training, customer support, development, testing, automation, and more. 
+Our customers use Appetize.io for app demos, training, customer support, development, testing, automation, and more.
 
 Try our **online demo** at [https://appetize.io/demo](https://appetize.io/demo). 
 
