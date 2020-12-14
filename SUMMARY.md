@@ -30,6 +30,7 @@
 * [Single sign-on](advanced-features/single-sign-on/README.md)
   * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
   * [SAML](advanced-features/single-sign-on/saml.md)
+  * [Azure Active Directory](advanced-features/single-sign-on/azure-active-directory.md)
 
 ## App recorder \(beta\) <a id="app-recorder"></a>
 
