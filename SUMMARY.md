@@ -31,6 +31,7 @@
   * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
   * [SAML](advanced-features/single-sign-on/saml.md)
   * [Azure Active Directory](advanced-features/single-sign-on/azure-active-directory.md)
+  * [Google Workspace \(GSuite\)](advanced-features/single-sign-on/google-workspace-gsuite.md)
 
 ## App recorder \(beta\) <a id="app-recorder"></a>
 
