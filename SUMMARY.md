@@ -32,6 +32,7 @@
   * [SAML](advanced-features/single-sign-on/saml.md)
   * [Azure Active Directory](advanced-features/single-sign-on/azure-active-directory.md)
   * [Google Workspace \(GSuite\)](advanced-features/single-sign-on/google-workspace-gsuite.md)
+* [ADB tunnel](advanced-features/adb-tunnel.md)
 
 ## App recorder \(beta\) <a id="app-recorder"></a>
 
