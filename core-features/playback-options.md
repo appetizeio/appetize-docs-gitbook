@@ -27,7 +27,7 @@ These parameters specify:
 * `proxy` - specify a proxy server to route network traffic. e.g. `http://example.com:8080`. For Appetize.io's intercepting proxy, use `proxy=intercept`
 * `enableAdb` - true or false. on session start, generate an SSH tunnel to allow ADB connections to the emulator
 * `androidPackageManager` - true or false, default is false. Allows installation of additional APKs after app launch
-* `params` - a URL-encoded JSON object. This data will be passed to your app on launch.
+* `params` - a URL-encoded JSON object. This data will be passed to your app on launch. eg. `&params={"foo":"bar"}` which gets URL encoded to `&params=%7B%22foo%22%3A%22bar%22%7D`
 
 The `params` JSON dictionary allows you to pass values to your app on launch. It can be useful to load custom content, skip onboarding, auto-login the specified user, or custom tracking.
 
