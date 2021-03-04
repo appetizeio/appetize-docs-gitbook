@@ -18,6 +18,7 @@ These parameters specify:
 * `language` - [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code
 * `locale` - Locale ID, eg. en\_GB, fr\_FR \(iOS only\)
 * `iosKeyboard` - iOS software keyboard, eg. iosKeyboard=ja\_JP@sw [available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
+* `disableVirtualKeyboard` - (Android only) true or false, default is false. When true, disables the on-screen keyboard.
 * `location` - latitude, longitude, eg. 39.903924,116.391432 \(Android only\)
 * `timezone` - specify URL-encoded timezone, eg. Australia%2FAdelaide, [available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) \(Android only\)
 * `grantPermissions` - true or false - automatically grant all required app permissions \(Android only\)
