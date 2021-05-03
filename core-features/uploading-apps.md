@@ -50,13 +50,15 @@ After your app is built, either via Android Studio or by running the command `./
 
 `<project-name>/<app-module-name>/build/outputs/apk/`
 
-If you are having trouble running your uploaded Android app in Appetize.io, we recommend trying to run the same APK on a physical Android device. 
+If you are having trouble running your uploaded Android app in Appetize.io, we recommend trying to run the same APK on a physical Android device or Android emulator locally over ADB. 
 
-If that works, you can also try running the APK in the Android x86 emulators provided by Google. More information on Android emulators at [https://developer.android.com/studio/run/emulator](https://developer.android.com/studio/run/emulator). 
+Once your device or emulator is connected via ADB, you can install it using a command like:
 
-If your app can run on physical devices, but not on the x86 emulators, please see [https://support.appetize.io/help/why-does-my-android-app-require-a-physical-device-to-run](https://support.appetize.io/help/why-does-my-android-app-require-a-physical-device-to-run).
+`adb install -r example.apk`
 {% endtab %}
 {% endtabs %}
+
+
 
 
 

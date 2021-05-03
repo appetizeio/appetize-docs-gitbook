@@ -1,8 +1,8 @@
 # Playback options
 
-App links, such as _https://appetize.io/app/&lt;publicKey&gt;?device=pixel4&language=en_ can contain many optional query parameters. 
+App links, such as [https://appetize.io/app/&lt;publicKey&gt;?device=pixel4&language=en](https://appetize.io/app/<publicKey>?device=pixel4&language=en) can contain many optional query parameters.
 
-You may see these query parameters in action when you run our [online demo](https://appetize.io/demo), and observe changes to your browser's address bar. 
+You may see these query parameters in action when you run our [online demo](https://appetize.io/demo), and observe changes to your browser's address bar.
 
 These parameters specify:
 
@@ -18,7 +18,7 @@ These parameters specify:
 * `language` - [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code
 * `locale` - Locale ID, eg. en\_GB, fr\_FR \(iOS only\)
 * `iosKeyboard` - iOS software keyboard, eg. iosKeyboard=ja\_JP@sw [available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
-* `disableVirtualKeyboard` - (Android only) true or false, default is false. When true, disables the on-screen keyboard.
+* `disableVirtualKeyboard` - \(Android only\) true or false, default is false. When true, disables the on-screen keyboard.
 * `location` - latitude, longitude, eg. 39.903924,116.391432 \(Android only\)
 * `timezone` - specify URL-encoded timezone, eg. Australia%2FAdelaide, [available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) \(Android only\)
 * `grantPermissions` - true or false - automatically grant all required app permissions \(Android only\)
@@ -34,7 +34,7 @@ The `params` JSON dictionary allows you to pass values to your app on launch. It
 
 To read the values in your iOS app, call `[[NSUserDefaults standardUserDefaults] objectForKey:@"key"]`.
 
-On Android, they will be passed as extras into the intent that launches your app, accessible by calling `getIntent().getStringExtra("key")`, `getBooleanExtra("key")`, etc. 
+On Android, they will be passed as extras into the intent that launches your app, accessible by calling `getIntent().getStringExtra("key")`, `getBooleanExtra("key")`, etc.
 
 They can also be retrieved from SharedPreferences named "prefs.db", e.g. `getApplicationContext().getSharedPreferences("prefs.db", 0).getString("key", null)`
 
