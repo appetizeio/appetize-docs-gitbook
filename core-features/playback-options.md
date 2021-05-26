@@ -15,7 +15,7 @@ These parameters specify:
 * `deviceColor` - black or white
 * `screenOnly` - true or false, default is false. When true, only show the screen, i.e. no device frame.
 * `xdocMsg` - true or false, default is false. When true, enables [cross-document messages](cross-document-messages.md).
-* `language` - [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code
+* `language` - [ISO 639-1 & BCP 47](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) language code
 * `locale` - Locale ID, eg. en\_GB, fr\_FR \(iOS only\)
 * `iosKeyboard` - iOS software keyboard, eg. iosKeyboard=ja\_JP@sw [available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
 * `disableVirtualKeyboard` - \(Android only\) true or false, default is false. When true, disables the on-screen keyboard.
