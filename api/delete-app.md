@@ -1,36 +1,18 @@
 # Delete app
 
-{% api-method method="delete" host="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" %}
-{% api-method-summary %}
-Delete app
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" method="delete" summary="Delete app" %}
+{% swagger-description %}
 Deletes an app. Your API token must be provisioned to the same account where the app was uploaded.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="publicKey" type="string" required=true %}
+{% swagger-parameter in="path" name="publicKey" type="string" %}
 publicKey for the app
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```javascript
 // N/A
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 

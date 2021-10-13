@@ -2,7 +2,7 @@
 
 You may upload apps directly via your web browser at [https://appetize.io/upload](https://appetize.io/upload), or you may upload programmatically via our [API](../api/create-new-app.md). 
 
-We also have many 3rd party integrations with tools such as [fastlane](https://docs.fastlane.tools/actions/appetize/), [Bitrise](https://www.bitrise.io/integrations/steps/appetize-deploy), and [Expo](https://expo.io/). 
+We also have many 3rd party integrations with tools such as [fastlane](https://docs.fastlane.tools/actions/appetize/), [Bitrise](https://www.bitrise.io/integrations/steps/appetize-deploy), and [Expo](https://expo.io). 
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -40,7 +40,7 @@ If you are using Xamarin to develop your apps, please see our specific instructi
 
 When building via the command line with Xcode 12, some users are encountering an issue with Apple's new arm64 architecture support in simulator builds. You may find the following troubleshooting steps useful:
 
-[https://stackoverflow.com/questions/64036180/error-module-was-created-for-incompatible-target-arm64-apple-ios8-0/64048460\#64048460](https://stackoverflow.com/questions/64036180/error-module-was-created-for-incompatible-target-arm64-apple-ios8-0/64048460#64048460)
+[https://stackoverflow.com/questions/64036180/error-module-was-created-for-incompatible-target-arm64-apple-ios8-0/64048460#64048460](https://stackoverflow.com/questions/64036180/error-module-was-created-for-incompatible-target-arm64-apple-ios8-0/64048460#64048460)
 {% endtab %}
 
 {% tab title="Android" %}
@@ -57,8 +57,6 @@ Once your emulator is launched and available via `adb devices`, you can install 
 `adb install -r example.apk`
 {% endtab %}
 {% endtabs %}
-
-
 
 
 

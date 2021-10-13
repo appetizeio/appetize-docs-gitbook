@@ -18,16 +18,16 @@ Messages with parameters should be passed as objects with the message name in th
 * `saveScreenshot` - prompts user to download screenshot
 * `getScreenshot` - sends screenshot data directly to parent window. See the `screenshot` event the iFrame posts to the parent.
 * `heartbeat` - sends heartbeat to prevent inactivity timeout
-* `mouseclick(x, y)` - sends click event at point \(x, y\)
+* `mouseclick(x, y)` - sends click event at point (x, y)
 * `pasteText(value)` - pastes text. `value` should be a string.
 * `keypress(key, shiftKey)` - sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
 * `language(value)` - sets language, restarts app
-* `location(value)` - sets location. `value` should be 2-length array that contains \[latitude, longitude\]
+* `location(value)` - sets location. `value` should be 2-length array that contains \[latitude, longitude]
 * `openUrl(value)` - opens deep-link or regular URL
 * `shakeDevice` - send shake gesture to iOS apps
-* `androidKeycodeMenu` - sends Android KEYCODE\_MENU command
-* `biometryMatch` - \(Android 8+ only\) simulate a matching fingerprint
-* `biometryNonMatch` - \(Android 8+ only\) simulate a non-matching fingerprint
+* `androidKeycodeMenu` - sends Android KEYCODE_MENU command
+* `biometryMatch` - (Android 8+ only) simulate a matching fingerprint
+* `biometryNonMatch` - (Android 8+ only) simulate a non-matching fingerprint
 * `disableInteractions` - disables all user interactions
 * `enableInteractions` - re-enables all user interactions
 * `restartApp` - kills and restarts app in same session
@@ -40,9 +40,9 @@ The iFrame also posts messages to the parent window.
 * `orientationChanged` - portrait or landscape
 * `sessionRequested` - session requested
 * `userError` - error starting session
-* `sessionQueued` - system-level queue \(awaiting device availability\)
+* `sessionQueued` - system-level queue (awaiting device availability)
 * `sessionQueuedPosition` - queue position
-* `accountQueued` - account-level queue \(concurrent users\)
+* `accountQueued` - account-level queue (concurrent users)
 * `accountQueuedPosition` - queue position
 * `appLaunch` - app launch command sent
 * `firstFrameReceived` - first frame received
@@ -53,4 +53,3 @@ The iFrame also posts messages to the parent window.
 * `sessionConnecting` - passes the identifying token for the session
 
 [Check out our JSFiddle.net example to see these messages in action!](https://jsfiddle.net/appetize/f97hs3ru/)
-

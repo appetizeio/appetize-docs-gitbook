@@ -44,4 +44,3 @@ request.post({
 {% hint style="info" %}
 Any questions at all? Please email us at [hello@appetize.io](mailto:hello@appetize.io).
 {% endhint %}
-

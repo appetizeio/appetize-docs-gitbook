@@ -21,5 +21,3 @@ Configure the permissions below to determine whether you need to be authenticate
 
 
 
-
-

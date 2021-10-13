@@ -1,29 +1,15 @@
 # List apps
 
-{% api-method method="get" host="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" %}
-{% api-method-summary %}
-Get a single app
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" method="get" summary="Get a single app" %}
+{% swagger-description %}
 Retrieves information about a single app.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="publicKey" type="string" required=true %}
+{% swagger-parameter in="path" name="publicKey" type="string" %}
 publicKey for the app
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```javascript
 {
     "publicKey": "p7nww3n6ubq73r1nh9jtauqy8w",
@@ -33,35 +19,27 @@ publicKey for the app
     "versionCode": 1
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://APITOKEN@api.appetize.io" path="/v1/apps" %}
-{% api-method-summary %}
-Get all apps
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps" method="get" summary="Get all apps" %}
+{% swagger-description %}
 Retrieves information about all apps in the account, with associated metadata.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="nextKey" type="string" required=false %}
-If results are truncated due to too many apps, response will include `hasMore: true` and `nextKey: "xyz"`. Pass nextKey value as query parameter into GET request to retrieve the next batch of apps. 
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% swagger-parameter in="query" name="nextKey" type="string" %}
+If results are truncated due to too many apps, response will include 
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
+`hasMore: true`
 
-{% endapi-method-response-example-description %}
+ and 
 
+`nextKey: "xyz"`
+
+. Pass nextKey value as query parameter into GET request to retrieve the next batch of apps. 
+{% endswagger-parameter %}
+
+{% swagger-response status="200" description="" %}
 ```javascript
 {
     "hasMore": true, // if results have been truncated
@@ -81,8 +59,5 @@ If results are truncated due to too many apps, response will include `hasMore: t
     }]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

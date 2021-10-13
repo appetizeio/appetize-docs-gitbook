@@ -5,9 +5,9 @@ To playback a recorded event, send a cross-document message with `type` field se
 A `playback` object should have the fields:
 
 * `event` - the entire event object that was previously recorded
-* `timeout` - \(default 10\) the number of seconds to wait for a match of the recorded element
-* `strictMatch` - \(default false\) if true, element must match all recorded attributes exactly. Otherwise, we will attempt to find the best matching element
-* `id` - \(optional\) a string to identify this playback attempt, to help identify success or failure.
+* `timeout` - (default 10) the number of seconds to wait for a match of the recorded element
+* `strictMatch` - (default false) if true, element must match all recorded attributes exactly. Otherwise, we will attempt to find the best matching element
+* `id` - (optional) a string to identify this playback attempt, to help identify success or failure.
 
 If playback is successful, the iFrame will post a cross-document message with `type` set to `playbackFoundAndSent`. Its `value` field will be an object with the fields:
 
@@ -32,7 +32,7 @@ A central problem when playing back recorded events is to find the recorded elem
 
 When searching for correct element during playback, we attempt to find a unique match based on the rules listed below. Each rule defines the set of fields we will consider. If there are multiple elements that satisfy a rule, we will attempt to "break the tie" by considering defining characteristics of sibling and parent elements. If remain multiple matches or there are no matches, we move on to the next rule.
 
-In scrollable views, the path can be misleading as the exact scroll position may differ between playback and recording. Therefore, path is removed from the rules if the element is inside of a scrollable view. \(Not yet implemented on iOS, see [Known Issues](overview.md#known-issues) above.\)
+In scrollable views, the path can be misleading as the exact scroll position may differ between playback and recording. Therefore, path is removed from the rules if the element is inside of a scrollable view. (Not yet implemented on iOS, see [Known Issues](overview.md#known-issues) above.)
 
 On Android, we match using these rules:
 
@@ -63,4 +63,3 @@ On iOS, we match using these rules:
 11. class, baseClass
 12. class
 13. baseClass
-

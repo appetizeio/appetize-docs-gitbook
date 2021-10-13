@@ -1,6 +1,6 @@
 # Playback options
 
-App links, such as [https://appetize.io/app/&lt;publicKey&gt;?device=pixel4&language=en](https://appetize.io/app/<publicKey>?device=pixel4&language=en) can contain many optional query parameters.
+App links, such as [https://appetize.io/app/\<publicKey>?device=pixel4\&language=en](https://appetize.io/app/%3CpublicKey%3E?device=pixel4\&language=en) can contain many optional query parameters.
 
 You may see these query parameters in action when you run our [online demo](https://appetize.io/demo), and observe changes to your browser's address bar.
 
@@ -16,13 +16,13 @@ These parameters specify:
 * `screenOnly` - true or false, default is false. When true, only show the screen, i.e. no device frame.
 * `xdocMsg` - true or false, default is false. When true, enables [cross-document messages](cross-document-messages.md).
 * `language` - [ISO 639-1 & BCP 47](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) language code
-* `locale` - Locale ID, eg. en\_GB, fr\_FR \(iOS only\)
-* `iosKeyboard` - iOS software keyboard, eg. iosKeyboard=ja\_JP@sw [available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
-* `disableVirtualKeyboard` - \(Android only\) true or false, default is false. When true, disables the on-screen keyboard.
-* `location` - latitude, longitude, eg. 39.903924,116.391432 \(Android only\)
-* `timezone` - specify URL-encoded timezone, eg. Australia%2FAdelaide, [available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) \(Android only\)
-* `grantPermissions` - true or false - automatically grant all required app permissions \(Android only\)
-* `hidePasswords` - true or false - hide password visibility when typing \(Android only\)
+* `locale` - Locale ID, eg. en_GB, fr_FR (iOS only)
+* `iosKeyboard` - iOS software keyboard, eg. iosKeyboard=ja_JP@sw [available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
+* `disableVirtualKeyboard` - (Android only) true or false, default is false. When true, disables the on-screen keyboard.
+* `location` - latitude, longitude, eg. 39.903924,116.391432 (Android only)
+* `timezone` - specify URL-encoded timezone, eg. Australia%2FAdelaide, [available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (Android only)
+* `grantPermissions` - true or false - automatically grant all required app permissions (Android only)
+* `hidePasswords` - true or false - hide password visibility when typing (Android only)
 * `launchUrl` - specify a deep link to open when your app is launched
 * `debug` - true or false, default is false. When true you can view the debug log for your app. 
 * `proxy` - specify a proxy server to route network traffic. e.g. `http://example.com:8080`. For Appetize.io's intercepting proxy, use `proxy=intercept`
@@ -45,4 +45,3 @@ For convenience, we set the key `"isAppetize": true` when streaming apps. You ca
 * Android: either of the following methods
   * `getIntent().getBooleanExtra("isAppetize", false)`
   * `getApplicationContext().getSharedPreferences("prefs.db", 0).getBoolean("isAppetize", false)`
-

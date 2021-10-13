@@ -12,19 +12,28 @@ Our customers use Appetize.io for app demos, training, customer support, develop
 
 Try our **online demo** at [https://appetize.io/demo](https://appetize.io/demo). 
 
-{% page-ref page="core-features/uploading-apps.md" %}
+{% content-ref url="core-features/uploading-apps.md" %}
+[uploading-apps.md](core-features/uploading-apps.md)
+{% endcontent-ref %}
 
-{% page-ref page="core-features/playback-options.md" %}
+{% content-ref url="core-features/playback-options.md" %}
+[playback-options.md](core-features/playback-options.md)
+{% endcontent-ref %}
 
-{% page-ref page="core-features/embed-your-app.md" %}
+{% content-ref url="core-features/embed-your-app.md" %}
+[embed-your-app.md](core-features/embed-your-app.md)
+{% endcontent-ref %}
 
-{% page-ref page="core-features/cross-document-messages.md" %}
+{% content-ref url="core-features/cross-document-messages.md" %}
+[cross-document-messages.md](core-features/cross-document-messages.md)
+{% endcontent-ref %}
 
-{% page-ref page="core-features/custom-launch-pages.md" %}
+{% content-ref url="core-features/custom-launch-pages.md" %}
+[custom-launch-pages.md](core-features/custom-launch-pages.md)
+{% endcontent-ref %}
 
 
 
 {% hint style="info" %}
 Any questions at all? Please email us at [hello@appetize.io](mailto:hello@appetize.io).
 {% endhint %}
-

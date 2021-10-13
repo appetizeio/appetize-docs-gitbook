@@ -1,23 +1,11 @@
 # Devices and IPs
 
-{% api-method method="get" host="https://appetize.io" path="/available-devices" %}
-{% api-method-summary %}
-Get available devices
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://appetize.io" path="/available-devices" method="get" summary="Get available devices" %}
+{% swagger-description %}
 Get the list of available devices and operating systems.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```javascript
 {
     "ios": {
@@ -50,29 +38,15 @@ Get the list of available devices and operating systems.
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://appetize.io" path="/ip-blocks" %}
-{% api-method-summary %}
-Get IP blocks
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://appetize.io" path="/ip-blocks" method="get" summary="Get IP blocks" %}
+{% swagger-description %}
 Get IP blocks for Appetize.io streaming servers. These are the IPs from which your running apps will be making network calls. 
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```javascript
 {
     "ipv4": [
@@ -84,8 +58,5 @@ Get IP blocks for Appetize.io streaming servers. These are the IPs from which yo
     ]
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

@@ -18,4 +18,3 @@ curl --http1.1 https://APITOKEN@api.appetize.io/v1/apps/PUBLICKEY -F "file=@file
 # specifying appPermissions
 curl --http1.1 https://APITOKEN@api.appetize.io/v1/apps -F "file=@file_to_upload.zip" -F "platform=ios" -F "appPermissions.run=public"
 ```
-
