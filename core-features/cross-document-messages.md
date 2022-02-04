@@ -23,7 +23,7 @@ Messages with parameters should be passed as objects with the message name in th
 * `keypress(key, shiftKey)` - sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
 * `language(value)` - sets language, restarts app
 * `location(value)` - sets location. `value` should be 2-length array that contains \[latitude, longitude]
-* `openUrl(value)` - opens deep-link or regular URL
+* `url(value)` - opens deep-link or regular URL
 * `shakeDevice` - send shake gesture to iOS apps
 * `androidKeycodeMenu` - sends Android KEYCODE_MENU command
 * `biometryMatch` - (Android 8+ only) simulate a matching fingerprint
