@@ -6,50 +6,413 @@ description: Interact with the virtual device via a Javascript post-message API
 
 Cross-document messaging, when enabled via the `&xdocMsg=true` query parameter, allows you to issue commands to the embedded iFrame via Javascript via [`postMessage(message, targetOrigin)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
-Messages without any parameters can be passed directly as strings, e.g. `postMessage('requestSession', '*')`. 
+Messages without any parameters can be passed directly as strings, e.g. 
 
-Messages with parameters should be passed as objects with the message name in the `type` field. E.g. `postMessage({type: 'mouseclick', x: 100, y:100}, '*')`
+```ts
+postMessage('requestSession', '*')
+```
 
-* `requestSession` - equivalent to clicking play
-* `emitHomeButton` - taps the home button for iOS apps when available
-* `rotateLeft` - rotates counter-clockwise
-* `rotateRight` - rotates clockwise
-* `setScale(value)` - sets device scale, values between 10 and 100
-* `saveScreenshot` - prompts user to download screenshot
-* `getScreenshot` - sends screenshot data directly to parent window. See the `screenshot` event the iFrame posts to the parent.
-* `heartbeat` - sends heartbeat to prevent inactivity timeout
-* `mouseclick(x, y)` - sends click event at point (x, y)
-* `pasteText(value)` - pastes text. `value` should be a string.
-* `keypress(key, shiftKey)` - sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
-* `language(value)` - sets language, restarts app
-* `location(value)` - sets location. `value` should be 2-length array that contains \[latitude, longitude]
-* `openUrl(value)` - opens deep-link or regular URL
-* `shakeDevice` - send shake gesture to iOS apps
-* `androidKeycodeMenu` - sends Android KEYCODE_MENU command
-* `biometryMatch` - (Android 8+ only) simulate a matching fingerprint
-* `biometryNonMatch` - (Android 8+ only) simulate a non-matching fingerprint
-* `disableInteractions` - disables all user interactions
-* `enableInteractions` - re-enables all user interactions
-* `restartApp` - kills and restarts app in same session
-* `endSession` - ends the session
+Messages with parameters should be passed as objects with the message name in the `type` field. E.g. 
 
-The iFrame also posts messages to the parent window.
+```ts
+postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
+```
 
-* `userInteractionReceived` - interaction received
-* `heartbeatReceived` - heartbeat received
-* `orientationChanged` - portrait or landscape
-* `sessionRequested` - session requested
-* `userError` - error starting session
-* `sessionQueued` - system-level queue (awaiting device availability)
-* `sessionQueuedPosition` - queue position
-* `accountQueued` - account-level queue (concurrent users)
-* `accountQueuedPosition` - queue position
-* `appLaunch` - app launch command sent
-* `firstFrameReceived` - first frame received
-* `timeoutWarning` - timeout in 10 seconds
-* `sessionEnded` - session ended
-* `screenshot` - screenshot data received
-* `chromeDevToolsUrl` - only if network intercept enabled
-* `sessionConnecting` - passes the identifying token for the session
+## Sendable Messages
+### requestSession
+Equivalent to clicking play
+
+```ts
+postMessage('requestSession', '*')
+```
+
+### emitHomeButton
+Taps the home button for iOS apps when available
+
+```ts
+postMessage('emitHomeButton', '*')
+```
+
+### rotateLeft
+Rotates counter-clockwise
+
+```ts
+postMessage('rotateLeft', '*')
+```
+
+### rotateRight
+Rotates clockwise
+
+```ts
+postMessage('rotateRight', '*')
+```
+
+### setScale
+Sets device scale to a value between 10 and 100
+
+```ts
+postMessage({ type: 'setScale', value: 50 })
+```
+
+### saveScreenshot
+Prompts user to download screenshot
+
+```ts
+postMessage('saveScreenshot', '*')
+```
+
+### getScreenshot
+Sends screenshot data directly to parent window. See the `screenshot` event the iFrame posts to the parent.
+
+```ts
+postMessage('getScreenshot', '*')
+```
+
+### heartbeat
+Sends heartbeat to prevent inactivity timeout
+
+```ts
+postMessage('heartbeat', '*')
+```
+
+### mouseclick
+Sends click event at the provided coordinates
+
+```ts
+postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
+```
+
+### pasteText
+Pastes the provided text
+
+```ts
+postMessage({ type: 'pasteText', value: 'Hello World' }, '*')
+```
+
+### keypress
+Sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
+
+```ts
+postMessage({ type: 'keypress', key: 'a', shiftKey: true }, '*') // would send 'A"
+```
+
+### language
+Sets language, restarts app
+
+```ts
+postMessage({ type: 'language', value: 'fr' }, '*')
+```
+
+### location
+Sets location. `value` should be 2-length array that contains \[latitude, longitude]
+
+```ts
+postMessage({ type: 'location', value: [50.0, -100.0] }, '*')
+```
+
+### url
+Opens deep-link or regular URL in Safari
+
+```ts
+postMessage({ type: 'url', value: 'https://appetize.io' }, '*')
+```
+
+### shakeDevice
+Send shake gesture to iOS apps
+
+```ts
+postMessage('shakeDevice', '*')
+```
+
+### androidKeycodeMenu
+Sends Android KEYCODE_MENU command
+
+```ts
+postMessage('androidKeycodeMenu', '*')
+```
+
+### biometryMatch
+(Android 8+ only) simulate a matching fingerprint
+
+```ts
+postMessage('biometryMatch', '*')
+```
+
+### biometryNonMatch
+(Android 8+ only) simulate a non-matching fingerprint
+
+```ts
+postMessage('biometryNonMatch', '*')
+```
+
+### disableInteractions 
+Disables all user interactions
+
+```ts
+postMessage('disableInteractions', '*')
+```
+
+### enableInteractions
+Re-enables all user interactions
+
+```ts
+postMessage('enableInteractions', '*')
+```
+
+### restartApp 
+Kills and restarts app in same session
+
+```ts
+postMessage('restartApp', '*')
+```
+
+### endSession 
+Ends the session
+
+```ts
+postMessage('endSession', '*')
+```
+
+## Receivable Messages
+
+The iFrame also posts messages to the parent window via `message` event. You can listen for them with an event handler on the window:
+
+```ts
+window.addEventListener('message', (event) => {    
+    const type = typeof event.data === 'string' ? event.data : event.data.type
+    
+    console.log(type)
+})
+```
+
+### userInteractionReceived
+Session has received an interaction from the user    
+
+```ts
+{
+    data: {
+        type: "userInteractionReceived",
+        value: {
+            altKey: boolean,
+            shiftKey: boolean,
+            timeStamp: number,
+            type: string,
+            xPos: number,
+            yPost: number
+        }
+    }
+}
+```
+### heartbeatReceived
+Heartbeat event received
+
+```ts
+{
+    data: "heartbeatReceived"
+}
+```
+
+### orientationChanged
+Device orientation has changed
+
+```ts
+{
+    data: { 
+        type: "orientationChanged",
+        value: "landscape" | "portrait"
+    }
+}
+```
+
+### sessionRequested
+Session has been requested
+
+```ts
+{
+    data: "sessionRequested"
+}
+```
+
+### userError
+An error occurred while starting session
+
+```ts
+{
+    data: { 
+        type: "userError",
+        value: string // error message
+    }
+}
+```
+
+### sessionQueued
+You have entered a system-level queue (awaiting device availability)
+
+```ts
+{
+    data: "sessionQueued"
+}
+```
+
+### sessionQueuedPosition
+Position of session queue
+
+```ts
+{
+    data: { 
+        type: "sessionQueuedPosition",
+        position: number
+    }
+}
+```
+
+### accountQueued
+You have entered an account-level queue (concurrent users)
+
+```ts
+{
+    data: "accountQueued"
+}
+```
+    
+### accountQueuedPosition
+Account queue position
+
+```ts
+{
+    data: { 
+        type: "accountQueuedPosition",
+        position: number
+    }
+}
+```
+        
+### appLaunch
+App launch command sent
+
+```ts
+{
+    data: "appLaunch"
+}
+```
+
+### firstFrameReceived
+First frame received
+
+```ts
+{
+    data: "firstFrameReceived"
+}
+```
+
+### timeoutWarning 
+Session is about to timeout in 10 seconds
+
+```ts
+{
+    data: "timeoutWarning"
+}
+```
+
+### sessionEnded
+Session has ended
+
+```ts
+{
+    data: "sessionEnded"
+}
+```
+
+### screenshot
+Screenshot data received
+
+```ts
+{
+    data: {
+        type: "screenshot",
+        data: string // base64 encoded image data
+    }
+}
+```
+
+### sessionConnecting
+Passes the identifying token for the session
+
+```ts
+{
+    data: { 
+        type: "sessionConnecting",
+        token: string,
+        path: string
+    }
+}
+```
+
+### chromeDevToolsUrl
+URL to view dev tools for the device (only if network intercept enabled)
+
+```ts
+{
+    data: { 
+        type: "chromeDevToolsUrl",
+        value: string
+    }
+}
+```
+
+### interceptResponse
+Intercepted network response. 
+
+This is only emitted if network intercept enabled (`proxy=intercept` query param)
+
+```ts
+{
+    data: { 
+        type: "interceptResponse",
+        value: {
+            cache: object
+            request: {
+                bodySize: number
+                cookies: Array<{ name: string, value: string }>
+                headers: Array<{ name: string, value: string }>
+                headersSize: number
+                httpVersion: string
+                method: string
+                queryString: Array<{ name: string, value: string }>
+                url: string
+            }
+            requestId: string
+            serverIPAddress: string
+        }
+    }
+}
+```
+### interceptRequest
+Intercepted network request. 
+
+This is only emitted if network intercept enabled (`proxy=intercept` query param)
+
+```ts
+{
+    data: { 
+        type: "interceptRequest",
+        value: {
+            cache: object
+            request: {
+                bodySize: number
+                cookies: Array<{ name: string, value: string }>
+                headers: Array<{ name: string, value: string }>
+                headersSize: number
+                httpVersion: string
+                method: string
+                queryString: Array<{ name: string, value: string }>
+                url: string
+            }
+            requestId: string
+            serverIPAddress: string
+        }
+    }
+}
+```
 
 [Check out our JSFiddle.net example to see these messages in action!](https://jsfiddle.net/appetize/f97hs3ru/)
