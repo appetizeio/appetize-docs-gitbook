@@ -8,13 +8,13 @@ Cross-document messaging, when enabled via the `&xdocMsg=true` query parameter, 
 
 Messages without any parameters can be passed directly as strings, e.g. 
 
-```ts
+```typescript
 postMessage('requestSession', '*')
 ```
 
 Messages with parameters should be passed as objects with the message name in the `type` field. E.g. 
 
-```ts
+```typescript
 postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
 ```
 
@@ -22,154 +22,154 @@ postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
 ### requestSession
 Equivalent to clicking play
 
-```ts
+```typescript
 postMessage('requestSession', '*')
 ```
 
 ### emitHomeButton
 Taps the home button for iOS apps when available
 
-```ts
+```typescript
 postMessage('emitHomeButton', '*')
 ```
 
 ### rotateLeft
 Rotates counter-clockwise
 
-```ts
+```typescript
 postMessage('rotateLeft', '*')
 ```
 
 ### rotateRight
 Rotates clockwise
 
-```ts
+```typescript
 postMessage('rotateRight', '*')
 ```
 
 ### setScale
 Sets device scale to a value between 10 and 100
 
-```ts
+```typescript
 postMessage({ type: 'setScale', value: 50 })
 ```
 
 ### saveScreenshot
 Prompts user to download screenshot
 
-```ts
+```typescript
 postMessage('saveScreenshot', '*')
 ```
 
 ### getScreenshot
 Sends screenshot data directly to parent window. See the `screenshot` event the iFrame posts to the parent.
 
-```ts
+```typescript
 postMessage('getScreenshot', '*')
 ```
 
 ### heartbeat
 Sends heartbeat to prevent inactivity timeout
 
-```ts
+```typescript
 postMessage('heartbeat', '*')
 ```
 
 ### mouseclick
 Sends click event at the provided coordinates
 
-```ts
+```typescript
 postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
 ```
 
 ### pasteText
 Pastes the provided text
 
-```ts
+```typescript
 postMessage({ type: 'pasteText', value: 'Hello World' }, '*')
 ```
 
 ### keypress
 Sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
 
-```ts
+```typescript
 postMessage({ type: 'keypress', key: 'a', shiftKey: true }, '*') // would send 'A"
 ```
 
 ### language
 Sets language, restarts app
 
-```ts
+```typescript
 postMessage({ type: 'language', value: 'fr' }, '*')
 ```
 
 ### location
 Sets location. `value` should be 2-length array that contains \[latitude, longitude]
 
-```ts
+```typescript
 postMessage({ type: 'location', value: [50.0, -100.0] }, '*')
 ```
 
 ### url
 Opens deep-link or regular URL in Safari
 
-```ts
+```typescript
 postMessage({ type: 'url', value: 'https://appetize.io' }, '*')
 ```
 
 ### shakeDevice
 Send shake gesture to iOS apps
 
-```ts
+```typescript
 postMessage('shakeDevice', '*')
 ```
 
 ### androidKeycodeMenu
 Sends Android KEYCODE_MENU command
 
-```ts
+```typescript
 postMessage('androidKeycodeMenu', '*')
 ```
 
 ### biometryMatch
 (Android 8+ only) simulate a matching fingerprint
 
-```ts
+```typescript
 postMessage('biometryMatch', '*')
 ```
 
 ### biometryNonMatch
 (Android 8+ only) simulate a non-matching fingerprint
 
-```ts
+```typescript
 postMessage('biometryNonMatch', '*')
 ```
 
 ### disableInteractions 
 Disables all user interactions
 
-```ts
+```typescript
 postMessage('disableInteractions', '*')
 ```
 
 ### enableInteractions
 Re-enables all user interactions
 
-```ts
+```typescript
 postMessage('enableInteractions', '*')
 ```
 
 ### restartApp 
 Kills and restarts app in same session
 
-```ts
+```typescript
 postMessage('restartApp', '*')
 ```
 
 ### endSession 
 Ends the session
 
-```ts
+```typescript
 postMessage('endSession', '*')
 ```
 
@@ -177,7 +177,7 @@ postMessage('endSession', '*')
 
 The iFrame also posts messages to the parent window via `message` event. You can listen for them with an event handler on the window:
 
-```ts
+```typescript
 window.addEventListener('message', (event) => {    
     const type = typeof event.data === 'string' ? event.data : event.data.type
     
@@ -188,7 +188,7 @@ window.addEventListener('message', (event) => {
 ### userInteractionReceived
 Session has received an interaction from the user    
 
-```ts
+```typescript
 {
     data: {
         type: "userInteractionReceived",
@@ -206,7 +206,7 @@ Session has received an interaction from the user
 ### heartbeatReceived
 Heartbeat event received
 
-```ts
+```typescript
 {
     data: "heartbeatReceived"
 }
@@ -215,7 +215,7 @@ Heartbeat event received
 ### orientationChanged
 Device orientation has changed
 
-```ts
+```typescript
 {
     data: { 
         type: "orientationChanged",
@@ -227,7 +227,7 @@ Device orientation has changed
 ### sessionRequested
 Session has been requested
 
-```ts
+```typescript
 {
     data: "sessionRequested"
 }
@@ -236,7 +236,7 @@ Session has been requested
 ### userError
 An error occurred while starting session
 
-```ts
+```typescript
 {
     data: { 
         type: "userError",
@@ -248,7 +248,7 @@ An error occurred while starting session
 ### sessionQueued
 You have entered a system-level queue (awaiting device availability)
 
-```ts
+```typescript
 {
     data: "sessionQueued"
 }
@@ -257,7 +257,7 @@ You have entered a system-level queue (awaiting device availability)
 ### sessionQueuedPosition
 Position of session queue
 
-```ts
+```typescript
 {
     data: { 
         type: "sessionQueuedPosition",
@@ -269,7 +269,7 @@ Position of session queue
 ### accountQueued
 You have entered an account-level queue (concurrent users)
 
-```ts
+```typescript
 {
     data: "accountQueued"
 }
@@ -278,7 +278,7 @@ You have entered an account-level queue (concurrent users)
 ### accountQueuedPosition
 Account queue position
 
-```ts
+```typescript
 {
     data: { 
         type: "accountQueuedPosition",
@@ -290,7 +290,7 @@ Account queue position
 ### appLaunch
 App launch command sent
 
-```ts
+```typescript
 {
     data: "appLaunch"
 }
@@ -299,7 +299,7 @@ App launch command sent
 ### firstFrameReceived
 First frame received
 
-```ts
+```typescript
 {
     data: "firstFrameReceived"
 }
@@ -308,7 +308,7 @@ First frame received
 ### timeoutWarning 
 Session is about to timeout in 10 seconds
 
-```ts
+```typescript
 {
     data: "timeoutWarning"
 }
@@ -317,7 +317,7 @@ Session is about to timeout in 10 seconds
 ### sessionEnded
 Session has ended
 
-```ts
+```typescript
 {
     data: "sessionEnded"
 }
@@ -326,7 +326,7 @@ Session has ended
 ### screenshot
 Screenshot data received
 
-```ts
+```typescript
 {
     data: {
         type: "screenshot",
@@ -338,7 +338,7 @@ Screenshot data received
 ### sessionConnecting
 Passes the identifying token for the session
 
-```ts
+```typescript
 {
     data: { 
         type: "sessionConnecting",
@@ -351,7 +351,7 @@ Passes the identifying token for the session
 ### chromeDevToolsUrl
 URL to view dev tools for the device (only if network intercept enabled)
 
-```ts
+```typescript
 {
     data: { 
         type: "chromeDevToolsUrl",
@@ -365,7 +365,7 @@ Intercepted network response.
 
 This is only emitted if network intercept enabled (`proxy=intercept` query param)
 
-```ts
+```typescript
 {
     data: { 
         type: "interceptResponse",
@@ -392,7 +392,7 @@ Intercepted network request.
 
 This is only emitted if network intercept enabled (`proxy=intercept` query param)
 
-```ts
+```typescript
 {
     data: { 
         type: "interceptRequest",
