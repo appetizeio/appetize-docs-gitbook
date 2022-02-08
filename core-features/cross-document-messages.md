@@ -6,20 +6,22 @@ description: Interact with the virtual device via a Javascript post-message API
 
 Cross-document messaging, when enabled via the `&xdocMsg=true` query parameter, allows you to issue commands to the embedded iFrame via Javascript via [`postMessage(message, targetOrigin)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
-Messages without any parameters can be passed directly as strings, e.g. 
+Messages without any parameters can be passed directly as strings, e.g.
 
 ```typescript
 postMessage('requestSession', '*')
 ```
 
-Messages with parameters should be passed as objects with the message name in the `type` field. E.g. 
+Messages with parameters should be passed as objects with the message name in the `type` field. E.g.
 
 ```typescript
 postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
 ```
 
 ## Sendable Messages
+
 ### requestSession
+
 Equivalent to clicking play
 
 ```typescript
@@ -27,6 +29,7 @@ postMessage('requestSession', '*')
 ```
 
 ### emitHomeButton
+
 Taps the home button for iOS apps when available
 
 ```typescript
@@ -34,6 +37,7 @@ postMessage('emitHomeButton', '*')
 ```
 
 ### rotateLeft
+
 Rotates counter-clockwise
 
 ```typescript
@@ -41,6 +45,7 @@ postMessage('rotateLeft', '*')
 ```
 
 ### rotateRight
+
 Rotates clockwise
 
 ```typescript
@@ -48,6 +53,7 @@ postMessage('rotateRight', '*')
 ```
 
 ### setScale
+
 Sets device scale to a value between 10 and 100
 
 ```typescript
@@ -55,6 +61,7 @@ postMessage({ type: 'setScale', value: 50 })
 ```
 
 ### saveScreenshot
+
 Prompts user to download screenshot
 
 ```typescript
@@ -62,6 +69,7 @@ postMessage('saveScreenshot', '*')
 ```
 
 ### getScreenshot
+
 Sends screenshot data directly to parent window. See the `screenshot` event the iFrame posts to the parent.
 
 ```typescript
@@ -69,6 +77,7 @@ postMessage('getScreenshot', '*')
 ```
 
 ### heartbeat
+
 Sends heartbeat to prevent inactivity timeout
 
 ```typescript
@@ -76,6 +85,7 @@ postMessage('heartbeat', '*')
 ```
 
 ### mouseclick
+
 Sends click event at the provided coordinates
 
 ```typescript
@@ -83,6 +93,7 @@ postMessage({ type: 'mouseclick', x: 100, y:100 }, '*')
 ```
 
 ### pasteText
+
 Pastes the provided text
 
 ```typescript
@@ -90,6 +101,7 @@ postMessage({ type: 'pasteText', value: 'Hello World' }, '*')
 ```
 
 ### keypress
+
 Sends keypress. `key` should be a string that identifies the key pressed, e.g. `'a'`. Acceptable values on Android also include `'volumeUp'` and `'volumeDown'`.
 
 ```typescript
@@ -97,6 +109,7 @@ postMessage({ type: 'keypress', key: 'a', shiftKey: true }, '*') // would send '
 ```
 
 ### language
+
 Sets language, restarts app
 
 ```typescript
@@ -104,6 +117,7 @@ postMessage({ type: 'language', value: 'fr' }, '*')
 ```
 
 ### location
+
 Sets location. `value` should be 2-length array that contains \[latitude, longitude]
 
 ```typescript
@@ -111,6 +125,7 @@ postMessage({ type: 'location', value: [50.0, -100.0] }, '*')
 ```
 
 ### url
+
 Opens deep-link or regular URL in Safari
 
 ```typescript
@@ -118,6 +133,7 @@ postMessage({ type: 'url', value: 'https://appetize.io' }, '*')
 ```
 
 ### shakeDevice
+
 Send shake gesture to iOS apps
 
 ```typescript
@@ -125,13 +141,15 @@ postMessage('shakeDevice', '*')
 ```
 
 ### androidKeycodeMenu
-Sends Android KEYCODE_MENU command
+
+Sends Android KEYCODE\_MENU command
 
 ```typescript
 postMessage('androidKeycodeMenu', '*')
 ```
 
 ### biometryMatch
+
 (Android 8+ only) simulate a matching fingerprint
 
 ```typescript
@@ -139,13 +157,15 @@ postMessage('biometryMatch', '*')
 ```
 
 ### biometryNonMatch
+
 (Android 8+ only) simulate a non-matching fingerprint
 
 ```typescript
 postMessage('biometryNonMatch', '*')
 ```
 
-### disableInteractions 
+### disableInteractions
+
 Disables all user interactions
 
 ```typescript
@@ -153,20 +173,23 @@ postMessage('disableInteractions', '*')
 ```
 
 ### enableInteractions
+
 Re-enables all user interactions
 
 ```typescript
 postMessage('enableInteractions', '*')
 ```
 
-### restartApp 
+### restartApp
+
 Kills and restarts app in same session
 
 ```typescript
 postMessage('restartApp', '*')
 ```
 
-### endSession 
+### endSession
+
 Ends the session
 
 ```typescript
@@ -186,7 +209,8 @@ window.addEventListener('message', (event) => {
 ```
 
 ### userInteractionReceived
-Session has received an interaction from the user    
+
+Session has received an interaction from the user
 
 ```typescript
 {
@@ -203,7 +227,9 @@ Session has received an interaction from the user
     }
 }
 ```
+
 ### heartbeatReceived
+
 Heartbeat event received
 
 ```typescript
@@ -213,6 +239,7 @@ Heartbeat event received
 ```
 
 ### orientationChanged
+
 Device orientation has changed
 
 ```typescript
@@ -225,6 +252,7 @@ Device orientation has changed
 ```
 
 ### sessionRequested
+
 Session has been requested
 
 ```typescript
@@ -234,6 +262,7 @@ Session has been requested
 ```
 
 ### userError
+
 An error occurred while starting session
 
 ```typescript
@@ -246,6 +275,7 @@ An error occurred while starting session
 ```
 
 ### sessionQueued
+
 You have entered a system-level queue (awaiting device availability)
 
 ```typescript
@@ -255,6 +285,7 @@ You have entered a system-level queue (awaiting device availability)
 ```
 
 ### sessionQueuedPosition
+
 Position of session queue
 
 ```typescript
@@ -267,6 +298,7 @@ Position of session queue
 ```
 
 ### accountQueued
+
 You have entered an account-level queue (concurrent users)
 
 ```typescript
@@ -274,8 +306,9 @@ You have entered an account-level queue (concurrent users)
     data: "accountQueued"
 }
 ```
-    
+
 ### accountQueuedPosition
+
 Account queue position
 
 ```typescript
@@ -286,8 +319,9 @@ Account queue position
     }
 }
 ```
-        
+
 ### appLaunch
+
 App launch command sent
 
 ```typescript
@@ -297,6 +331,7 @@ App launch command sent
 ```
 
 ### firstFrameReceived
+
 First frame received
 
 ```typescript
@@ -305,7 +340,8 @@ First frame received
 }
 ```
 
-### timeoutWarning 
+### timeoutWarning
+
 Session is about to timeout in 10 seconds
 
 ```typescript
@@ -315,6 +351,7 @@ Session is about to timeout in 10 seconds
 ```
 
 ### sessionEnded
+
 Session has ended
 
 ```typescript
@@ -324,6 +361,7 @@ Session has ended
 ```
 
 ### screenshot
+
 Screenshot data received
 
 ```typescript
@@ -336,6 +374,7 @@ Screenshot data received
 ```
 
 ### sessionConnecting
+
 Passes the identifying token for the session
 
 ```typescript
@@ -349,6 +388,7 @@ Passes the identifying token for the session
 ```
 
 ### chromeDevToolsUrl
+
 URL to view dev tools for the device (only if network intercept enabled)
 
 ```typescript
@@ -361,7 +401,8 @@ URL to view dev tools for the device (only if network intercept enabled)
 ```
 
 ### interceptResponse
-Intercepted network response. 
+
+Intercepted network response.
 
 This is only emitted if network intercept enabled (`proxy=intercept` query param)
 
@@ -387,8 +428,10 @@ This is only emitted if network intercept enabled (`proxy=intercept` query param
     }
 }
 ```
+
 ### interceptRequest
-Intercepted network request. 
+
+Intercepted network request.
 
 This is only emitted if network intercept enabled (`proxy=intercept` query param)
 
@@ -410,6 +453,22 @@ This is only emitted if network intercept enabled (`proxy=intercept` query param
             }
             requestId: string
             serverIPAddress: string
+        }
+    }
+}
+```
+
+### deviceDimensions
+
+The dimensions of the current device. If the `screenOnly` query param is true, the dimensions will be for the screen.
+
+```typescript
+{
+    data: {
+        type: "deviceDimensions",
+        value: {
+            width: number,
+            height: number
         }
     }
 }
