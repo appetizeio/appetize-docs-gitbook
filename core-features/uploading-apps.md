@@ -32,13 +32,13 @@ Once the build command completes successfully, you may then zip the `.app` bundl
 
 `build/Debug-iphonesimulator/`
 
-If you are having trouble running your uploaded iOS app in Appetize.io, please find our troubleshooting steps at [https://help.appetize.io/error-installing-or-running-app-on-ios](https://help.appetize.io/error-installing-or-running-app-on-ios).
+If you are having trouble running your uploaded iOS app in Appetize.io, please find our troubleshooting steps at [https://support.appetize.io/error-installing-or-running-app-on-ios](https://support.appetize.io/error-installing-or-running-app-on-ios).
 
-If you are using Xamarin to develop your apps, please see our specific instructions at [https://help.appetize.io/can-i-upload-xamarin-apps-to-appetize.io](https://help.appetize.io/can-i-upload-xamarin-apps-to-appetize.io).
+If you are using Xamarin to develop your apps, please see our specific instructions at [https://support.appetize.io/can-i-upload-xamarin-apps-to-appetize.io](https://support.appetize.io/can-i-upload-xamarin-apps-to-appetize.io).
 
-For React Native issues, please see [https://help.appetize.io/i-need-help-uploading-react-native-apps-to-appetize.io](https://help.appetize.io/i-need-help-uploading-react-native-apps-to-appetize.io).&#x20;
+For React Native issues, please see [https://support.appetize.io/i-need-help-uploading-react-native-apps-to-appetize.io](https://support.appetize.io/i-need-help-uploading-react-native-apps-to-appetize.io).&#x20;
 
-For issues uploading apps from an ARM-based Mac, please see [https://help.appetize.io/how-can-i-upload-an-ios-build-using-a-mac-with-m1-arm-architecture](https://help.appetize.io/how-can-i-upload-an-ios-build-using-a-mac-with-m1-arm-architecture).
+For issues uploading apps from an ARM-based Mac, please see [https://support.appetize.io/how-can-i-upload-an-ios-build-using-a-mac-with-m1-arm-architecture](https://support.appetize.io/how-can-i-upload-an-ios-build-using-a-mac-with-m1-arm-architecture).
 
 ### **Note about Xcode 12 and iOS 14**
 
