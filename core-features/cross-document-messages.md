@@ -458,6 +458,21 @@ This is only emitted if network intercept enabled (`proxy=intercept` query param
 }
 ```
 
+### debug
+
+Logged messages from the device.
+
+This is only emitted if debug log is enabled (`debug=true` query param)
+
+```typescript
+{
+    data: {
+        type: "debug",
+        value: string
+    }
+}
+```
+
 ### deviceDimensions
 
 The dimensions of the current device. If the `screenOnly` query param is true, the dimensions will be for the screen.
