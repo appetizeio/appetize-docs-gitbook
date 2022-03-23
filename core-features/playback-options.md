@@ -24,6 +24,7 @@ These parameters specify:
 * `grantPermissions` - true or false - automatically grant all required app permissions (Android only)
 * `hidePasswords` - true or false - hide password visibility when typing (Android only)
 * `launchUrl` - specify a deep link to open when your app is launched
+* `launchArgs` - specify a url-encoded JSON array of strings to pass when launching your app (iOS only)
 * `debug` - true or false, default is false. When true you can view the debug log for your app.&#x20;
 * `proxy` - specify a proxy server to route network traffic. e.g. `http://example.com:8080`. For Appetize.io's intercepting proxy, use `proxy=intercept`
 * `enableAdb` - true or false. on session start, generate an SSH tunnel to allow ADB connections to the emulator
