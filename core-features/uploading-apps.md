@@ -2,7 +2,7 @@
 
 You may upload apps directly via your web browser at [https://appetize.io/upload](https://appetize.io/upload), or you may upload programmatically via our [API](../api/create-new-app.md).&#x20;
 
-We also have many 3rd party integrations with tools such as [fastlane](https://docs.fastlane.tools/actions/appetize/), [Bitrise](https://www.bitrise.io/integrations/steps/appetize-deploy), and [Expo](https://expo.io).&#x20;
+We also have many 3rd party integrations with tools such as [fastlane](https://docs.fastlane.tools/actions/appetize/), [Bitrise](https://www.bitrise.io/integrations/steps/appetize-deploy), and [Expo](https://expo.io/).&#x20;
 
 {% tabs %}
 {% tab title="iOS" %}
