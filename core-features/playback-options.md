@@ -7,6 +7,7 @@ You may see these query parameters in action when you run our [online demo](http
 These parameters specify:
 
 * `device` - eg. iphone8, iphone11pro, iphone11promax, ipadair2, pixel4, pixel4xl, galaxytabs7
+* `codec` - "h264" or "jpeg", default is "h264". Changes the codec used for video streaming
 * `osVersion` - the operating system version on which to run your app, e.g. 11.4, 12.2, 13.3, 14.0 _Note: We recommend do not include osVersion as a query parameter when embedding your app, that way will always use our latest default._
 * `scale` - values between 10 and 100
 * `autoplay` - true or false, default is false. When true, start streaming app on page load.
