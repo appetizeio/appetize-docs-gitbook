@@ -4,14 +4,12 @@ The App Recorder is an experimental feature which allows users to record and pla
 
 The app recorder is disabled by default. To enable, append `&record=true&xdocMsg=true` to your app's url.
 
-We welcome your feedback and bug reports as we continue developing this feature. 
+We welcome your feedback and bug reports as we continue developing this feature.&#x20;
 
-You may see a basic illustrative example at [https://jsfiddle.net/appetize/829fabph/](https://jsfiddle.net/appetize/829fabph/). 
+You may see a basic illustrative example at [https://jsfiddle.net/appetize/829fabph/](https://jsfiddle.net/appetize/829fabph/).&#x20;
 
 ### Known Issues
 
-* Unable to look into the contents of iOS web views
-* Performance issues if iOS apps are backgrounded
-* iOS picker controls are not well supported
+* Unable to look into the contents of iOS webviews
 * scrollToElement not yet implemented on iOS
 
