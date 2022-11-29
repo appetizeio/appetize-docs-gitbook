@@ -9,7 +9,7 @@ These parameters specify:
 * `device` - eg. iphone8, iphone11pro, iphone11promax, ipadair2, pixel4, pixel4xl, galaxytabs7
 * `codec` - "h264" or "jpeg", default is "h264". Changes the codec used for video streaming
 * `osVersion` - the operating system version on which to run your app, e.g. 11.4, 12.2, 13.3, 14.0 _Note: We recommend do not include osVersion as a query parameter when embedding your app, that way will always use our latest default._
-* `scale` - between 10 and 100. Adjusts the size of the device shown on the page. Embeds can also take a value of "auto" which will fit the device to the window (default behaviour).
+* `scale` - a number between 10 and 100, or "auto". Adjusts the size of the device shown on the page. "auto" will scale to fit the size of the iframe (embeds only).
 * `autoplay` - true or false, default is false. When true, start streaming app on page load.
 * `orientation` - portrait or landscape
 * `centered` - "vertical", "horizontal" or "both". Centers the device (only when embedding)
