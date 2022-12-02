@@ -489,4 +489,23 @@ The dimensions of the current device. If the `screenOnly` query param is true, t
 }
 ```
 
+### app
+
+Information for the application
+
+```typescript
+{
+    data: {
+        type: "app",
+        value: {
+            name: "Example",
+            appDisplayName: "Example",
+            bundle: "com.example.app",
+            publicKey: "p7nww3n6ubq73r1nh9jtauqy8w",
+            platform: "ios"
+        }
+    }
+}
+```
+
 [Check out our JSFiddle.net example to see these messages in action!](https://jsfiddle.net/appetize/f97hs3ru/)
