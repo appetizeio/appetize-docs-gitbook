@@ -16,7 +16,13 @@ publicKey for the app
     "created": "2016-02-10T17:46:14.089Z",
     "updated": "2016-02-10T17:46:14.089Z",
     "platform": "ios",
-    "versionCode": 1
+    "bundle": "com.example.app",
+    "name": "example",
+    "appDisplayName": "Example App",
+    "appVersionCode": "1",
+    "appVersionName": "1.0.0",
+    "versionCode": 1,
+    "iconUrl": "https://example.com/app.png",
 }
 ```
 {% endswagger-response %}
@@ -49,13 +55,25 @@ If results are truncated due to too many apps, response will include
         "created": "2016-02-10T17:46:14.089Z",
         "updated": "2016-02-10T17:46:14.089Z",
         "platform": "ios",
-        "versionCode": 1
+        "bundle": "com.example.app",
+        "name": "example",
+        "appDisplayName": "Example App",
+        "appVersionCode": "1",
+        "appVersionName": "1.0.0",
+        "versionCode": 1,
+        "iconUrl": "https://example.com/app.png",
     }, {
         "publicKey": "48g0593mgxut2fz57yw2hdjd24",
         "created": "2016-02-10T17:44:38.613Z",
         "updated": "2016-02-10T17:44:38.613Z",
         "platform": "ios",
-        "versionCode": 3
+        "bundle": "com.example.app2",
+        "name": "example",
+        "appDisplayName": "Example App",
+        "appVersionCode": "1",
+        "appVersionName": "1.0.0",
+        "versionCode": 3,
+        "iconUrl": "https://example.com/app2.png",
     }]
 }
 ```
