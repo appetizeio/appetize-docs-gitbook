@@ -148,6 +148,19 @@ Sends Android KEYCODE\_MENU command
 postMessage('androidKeycodeMenu', '*')
 ```
 
+### adbShellCommand
+
+Executes an adb shell command on an Android device.&#x20;
+
+If a session is already running the command will be executed immediately. If the session has not been started, the command will execute upon start.
+
+```typescript
+postMessage({ 
+    type: 'adbShellCommand', 
+    value: 'am start -a android.intent.action.VIEW -d https://appetize.io/'
+}, '*')
+```
+
 ### biometryMatch
 
 (Android 8+ only) simulate a matching fingerprint
