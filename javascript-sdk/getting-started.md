@@ -1,7 +1,3 @@
----
-description: v0.1.3
----
-
 # Getting Started
 
 ## Overview
