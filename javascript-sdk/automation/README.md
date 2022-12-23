@@ -25,8 +25,8 @@ We welcome customer feedback as we continue to refine our APIs, and the underlyi
 [touch-interactions.md](touch-interactions.md)
 {% endcontent-ref %}
 
-{% content-ref url="recording-and-playback.md" %}
-[recording-and-playback.md](recording-and-playback.md)
+{% content-ref url="recording-and-playback/" %}
+[recording-and-playback](recording-and-playback/)
 {% endcontent-ref %}
 
 {% content-ref url="events.md" %}

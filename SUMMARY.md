@@ -11,17 +11,17 @@
 * [Cross-document messages](core-features/cross-document-messages.md)
 * [Custom launch pages](core-features/custom-launch-pages.md)
 
-## API
+## REST API
 
-* [Overview](api/overview.md)
-* [Create new app](api/create-new-app.md)
-* [Update existing app](api/update-existing-app.md)
-* [Direct file uploads](api/direct-file-uploads.md)
-* [Delete app](api/delete-app.md)
-* [List apps](api/list-apps.md)
-* [Usage summary](api/usage-summary.md)
-* [Devices and IPs](api/devices-and-ips.md)
-* [Sample code](api/sample-code.md)
+* [Overview](rest-api/overview.md)
+* [Create new app](rest-api/create-new-app.md)
+* [Update existing app](rest-api/update-existing-app.md)
+* [Direct file uploads](rest-api/direct-file-uploads.md)
+* [Delete app](rest-api/delete-app.md)
+* [List apps](rest-api/list-apps.md)
+* [Usage summary](rest-api/usage-summary.md)
+* [Devices and IPs](rest-api/devices-and-ips.md)
+* [Sample code](rest-api/sample-code.md)
 
 ## Javascript SDK
 
@@ -31,7 +31,8 @@
 * [Automation](javascript-sdk/automation/README.md)
   * [Device commands](javascript-sdk/automation/device-commands.md)
   * [Touch interactions](javascript-sdk/automation/touch-interactions.md)
-  * [Recording and playback](javascript-sdk/automation/recording-and-playback.md)
+  * [Recording and playback](javascript-sdk/automation/recording-and-playback/README.md)
+    * [Playback event matching](javascript-sdk/automation/recording-and-playback/playback-event-matching.md)
   * [Events](javascript-sdk/automation/events.md)
 * [Use cases](javascript-sdk/use-cases/README.md)
   * [Log in with username and password](javascript-sdk/use-cases/log-in-with-username-and-password.md)
@@ -50,10 +51,3 @@
   * [Azure Active Directory](advanced-features/single-sign-on/azure-active-directory.md)
   * [Google Workspace (GSuite)](advanced-features/single-sign-on/google-workspace-gsuite.md)
 * [ADB tunnel](advanced-features/adb-tunnel.md)
-
-## App recorder (beta) <a href="#app-recorder" id="app-recorder"></a>
-
-* [Overview](app-recorder/overview.md)
-* [Record events](app-recorder/record-events.md)
-* [Playback events](app-recorder/playback-events.md)
-* [Retrieving the user interface](app-recorder/retrieving-the-user-interface.md)

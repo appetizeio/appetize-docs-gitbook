@@ -20,7 +20,7 @@ const session = await client.startSession()
 
 ### config()
 
-Update the configured app, device, operating system, or other launch options.  See [Configuration](../configuration.md#configuration-options) for acceptable values.
+Update the configured app, device, operating system, or other launch options. See [Configuration](../configuration.md#configuration-options) for acceptable values.
 
 _Note: This will end any active sessions._
 
@@ -60,8 +60,12 @@ await session.end()
 
 Returns the UI of the app as an XML string
 
+This returns an XML representation of your app's user interface. You may find it helpful to retrieve this data (UI Dump) to programmatically understand what your app is displaying.
+
 ```typescript
 await session.getUI()
+
+// returns a string, eg. "<?xml version='1.0' encoding='UTF-8' ?>..."
 ```
 
 ### heartbeat()
@@ -74,7 +78,7 @@ await session.heartbeat()
 
 ### keypress()
 
-Sends a single key press to the device.&#x20;
+Sends a single key press to the device.
 
 ```javascript
 await session.keypress("a")
@@ -82,7 +86,7 @@ await session.keypress("a")
 
 This can also be used to send hardware keys:
 
-* `HOME`&#x20;
+* `HOME`
 * `VOLUME_UP` (Android)
 * `VOLUME_DOWN` (Android)
 * `ANDROID_KEYCODE_MENU` (Android)
