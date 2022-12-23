@@ -23,6 +23,23 @@
 * [Devices and IPs](api/devices-and-ips.md)
 * [Sample code](api/sample-code.md)
 
+## Javascript SDK
+
+* [Overview](javascript-sdk/javascript-sdk-overview.md)
+* [Getting Started](javascript-sdk/getting-started.md)
+* [Configuration](javascript-sdk/configuration.md)
+* [Automation](javascript-sdk/automation/README.md)
+  * [Device commands](javascript-sdk/automation/device-commands.md)
+  * [Touch interactions](javascript-sdk/automation/touch-interactions.md)
+  * [Recording and playback](javascript-sdk/automation/recording-and-playback.md)
+  * [Events](javascript-sdk/automation/events.md)
+* [Use cases](javascript-sdk/use-cases/README.md)
+  * [Log in with username and password](javascript-sdk/use-cases/log-in-with-username-and-password.md)
+  * [Swipe a pattern to unlock an Android device](javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
+  * [Open a deeplink and make sure analytics API calls happen](javascript-sdk/use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
+  * [Save screenshots of an app in multiple languages](javascript-sdk/use-cases/save-screenshots-of-an-app-in-multiple-languages.md)
+* [API reference](javascript-sdk/api-reference.md)
+
 ## Advanced features
 
 * [Custom branding](advanced-features/custom-branding.md)
@@ -40,20 +57,3 @@
 * [Record events](app-recorder/record-events.md)
 * [Playback events](app-recorder/playback-events.md)
 * [Retrieving the user interface](app-recorder/retrieving-the-user-interface.md)
-
-## Javascript SDK
-
-* [Overview](javascript-sdk/javascript-sdk-overview.md)
-* [Getting Started](javascript-sdk/getting-started.md)
-* [Configuration](javascript-sdk/configuration.md)
-* [Automation](javascript-sdk/automation/README.md)
-  * [Device commands](javascript-sdk/automation/device-commands.md)
-  * [Touch interactions](javascript-sdk/automation/touch-interactions.md)
-  * [Recording and playback](javascript-sdk/automation/recording-and-playback.md)
-  * [Events](javascript-sdk/automation/events.md)
-* [Use cases](javascript-sdk/use-cases/README.md)
-  * [Log in with username and password](javascript-sdk/use-cases/log-in-with-username-and-password.md)
-  * [Swipe a pattern to unlock an Android device](javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
-  * [Open a deeplink and make sure analytics API calls happen](javascript-sdk/use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
-  * [Save screenshots of an app in multiple languages](javascript-sdk/use-cases/save-screenshots-of-an-app-in-multiple-languages.md)
-* [API reference](javascript-sdk/api-reference.md)

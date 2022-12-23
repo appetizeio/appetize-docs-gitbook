@@ -1,10 +1,10 @@
 # Overview
 
-{% hint style="warning" %}
+{% hint style="info" %}
 The Javascript SDK is **currently in beta** and is subject to breaking changes.
 {% endhint %}
 
-Our SDK offers an API to programmatically interact with Appetize.io devices. This allows you to automate interactions with the device, verify app behaviour, and more.
+Our Javascript SDK offers an API to programmatically interact with Appetize devices. This allows you to automate interactions with the device, verify app behavior, and more.
 
 Here are some examples of what you can do:
 
@@ -24,4 +24,4 @@ Here are some examples of what you can do:
 [save-screenshots-of-an-app-in-multiple-languages.md](use-cases/save-screenshots-of-an-app-in-multiple-languages.md)
 {% endcontent-ref %}
 
-Let's get started!
+## **Let's get started!**

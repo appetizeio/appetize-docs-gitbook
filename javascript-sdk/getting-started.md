@@ -2,7 +2,7 @@
 
 ## Installation
 
-First, load the SDK by adding the following snippet to the `head` section of your page:
+First, load the Javascript SDK by adding the following snippet to the `head` section of your page:
 
 ```html
 <script>
@@ -13,7 +13,7 @@ First, load the SDK by adding the following snippet to the `head` section of you
 </script>
 ```
 
-The SDK exposes `window.appetize.getClient(selector)`. It takes a query selector for the embedded iframe (which we will add next) and returns a promise that resolves with a client instance.
+The Javascript SDK exposes `window.appetize.getClient(selector)`. It takes a query selector for the embedded iframe (which we will add next) and returns a promise that resolves with a client instance.
 
 ### Embed your app
 
