@@ -43,6 +43,7 @@
 
 ## Javascript SDK
 
+* [Overview](javascript-sdk/javascript-sdk-overview.md)
 * [Getting Started](javascript-sdk/getting-started.md)
 * [Configuration](javascript-sdk/configuration.md)
 * [Automation](javascript-sdk/automation/README.md)
