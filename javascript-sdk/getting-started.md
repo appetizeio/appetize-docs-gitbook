@@ -1,4 +1,16 @@
+---
+description: v0.1.3
+---
+
 # Getting Started
+
+## Overview
+
+{% hint style="info" %}
+The Javascript SDK is **currently in beta** and is subject to breaking changes.
+{% endhint %}
+
+Our Javascript SDK offers an API to programmatically interact with Appetize devices. This allows you to automate interactions with the device, verify app behavior, and more.
 
 ## Installation
 
