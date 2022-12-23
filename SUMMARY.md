@@ -31,13 +31,17 @@
   * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
   * [SAML](advanced-features/single-sign-on/saml.md)
   * [Azure Active Directory](advanced-features/single-sign-on/azure-active-directory.md)
-  * [Google Workspace \(GSuite\)](advanced-features/single-sign-on/google-workspace-gsuite.md)
+  * [Google Workspace (GSuite)](advanced-features/single-sign-on/google-workspace-gsuite.md)
 * [ADB tunnel](advanced-features/adb-tunnel.md)
 
-## App recorder \(beta\) <a id="app-recorder"></a>
+## App recorder (beta) <a href="#app-recorder" id="app-recorder"></a>
 
 * [Overview](app-recorder/overview.md)
 * [Record events](app-recorder/record-events.md)
 * [Playback events](app-recorder/playback-events.md)
 * [Retrieving the user interface](app-recorder/retrieving-the-user-interface.md)
 
+## Javascript SDK
+
+* [Getting Started](javascript-sdk/getting-started.md)
+* [Configuration](javascript-sdk/configuration.md)
