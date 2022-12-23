@@ -6,7 +6,7 @@ The Javascript SDK is **currently in beta** and is subject to breaking changes.
 
 Our Javascript SDK offers an API to programmatically interact with Appetize devices. This allows you to automate interactions with the device, verify app behavior, and more.
 
-### Here are some examples of what you can do:
+### Sample Use Cases
 
 {% content-ref url="use-cases/log-in-with-username-and-password.md" %}
 [log-in-with-username-and-password.md](use-cases/log-in-with-username-and-password.md)
