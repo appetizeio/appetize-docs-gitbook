@@ -24,12 +24,16 @@ Try our **online demo** at [https://appetize.io/demo](https://appetize.io/demo).
 [embed-your-app.md](core-features/embed-your-app.md)
 {% endcontent-ref %}
 
+{% content-ref url="core-features/custom-launch-pages.md" %}
+[custom-launch-pages.md](core-features/custom-launch-pages.md)
+{% endcontent-ref %}
+
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="core-features/custom-launch-pages.md" %}
-[custom-launch-pages.md](core-features/custom-launch-pages.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 
