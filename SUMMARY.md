@@ -33,6 +33,7 @@
   * [Recording and playback](javascript-sdk/automation/recording-and-playback/README.md)
     * [Playback event matching](javascript-sdk/automation/recording-and-playback/playback-event-matching.md)
   * [Events](javascript-sdk/automation/events.md)
+* [Playwright](javascript-sdk/playwright.md)
 * [Use cases](javascript-sdk/use-cases/README.md)
   * [Log in with username and password](javascript-sdk/use-cases/log-in-with-username-and-password.md)
   * [Swipe a pattern to unlock an Android device](javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
