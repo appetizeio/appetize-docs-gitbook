@@ -45,8 +45,15 @@ Get the client by calling `window.appetize.getClient(selector)`. After getting t
 
 ```javascript
 window.appetize.getClient("#appetize").then(async client => {
+    // listen for new session
+    // this event will fire whether the session is started programmatically
+    // or when the user clicks
+    client.on("session", session => {
+        console.log('session started!')
+    })
+    
+    // start a session programmatically
     const session = await client.startSession()
-    console.log('session started!') 
 })
 ```
 
