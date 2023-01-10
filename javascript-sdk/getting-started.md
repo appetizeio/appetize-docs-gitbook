@@ -14,10 +14,10 @@ First, load the Javascript SDK by adding the following snippet to the `head` sec
 
 ```html
 <script>
-  !function(b,c,d,a,e,f){a=new Promise(function(g){b[d]={getClient:function(h){
-  return e||((e=document.createElement(c)).src="https://js.appetize.io/embed.js",
-  e.async=1,(f=document.getElementsByTagName(c)[0]).parentNode.insertBefore(e,f),
-  e.onload=function(){g(b[d].getClient(h))}),a}}})}(window,"script","appetize")
+(function () {const n = window,i = document,o = i.getElementsByTagName("script")[0],t = i.createElement("script");
+(t.src = "https://js.appetize.io/embed.js"), (t.async = 1), o.parentNode.insertBefore(t, o);
+const s = new Promise(function (e) {t.onload = function () {e();};});n.appetize = {getClient: function (...e) {
+return s.then(() => n.appetize.getClient(...e));},};})();
 </script>
 ```
 
