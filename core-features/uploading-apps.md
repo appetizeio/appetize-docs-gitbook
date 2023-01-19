@@ -59,8 +59,17 @@ If you are having trouble running your uploaded Android app in Appetize.io, we r
 Once your emulator is launched and available via `adb devices`, you can install it using a command like:
 
 `adb install -r example.apk`
+
+{% hint style="info" %}
+To use an `.aab` on Appetize, please first convert it to an `.apk` before uploading. \
+
+{% endhint %}
 {% endtab %}
 {% endtabs %}
+
+
+
+
 
 
 
