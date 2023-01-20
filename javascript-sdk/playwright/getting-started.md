@@ -1,20 +1,22 @@
 # Getting Started
 
+You can follow along with the installation steps below to start a new project, or you can clone the [example project here.](https://github.com/appetizeio/appetize-js-sdk-examples/tree/main/playwright-testing)
+
 ## Installation
 
-First, setup a new Playwright project ([see Playwright documentation](https://playwright.dev/docs/intro#installing-playwright)).
+Create a new Playwright project ([see Playwright documentation](https://playwright.dev/docs/intro#installing-playwright))
 
 ```bash
 npm init playwright@latest
 ```
 
-Next, install `@appetize/playwright` in the newly made project
+Then install `@appetize/playwright`
 
 ```bash
 npm install @appetize/playwright
 ```
 
-## Playwright Config
+### Playwright Config
 
 You will need to update `playwright.config.ts` so that it's configured for Appetize. Update it to the following:
 

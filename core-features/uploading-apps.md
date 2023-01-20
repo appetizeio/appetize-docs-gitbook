@@ -60,9 +60,10 @@ Once your emulator is launched and available via `adb devices`, you can install 
 
 `adb install -r example.apk`
 
-{% hint style="info" %}
-To use an `.aab` on Appetize, please first convert it to an `.apk` before uploading. \
+``
 
+{% hint style="info" %}
+To use an `.aab` on Appetize, please first convert it to an `.apk` before uploading.&#x20;
 {% endhint %}
 {% endtab %}
 {% endtabs %}
