@@ -126,41 +126,65 @@ const elements = await session.findElements({
 
 ### swipe()
 
-Swipes at the specified coordinate or element.
+Plays a swipe gesture at the coordinate or specified element
 
 #### By coordinates
 
-Coordinates can be specified using `px`, `%`, `vw` or `vh` units ([see table below](touch-interactions.md#units)).
+Coordinates can be specified in either `px` or `%` (of screen).
 
-```javascript
-session.swipe({
-    x: '50%',
+<pre class="language-javascript"><code class="lang-javascript"><strong>// swipe up at middle of the screen
+</strong><strong>session.swipe({
+</strong>    x: '50%',
     y: '50%',
-    direction: 'up',
-    distance: '10%' // optional (must match unit of x/y)
+    gesture: 'up', // or 'left', 'down', 'right'
     duration: 1000 // optional, in ms
 })
-```
+</code></pre>
 
 #### By element
 
+When an element is targeted, `%` values will correlate to the height/width of the element rather than the screen.
+
 ```javascript
+// swipe left from the middle of an image
 session.swipe({
+    x: '50%',
+    y: '50%',
     element: { accessibilityIdentifier: 'my-image' },
-    direction: 'left',
-    distance: '100px' // optional, relative to the top-left of the element
-    duration: 1000 // optional, in ms
+    gesture: 'left'
 })
 ```
 
-#### Units
+#### Complex Gestures
 
-| Unit | Description                                                    |
-| ---- | -------------------------------------------------------------- |
-| `px` | Pixels                                                         |
-| `%`  | Percentage of screen (or element if targeted) width or height. |
-| `vh` | Percentage of the screen height                                |
-| `vw` | Percentage of the screen width                                 |
+If you have a more complex gesture you can build one by providing a function to the `gesture` argument.
+
+```javascript
+// swipe left 100px and then up 100px (L shape)
+session.swipe({
+    x: '50%',
+    y: '50%',
+    gesture: g => g.move(-100, 0).move(0, -100)
+})
+
+// swipe up-right 25% of the screen
+session.swipe({
+    x: '50%',
+    y: '50%',
+    gesture: g => g.move('25%', '-25%')
+})
+
+// swipe across an element starting from the middle-left
+session.swipe({
+    x: '0%',
+    y: '50%',
+    element: { accessibilityIdentifier: 'my-image' },
+    // 100% = width of the targeted element
+    gesture: g => g.move('100%', 0)
+})
+```
+
+The `move` function takes `x, y` arguments and defines the points in the path of your gesture. Each chained `move()` is relative to the previous point.
 
 ### tap()
 
