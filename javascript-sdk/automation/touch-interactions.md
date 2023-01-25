@@ -1,10 +1,14 @@
 # Touch interactions
 
-### Targeting Elements
+## Targeting Elements
 
-Touch interactions usually require a target element. An element can be described using our Element Selector API; a convenient to way to target a UI element on the device.
+Touch interactions will usually require a target element. An element can be described using our Element Selector API; a convenient to way to target a UI element on the device.
 
 A selector is comprised of attributes that describe the element in your application. Below is a list of attributes you can describe for each platform.
+
+{% hint style="info" %}
+Element selectors work regardless of the device or screen size, meaning you can run the same set of actions on both a phone and tablet
+{% endhint %}
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -20,44 +24,71 @@ A selector is comprised of attributes that describe the element in your applicat
 | Attribute    | Description                                                                           |
 | ------------ | ------------------------------------------------------------------------------------- |
 | class        | <p>Name of the element's class<br><br>ex: <code>android.widget.TextView</code></p>    |
-| content-desc | Value of the element's Content Description                                            |
+| content-desc | Value of the element's Content Description (case sensitive)                           |
 | resource-id  | <p>Value of the element's Resource ID<br><br>ex: <code>com.example:id/icon</code></p> |
 | text         | Text content of the element and its children (case sensitive)                         |
 {% endtab %}
 {% endtabs %}
 
-Any or all of these can be provided at once. If you have multiple elements that share the same attributes (such as "text") you can provide multiple attributes to narrow down the selection.&#x20;
+Any mixture of these attributes can be used to describe your element:
 
 ```javascript
+// tap on an element by text
+await session.tap({
+  element: {
+    text: "OK"
+  }  
+})
+
+// (iOS) tap on an element by accessibilityIdentifier
+await session.tap({
+  element: {
+    accessibilityIdentifier: "dialog-confirm-button"
+  }  
+})
+
+// tap on an element by *both* text and accessibilityIdentifier
 await session.tap({
   element: {
     text: "OK",
-    class: "UIConfirmButton"
+    accessibilityIdentifier: "dialog-confirm-button"
   }  
 })
 ```
 
-If you are a developer for the app, we recommend using accessibility attributes when creating your elements. This will allow for simpler queries and also help your app be more accessible.
+## Best Practices
+
+When developing your app, we recommend adding accessibility identifiers wherever possible to aid you when automating interactions with Appetize. This will allow for simpler queries and also help your app be more accessible.
+
+On iOS, you should be using `accessibilityIdentifier`.
+
+On Android, you should be using `content-desc` or `resource-id`.
+
+If you are using React Native, a `testID` prop on your component will map to `accessibilityIdentifier` on iOS and `resource-id` on Android.
 
 ```javascript
 // ios
 await session.tap({
   element: {
-      accessibilityIdentifier: "confirm-button"
+      accessibilityIdentifier: "dialog-confirm-button"
   }
 })
 
 // android
 await session.tap({
   element: {
-      'content-desc': "confirm button"
+      'resource-id': "dialog-confirm-button"
   }
 })
 ```
 
-{% hint style="info" %}
-Element selectors work regardless of the device or screen size, meaning you can run the same set of actions on both a phone and tablet
-{% endhint %}
+If you do not have an accessibility id to reference it is best to describe elements by text, adding [additional attributes](touch-interactions.md#targeting-elements) as necessary.
+
+## Timeouts
+
+All interactions that target an element will wait up to 30 seconds to find the element. If the element is not found, it will throw an error.
+
+## Methods
 
 ### findElement
 
@@ -95,7 +126,7 @@ const elements = await session.findElements({
 
 ### swipe()
 
-Swipes at the specified coordinate or element.&#x20;
+Swipes at the specified coordinate or element.
 
 #### By coordinates
 
@@ -157,4 +188,3 @@ Types the given text
 ```javascript
 await session.type("hello")
 ```
-
