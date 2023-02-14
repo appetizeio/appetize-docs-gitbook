@@ -20,7 +20,7 @@ These parameters specify:
 * `locale` - Locale ID, eg. en\_GB, fr\_FR (iOS only)
 * `iosKeyboard` - iOS software keyboard, eg. iosKeyboard=ja\_JP@sw [available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
 * `disableVirtualKeyboard` - (Android only) true or false, default is false. When true, disables the on-screen keyboard.
-* `location` - latitude, longitude, eg. 39.903924,116.391432
+* `location` - latitude, longitude, eg. 39.903924,116.391432 (iOS 12+, Android 10+)
 * `timezone` - specify URL-encoded timezone, eg. Australia%2FAdelaide, [available values](https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones) (Android only)
 * `grantPermissions` - true or false - automatically grant all required app permissions (Android only)
 * `hidePasswords` - true or false - hide password visibility when typing (Android only)

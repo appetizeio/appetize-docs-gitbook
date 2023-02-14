@@ -30,7 +30,7 @@ The device to run on. [See available devices](configuration.md#available-devices
 
 `string`
 
-The operating system version on which to run your app. e.g. 11.4, 12.2, 13.3, 14.0&#x20;
+The operating system version on which to run your app. e.g. 11.4, 12.2, 13.3, 14.0
 
 _Note: We recommend leaving this blank so it will always use our latest default for the device_
 
@@ -92,7 +92,7 @@ Set the language for the iOS Keyboard. eg. `ja_JP@sw`. [See available values](ht
 
 `string`
 
-(Android only) Sets location of the device in latitude and longitude. eg. `39.903924,116.391432`
+(iOS 12+, Android 10+) Sets location of the device in latitude and longitude. eg. `39.903924,116.391432`
 
 ### timezone
 
@@ -154,7 +154,7 @@ For Appetize.io's built-in intercepting proxy, use `intercept`. Network logs are
 
 `"dark" | "light"`
 
-Sets dark or light mode UI on iOS 13+ and Android 10+
+(iOS 13+ and Android 10+) Sets dark or light mode UI
 
 ### params
 
