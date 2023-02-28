@@ -30,6 +30,14 @@ await client.config(config)
 
 ## **Session**
 
+### adbShellCommand
+
+Executes an `adb shell` command on the device (Android only)
+
+```typescript
+await session.adbShellCommand("am start -a android.intent.action.VIEW -d https://appetize.io/")
+```
+
 ### allowInteractions()
 
 Enables or disables all interactions on the device.
