@@ -1,6 +1,6 @@
 # Create new app
 
-{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps" method="post" summary="Create new app" %}
+{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps" method="post" summary="Create new app" expanded="true" %}
 {% swagger-description %}
 Creates new app, returns new publicKey. The POST body must be a JSON object.
 {% endswagger-description %}
