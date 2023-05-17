@@ -1,20 +1,20 @@
 # Usage summary
 
-{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/usageSummary" method="get" summary="Get usage summary" %}
+{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/usageSummary" method="get" summary="Get usage summary" expanded="true" %}
 {% swagger-description %}
 Gets usage summary of all sessions for your account, including number of sessions and session durations.
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="nextKey" type="string" %}
-If results are truncated, response will include 
+{% swagger-parameter in="query" name="nextKey" type="string" required="false" %}
+If results are truncated, response will include
 
 `hasMore:true`
 
- and 
+and
 
 `nextKey: "xyz"`
 
-. Pass nextKey value as query parameter into GET request to retrieve the next batch of results. 
+. Pass nextKey value as query parameter into GET request to retrieve the next batch of results.
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -37,4 +37,3 @@ If results are truncated, response will include
 ```
 {% endswagger-response %}
 {% endswagger %}
-

@@ -1,12 +1,11 @@
+---
+description: >-
+  Our Javascript SDK offers an API to programmatically interact with Appetize
+  devices. This allows you to automate interactions with the device, verify app
+  behavior, and more.
+---
+
 # Getting Started
-
-## Overview
-
-{% hint style="info" %}
-The Javascript SDK is **currently in beta** and is subject to breaking changes.
-{% endhint %}
-
-Our Javascript SDK offers an API to programmatically interact with Appetize devices. This allows you to automate interactions with the device, verify app behavior, and more.
 
 ## Installation
 
@@ -25,7 +24,7 @@ The Javascript SDK exposes `window.appetize.getClient(selector)`. It takes a que
 
 ### Embed your app
 
-Add an iframe with an [Appetize embed URL](https://docs.appetize.io/core-features/embed-your-app):
+Add an `iframe` with an [Appetize embed URL](../platform/embedding-apps.md):
 
 ```html
 <iframe

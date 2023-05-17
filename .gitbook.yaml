@@ -1,0 +1,29 @@
+root: ./
+
+structure:
+    readme: README.md
+    summary: SUMMARY.md
+
+redirects:
+    core-features/uploading-apps: platform/uploading-apps.md
+    core-features/playback-options: features/query-params-reference.md
+    core-features/embed-your-app: platform/embedding-apps.md
+    core-features/app-permissions: platform/app-permissions.md
+    core-features/cross-document-messages: deprecated/cross-document-messages.md
+    core-features/custom-launch-pages: features/custom-launch-pages.md
+    rest-api/devices-and-ips: rest-api/devices-os-versions.md
+    advanced-features/custom-branding: features/custom-branding.md
+    advanced-features/reserved-devices: features/advanced-features/reserved-devices.md
+    advanced-features/adb-tunnel: features/advanced-features/android/adb-tunnel.md
+    advanced-features/single-sign-on: account/single-sign-on.md
+    advanced-features/single-sign-on/openid-connect: account/single-sign-on/openid-connect.md
+    advanced-features/single-sign-on/saml: account/single-sign-on/saml.md
+    advanced-features/single-sign-on/azure-active-directory: account/single-sign-on/azure-active-directory.md
+    advanced-features/single-sign-on/google-workspace-gsuite: account/single-sign-on/google-workspace-gsuite.md
+    javascript-sdk/automation/recording-and-playback: features/ui-automation.md
+    javascript-sdk/automation/recording-and-playback/playback-event-matching: javascript-sdk/automation/playback-event-matching.md
+    javascript-sdk/automation/events: javascript-sdk/api-reference.md
+    javascript-sdk/use-cases/log-in-with-username-and-password: sample-use-cases/automate-sign-in-flow.md
+    javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device: sample-use-cases/swipe-a-pattern-to-unlock-an-android-device.md
+    javascript-sdk/use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen: sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md
+    javascript-sdk/use-cases/save-screenshots-of-an-app-in-multiple-languages: sample-use-cases/save-screenshots-of-an-app-in-multiple-languages.md

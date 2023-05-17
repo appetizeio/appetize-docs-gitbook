@@ -1,15 +1,50 @@
 # Table of contents
 
-* [Getting started](README.md)
+* [Getting Started](README.md)
 
-## Core features
+## Platform
 
-* [Uploading apps](core-features/uploading-apps.md)
-* [Playback options](core-features/playback-options.md)
-* [Embed your app](core-features/embed-your-app.md)
-* [App permissions](core-features/app-permissions.md)
-* [Cross-document messages](core-features/cross-document-messages.md)
-* [Custom launch pages](core-features/custom-launch-pages.md)
+* [Uploading Apps](platform/uploading-apps.md)
+  * [Android](platform/uploading-apps/android.md)
+  * [iOS](platform/uploading-apps/ios.md)
+* [Listing Apps](platform/listing-apps.md)
+* [App Permissions](platform/app-permissions.md)
+* [Running Apps](platform/running-apps.md)
+* [Embedding Apps](platform/embedding-apps.md)
+* [Sharing Apps](platform/sharing-apps.md)
+* [Standalone Device](platform/standalone-device.md)
+
+## Features
+
+* [Devices & OS Versions](features/devices-and-os-versions.md)
+* [Network Traffic Monitor](features/network-traffic-monitor.md)
+* [Debug Logs](features/debug-logs.md)
+* [UI Automation](features/ui-automation.md)
+* [Language & Locale](features/language-and-locale.md)
+* [Mock Location](features/mock-location.md)
+* [Deep links](features/deep-links.md)
+* [Launch Params](features/launch-params.md)
+* [Custom Branding](features/custom-branding.md)
+* [Custom Launch Pages](features/custom-launch-pages.md)
+* [Advanced Features](features/advanced-features/README.md)
+  * [Android](features/advanced-features/android/README.md)
+    * [ADB tunnel](features/advanced-features/android/adb-tunnel.md)
+    * [Auto-grant permissions](features/advanced-features/android/auto-grant-permissions.md)
+    * [Hide Password Visibility](features/advanced-features/android/hide-password-visibility.md)
+  * [Reserved Devices](features/advanced-features/reserved-devices.md)
+* [Query Params Reference](features/query-params-reference.md)
+
+## Account
+
+* [Invite your team](account/invite-your-team.md)
+* [Single Sign-On](account/single-sign-on.md)
+  * [OpenID Connect](account/single-sign-on/openid-connect.md)
+  * [SAML](account/single-sign-on/saml.md)
+  * [Azure Active Directory](account/single-sign-on/azure-active-directory.md)
+  * [Google Workspace (GSuite)](account/single-sign-on/google-workspace-gsuite.md)
+* [Reporting](account/reporting/README.md)
+  * [Session History](account/reporting/session-history.md)
+  * [Usage Summary](account/reporting/usage-summary.md)
 
 ## REST API
 
@@ -20,7 +55,8 @@
 * [Delete app](rest-api/delete-app.md)
 * [List apps](rest-api/list-apps.md)
 * [Usage summary](rest-api/usage-summary.md)
-* [Devices and IPs](rest-api/devices-and-ips.md)
+* [Devices & OS Versions](rest-api/devices-and-os-versions.md)
+* [IP Blocks](rest-api/ip-blocks.md)
 * [Sample code](rest-api/sample-code.md)
 
 ## Javascript SDK
@@ -30,29 +66,26 @@
 * [Automation](javascript-sdk/automation/README.md)
   * [Device commands](javascript-sdk/automation/device-commands.md)
   * [Touch interactions](javascript-sdk/automation/touch-interactions.md)
-  * [Recording and playback](javascript-sdk/automation/recording-and-playback/README.md)
-    * [Playback event matching](javascript-sdk/automation/recording-and-playback/playback-event-matching.md)
-  * [Events](javascript-sdk/automation/events.md)
+  * [Playback Action Matching](javascript-sdk/automation/playback-event-matching.md)
 * [Playwright](javascript-sdk/playwright/README.md)
   * [Getting Started](javascript-sdk/playwright/getting-started.md)
   * [Writing Tests](javascript-sdk/playwright/writing-tests.md)
   * [Running Tests](javascript-sdk/playwright/running-tests.md)
   * [Record Tests (experimental)](javascript-sdk/playwright/record-tests-experimental.md)
   * [Trace Viewer](javascript-sdk/playwright/trace-viewer.md)
-* [Use cases](javascript-sdk/use-cases/README.md)
-  * [Log in with username and password](javascript-sdk/use-cases/log-in-with-username-and-password.md)
-  * [Swipe a pattern to unlock an Android device](javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
-  * [Open a deeplink and make sure analytics API calls happen](javascript-sdk/use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
-  * [Save screenshots of an app in multiple languages](javascript-sdk/use-cases/save-screenshots-of-an-app-in-multiple-languages.md)
 * [API reference](javascript-sdk/api-reference.md)
 
-## Advanced features
+## Sample Use Cases
 
-* [Custom branding](advanced-features/custom-branding.md)
-* [Reserved devices](advanced-features/reserved-devices.md)
-* [Single sign-on](advanced-features/single-sign-on/README.md)
-  * [OpenID Connect](advanced-features/single-sign-on/openid-connect.md)
-  * [SAML](advanced-features/single-sign-on/saml.md)
-  * [Azure Active Directory](advanced-features/single-sign-on/azure-active-directory.md)
-  * [Google Workspace (GSuite)](advanced-features/single-sign-on/google-workspace-gsuite.md)
-* [ADB tunnel](advanced-features/adb-tunnel.md)
+* [Automate Sign-in Flow](sample-use-cases/automate-sign-in-flow.md)
+* [Unlock Device](sample-use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
+* [Validate Analytics Events](sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
+* [Screenshot Automation](sample-use-cases/save-screenshots-of-an-app-in-multiple-languages.md)
+
+## Deprecated
+
+* [Cross-document messages](deprecated/cross-document-messages.md)
+
+## Additional Support
+
+* [Knowledge Base](https://support.appetize.io/)

@@ -166,7 +166,7 @@ test('loads the home tab', async ({ sesssion }) => {
 
 An example of how you could assert that a network request was made.
 
-[See documentation for network events](../automation/events.md#session)
+[See documentation for network events](../api-reference.md#on-session)
 
 ```javascript
 test.setup({
@@ -229,6 +229,3 @@ Waits for the given time to elapse (in ms)
 ```javascript
 await session.waitForTimeout(5000)
 ```
-
-
-

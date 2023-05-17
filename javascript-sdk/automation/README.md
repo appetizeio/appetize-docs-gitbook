@@ -1,19 +1,13 @@
+---
+description: >-
+  The device can be interacted with programmatically through our API. This is
+  useful for scenarios such as logging in a user at the start of a session, or
+  writing tests.
+---
+
 # Automation
 
-The device can be interacted with programmatically through our API. This is useful for scenarios such as logging in a user at the start of a session, or writing tests.
-
-Users can record and playback interactions with the app. The recordings are based on the app's user interface elements, and are designed to be robust against small changes in your app. A recording can even be made on one device and played back on another device (e.g. iPhone vs iPad).
-
-### Coming Soon (Q1 2023)
-
-* Better support for Android and iOS Webviews
-* Support for headless sessions, eg. running automations via your backend
-
-### Customer Feedback
-
-We welcome customer feedback as we continue to refine our APIs, and the underlying technology powering our Javascript SDK.&#x20;
-
-
+See [UI Automation](../../features/ui-automation.md) for more information.
 
 ### Next Steps
 
@@ -25,10 +19,6 @@ We welcome customer feedback as we continue to refine our APIs, and the underlyi
 [touch-interactions.md](touch-interactions.md)
 {% endcontent-ref %}
 
-{% content-ref url="recording-and-playback/" %}
-[recording-and-playback](recording-and-playback/)
-{% endcontent-ref %}
-
-{% content-ref url="events.md" %}
-[events.md](events.md)
+{% content-ref url="../api-reference.md" %}
+[api-reference.md](../api-reference.md)
 {% endcontent-ref %}
