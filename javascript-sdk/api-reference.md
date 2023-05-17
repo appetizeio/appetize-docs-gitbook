@@ -2,7 +2,7 @@
 
 ## getClient()
 
-Get an instance of the Appetize client.&#x20;
+Get an instance of the Appetize client.
 
 ```javascript
 const client = await window.appetize.getClient('#my_iframe')
@@ -16,7 +16,7 @@ const client = await window.appetize.getClient('#my_iframe')
 
 ## Client
 
-### on()
+### on() <a href="#on-client" id="on-client"></a>
 
 Listens for an event of the given name
 
@@ -26,10 +26,12 @@ client.on(event, data => {
 })
 ```
 
-| Event | Data Type                                             | Description                                                                                                                                                                                                                                                                                                                                |
-| ----- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| queue | `{ type: 'account' \| 'session' , position: number }` | <p>Your position in queue for the device.<br><br>If <code>type</code> is <code>account</code> you have reached the maximum amount of concurrent sessions for your account and are in queue for the next available slot.<br><br>If <code>type</code> is <code>session</code>, you are in a queue to wait for the next available device.</p> |
-| error | `string`                                              | An error has occurred                                                                                                                                                                                                                                                                                                                      |
+| Event               | Data Type                                             | Description                                                                                                                                                                                                                                                                                                                                |
+| ------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <h4>queue</h4>      | `{ type: 'account' \| 'session' , position: number }` | <p>Your position in queue for the device.<br><br>If <code>type</code> is <code>account</code> you have reached the maximum amount of concurrent sessions for your account and are in queue for the next available slot.<br><br>If <code>type</code> is <code>session</code>, you are in a queue to wait for the next available device.</p> |
+| <h4>error</h4>      | `string`                                              | An error has occurred                                                                                                                                                                                                                                                                                                                      |
+| <h4>deviceInfo</h4> | `Record<string, any>`                                 | <p>Information about the current device, such as type, orientation, and screen dimensions.<br><br>It also contains rendered dimensions of the device within the embed.</p>                                                                                                                                                                 |
+| <h4>session</h4>    | `Session`                                             | A new session has started, either by `client.startSession()` or the user clicking "Tap to Play" on the device                                                                                                                                                                                                                              |
 
 ### startSession()
 
@@ -47,7 +49,7 @@ const session = await client.startSession()
 
 #### config()
 
-Update the configured app, device, operating system, or other launch options.&#x20;
+Update the configured app, device, operating system, or other launch options.
 
 _Note: This will end any active sessions._
 
@@ -67,7 +69,7 @@ Changes the loaded Appetize app of the iframe. This will restart your session, a
 
 ## **Session**
 
-### on()
+### on() <a href="#on-session" id="on-session"></a>
 
 Listens for an event of the given name
 
@@ -77,14 +79,17 @@ session.on(event, data => {
 })
 ```
 
-| Event             | Data Type                      | Description                                                                                                                                                              |
-| ----------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| log               | `{ message: string }`          | <p>Debug log from the device<br><br>Requires <a href="configuration.md#debug">debug</a> to be set to <code>true</code> </p>                                              |
-| network           | `Record<string, any>`          | <p>Intercepted network request or responses. </p><p></p><p>Requires <a href="configuration.md#proxy">proxy</a> to be set to <code>intercept</code></p>                   |
-| error             | `string`                       | An error has occurred on the session                                                                                                                                     |
-| action            | `Record<string, any>`          | An action has been recorded                                                                                                                                              |
-| interaction       | `Record<string, any>`          | Session received interaction from the user                                                                                                                               |
-| inactivityWarning | `{ secondsRemaining: number }` | <p>Session is about to timeout due to inactivity. </p><p></p><p>Any user interaction or a <a href="api-reference.md#heartbeat">heartbeat</a> will reset the timeout.</p> |
+| Event                       | Data Type                                                                                                                | Description                                                                                                                                                                                                                                                                                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <h4>log</h4>                | `{ message: string }`                                                                                                    | <p>Debug log from the device<br><br>Requires <a href="configuration.md#debug">debug</a> to be set to <code>true</code></p>                                                                                                                                                                                                                     |
+| <h4>network</h4>            | `Record<string, any>`                                                                                                    | <p>Intercepted network request or responses.</p><p>Requires <a href="configuration.md#proxy">proxy</a> to be set to <code>intercept</code></p>                                                                                                                                                                                                 |
+| <h4>error</h4>              | `string`                                                                                                                 | An error has occurred on the session                                                                                                                                                                                                                                                                                                           |
+| <h4>action</h4>             | `Record<string, any>`                                                                                                    | An action has been recorded                                                                                                                                                                                                                                                                                                                    |
+| <h4>interaction</h4>        | `Record<string, any>`                                                                                                    | Session received interaction from the user                                                                                                                                                                                                                                                                                                     |
+| <h4>inactivityWarning</h4>  | `{ secondsRemaining: number }`                                                                                           | <p>Session is about to timeout due to inactivity.</p><p>Any user interaction or a <a href="api-reference.md#heartbeat">heartbeat</a> will reset the timeout.</p>                                                                                                                                                                               |
+| <h4>orientationChanged</h4> | `'portrait' \| 'landscape'`                                                                                              | The device has changed orientation                                                                                                                                                                                                                                                                                                             |
+| <h4>video</h4>              | <p><code>{</code><br><code>buffer: Uint8Array, width: number, height: number, codec: string</code><br><code>}</code></p> | <p>Video frames of the current session.<br><br>When codec is <code>h264</code>, the buffer is a raw frame of the stream. These frames can be muxed (using something like <a href="https://github.com/samirkumardas/jmuxer">jmuxer</a>) to turn it into a video format.<br><br>When codec is <code>jpeg</code> the buffers are jpeg images.</p> |
+| <h4>audio</h4>              | <p><code>{</code><br><code>buffer: Uint8Array, codec: 'aac'</code><br><code>}</code></p>                                 | <p>Audio frames of the current session.<br><br>Like <code>h264</code> with the <code>video</code> event, these can be muxed as well.</p>                                                                                                                                                                                                       |
 
 ### end()
 
@@ -187,6 +192,21 @@ await session.setLanguage("fr")
 | ---------- | -------- | ------------- |
 | `language` | `string` | Language code |
 
+### setLocation()
+
+Sets the simulated location of the device.
+
+```typescript
+await setLocation(-33.924434, 18.418391)
+```
+
+#### Parameters
+
+| Name        | Type   | Description                                                                                                                                                                                                          |
+| ----------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `latitude`  | number | Decimal number between -90 and 90, representing the degrees of north or south of the Equator. Negative numbers indicate south of the Equator, and positive numbers indicate north of the Equator.                    |
+| `longitude` | number | Decimal number between -180 and 180, representing the degrees of east or west of the Prime Meridian. Negative numbers indicate west of the Prime Meridian, and positive numbers indicate east of the Prime Meridian. |
+
 ### openUrl()
 
 Opens a deep-link or web URL
@@ -221,7 +241,7 @@ await session.biometry({
 
 ### allowInteractions()
 
-Enables or disables all interactions on the device. Default is true.&#x20;
+Enables or disables all interactions on the device. Default is true.
 
 ```typescript
 await session.allowInteractions(true/false)

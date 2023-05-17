@@ -1,11 +1,11 @@
 # Delete app
 
-{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" method="delete" summary="Delete app" %}
+{% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" method="delete" summary="Delete app" expanded="true" %}
 {% swagger-description %}
 Deletes an app. Your API token must be provisioned to the same account where the app was uploaded.
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="publicKey" type="string" %}
+{% swagger-parameter in="path" name="publicKey" type="string" required="false" %}
 publicKey for the app
 {% endswagger-parameter %}
 
@@ -15,4 +15,3 @@ publicKey for the app
 ```
 {% endswagger-response %}
 {% endswagger %}
-

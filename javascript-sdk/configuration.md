@@ -24,7 +24,7 @@ const session = await client.startSession({
 
 `string`
 
-The device to run on. [See available devices](configuration.md#available-devices).
+The device to run on. [See Devices & OS Versions](../features/devices-and-os-versions.md).
 
 ### osVersion
 
@@ -90,9 +90,9 @@ Set the language for the iOS Keyboard. eg. `ja_JP@sw`. [See available values](ht
 
 ### location
 
-`string`
+`number[]`
 
-(iOS 12+, Android 10+) Sets location of the device in latitude and longitude. eg. `39.903924,116.391432`
+(iOS 12+, Android 10+) Sets location of the device in latitude and longitude. eg. \[`39.903924,116.391432]`
 
 ### timezone
 
@@ -136,13 +136,23 @@ When true, the session will listen for debug logs and emit them as a `log` event
 
 Specify a proxy server to route network traffic. eg `http://example.com:8080`
 
-For Appetize.io's built-in intercepting proxy, use `intercept`. Network logs are emitted from the session as a `network` event.
+For Appetize's built-in intercepting proxy, use `intercept`. Network logs are emitted from the session as a `network` event.
+
+{% hint style="info" %}
+Our current support is limited to HTTP Proxies. When your app makes HTTPS connections, the data remains encrypted despite the unencrypted connection to the proxy. The app sends a CONNECT request to the proxy for the destination HTTPS server, initiating an SSL handshake. The proxy acts as a TCP connection forwarder, ensuring end-to-end encryption for app data.
+{% endhint %}
+
+### record
+
+`boolean`
+
+Enables recording of all user actions that took place during the session. See [UI Automation](../features/ui-automation.md) for more information.
 
 ### enableAdb
 
 `boolean`
 
-(Android only) Sets up an SSH tunnel to allow ADB connections to the emulator. SSH command and info can be found in the session's `deviceInfo` event
+(Android only) Sets up an SSH tunnel to allow ADB connections to the emulator. SSH command and info can be found by quering [getAdbInfo](api-reference.md#getadbinfo) on the session.
 
 ### androidPackageManager
 
@@ -168,39 +178,3 @@ A JSON object that will be passed to your app on launch
 
 The publicKey of the app that you wish to run
 
-## Available Devices
-
-### iOS
-
-* `iphone5s`
-* `iphone6`
-* `iphone6plus`
-* `iphone7`
-* `iphone7plus`
-* `iphone8`
-* `iphone8plus`
-* `iphonex`
-* `iphonexs`
-* `iphonexsmax`
-* `iphone11pro`
-* `iphone11promax`
-* `iphone12`
-* `iphone12mini`
-* `iphone12pro`
-* `iphone12promax`
-* `iphone14pro`
-* `iphone14promax`
-* `ipadair`
-* `ipadair2`
-* `ipodtouch7thgeneration`
-
-### Android
-
-* `nexus5`
-* `nexus7`
-* `nexus9`
-* `pixel4`
-* `pixel4xl`
-* `pixel6`
-* `pixel6pro`
-* `galaxytabs7`

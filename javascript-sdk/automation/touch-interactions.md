@@ -12,20 +12,21 @@ Element selectors work regardless of the device or screen size, meaning you can 
 
 {% tabs %}
 {% tab title="iOS" %}
-| Attribute               | Description                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------- |
-| accessibilityIdentifier | Value of the element's accessibilityIdentifier                                              |
-| baseClass               | <p>Name of the element's base (or inherited) class</p><p></p><p>ex: <code>UIView</code></p> |
-| class                   | <p>Name of the element's class<br><br>ex: <code>MyCustomUIView</code></p>                   |
-| text                    | Text content of the element and its children (case sensitive)                               |
+| Attribute               | Description                                                                          |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| accessibilityIdentifier | Value of the element's accessibilityIdentifier                                       |
+| accessibilityLabel      | Value of the element's accessibilityLabel                                            |
+| baseClass               | <p>Name of the element's base (or inherited) class</p><p>ex: <code>UIView</code></p> |
+| class                   | <p>Name of the element's class<br><br>ex: <code>MyCustomUIView</code></p>            |
+| text                    | Text content of the element and its children (case sensitive)                        |
 {% endtab %}
 
 {% tab title="Android" %}
 | Attribute    | Description                                                                           |
 | ------------ | ------------------------------------------------------------------------------------- |
-| class        | <p>Name of the element's class<br><br>ex: <code>android.widget.TextView</code></p>    |
-| content-desc | Value of the element's Content Description (case sensitive)                           |
 | resource-id  | <p>Value of the element's Resource ID<br><br>ex: <code>com.example:id/icon</code></p> |
+| content-desc | Value of the element's Content Description (case sensitive)                           |
+| class        | <p>Name of the element's class<br><br>ex: <code>android.widget.TextView</code></p>    |
 | text         | Text content of the element and its children (case sensitive)                         |
 {% endtab %}
 {% endtabs %}
