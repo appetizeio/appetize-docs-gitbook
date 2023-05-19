@@ -1,3 +1,10 @@
+---
+description: >-
+  With Appetize's configuration options, users can easily switch between
+  different device and operating system versions, languages, and many other
+  options in order to customize their experience
+---
+
 # Configuration
 
 You can configure the client to change the device, OS version, currently loaded app (publicKey), and various other options.
@@ -177,4 +184,3 @@ A JSON object that will be passed to your app on launch
 `string`
 
 The publicKey of the app that you wish to run
-
