@@ -8,12 +8,12 @@
   * [Android](platform/uploading-apps/android.md)
   * [iOS](platform/uploading-apps/ios.md)
 * [Listing Apps](platform/listing-apps.md)
-* [App Permissions](platform/app-permissions.md)
-* [Session Inactivity Timeout](platform/session-inactivity-timeout.md)
 * [Running Apps](platform/running-apps.md)
 * [Embedding Apps](platform/embedding-apps.md)
 * [Sharing Apps](platform/sharing-apps.md)
 * [Standalone Device](platform/standalone-device.md)
+* [App Permissions](platform/app-permissions.md)
+* [Session Inactivity Timeout](platform/session-inactivity-timeout.md)
 
 ## Features
 
