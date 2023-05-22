@@ -13,7 +13,7 @@ You can access your usage summary by navigating to your [Reports Dashboard](http
 * **Monthly usage report**
 * **Daily usage report** after specifying the month that you are interested in e.g. May 2023
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="390"><figcaption><p>Select "Download" under Monthly or Daily usage report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt="" width="390"><figcaption><p>Select "Download" under Monthly or Daily usage report</p></figcaption></figure>
 
 ### With REST API
 

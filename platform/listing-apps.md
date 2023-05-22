@@ -59,7 +59,7 @@ You can view all your App Groups on the [App Group Dashboard](https://appetize.i
 
 To create a new group, select the `Add new group` button
 
-<figure><img src="../.gitbook/assets/image (2).png" alt="" width="277"><figcaption><p>Add new group Action</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt="" width="277"><figcaption><p>Add new group Action</p></figcaption></figure>
 
 A new group will be created with no applications attached
 

@@ -54,7 +54,7 @@ or by going to your [Apps](https://appetize.io/apps) page, clicking `view` under
 
 <figure><img src="../../../.gitbook/assets/image (10) (1) (1) (5).png" alt="Example App Link with View Action"><figcaption><p>Select "View" under your app</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
 
 Select `Tap To Play` (or your equivalent text to start the session). A command will then be generated that you need to copy and paste in your shell environment e.g.
 
