@@ -113,6 +113,12 @@ Set the language for the iOS Keyboard. eg. `ja_JP@sw`. [See available values](ht
 
 (Android only) Automatically grant all required app permissions
 
+### autoPlay
+
+`boolean`
+
+When true, starts streaming the app on device load. Default is `false`
+
 ### hidePasswords
 
 `boolean`
