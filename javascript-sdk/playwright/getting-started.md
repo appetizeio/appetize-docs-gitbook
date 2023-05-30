@@ -16,7 +16,7 @@ Then install `@appetize/playwright`
 npm install @appetize/playwright
 ```
 
-### Playwright Config
+## Playwright Config
 
 You will need to update `playwright.config.ts` so that it's configured for Appetize. Update it to the following:
 
@@ -26,42 +26,37 @@ const config = {
     outputDir: 'test-results/',
     timeout: 120 * 1000,
     expect: {        
-        timeout: 5000,
-        
         // recommended ratio for screenshot testing
         toMatchSnapshot: {
             maxDiffPixelRatio: 0.05,
         }
-    },    
+    },
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 3 : 0,
     reporter: 'line',
     
-    // correlates to number of concurrent Appetize sessions at once.
-    // if you are a paid Appetize user you may increase this.
+    // correlates to number of concurrent Appetize sessions at a time
     workers: 1,
-    
-    // required - each test file will use 1 browser and 1 Appetize session
     fullyParallel: false,
     
     use: {    
-        trace: 'on-first-retry',
+        trace: 'retain-on-failure',
         baseURL: 'https://appetize.io',
+        
+        // Appetize session configuration
+        config: {
+            device: 'iphone14pro',
+            publicKey: '<PUBLIC KEY>'
+        }    
     },
-
-    // any browser is fine, but use only 1
-    projects: [
-        {
-            name: 'chromium',
-            use: {
-                ...devices['Desktop Chrome'],
-            },
-        }
-    ]    
 }
 
 export default config;
 ```
+
+{% hint style="info" %}
+See [Test Configuration](test-configuration.md) for more advanced configurations.
+{% endhint %}
 
 ## Usage
 
@@ -70,15 +65,9 @@ Delete the example test files that Playwright made when you generated the projec
 ```javascript
 import { test, expect } from '@appetize/playwright'
 
-test.setup({
-    // replace with your app's publicKey
-    publicKey: '<PUBLIC KEY>'
-})
-
 test('loads the home screen', async ({ session }) => {
     await expect(session).toHaveElement({
-        // replace with text that appears on your app
-        // (case sensitive, must match text string fully)
+        // replace with text of element that appears on your app
         text: 'Welcome',
     })
 })
@@ -94,4 +83,3 @@ npx playwright test --headed
 npx playwright test
 ```
 
-You should see your app load and the test run! The next section will cover what exactly is happening here in detail.

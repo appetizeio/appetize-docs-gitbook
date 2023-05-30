@@ -2,21 +2,21 @@
 description: >-
   With Appetize's configuration options, users can easily switch between
   different device and operating system versions, languages, and many other
-  options in order to customize their experience
+  options in order to customize their experience.
 ---
 
 # Configuration
 
-You can configure the client to change the device, OS version, currently loaded app (publicKey), and various other options.
+You can configure the client to change the device, OS version, app, and various other options. This will set the configuration for the embed before the session starts, either programmatically or by user interaction.
 
 ```javascript
-await client.config({
+await client.setConfig({
     device: 'iphone11pro',
     osVersion: '15.0'
 })
 ```
 
-Additionally, you can provide these when requesting a session:
+Additionally, you can provide these when starting a session programmatically:
 
 ```javascript
 const session = await client.startSession({
@@ -25,7 +25,17 @@ const session = await client.startSession({
 })
 ```
 
+{% hint style="info" %}
+Initial values may also be provided in the embed URL. See [Query Params Reference](../features/query-params-reference.md).
+{% endhint %}
+
 ## Configuration Options
+
+### publicKey
+
+`string`
+
+The publicKey of the Appetize app that you wish to run
 
 ### device
 
@@ -43,9 +53,11 @@ _Note: We recommend leaving this blank so it will always use our latest default 
 
 ### scale
 
-`number`
+`number | 'auto'`
 
-Sets the scale of the device. Value must be between 10 and 100.
+Sets the scale of the device in the iframe.
+
+If a number is provided it must be between 10 and 100. If `'auto'`, the device will scale up to fit inside the iframe.
 
 ### orientation
 
@@ -159,7 +171,7 @@ Our current support is limited to HTTP Proxies. When your app makes HTTPS connec
 
 `boolean`
 
-Enables recording of all user actions that took place during the session. See [UI Automation](../features/ui-automation.md) for more information.
+Enables recording of all user actions that took place during the session. See [UI Automation](../features/ui-automation.md) for more information. Default is true.
 
 ### enableAdb
 
@@ -185,8 +197,14 @@ Enables recording of all user actions that took place during the session. See [U
 
 A JSON object that will be passed to your app on launch
 
-### publicKey
+### audio
 
-`string`
+`boolean`
 
-The publicKey of the app that you wish to run
+Enables audio playback on the device
+
+### codec
+
+`"h264" | "jpeg"`
+
+Set the video codec used for the stream. Default is `h264` if the browser supports it, otherwise falls back to `jpeg`.

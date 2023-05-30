@@ -9,12 +9,12 @@ description: >-
 
 ## AppRecorder
 
-Users can easily record and replay their interactions with our Appetize Devices using `AppRecorder`. These recordings capture the running application's user interface elements and are designed to handle minor app changes without any issues.&#x20;
+Users can easily record and replay their interactions with our Appetize Devices using `AppRecorder`. These recordings capture the running application's user interface elements and are designed to handle minor app changes without any issues.
 
 You can even record on one device, like an iPhone, and play it back on another device, such as an iPad.
 
 {% hint style="info" %}
-We welcome [customer feedback](mailto:hello@appetize.io) as we continue to refine our APIs, and the underlying technology powering our JavaScript SDK.&#x20;
+We welcome [customer feedback](mailto:hello@appetize.io) as we continue to refine our APIs, and the underlying technology powering our JavaScript SDK.
 {% endhint %}
 
 ### Recording Actions
@@ -37,7 +37,7 @@ await session.playActions(Actions)
 
 Recorded actions can be serialized as `JSON` and stored so that you can replay them later.
 
-{% code title="Example of a 'click' action" fullWidth="false" %}
+{% code title="Example of a " fullWidth="false" %}
 ```javascript
 {
     type: 'click',
@@ -89,7 +89,7 @@ await session.playActions([
 ```
 
 {% hint style="info" %}
-See [Playback Event Matching](../javascript-sdk/automation/playback-event-matching.md) for more information on how we match views.
+See [Touch Interactions](../javascript-sdk/automation/touch-interactions.md) for more information on how we match views and some best practices.
 {% endhint %}
 
 ## Programmatic Interactions
@@ -106,7 +106,7 @@ The device can also be interacted with programmatically through our JavaScript A
 
 ## UI Testing with Appetize
 
-We offer a [Playwright](https://playwright.dev/) integration that uses our JavaScript SDK to test your apps.&#x20;
+We offer a [Playwright](https://playwright.dev/) integration that uses our JavaScript SDK to test your apps.
 
 {% content-ref url="../javascript-sdk/playwright/" %}
 [playwright](../javascript-sdk/playwright/)

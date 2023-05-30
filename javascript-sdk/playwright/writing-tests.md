@@ -1,6 +1,6 @@
 # Writing Tests
 
-Each test will have an [Appetize session](../automation/) for you to interact with your device (like a [page](https://playwright.dev/docs/pages) in Playwright). You can then assert the app based on some criteria, such as the existence of a UI element, a made network request, or a screenshot.
+Each test will have an [Appetize session](../api-reference.md#session-1) for you to interact with your device (like a [page](https://playwright.dev/docs/pages) in Playwright). You can then assert the app based on some criteria, such as the existence of a UI element, a network request, or do a screenshot test.
 
 ## Your first test
 
@@ -9,12 +9,6 @@ Take a look at the following test example:
 ```javascript
 import { test, expect } from '@appetize/playwright'
 
-test.setup({
-    publicKey: '<PUBLIC KEY>',
-    // ... other config
-    // see https://docs.appetize.io/javascript-sdk/configuration
-})
-
 // reinstall app after each test to reset data
 test.afterEach(async ({ session }) => {
     await session.reinstallApp()
@@ -22,46 +16,44 @@ test.afterEach(async ({ session }) => {
 
 test('logs in to the app', async ({ session }) => {
     // type username
-    await session.tap({ element: { accessibilityIdentifier: 'username_field' } })
+    await session.tap({ 
+        element: { 
+            attributes: {
+                accessibilityIdentifier: 'username_field' 
+            }
+        } 
+    })
     await session.type({ value: 'jordan' })
     
     // type password
-    await session.tap({ element: { accessibilityIdentifier: 'password_field' } })
+    await session.tap({ 
+        element: { 
+            attributes: {
+                accessibilityIdentifier: 'password_field' 
+            }
+        } 
+    })
     await session.type({ value: 'secretpassword' })
     
     // tap login button
-    await session.tap({ element: { text: 'Login' } })
+    await session.tap({ 
+        element: { 
+            attributes: {
+                text: 'Login' 
+            }
+        } 
+    })
     
-    // wait for an element with 'Hello Jordan' to exist on the screen
-    await expect(session).toHaveElement({ text: 'Hello Jordan' })
+    // assert that an element with 'Hello Jordan' exists on the screen
+    await expect(session).toHaveElement({ 
+        attributes: {
+            text: 'Hello Jordan' 
+        }
+    })
 })
 ```
 
 This will load a hypothetical app with a login screen. It will tap on the username and password fields, type some credentials, log in, and assert that a UI element with text "Hello Jordan" exists.
-
-## Setup
-
-It is required to call `test.setup` at the start of your test suite. It takes a [configuration](../configuration.md) object to specify your publicKey, device, OS version, etc.
-
-Typically you will call this at the top-level of your test file, but you can also nest them under `test.describe()`
-
-```javascript
-test.describe('iOS app', () => {
-    test.setup({ publicKey: '...', device: 'iphone14pro' })
-
-    test('logs in', async ({ session }) => {
-       // ...
-    })
-})
-
-test.describe('Android app', () => {
-    test.setup({ publicKey: '...', device: 'pixel7' })
-
-    test('logs in', async ({ session }) => {
-       // ...
-    })
-})
-```
 
 ## Actions
 
@@ -70,9 +62,11 @@ Each test provides the `session` for your app. You can use [Automation](../autom
 ```javascript
 test('scrolls through the news feed', async ({ session }) => {
     await session.swipe({
-        x: '50%',
-        y: '50%',
-        direction: 'up'
+        position: {
+            x: '50%',
+            y: '50%',
+        },
+        gesture: 'up'
     })
 })
 ```
@@ -83,12 +77,25 @@ All actions are promises that will await until the interaction has been played o
 
 ```javascript
 test('navigates to a settings menu', async ({ session }) => {
-    await session.tap({ element: { text: 'Settings' } })
-    await session.tap({ element: { text: 'Notifications' } })    
+    await session.tap({ 
+        element: { 
+            attributes: {
+                text: 'Settings' 
+            }
+        } 
+    })
+    
+    await session.tap({ 
+        element: { 
+            attributes: {
+                text: 'Notifications' 
+            }
+        } 
+    }) 
 })
 ```
 
-If you just need to wait for an element to appear, you can use [waitForElement()](writing-tests.md#waitforelement)
+All actions that target an element will wait up to 10 seconds for an element to appear. If you need to wait for an element to appear without interacting on it, you can use [waitForElement()](writing-tests.md#waitforelement)
 
 ```javascript
 test('screenshot of the settings page', async ({ session }) => {
@@ -104,6 +111,8 @@ test('screenshot of the settings page', async ({ session }) => {
 })
 ```
 
+These timeouts are also configurable (see [Timeouts](../automation/touch-interactions.md#timeouts).)
+
 ## Assertions
 
 ### expect
@@ -115,8 +124,11 @@ Playwright uses the [expect](https://jestjs.io/docs/expect) library for assertio
 Asserts that an element exists in the current application UI
 
 ```javascript
-await expect(session).toHaveElement({ text: 'Hello' })
-await expect(session).toHaveElement({ accessbilityIdentifier: 'greeting-label' })
+await expect(session).toHaveElement({ 
+    attributes: {
+        text: 'Hello' 
+    }
+})
 ```
 
 It can take additional options to change the behaviour of the assertion:
@@ -124,10 +136,12 @@ It can take additional options to change the behaviour of the assertion:
 ```javascript
 await expect(session).toHaveElement(
     {
-        text: 'Hello',
+        attributes: {
+            text: 'Hello',
+        }
     },
     {        
-        timeout: 30000, // time in ms to wait for element to appear (default 30000)
+        timeout: 10000, // time in ms to wait for element to appear (default 10000)
         matches: 1      // require this amount of elements to be found
     }
 )
@@ -136,25 +150,20 @@ await expect(session).toHaveElement(
 If you want to assert that an element does **not** exist:
 
 ```javascript
-await expect(session).not.toHaveElement(
-    {
+await expect(session).not.toHaveElement({
         text: 'Hello',
-    },
-    // since we expect the element to not exist, it will use up the full timeout
-    // and pass as long as it never found anything.
-    { timeout: 5000 }
-)
+ })
 ```
 
 ### Screenshot comparisons
 
 [toMatchSnapshot()](https://playwright.dev/docs/api/class-snapshotassertions#snapshot-assertions-to-match-snapshot-2) works with [session.screenshot()](../automation/device-commands.md#screenshot), allowing you to do screenshot comparisons of your app.
 
-_Note: screenshot tests are fragile by nature because any change in the UI will cause it to fail. It is always better to assert on a narrow piece of application state, such as_ [_toHaveElement_](writing-tests.md#tohaveelement)_, or on network/debug log output._
+_Note: screenshot tests are fragile by nature as any change in the UI could cause it to fail. It is always better to assert on a narrow piece of application state, such as_ [_toHaveElement_](writing-tests.md#tohaveelement)_, or on network/debug log output._
 
 ```javascript
 test('loads the home tab', async ({ sesssion }) => {
-    await session.findElement({ text: 'Home' })
+    await session.findElement({ attributes: { text: 'Home' } })
     
     const screenshot = await session.screenshot()
     
@@ -164,14 +173,15 @@ test('loads the home tab', async ({ sesssion }) => {
 
 ### Network
 
-An example of how you could assert that a network request was made.
+An example of how you can assert that a network request was made.
 
 [See documentation for network events](../api-reference.md#on-session)
 
 ```javascript
-test.setup({
- proxy: 'intercept',
- // ... rest of your config
+test.use({
+    config: {
+         proxy: 'intercept',
+     }
 })
 
 test('makes a network request to the API with authentication', async ({ session }) => {
@@ -199,13 +209,13 @@ test('makes a network request to the API with authentication', async ({ session 
 Waits for an element to appear.
 
 ```javascript
-await session.waitForElement({ text: "Hello" })
+await session.waitForElement({ attributes: { text: "Hello" } })
 
 await session.waitForElement(
-    { text: "Hello" }, 
+    { attributes: { text: "Hello" } }, 
     { 
         matches: 2, // wait for exactly 2 elements to match the selector
-        timeout: 30000 // wait a maximum of 30 seconds
+        timeout: 10000 // wait a maximum of 10 seconds (default)
     }
 )
 ```
@@ -218,6 +228,7 @@ Waits for an event to occur
 const networkEvent = await session.waitForEvent('network')
 
 const requestEvent = await session.waitForEvent('network', event => {
+    // resolves only when this condition is met
     return event.type === 'request'
 })
 ```

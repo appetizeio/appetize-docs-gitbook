@@ -1,6 +1,6 @@
 ---
 description: >-
-  Our Javascript SDK offers an API to programmatically interact with Appetize
+  Our JavaScript SDK offers an API to programmatically interact with Appetize
   devices. This allows you to automate interactions with the device, verify app
   behavior, and more.
 ---
@@ -9,7 +9,7 @@ description: >-
 
 ## Installation
 
-First, load the Javascript SDK by adding the following snippet to the `head` section of your page:
+First, load the JavaScript SDK by adding the following snippet to the `head` section of your page:
 
 ```html
 <script>
@@ -19,8 +19,6 @@ const s = new Promise(function (e) {t.onload = function () {e();};});n.appetize 
 return s.then(() => n.appetize.getClient(...e));},};})();
 </script>
 ```
-
-The Javascript SDK exposes `window.appetize.getClient(selector)`. It takes a query selector for the embedded iframe (which we will add next) and returns a promise that resolves with a client instance.
 
 ### Embed your app
 
@@ -36,23 +34,30 @@ Add an `iframe` with an [Appetize embed URL](../platform/embedding-apps.md):
     scrolling="no"></iframe>
 ```
 
-For sake of example we gave the iframe an id of `appetize`, but it can be anything you wish.
+{% hint style="info" %}
+We gave the iframe an id of `appetize`, but it can be anything you wish.
+{% endhint %}
 
 ## Starting a Session
 
-Get the client by calling `window.appetize.getClient(selector)`. After getting the client, you can start the session:
+Get the client by calling `window.appetize.getClient(selector)`. This will return an Appetize client instance for the embed.
 
 ```javascript
-window.appetize.getClient("#appetize").then(async client => {
-    // listen for new session
-    // this event will fire whether the session is started programmatically
-    // or when the user clicks
-    client.on("session", session => {
-        console.log('session started!')
-    })
-    
-    // start a session programmatically
-    const session = await client.startSession()
+const client = await window.appetize.getClient("#appetize")
+```
+
+With the client, you can start a session programmatically:
+
+```javascript
+const session = await client.startSession()
+console.log('session started!')
+```
+
+or wait for the user to click "Tap to Play":
+
+```javascript
+client.on("session", session => {
+    console.log('session started!')
 })
 ```
 

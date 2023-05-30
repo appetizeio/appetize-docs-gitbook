@@ -18,14 +18,14 @@ const session = await client.startSession()
 | --------- | --------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `config?` | `Record<string, any>` | A JSON object describing the [Configuration options](../configuration.md#configuration-options) for the device. |
 
-### config()
+### setConfig()
 
 Update the configured app, device, operating system, or other launch options. See [Configuration](../configuration.md#configuration-options) for acceptable values.
 
 _Note: This will end any active sessions._
 
 ```typescript
-await client.config(config)
+await client.setConfig(config)
 ```
 
 ## **Session**
@@ -34,9 +34,11 @@ await client.config(config)
 
 Executes an `adb shell` command on the device (Android only)
 
+{% code overflow="wrap" %}
 ```typescript
 await session.adbShellCommand("am start -a android.intent.action.VIEW -d https://appetize.io/")
 ```
+{% endcode %}
 
 ### allowInteractions()
 
@@ -66,19 +68,28 @@ await session.end()
 
 ### getUI()
 
-Returns the UI of the app as an XML string
+{% hint style="warning" %}
+**Experimental** \
+The data structure of the response is subject to change
+{% endhint %}
 
-This returns an XML representation of your app's user interface. You may find it helpful to retrieve this data (UI Dump) to programmatically understand what your app is displaying.
+Returns an array of elements describing the current UI on the device.
 
 ```typescript
-await session.getUI()
+const ui = await session.getUI()
 
-// returns a string, eg. "<?xml version='1.0' encoding='UTF-8' ?>..."
+/*
+[
+  { type: 'app', appId: 'com.my.app', children: [...] },
+  { type: 'app', appId: 'com.apple.springboard', children: [...] }
+]
+*/
+
 ```
 
 ### heartbeat()
 
-Sends a heartbeat to the server, resetting the inactivity timer
+Sends a heartbeat to the server, resetting the inactivity timer of the session
 
 ```typescript
 await session.heartbeat()
@@ -153,6 +164,14 @@ Changes the current language and restarts the app
 
 ```typescript
 await session.setLanguage("fr")
+```
+
+### type()
+
+Types the given text
+
+```javascript
+await session.type("hello")
 ```
 
 ###

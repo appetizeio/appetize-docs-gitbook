@@ -12,13 +12,15 @@ Element selectors work regardless of the device or screen size, meaning you can 
 
 {% tabs %}
 {% tab title="iOS" %}
-| Attribute               | Description                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------ |
-| accessibilityIdentifier | Value of the element's accessibilityIdentifier                                       |
-| accessibilityLabel      | Value of the element's accessibilityLabel                                            |
-| baseClass               | <p>Name of the element's base (or inherited) class</p><p>ex: <code>UIView</code></p> |
-| class                   | <p>Name of the element's class<br><br>ex: <code>MyCustomUIView</code></p>            |
-| text                    | Text content of the element and its children (case sensitive)                        |
+| Attribute               | Description                                                                                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| accessibilityIdentifier | The element's [accessibilityIdentifier](https://developer.apple.com/documentation/uikit/uiaccessibilityidentification/1623132-accessibilityidentifier) |
+| accessibilityLabel      | The element's [accessibilityLabel](https://developer.apple.com/documentation/objectivec/nsobject/1615181-accessibilitylabel)                           |
+| accessibilityHint       | The element's [accessibilityHint](https://developer.apple.com/documentation/objectivec/nsobject/1615093-accessibilityhint)                             |
+| accessibilityValue      | The element's [accessibilityValue](https://developer.apple.com/documentation/objectivec/nsobject/1615117-accessibilityvalue)                           |
+| baseClass               | Name of the element's base (or inherited) class                                                                                                        |
+| class                   | Name of the element's class                                                                                                                            |
+| text                    | Text content of the element and its children (case sensitive)                                                                                          |
 {% endtab %}
 
 {% tab title="Android" %}
@@ -37,14 +39,18 @@ Any mixture of these attributes can be used to describe your element:
 // tap on an element by text
 await session.tap({
   element: {
-    text: "OK"
+    attributes: { 
+      text: "OK"
+    }
   }  
 })
 
-// (iOS) tap on an element by accessibilityIdentifier
+// tap on an element by accessibilityIdentifier
 await session.tap({
   element: {
-    accessibilityIdentifier: "dialog-confirm-button"
+    attributes: {
+      accessibilityIdentifier: "dialog-confirm-button"
+    }
   }  
 })
 
@@ -61,155 +67,193 @@ await session.tap({
 
 When developing your app, we recommend adding accessibility identifiers wherever possible to aid you when automating interactions with Appetize. This will allow for simpler queries and also help your app be more accessible.
 
-On iOS, you should be using `accessibilityIdentifier`.
+On iOS, you should be using **`accessibilityIdentifier`**.
 
-On Android, you should be using `content-desc` or `resource-id`.
+On Android, you should be using **`resource-id`**.
 
-If you are using React Native, a `testID` prop on your component will map to `accessibilityIdentifier` on iOS and `resource-id` on Android.
+If you are using React Native, a **`testID`** prop on your component will map to `accessibilityIdentifier` on iOS and `resource-id` on Android.
 
 ```javascript
 // ios
 await session.tap({
   element: {
-      accessibilityIdentifier: "dialog-confirm-button"
+      attributes: {
+          accessibilityIdentifier: "dialog-confirm-button"
+      }
   }
 })
 
 // android
 await session.tap({
   element: {
-      'resource-id': "dialog-confirm-button"
+      attributes: {
+          'resource-id': "dialog-confirm-button"
+      }
   }
 })
 ```
 
-If you do not have an accessibility id to reference it is best to describe elements by text, adding [additional attributes](touch-interactions.md#targeting-elements) as necessary.
-
-## Timeouts
-
-All interactions that target an element will wait up to 30 seconds to find the element. If the element is not found, it will throw an error.
+{% hint style="info" %}
+If you do not have an **accessibilityId** to reference it is best to query elements by text or accessibility attributes such as **`accessibilityLabel`** (iOS) or **`content-desc`** (Android).
+{% endhint %}
 
 ## Methods
 
 ### findElement
 
-Returns an element that matches the selector. This is useful if you need to wait for an element to appear before doing another action.
+Returns an element that matches the selector. This is useful for waiting until an element appears.
 
 ```javascript
 const element = await session.findElement({
-    text: "OK"
+    text: "Home"
 })
 
 console.log(element)
 
-// { text: "OK", class: "UIButton", accessbilityIdentifier: 'confirm-btn' }
+// output
+{
+  attributes: { text: "Home", class: "UILabel" },
+  path: "0/0/0/0/1/2/3",
+  bounds: { x: 10, y: 100, width: 100, height: 20 }  
+}
 ```
 
-If multiple elements are found it will throw an error. If you want to get all of them you can use [findElements](touch-interactions.md#findelements). Otherwise you can provide an index to get the nth element.
-
-```javascript
-// get the first occurence of an element with text "OK"
-const element = await session.findElement({
-    text: "OK",
-    matchIndex: 0
-})
-```
+If multiple elements are found it will return the first element.
 
 ### findElements
 
-Returns an array of all elements matching that selector. It will error if no elements are found.
+Returns an array of all elements matching that selector.
 
 ```javascript
 const elements = await session.findElements({
-    text: "OK"
+    accessibilityLabel: 'Like post'
 })
 ```
 
-### swipe()
+### swipe
 
-Plays a swipe gesture at the coordinate or specified element
+Swipes from the screen position or element
 
-#### By coordinates
+#### By position or coordinates
 
-Coordinates can be specified in either `px` or `%` (of screen).
-
-<pre class="language-javascript"><code class="lang-javascript"><strong>// swipe up at middle of the screen
-</strong><strong>session.swipe({
-</strong>    x: '50%',
-    y: '50%',
-    gesture: 'up', // or 'left', 'down', 'right'
+```javascript
+// swipe up at middle of the screen
+session.swipe({
+    gesture: 'up', // can be 'left', 'down', 'right', or a function
+    position: {
+        x: '50%', // 50% of screen width
+        y: '50%', // 50% of screen height
+    },
     duration: 1000 // optional, in ms
 })
-</code></pre>
+
+// swipe up at x/y coordinate
+session.swipe({
+    gesture: 'up',
+    coordinates: {
+        x: 100,
+        y: 100
+    }
+})
+```
 
 #### By element
 
-When an element is targeted, `%` values will correlate to the height/width of the element rather than the screen.
-
 ```javascript
-// swipe left from the middle of an image
+// swipe left from the middle of an image element
 session.swipe({
-    x: '50%',
-    y: '50%',
-    element: { accessibilityIdentifier: 'my-image' },
     gesture: 'left'
+    element: { 
+        attributes: {
+            accessibilityIdentifier: 'image-carousel' 
+        }        
+    },
+    // optional, defaults to 50%,50%
+    localPosition: { 
+        x: '50%', // middle of element on x-axis
+        y: '50%'  // middle of element on y-axis
+    }
 })
 ```
 
 #### Complex Gestures
 
-If you have a more complex gesture you can build one by providing a function to the `gesture` argument.
+You can describe a more complex gesture by providing a function to `gesture`.&#x20;
 
 ```javascript
-// swipe left 100px and then up 100px (L shape)
+// swipe from middle of screen to the left and then down
 session.swipe({
-    x: '50%',
-    y: '50%',
-    gesture: g => g.move(-100, 0).move(0, -100)
+    position: {
+        x: '50%',
+        y: '50%',
+    },
+    // use up(), left(), right(), or down() for simple movements
+    gesture: g => g.left('25%').down('25%')
 })
 
-// swipe up-right 25% of the screen
+// swipe diagonally up and right
 session.swipe({
-    x: '50%',
-    y: '50%',
-    gesture: g => g.move('25%', '-25%')
+    position: {
+        x: '50%',
+        y: '50%',
+    },
+    // .to(x, y) will move to that position on screen
+    gesture: g => g.to('25%', '-25%')
 })
 
-// swipe across an element starting from the middle-left
+// swipe up, wait 500ms, and then swipe right
 session.swipe({
-    x: '0%',
-    y: '50%',
-    element: { accessibilityIdentifier: 'my-image' },
-    // 100% = width of the targeted element
-    gesture: g => g.move('100%', 0)
+    position: {
+        x: '0%',
+        y: '100%',
+    },
+    // wait(ms) will hold the swipe gesture in place
+    gesture: g => g.up('25%').wait(500).right('50%')
 })
 ```
 
-The `move` function takes `x, y` arguments and defines the points in the path of your gesture. Each chained `move()` is relative to the previous point.
-
-### tap()
+### tap
 
 Taps on the specified element or coordinates
 
+#### By position or coordinate
+
 ```javascript
-await session.tap({ 
-    element: { 
-        text: 'submit' 
+// tap at middle of the screen
+await session.tap({
+    position: {
+        x: '50%',
+        y: '50%'
+    }
+})
+
+// tap at x/y coordinate
+await session.tap({
+    position: {
+        x: 100,
+        y: 250
     }
 })
 ```
 
+#### By element
+
 ```javascript
-await session.tap({
-    x: 100,
-    y: 250
+await session.tap({ 
+    element: {
+        attributes: {
+            text: 'submit'
+        } 
+    }
 })
 ```
 
-### type()
+## Timeouts
 
-Types the given text
+Interactions that target an element will wait up to 10 seconds to find the element. You may lower these timeouts by passing a second parameter:
 
 ```javascript
-await session.type("hello")
+await session.tap({ ... }, { timeout: 5000 })
+await session.swipe({ ... }, { timeout: 5000 })
+await session.findElement({ ... }, { timeout: 5000 })
 ```

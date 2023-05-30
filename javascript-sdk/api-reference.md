@@ -26,12 +26,16 @@ client.on(event, data => {
 })
 ```
 
-| Event               | Data Type                                             | Description                                                                                                                                                                                                                                                                                                                                |
-| ------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| <h4>queue</h4>      | `{ type: 'account' \| 'session' , position: number }` | <p>Your position in queue for the device.<br><br>If <code>type</code> is <code>account</code> you have reached the maximum amount of concurrent sessions for your account and are in queue for the next available slot.<br><br>If <code>type</code> is <code>session</code>, you are in a queue to wait for the next available device.</p> |
-| <h4>error</h4>      | `string`                                              | An error has occurred                                                                                                                                                                                                                                                                                                                      |
-| <h4>deviceInfo</h4> | `Record<string, any>`                                 | <p>Information about the current device, such as type, orientation, and screen dimensions.<br><br>It also contains rendered dimensions of the device within the embed.</p>                                                                                                                                                                 |
-| <h4>session</h4>    | `Session`                                             | A new session has started, either by `client.startSession()` or the user clicking "Tap to Play" on the device                                                                                                                                                                                                                              |
+
+
+| Event                                | Data Type                                                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <h4><strong>queue</strong></h4>      | <p><code>{</code> <br> <code>type: 'session'</code></p><p>    <code>| 'concurrent',</code></p><p> <code>position: number,</code></p><p> <code>name?: string</code> <br><code>}</code></p> | <p>Your position in queue for the device.<br><br>If <code>type</code> is <code>session</code>, you are in a queue to wait for the next available device for your configuration.<br><br>If <code>type</code> is <code>concurrent</code> you have reached the maximum amount of concurrent sessions for your account and are in queue for the next available slot. </p> |
+| <h4><strong>error</strong></h4>      | `string`                                                                                                                                                                                  | An error has occurred                                                                                                                                                                                                                                                                                                                                                 |
+| <h4><strong>deviceInfo</strong></h4> | `Record<string, any>`                                                                                                                                                                     | Information about the current device, such as type, osVersion, and screen dimensions.                                                                                                                                                                                                                                                                                 |
+| **sessionRequested**                 | `void`                                                                                                                                                                                    | A new session has been requested either by the client or user clicking "Tap to Play"                                                                                                                                                                                                                                                                                  |
+| <h4><strong>session</strong></h4>    | `Session`                                                                                                                                                                                 | A new session has started either by the client or user clicking "Tap to Play"                                                                                                                                                                                                                                                                                         |
+| **app**                              | `Record<string, any>`                                                                                                                                                                     | The currently loaded Appetize app                                                                                                                                                                                                                                                                                                                                     |
 
 ### startSession()
 
@@ -47,14 +51,14 @@ const session = await client.startSession()
 | --------- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `config?` | `Record<string, any>` | A JSON object describing the [Configuration options](configuration.md#configuration-options) for the device. |
 
-#### config()
+### setConfig()
 
 Update the configured app, device, operating system, or other launch options.
 
 _Note: This will end any active sessions._
 
 ```typescript
-await client.config(config)
+await client.setConfig(config)
 ```
 
 **Parameters**
@@ -63,9 +67,65 @@ await client.config(config)
 | -------- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
 | `config` | `Record<string, any>` | A JSON object describing the [Configuration options](configuration.md#configuration-options) for the device. |
 
-### loadApp
+### getConfig()
 
-Changes the loaded Appetize app of the iframe. This will restart your session, and you can also pass in `config` as well.
+Returns the current config
+
+```javascript
+const config = client.getConfig()
+```
+
+### device
+
+The currently loaded device
+
+```typescript
+{
+    type: string;
+    name: string;
+    osVersion: string;
+    orientation: 'portrait' | 'landscape';
+    screen: {
+        width: number;
+        height: number;
+        devicePixelRatio?: number;
+    };
+    embed: {
+        width: number;
+        height: number;
+        screen: {
+            width: number;
+            height: number;
+            offset: {
+                x: number;
+                y: number;
+            };
+        };
+    };    
+}
+```
+
+### app
+
+The currently loaded app
+
+```typescript
+{
+  publicKey: string;
+  name?: string;
+  appDisplayName?: string;
+  appVersionCode?: string;
+  bundle?: string;
+  platform?: string;
+  versionCode?: string;
+  architectures?: string;
+  iconUrl?: string;
+  created?: string;
+  apps?: AppetizeApp[];
+}
+```
+
+
 
 ## **Session**
 
@@ -79,17 +139,19 @@ session.on(event, data => {
 })
 ```
 
-| Event                       | Data Type                                                                                                                | Description                                                                                                                                                                                                                                                                                                                                    |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <h4>log</h4>                | `{ message: string }`                                                                                                    | <p>Debug log from the device<br><br>Requires <a href="configuration.md#debug">debug</a> to be set to <code>true</code></p>                                                                                                                                                                                                                     |
-| <h4>network</h4>            | `Record<string, any>`                                                                                                    | <p>Intercepted network request or responses.</p><p>Requires <a href="configuration.md#proxy">proxy</a> to be set to <code>intercept</code></p>                                                                                                                                                                                                 |
-| <h4>error</h4>              | `string`                                                                                                                 | An error has occurred on the session                                                                                                                                                                                                                                                                                                           |
-| <h4>action</h4>             | `Record<string, any>`                                                                                                    | An action has been recorded                                                                                                                                                                                                                                                                                                                    |
-| <h4>interaction</h4>        | `Record<string, any>`                                                                                                    | Session received interaction from the user                                                                                                                                                                                                                                                                                                     |
-| <h4>inactivityWarning</h4>  | `{ secondsRemaining: number }`                                                                                           | <p>Session is about to timeout due to inactivity.</p><p>Any user interaction or a <a href="api-reference.md#heartbeat">heartbeat</a> will reset the timeout.</p>                                                                                                                                                                               |
-| <h4>orientationChanged</h4> | `'portrait' \| 'landscape'`                                                                                              | The device has changed orientation                                                                                                                                                                                                                                                                                                             |
-| <h4>video</h4>              | <p><code>{</code><br><code>buffer: Uint8Array, width: number, height: number, codec: string</code><br><code>}</code></p> | <p>Video frames of the current session.<br><br>When codec is <code>h264</code>, the buffer is a raw frame of the stream. These frames can be muxed (using something like <a href="https://github.com/samirkumardas/jmuxer">jmuxer</a>) to turn it into a video format.<br><br>When codec is <code>jpeg</code> the buffers are jpeg images.</p> |
-| <h4>audio</h4>              | <p><code>{</code><br><code>buffer: Uint8Array, codec: 'aac'</code><br><code>}</code></p>                                 | <p>Audio frames of the current session.<br><br>Like <code>h264</code> with the <code>video</code> event, these can be muxed as well.</p>                                                                                                                                                                                                       |
+
+
+| Event                                        | Data Type                                                                                                                                                                     | Description                                                                                                                                                                                                                                                                                        |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <h4><strong>action</strong></h4>             | `Record<string, any>`                                                                                                                                                         | <p>A user action has been recorded. This can be played back later with <a href="api-reference.md#playaction-action-options">playAction</a>.<br><br>Requires <a href="configuration.md#record">record</a> to be set to <code>true</code> </p>                                                       |
+| <h4><strong>audio</strong></h4>              | <p><code>{</code><br><code>buffer: Uint8Array, codec: 'aac'</code><br><code>}</code></p>                                                                                      | <p>Audio frames of the current session.<br><br>Requires <a href="configuration.md#audio">audio</a> to be set to <code>true</code></p>                                                                                                                                                              |
+| <h4><strong>error</strong></h4>              | `string`                                                                                                                                                                      | An error has occurred on the session                                                                                                                                                                                                                                                               |
+| <h4><strong>inactivityWarning</strong></h4>  | `{ secondsRemaining: number }`                                                                                                                                                | <p>Session is about to timeout due to inactivity.</p><p>Any user interaction or a <a href="api-reference.md#heartbeat">heartbeat</a> will reset the timeout.</p>                                                                                                                                   |
+| <h4><strong>interaction</strong></h4>        | `Record<string, any>`                                                                                                                                                         | User has interacted with the device.                                                                                                                                                                                                                                                               |
+| <h4><strong>log</strong></h4>                | `{ message: string }`                                                                                                                                                         | <p>Debug log from the device<br><br>Requires <a href="configuration.md#debug">debug</a> to be set to <code>true</code></p>                                                                                                                                                                         |
+| <h4><strong>network</strong></h4>            | `Record<string, any>`                                                                                                                                                         | <p>Intercepted network request or responses.<br></p><p>Requires <a href="configuration.md#proxy">proxy</a> to be set to <code>intercept</code></p>                                                                                                                                                 |
+| <h4><strong>orientationChanged</strong></h4> | `'portrait' \| 'landscape'`                                                                                                                                                   | The device has changed orientation                                                                                                                                                                                                                                                                 |
+| <h4><strong>video</strong></h4>              | <p><code>{</code><br> <code>buffer: Uint8Array,</code><br> <code>width: number,</code><br> <code>height: number,</code> <br> <code>codec: string</code><br><code>}</code></p> | <p>Video frames of the current session.<br><br>These frames can be muxed (e.g. using <a href="https://github.com/samirkumardas/jmuxer">jmuxer</a>) to turn it into a video format.<br><br>When <a href="configuration.md#codec">codec</a> is <code>jpeg</code> the buffers are of jpeg images.</p> |
 
 ### end()
 
@@ -113,7 +175,7 @@ await session.rotate('right')
 | --------- | ------------------- | ----------------------- |
 | direction | `"left" \| "right"` | The direction to rotate |
 
-### screenshot()
+### screenshot(format)
 
 Takes a screenshot of the device and returns the data
 
@@ -123,9 +185,9 @@ const { data, mimeType } = await session.screenshot(format)
 
 **Parameters**
 
-| Name   | Type                   | Description                                 |
-| ------ | ---------------------- | ------------------------------------------- |
-| format | `"buffer" \| "base64"` | The format of the screenshot data to return |
+| Name    | Type                   | Description                                                       |
+| ------- | ---------------------- | ----------------------------------------------------------------- |
+| format? | `"buffer" \| "base64"` | The format of the screenshot data to return. Defaults to `buffer` |
 
 ### heartbeat()
 
@@ -135,21 +197,48 @@ Sends a heartbeat to the server, resetting the inactivity timer
 await session.heartbeat()
 ```
 
-### tap()
+### tap(target, options)
 
-Taps on the screen at the given position
+Taps on the screen at the given position, coordinate or element
 
 ```typescript
-await session.tap({ x: 100, y: 100 })
+await session.tap({ position: { x: '50%', y: '50%' } })
+await session.tap({ coordinates: { x: 100, y: 100 } })
+await session.tap({ element: { attributes: { text: 'OK' } } })
 ```
 
 **Parameters**
 
-| Name          | Type                      | Description                                                     |
-| ------------- | ------------------------- | --------------------------------------------------------------- |
-| `coordinates` | `{ x: number, y: number}` | The coordinates of the position to tap, relative to the screen. |
+| Name                | Type                                                                                              | Description                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| target.coordinates? | <p><code>{</code> <br> <code>x: number</code><br> <code>y: number</code></p><p><code>}</code></p> | The coordinates in dip units                                                                |
+| target.position?    | <p><code>{</code> <br> <code>x: string</code><br> <code>y: string</code><br><code>}</code></p>    | The position on screen in %                                                                 |
+| target.element?     | `ElementSelector`                                                                                 | An [element selector](automation/touch-interactions.md#targeting-elements)                  |
+| target.duration?    | `number`                                                                                          | Duration of the tap                                                                         |
+| options.timeout?    | `number`                                                                                          | If an element is provided, the amount of time to wait for it to appear in ms (defaults 10s) |
+| options.matchIndex? | `number`                                                                                          | If multiple elements match the element selector, select the nth one                         |
 
-### type()
+### swipe(target, options)
+
+Swipes on the screen at the given position, coordinate or element
+
+```typescript
+await session.swipe({ position: { x: '50%', y: '50%' }, gesture: 'up' })
+await session.swipe({ coordinates: { x: 100, y: 100 }, gesture: 'up' })
+await session.swipe({ element: { attributes: { text: 'OK' } }, gesture: 'up' })
+```
+
+|                     |                                                                                                   |                                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| target.coordinates? | <p><code>{</code> <br> <code>x: number</code><br> <code>y: number</code></p><p><code>}</code></p> | The coordinates in dip units to start the swipe                                                |
+| target.position?    | <p><code>{</code> <br> <code>x: string</code><br> <code>y: string</code><br><code>}</code></p>    | The position on screen in %                                                                    |
+| target.element?     | `ElementSelector`                                                                                 | An [element selector](automation/touch-interactions.md#targeting-elements)                     |
+| target.duration?    | `number`                                                                                          | Duration of the swipe                                                                          |
+| target.gesture      | `string \| function`                                                                              | The gesture of the swipe. See [swipe](automation/touch-interactions.md#swipe) for more details |
+| options.timeout?    | `number`                                                                                          | If an element is provided, the amount of time to wait for it to appear in ms (defaults 10s)    |
+| options.matchIndex? | `number`                                                                                          | If multiple elements match the element selector, select the nth one                            |
+
+### type(text)
 
 Types the given text on the device
 
@@ -159,11 +248,11 @@ await session.type("hello")
 
 **Parameters**
 
-| Name   | Type     | Description  |
-| ------ | -------- | ------------ |
-| `text` | `string` | Text to type |
+| Name | Type     | Description  |
+| ---- | -------- | ------------ |
+| text | `string` | Text to type |
 
-### keypress()
+### keypress(character, options)
 
 Sends a single key press to the device
 
@@ -173,12 +262,12 @@ await session.keypress("a")
 
 **Parameters**
 
-| Name      | Type                  | Description                                                                                                                                                                                                                                             |
-| --------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `key`     | `string`              | <p>Key to send to the device ('a', 'b', etc.)<br><br>Also takes special values for hardware keys:<br><br><code>HOME</code><br><code>VOLUME_UP</code> (android only)<br><code>VOLUME_DOWN</code> (android only)<br><code>ANDROID_KEYCODE_MENU</code></p> |
-| `options` | `{ shift?: boolean }` |                                                                                                                                                                                                                                                         |
+| Name           | Type      | Description                                                                                                                                                                                                                                             |
+| -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)<br><br>Also takes special values for hardware keys:<br><br><code>HOME</code><br><code>VOLUME_UP</code> (android only)<br><code>VOLUME_DOWN</code> (android only)<br><code>ANDROID_KEYCODE_MENU</code></p> |
+| options.shift? | `boolean` |                                                                                                                                                                                                                                                         |
 
-### setLanguage()
+### setLanguage(language)
 
 Changes the current language and restarts the app
 
@@ -188,11 +277,11 @@ await session.setLanguage("fr")
 
 **Parameters**
 
-| Name       | Type     | Description   |
-| ---------- | -------- | ------------- |
-| `language` | `string` | Language code |
+| Name     | Type     | Description   |
+| -------- | -------- | ------------- |
+| language | `string` | Language code |
 
-### setLocation()
+### setLocation(lat, long)
 
 Sets the simulated location of the device.
 
@@ -202,12 +291,12 @@ await setLocation(-33.924434, 18.418391)
 
 #### Parameters
 
-| Name        | Type   | Description                                                                                                                                                                                                          |
-| ----------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `latitude`  | number | Decimal number between -90 and 90, representing the degrees of north or south of the Equator. Negative numbers indicate south of the Equator, and positive numbers indicate north of the Equator.                    |
-| `longitude` | number | Decimal number between -180 and 180, representing the degrees of east or west of the Prime Meridian. Negative numbers indicate west of the Prime Meridian, and positive numbers indicate east of the Prime Meridian. |
+| Name      | Type     | Description                                                                                                                                                                                                          |
+| --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| latitude  | `number` | Decimal number between -90 and 90, representing the degrees of north or south of the Equator. Negative numbers indicate south of the Equator, and positive numbers indicate north of the Equator.                    |
+| longitude | `number` | Decimal number between -180 and 180, representing the degrees of east or west of the Prime Meridian. Negative numbers indicate west of the Prime Meridian, and positive numbers indicate east of the Prime Meridian. |
 
-### openUrl()
+### openUrl(url)
 
 Opens a deep-link or web URL
 
@@ -229,7 +318,7 @@ Shakes device (iOS only)
 await session.shake()
 ```
 
-### biometry()
+### biometry(match)
 
 Simulate a matching fingerprint (Android 8+ only)
 
@@ -239,7 +328,7 @@ await session.biometry({
 })
 ```
 
-### allowInteractions()
+### allowInteractions(enabled)
 
 Enables or disables all interactions on the device. Default is true.
 
@@ -263,23 +352,25 @@ Returns the UI as an XML string
 await session.getUI()
 ```
 
-### getAdbInfo()
+{% hint style="warning" %}
+**Experimental** \
+The data structure of the response is subject to change
+{% endhint %}
 
-Returns information about the adb connection (Android only)
+Returns an array of elements describing the current UI on the device.
 
-```javascript
-const adb = await session.getAdbInfo()
+```typescript
+const ui = await session.getUI()
+
+/*
+[
+  { type: 'app', appId: 'com.my.app', children: [...] },
+  { type: 'app', appId: 'com.apple.springboard', children: [...] }
+]
+*/
 ```
 
-### getNetworkInspectorUrl()
-
-Returns the URL to chrome dev tools to inspect network logs. Requires proxy to be set to `intercept`
-
-```javascript
-const url = await session.getNetworkInspectorUrl()
-```
-
-### playAction()
+### playAction(action, options)
 
 Play an automation Action or array of Actions.
 
@@ -289,11 +380,12 @@ await session.playAction(action)
 
 **Parameters**
 
-| Name   | Type                  | Description                                                                    |
-| ------ | --------------------- | ------------------------------------------------------------------------------ |
-| action | `Record<string, any>` | Actions emitted from the [`session.on('action')`](api-reference.md#on-1) event |
+| Name             | Type                  | Description                                                                    |
+| ---------------- | --------------------- | ------------------------------------------------------------------------------ |
+| action           | `Record<string, any>` | Actions emitted from the [`session.on('action')`](api-reference.md#on-1) event |
+| options.timeout? | `number`              | Amount of time in ms to wait for the action to succeed (default 10s)           |
 
-### playAction**s**
+### playAction**s(actions, options)**
 
 Plays an array of actions.
 
@@ -303,6 +395,85 @@ await session.playActions(actions)
 
 **Parameters**
 
-| Name    | Type                         | Description                                                                    |
-| ------- | ---------------------------- | ------------------------------------------------------------------------------ |
-| actions | `Array<Record<string, any>>` | Actions emitted from the [`session.on('action')`](api-reference.md#on-1) event |
+| Name             | Type                         | Description                                                                    |
+| ---------------- | ---------------------------- | ------------------------------------------------------------------------------ |
+| actions          | `Array<Record<string, any>>` | Actions emitted from the [`session.on('action')`](api-reference.md#on-1) event |
+| options.timeout? | `number`                     | Amount of time in ms to wait for an action to succeed (default 10s)            |
+
+### adbConnection
+
+Info for connecting to the Android devices via adb. Requires [enableAdb](configuration.md#enableadb) to be true
+
+```typescript
+{
+    command: string;
+    forwards: Array<{ destination: string; port: number }>;
+    hash: string;
+    hostname: string;
+    port: number;
+    user: string;
+}
+```
+
+### networkInspectorUrl
+
+The URL to chrome dev tools to inspect network logs. Requires [proxy](configuration.md#proxy) to be set to `intercept`
+
+### device
+
+The current device
+
+```typescript
+{
+    type: string;
+    name: string;
+    osVersion: string;
+    orientation: 'portrait' | 'landscape';
+    screen: {
+        width: number;
+        height: number;
+        devicePixelRatio?: number;
+    };
+    embed: {
+        width: number;
+        height: number;
+        screen: {
+            width: number;
+            height: number;
+            offset: {
+                x: number;
+                y: number;
+            };
+        };
+    };    
+}
+```
+
+### app
+
+The Appetize app for the session
+
+```typescript
+{
+  publicKey: string;
+  name?: string;
+  appDisplayName?: string;
+  appVersionCode?: string;
+  bundle?: string;
+  platform?: string;
+  versionCode?: string;
+  architectures?: string;
+  iconUrl?: string;
+  created?: string;
+  apps?: AppetizeApp[];
+}
+```
+
+### path
+
+The URL to the Appetizer server
+
+### token
+
+The token of the Appetize session
+

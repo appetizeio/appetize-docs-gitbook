@@ -14,12 +14,7 @@ npx playwright test --headed
 
 ## Parallel Tests
 
-Appetize will only run 1 session for all tests in a test suite. This allows you to use the same device for your tests and keeps you from re-entering the queue for each individual test.
+All tests in a test suite will run serially using the same session. This keeps you from re-entering the queue for each individual test and overall leads to faster test times. However, should a test fail, the session ends and a new one is requested.
 
-However you may run multiple test suites at once so long as your Appetize account has capacity for concurrent sessions. If not, you will simply enter the queue and the test will proceed once you have a session (tests will increase their timeout to 5 minutes if you enter a queue).
+You may run multiple test suites in parallel so long as your Appetize account has capacity for concurrent sessions. To do this, increase the [number of workers ](https://playwright.dev/docs/test-parallel#worker-processes) in `playwright.config.ts`.
 
-To do this, edit the [worker configuration](https://playwright.dev/docs/test-parallel#worker-processes) in `playwright.config.ts`.&#x20;
-
-## Continuous Integration
-
-[See Playwright documentation for running on CI](https://playwright.dev/docs/ci)
