@@ -113,7 +113,7 @@ Set the keyboard of the device by adding the `iosKeyboard` query parameter to yo
 &iosKeyboard=ja_JP@sw
 ```
 
-See [Query Params Reference](query-params-reference.md#timezone) for more information
+See [Query Params Reference](query-params-reference.md#ioskeyboard) for more information
 
 ### **With JavaScript SDK Configuration**
 

@@ -51,7 +51,7 @@ Now that your app is up and running on Appetize, it's time to take control of yo
 [query-params-reference.md](features/query-params-reference.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="javascript-sdk/getting-started.md" %}
+[getting-started.md](javascript-sdk/getting-started.md)
 {% endcontent-ref %}
 
