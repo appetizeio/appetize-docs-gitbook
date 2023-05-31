@@ -16,7 +16,7 @@ https://appetize.io/app/:publicKey
 
 This **`publicKey`** is an unguessable cryptographically generated 128-bit random string. By default, anybody who has your app's link, i.e. its **publicKey**, will have permission to run your app. Your app link can be easily shared with whomever you'd like, or [embedded](embedding-apps.md) into your own applications.
 
-Some customers want to restrict access, so that only authenticated users may run their app. For this purpose, we have a configuration option which can be set at either the app-level or the account-level.&#x20;
+Some customers want to restrict access, so that only authenticated users may run their app. For this purpose, we have a configuration option which can be set at either the app-level or the account-level.
 
 ### App Level Permissions
 
@@ -26,9 +26,9 @@ App Level Permissions will override Account Level Permission Defaults
 
 For the app-level setting, navigate to your [Dashboard](https://appetize.io/dashboard), then click the "manage" link for your app
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (2).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
 
-and finally configure the option under App Permissions.&#x20;
+and finally configure the option under App Permissions.
 
 {% hint style="info" %}
 App Level Permissions can also be applied when uploading the app via our REST API. See [Create new app](../rest-api/create-new-app.md) and [Update existing app](../rest-api/update-existing-app.md) for more information.
@@ -46,11 +46,11 @@ You may also set account-wide permissions on your [Account](https://appetize.io/
 
 Configure the permissions below to determine whether you need to be authenticated to the account or simply have the Embed or View link for an app in order to perform the following actions.
 
-| Permission                     | Description                                                          |
-| ------------------------------ | -------------------------------------------------------------------- |
-| <h4>run</h4>                   | Run your application                                                 |
-| <h4>networkProxy</h4>          | Specify a network proxy when running the app                         |
-| <h4>networkIntercept</h4>      | Use Appetize's intercepting proxy when running the app               |
-| <h4>debugLog</h4>              | View your app's NSLog/Logger or Logcat output                        |
-| <h4>adbConnect</h4>            | Debug your app by connecting ADB to the hosted emulator              |
-| <h4>androidPackageManager</h4> | Allow the installation of additional APK's while your app is running |
+| Permission                | Description                                                          |
+| ------------------------- | -------------------------------------------------------------------- |
+| **run**                   | Run your application                                                 |
+| **networkProxy**          | Specify a network proxy when running the app                         |
+| **networkIntercept**      | Use Appetize's intercepting proxy when running the app               |
+| **debugLog**              | View your app's NSLog/Logger or Logcat output                        |
+| **adbConnect**            | Debug your app by connecting ADB to the hosted emulator              |
+| **androidPackageManager** | Allow the installation of additional APK's while your app is running |

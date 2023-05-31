@@ -27,7 +27,7 @@ If you have a custom domain, the app links you share and embed will display your
 
 To enable this feature, you'll need to set up a CNAME record that points your desired domain or subdomain to `whitelabel.appetize.io`.
 
-Once setup, please [contact us](mailto:support@appetize.io) to finish the configuration.&#x20;
+Once setup, please [contact us](mailto:support@appetize.io) to finish the configuration.
 
 {% hint style="info" %}
 Appetize uses industry standard [Let's Encrypt](https://letsencrypt.org/) for SSL/TLS configuration of your domain.
@@ -37,9 +37,9 @@ Appetize uses industry standard [Let's Encrypt](https://letsencrypt.org/) for SS
 
 From your Appetize [Dashboard](https://appetize.io/apps), select `manage` under one of your uploaded apps.
 
-<figure><img src="../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (4).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
 
-From there, you will see options to customize the Pre-Launch and Post-Session Graphics.&#x20;
+From there, you will see options to customize the Pre-Launch and Post-Session Graphics.
 
 <figure><img src="../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption><p>Example Pre-Launch Styling</p></figcaption></figure>
 
@@ -47,13 +47,12 @@ From there, you will see options to customize the Pre-Launch and Post-Session Gr
 
 ## Custom Loading Animations
 
-Appetize supports personalized loading animations. To enable this, you can provide a link to a hosted responsive webpage that we'll embed as an `iFrame` during the loading process.&#x20;
+Appetize supports personalized loading animations. To enable this, you can provide a link to a hosted responsive webpage that we'll embed as an `iFrame` during the loading process.
 
 {% embed url="https://codepen.io/martinvd/pen/xbQJom" %}
 Sample Loading Animation on CodePen from[ ](https://codepen.io/martinvd)[Martin van Driel](https://codepen.io/martinvd)
 {% endembed %}
 
-&#x20;We have hosted this simple webpage [here](https://appetizeio-static.s3.amazonaws.com/loading\_example.html). A page like this can be specified as your custom loading animation, and may contain any of your branding you would like.&#x20;
+We have hosted this simple webpage [here](https://appetizeio-static.s3.amazonaws.com/loading\_example.html). A page like this can be specified as your custom loading animation, and may contain any of your branding you would like.
 
-Once setup, please [contact us](mailto:support@appetize.io) to finish the configuration.&#x20;
-
+Once setup, please [contact us](mailto:support@appetize.io) to finish the configuration.

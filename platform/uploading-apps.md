@@ -17,7 +17,7 @@ description: >-
 {% endcontent-ref %}
 
 {% hint style="info" %}
-We also support apps made in Flutter, Xamarin, React-Native, Kotlin Multiplatform and other similar cross-platform environments, as long as the resulting `.app` or `.apk` build is generated. &#x20;
+We also support apps made in Flutter, Xamarin, React-Native, Kotlin Multiplatform and other similar cross-platform environments, as long as the resulting `.app` or `.apk` build is generated.
 
 If you are experiencing any issues, please see our [Knowledge base](https://support.appetize.io/uploading-and-installing-apps) for more information.
 {% endhint %}
@@ -33,12 +33,12 @@ You can upload your application directly via a web browser by making use of our 
 {% hint style="info" %}
 If you have an existing app that you would like to update, you can upload a new build within the manage page of that app. Select `manage` under the app listed in your [Apps Dashboard](https://appetize.io/apps) and navigate to `Upload a new build`.
 
-<img src="../.gitbook/assets/image (10) (1) (1) (3).png" alt="Example App with Manage action" data-size="original">
+<img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (3).png" alt="Example App with Manage action" data-size="original">
 {% endhint %}
 
 ### With REST API
 
-Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference):
+Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference/):
 
 {% content-ref url="../rest-api/create-new-app.md" %}
 [create-new-app.md](../rest-api/create-new-app.md)
@@ -61,4 +61,3 @@ Appetize has several 3rd party integrations for popular tools to allow you to qu
 {% hint style="info" %}
 If there is a 3rd party integration that you think should be on this list, please let us [know](mailto:support@appetize.io)!
 {% endhint %}
-

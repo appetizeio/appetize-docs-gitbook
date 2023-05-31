@@ -31,5 +31,4 @@ https://appetize.io/app/{publicKey}
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `view/debug` under the app you want to run.
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (5).png" alt="Example App Link with Debug Action"><figcaption><p>Select "View" or "Debug" under your app</p></figcaption></figure>
-
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (2).png" alt="Example App Link with Debug Action"><figcaption><p>Select "View" or "Debug" under your app</p></figcaption></figure>

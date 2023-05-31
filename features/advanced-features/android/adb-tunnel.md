@@ -52,7 +52,7 @@ https://appetize.io/app/{publicKey}?&enableAdb=true
 
 or by going to your [Apps](https://appetize.io/apps) page, clicking `view` under the app you want to inspect and then toggling `Adb Tunnel` to `On`
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (5).png" alt="Example App Link with View Action"><figcaption><p>Select "View" under your app</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (1) (1) (2).png" alt="Example App Link with View Action"><figcaption><p>Select "View" under your app</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
 
