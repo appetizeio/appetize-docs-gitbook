@@ -121,7 +121,7 @@ Set the time zone of the device via our JavaScript SDK configuration
 
 ```typescript
 await client.config({
-    timezone: 'Australia/Adelaide',
+    iosKeyboard: 'ja_JP@sw',
     ...
 })
 ```
