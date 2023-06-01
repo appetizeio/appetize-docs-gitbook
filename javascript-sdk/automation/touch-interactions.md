@@ -2,13 +2,15 @@
 
 ## Targeting Elements
 
-Touch interactions will usually require a target element. An element can be described using our Element Selector API; a convenient to way to target a UI element on the device.
+Touch interactions may accept a target element to play the interaction on. An element is described with an "Element Selector"; a convenient to way to target a UI element on the device.
 
-A selector is comprised of attributes that describe the element in your application. Below is a list of attributes you can describe for each platform.
+An Element Selector describes the element in your application by its attributes and other properties. Below is a list of accepted attributes for each platform.
 
 {% hint style="info" %}
-Element selectors work regardless of the device or screen size, meaning you can run the same set of actions on both a phone and tablet
+Element Selectors work regardless of the device or screen size, meaning you can run the same set of actions on both a phone and tablet
 {% endhint %}
+
+### Element Attributes
 
 {% tabs %}
 {% tab title="iOS" %}
@@ -57,8 +59,10 @@ await session.tap({
 // tap on an element by *both* text and accessibilityIdentifier
 await session.tap({
   element: {
-    text: "OK",
-    accessibilityIdentifier: "dialog-confirm-button"
+    attributes: {
+      text: "OK",
+      accessibilityIdentifier: "dialog-confirm-button"
+    }
   }  
 })
 ```
@@ -105,7 +109,9 @@ Returns an element that matches the selector. This is useful for waiting until a
 
 ```javascript
 const element = await session.findElement({
-    text: "Home"
+    attributes: {
+        text: "Home"
+    }
 })
 
 console.log(element)
@@ -126,7 +132,9 @@ Returns an array of all elements matching that selector.
 
 ```javascript
 const elements = await session.findElements({
-    accessibilityLabel: 'Like post'
+    attributes: { 
+       accessibilityLabel: 'Like post'
+    }
 })
 ```
 
