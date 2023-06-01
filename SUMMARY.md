@@ -91,3 +91,4 @@
 ## Additional Support
 
 * [Knowledge Base](https://support.appetize.io/)
+* [Support Request](https://appetize.io/support-request)
