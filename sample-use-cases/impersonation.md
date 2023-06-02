@@ -9,7 +9,7 @@ description: >-
 
 ## Overview
 
-Impersonation and delegation scenarios are common in various systems. One recognizable case involves system administrators or call center agents taking on a user's identity to verify and troubleshoot user-reported issues.&#x20;
+Impersonation and delegation enable call center agents or system administrators to take on a user's identity to verify and troubleshoot user-reported issues. Most organizations already have a solution implemented for their web-based applications. Appetize allows you to impersonate and delegate your native and cross-platform mobile application users.
 
 This documentation provides insights on leveraging Appetize's capabilities to impersonate users, perform delegated actions, and resolve user-reported problems. To simplify the process, we will break down impersonation into three essential steps:
 
@@ -166,6 +166,10 @@ func scene(_ scene: UIScene,
 ## Best Practices
 
 To ensure a secure and responsible impersonation process, adhere to these best practices:
+
+{% hint style="info" %}
+Appetize offers both Public and Private cloud deployments. If you are potentially accessing sensitive data, please contact our [support team](mailto:hello@appetize.io) to ensure you are implementing personalization in a compliant manner.
+{% endhint %}
 
 #### **User Consent and Privacy**
 
