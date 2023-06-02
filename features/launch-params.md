@@ -46,7 +46,7 @@ For convenience, we set the key **`"isAppetize": true`** while streaming your ap
 
 {% tabs %}
 {% tab title="Android (Java)" %}
-#### With Intents
+**With Intents**
 
 The data will be passed as extras into the intent that launches your app, accessible by calling the appropriate get method (based on type) e.g.
 
@@ -57,7 +57,7 @@ intent.getStringExtra("stringKey");
 ...
 ```
 
-#### With SharedPreferences
+**With SharedPreferences**
 
 The data will also be stored in SharedPreferences under a file called `prefs.db`. This is accessibly by fetching that `SharedPreferences` instance and calling the appropriate get method e.g.
 
@@ -72,7 +72,7 @@ preferences.getString("stringKey", null);
 {% endtab %}
 
 {% tab title="Android (Kotlin)" %}
-#### With Intents
+**With Intents**
 
 The data will be passed as extras into the intent that launches your app, accessible by calling the appropriate get method (based on type) e.g.
 
@@ -82,7 +82,7 @@ intent.getStringExtra("stringKey")
 ...
 ```
 
-#### With SharedPreferences
+**With SharedPreferences**
 
 The data will also be stored in SharedPreferences under a file called `prefs.db`. This is accessibly by fetching that `SharedPreferences` instance and calling the appropriate get method e.g.
 
@@ -105,6 +105,10 @@ The data passed will be stored in the shared defaults object, accessible by call
 [[NSUserDefaults standardUserDefaults] stringForKey:@"stringKey"]
 ...
 ```
+
+{% hint style="warning" %}
+Note that extension bundles will not have access to the app's standard `UserDefaults`. To work around this issue, please see [Sharing Data with Your Containing App](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple\_ref/doc/uid/TP40014214-CH21-SW1).
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS (Swift)" %}
@@ -116,5 +120,9 @@ UserDefaults.standard.object(forKey: "objectKey")
 UserDefaults.standard.string(forKey: "stringKey")
 ...
 ```
+
+{% hint style="warning" %}
+Note that extension bundles will not have access to the app's standard `UserDefaults`. To work around this issue, please see [Sharing Data with Your Containing App](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple\_ref/doc/uid/TP40014214-CH21-SW1).
+{% endhint %}
 {% endtab %}
 {% endtabs %}

@@ -79,6 +79,7 @@
 
 ## Sample Use Cases
 
+* [Impersonation](sample-use-cases/impersonation.md)
 * [Automate Sign-in Flow](sample-use-cases/automate-sign-in-flow.md)
 * [Unlock Device](sample-use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
 * [Validate Analytics Events](sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
