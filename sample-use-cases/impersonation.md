@@ -12,7 +12,7 @@ description: >-
 Impersonation and delegation enable call center agents or system administrators to take on a user's identity to verify and troubleshoot user-reported issues. Most organizations already have a solution implemented for their web-based applications. Appetize allows you to impersonate and delegate your native and cross-platform mobile application users.
 
 {% hint style="warning" %}
-Enabling user impersonation necessitates the use of custom code and careful consideration of security, privacy, and compliance. The required custom code may involve making adjustments to the mobile app, the embedded Appetize page, and the backend infrastructure.
+Enabling user impersonation necessitates the use of custom code and careful consideration of security, privacy, and compliance. The required custom code may involve making adjustments to the mobile app, the page Appetize is embedded on, and the backend infrastructure.
 {% endhint %}
 
 This documentation provides insights on leveraging Appetize's capabilities to impersonate users, perform delegated actions, and resolve user-reported problems. To simplify the process, we will break down impersonation into three essential steps:
