@@ -18,7 +18,7 @@ Enabling user impersonation necessitates the use of custom code and careful cons
 This documentation provides insights on leveraging Appetize's capabilities to impersonate users, perform delegated actions, and resolve user-reported problems. To simplify the process, we will break down impersonation into three essential steps:
 
 * [Preparing User Context for Impersonation](impersonation.md#preparing-user-context-for-impersonation)
-* [Implementing Impersonation in Your App](impersonation.md#implementing-impersonation-in-your-app)
+* [Passing the Impersonated User to your Embedded App](impersonation.md#passing-the-impersonated-user-to-your-embedded-app)
 * [Best Practices](impersonation.md#best-practices)
 
 ## Preparing User Context for Impersonation
@@ -60,9 +60,9 @@ You could confirm that your app is running in an Appetize Session by making use 
 
 <img src="../.gitbook/assets/file.excalidraw.svg" alt="Sample Structure for using a single app for both generating and utilizing the user token." class="gitbook-drawing">
 
-## Implementing Impersonation in Your App
+## Passing the Impersonated User to your Embedded App
 
-Once you have the required user information (e.g. user token), proceed with passing it to your app for impersonation. Consider the following options:
+Once you have the required user information (e.g. user token), proceed with passing it to your embedded app for impersonation. Consider the following options:
 
 ### Option 1: Launch Params
 
