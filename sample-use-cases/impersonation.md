@@ -187,10 +187,10 @@ func scene(_ scene: UIScene,
 
 ## Best Practices
 
-To ensure a secure and responsible impersonation process, adhere to these best practices:
+To ensure a secure and responsible impersonation process, adhere to these best practices.
 
 {% hint style="info" %}
-Appetize offers both Public and Private cloud deployments. If you are potentially accessing sensitive data, please contact our [support team](mailto:hello@appetize.io) to ensure you are implementing personalization in a compliant manner.
+Appetize offers both Public and Private cloud deployments. If you are potentially accessing sensitive data, please contact our [support team](mailto:hello@appetize.io) to ensure you are implementing impersonation in a compliant manner.
 {% endhint %}
 
 #### **User Consent and Privacy**
