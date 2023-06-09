@@ -14,7 +14,7 @@ Our embed links support all our [Query Parameters](../features/query-params-refe
 
 The easiest way to find your embed link is by going to your [Apps](https://appetize.io/apps) page and selecting `embed` under the app you want to embed on your website.
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (4).png" alt="" width="366"><figcaption><p>Select "embed" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (7).png" alt="" width="366"><figcaption><p>Select "embed" under your app</p></figcaption></figure>
 
 You can also simply replace **app** with **embed** in the your app's app link (see [Running Apps](running-apps.md)) e.g.
 

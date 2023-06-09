@@ -37,7 +37,7 @@ Appetize uses industry standard [Let's Encrypt](https://letsencrypt.org/) for SS
 
 From your Appetize [Dashboard](https://appetize.io/apps), select `manage` under one of your uploaded apps.
 
-<figure><img src="../.gitbook/assets/image (10) (1) (2).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (4).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
 
 From there, you will see options to customize the Pre-Launch and Post-Session Graphics.
 

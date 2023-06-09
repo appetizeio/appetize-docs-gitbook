@@ -79,7 +79,7 @@ https://appetize.io/app/:publicKey
 and can also be seen on the [App Dashboard](https://appetize.io/apps).
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt="" width="455"><figcaption><p>Add a group by publicKey</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png" alt="" width="455"><figcaption><p>Add a group by publicKey</p></figcaption></figure>
 
 Once you have added all the applications to the group, you can use the group in the same way that you would have used the individual applications (e.g. view, embed etc.).
 

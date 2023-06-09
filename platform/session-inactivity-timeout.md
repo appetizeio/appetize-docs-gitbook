@@ -18,7 +18,7 @@ Navigate to your [**Account Dashboard**](https://appetize.io/account) **->** **D
 
 Navigate to your [**App Dashboard**](https://appetize.io/apps) **-> Manage** (under your preferred app) **-> Session timeout**
 
-<figure><img src="../.gitbook/assets/image (2).png" alt="" width="366"><figcaption><p>Select "manage" under your preferred app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (5).png" alt="" width="366"><figcaption><p>Select "manage" under your preferred app</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (8).png" alt="" width="455"><figcaption><p>App specific Inactivity Timeout</p></figcaption></figure>
 

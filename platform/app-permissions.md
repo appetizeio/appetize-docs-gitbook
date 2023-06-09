@@ -26,7 +26,7 @@ App Level Permissions will override Account Level Permission Defaults
 
 For the app-level setting, navigate to your [Dashboard](https://appetize.io/dashboard), then click the "manage" link for your app
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (2).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
 
 and finally configure the option under App Permissions.
 
