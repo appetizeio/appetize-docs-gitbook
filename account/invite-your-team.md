@@ -34,3 +34,9 @@ To **delete** an account, select `delete` next to the account you want to remove
 ## Single Sign-On (SSO)
 
 On our Enterprise plans, you can take advantage of our Single Sign-On (SSO) integrations for seamless user management on Appetize. Visit our [documentation](single-sign-on.md) for more details.
+
+## Related Links
+
+{% content-ref url="../platform/app-permissions.md" %}
+[app-permissions.md](../platform/app-permissions.md)
+{% endcontent-ref %}
