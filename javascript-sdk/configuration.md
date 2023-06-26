@@ -185,6 +185,16 @@ Enables recording of all user actions that took place during the session. See [U
 
 (Android only) Allows installation of additional APKs after app launch
 
+### region
+
+`us` | `eu`
+
+Ensures that Appetize sessions are launched only from servers in a specific region.
+
+{% hint style="warning" %}
+It is best to avoid setting this property unless absolutely necessary. Our system automatically directs requests to the closest servers for optimal performance. Using this property could lead to longer queues in busy regions.
+{% endhint %}
+
 ### appearance
 
 `"dark" | "light"`
