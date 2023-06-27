@@ -21,6 +21,7 @@
 * [Network Traffic Monitor](features/network-traffic-monitor.md)
 * [Debug Logs](features/debug-logs.md)
 * [UI Automation](features/ui-automation.md)
+* [Proxy](features/proxy.md)
 * [Language & Locale](features/language-and-locale.md)
 * [Mock Location](features/mock-location.md)
 * [Deep links](features/deep-links.md)

@@ -41,7 +41,7 @@ See [Configuration](../javascript-sdk/configuration.md#proxy) for more informati
 
 ### With App Page
 
-The app page provides a simple network log of all the events that took place. You can access this via your app's app link&#x20;
+The app page provides a simple network log of all the events that took place. You can access this via your app's app link
 
 {% code overflow="wrap" %}
 ```url
@@ -51,7 +51,7 @@ https://appetize.io/app/{publicKey}?&proxy=intercept
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `debug` under the app you want to inspect.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
 
 {% hint style="info" %}
 You can also open the network logs in Chrome DevTools if you are running the app in a Chrome Browser by selecting the `View in Chrome DevTools`button.

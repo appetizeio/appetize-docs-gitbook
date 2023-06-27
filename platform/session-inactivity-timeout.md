@@ -12,7 +12,7 @@ By **default**, your Appetize session will end after **2 minutes** of inactivity
 
 Navigate to your [**Account Dashboard**](https://appetize.io/account) **->** **Default app settings** -> **Default inactivity timeout**
 
-<figure><img src="../.gitbook/assets/image.png" alt="" width="563"><figcaption><p>Default App Inactivity Timeout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt="" width="563"><figcaption><p>Default App Inactivity Timeout</p></figcaption></figure>
 
 ## App Specific Timeout
 
@@ -30,6 +30,6 @@ You can also[ set](../rest-api/create-new-app.md)/[update](../rest-api/update-ex
 
 When a user launches Appetize and the maximum concurrency limit has been reached, they will be placed in a virtual 'queue' and wait until additional capacity becomes available:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt="" width="360"><figcaption><p>Sample of reaching the concurrency queue in our demo experience</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt="" width="360"><figcaption><p>Sample of reaching the concurrency queue in our demo experience</p></figcaption></figure>
 
 As soon as a device becomes available, the queued users will be granted access, allowing them to continue as usual.
