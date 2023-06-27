@@ -52,11 +52,7 @@ You may also set account-wide proxy settings on your [Account](https://appetize.
 
 By setting a default proxy, the proxy will be used when no other proxy is specified.
 
-{% hint style="info" %}
-You can set the default proxy to always use our `intercept` proxy. See [Network Traffic Monitor](network-traffic-monitor.md) for more information.
-{% endhint %}
-
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Example default proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt="" width="563"><figcaption><p>Example default proxy</p></figcaption></figure>
 
 ### Forced Proxy
 

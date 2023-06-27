@@ -27,7 +27,7 @@ You can also adjust the role of each account by navigating down to the **User Ro
 | Admin     | View account page, edit billing, manage users, and change account settings |
 | Developer | Upload apps and manage app settings                                        |
 
-<figure><img src="../.gitbook/assets/image (3).png" alt="" width="563"><figcaption><p>Adjust user roles and remove users from your Account Dashboard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (3).png" alt="" width="563"><figcaption><p>Adjust user roles and remove users from your Account Dashboard</p></figcaption></figure>
 
 To **delete** an account, select `delete` next to the account you want to remove.
 
