@@ -11,6 +11,14 @@ description: >-
 
 To enable the ADB tunnel feature, you can either choose to enable it through a query parameter or by utilizing the JavaScript SDK.
 
+{% hint style="warning" %}
+Enabling the SSH ADB tunnel has a limitation that causes our ADB connection to terminate. Consequently, the following Appetize features will be affected and unavailable:
+
+1. [AppRecorder](../../ui-automation.md)
+2. [Screenshots](../../../javascript-sdk/api-reference.md#screenshot-format)
+3. [Debug Logs](../../debug-logs.md)
+{% endhint %}
+
 ### With Query Parameter
 
 Add the `debug=true` query parameter to your app or embed URL
@@ -64,11 +72,11 @@ Then, the Appetize virtual Android device will appear with `adb devices`, as if 
 
 ### With JavaScript SDK
 
-You can retrieve all the information needed to start an ADB session via the `getAdbInfo` function
+You can retrieve all the information needed to start an ADB session via the `adbConnection` property
 
 ```typescript
-const adbInfo = await session.getAdbInfo()
+const adbInfo = session.adbConnection
 const command = adbInfo.command
 ```
 
-See our JavaScript [API Reference](../../../javascript-sdk/api-reference.md#getadbinfo) for more information.
+See our JavaScript [API Reference](../../../javascript-sdk/api-reference.md#adbconnection) for more information.

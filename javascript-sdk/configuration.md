@@ -177,7 +177,9 @@ Enables recording of all user actions that took place during the session. See [U
 
 `boolean`
 
-(Android only) Sets up an SSH tunnel to allow ADB connections to the emulator. SSH command and info can be found by quering [getAdbInfo](api-reference.md#getadbinfo) on the session.
+(Android only) Sets up an SSH tunnel to allow ADB connections to the emulator. SSH command and info can be found by accessing the [adbConnection](api-reference.md#adbconnection) property on the session.
+
+For more information see [ADB tunnel](../features/advanced-features/android/adb-tunnel.md).
 
 ### androidPackageManager
 
