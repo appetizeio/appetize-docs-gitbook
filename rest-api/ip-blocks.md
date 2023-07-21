@@ -12,6 +12,15 @@ description: >-
 Get IP blocks for Appetize streaming servers. These are the IPs from which your running apps will be making network calls. Use the IP blocks to whitelist access to your backend if it is not public.
 {% endswagger-description %}
 
+{% swagger-parameter in="query" name="format" type="string" %}
+`txt|text`\
+Returns a text response with IPs split by new lines.\
+`json` (**Default**)\
+Returns response in JSON format.
+
+
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="" %}
 ```javascript
 {
