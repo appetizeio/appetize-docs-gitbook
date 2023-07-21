@@ -5,7 +5,7 @@
 Retrieves information about a single app.
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="publicKey" type="string" %}
+{% swagger-parameter in="path" name="publicKey" type="string" required="true" %}
 publicKey for the app
 {% endswagger-parameter %}
 
@@ -33,16 +33,16 @@ publicKey for the app
 Retrieves information about all apps in the account, with associated metadata.
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="nextKey" type="string" %}
-If results are truncated due to too many apps, response will include 
+{% swagger-parameter in="query" name="nextKey" type="string" required="false" %}
+If results are truncated due to too many apps, response will include
 
 `hasMore: true`
 
- and 
+and
 
 `nextKey: "xyz"`
 
-. Pass nextKey value as query parameter into GET request to retrieve the next batch of apps. 
+. Pass nextKey value as query parameter into GET request to retrieve the next batch of apps.
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="" %}
@@ -75,6 +75,36 @@ If results are truncated due to too many apps, response will include
         "versionCode": 3,
         "iconUrl": "https://example.com/app2.png",
     }]
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/v1/apps/:publicKey" baseUrl="https://APITOKEN@api.appetize.io" summary="Get an app group" %}
+{% swagger-description %}
+Retrieves information about an app group and all the apps associated with it.
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="publicKey" type="string" required="true" %}
+publicKey for the app group (starts with 
+
+`ag_`
+
+)
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "publicKey": "ag_{publicKey}",
+    "updated": "2023-07-21T12:50:21.492Z",
+    "name": "App Group Name",
+    "created": "2023-05-05T08:35:39.967Z",
+    "createdBy": "user@appetize.io",
+    "apps": [
+        "{app 1 publicKey}",
+        "{app 2 publicKey}"
+    ]
 }
 ```
 {% endswagger-response %}
