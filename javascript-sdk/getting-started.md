@@ -35,18 +35,37 @@ Add an `iframe` with an [Appetize embed URL](../platform/embedding-apps.md):
 ```
 
 {% hint style="info" %}
-We gave the iframe an id of `appetize`, but it can be anything you wish.
+We gave the iframe an id of `appetize`, but it can be anything you wish.&#x20;
 {% endhint %}
 
-## Starting a Session
+## Get the Client
 
-Get the client by calling `window.appetize.getClient(selector)`. This will return an Appetize client instance for the embed.
+The easiest way to get the client is by calling [`window.appetize.getClient(selector)`](api-reference.md#getclient-selector).&#x20;
+
+This will return an Appetize client instance for the embed e.g.
 
 ```javascript
 const client = await window.appetize.getClient("#appetize")
 ```
 
-With the client, you can start a session programmatically:
+{% hint style="info" %}
+We also support getting the client with an initial [configuration](configuration.md) - for scenarios where the initial embed link might not be known on launching of the page by making use of [`window.appetize.getClient(selector, config)`](api-reference.md#getclient-selector-config).&#x20;
+
+This will return an Appetize client instance with the initial [configuration](configuration.md) applied e.g.
+
+```javascript
+const client = await window.appetize.getClient("#appetize", {
+    publicKey: '{publicKey}',
+    device: 'iphone13pro',
+    osVersion: '15.0'
+    ...
+})
+```
+{% endhint %}
+
+## Starting a Session
+
+You can start a session programmatically:
 
 ```javascript
 const session = await client.startSession()
