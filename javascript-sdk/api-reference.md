@@ -1,8 +1,8 @@
 # API reference
 
-## getClient()
+## getClient(selector)
 
-Get an instance of the Appetize client.
+Get an instance of the Appetize client.&#x20;
 
 ```javascript
 const client = await window.appetize.getClient('#my_iframe')
@@ -13,6 +13,28 @@ const client = await window.appetize.getClient('#my_iframe')
 | Name     | Type     | Description                                             |
 | -------- | -------- | ------------------------------------------------------- |
 | selector | `string` | A query selector string pointing to the embedded iframe |
+
+## getClient(selector, config)
+
+Get an instance of the Appetize client as well as set the initial config when loading the client.&#x20;
+
+_Useful when the embed link might not be known up front and the configuration has to be applied at runtime._
+
+```javascript
+const client = await window.appetize.getClient('#my_iframe', {
+    publicKey: '{publicKey}',
+    device: 'iphone11pro',
+    osVersion: '15.0'
+    ...
+})
+```
+
+**Parameters**
+
+| Name     | Type                  | Description                                                                                                  |
+| -------- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| selector | `string`              | A query selector string pointing to the embedded iframe                                                      |
+| config   | `Record<string, any>` | A JSON object describing the [Configuration options](configuration.md#configuration-options) for the device. |
 
 ## Client
 
