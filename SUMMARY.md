@@ -85,6 +85,7 @@
 * [Unlock Device](sample-use-cases/swipe-a-pattern-to-unlock-an-android-device.md)
 * [Validate Analytics Events](sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
 * [Screenshot Automation](sample-use-cases/save-screenshots-of-an-app-in-multiple-languages.md)
+* [Samples Repository](https://samples.appetize.io/)
 
 ## Deprecated
 
