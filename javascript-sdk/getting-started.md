@@ -49,7 +49,7 @@ const client = await window.appetize.getClient("#appetize")
 ```
 
 {% hint style="info" %}
-We also support getting the client with an initial [configuration](configuration.md) - for scenarios where the initial embed link might not be known on launching of the page by making use of [`window.appetize.getClient(selector, config)`](api-reference.md#getclient-selector-config).&#x20;
+We also support getting the client with an initial [configuration](configuration.md) - for scenarios where the initial embed link might not be known on launching of the page  (no `src` specified on the `iframe`) by making use of [`window.appetize.getClient(selector, config)`](api-reference.md#getclient-selector-config).&#x20;
 
 This will return an Appetize client instance with the initial [configuration](configuration.md) applied e.g.
 
