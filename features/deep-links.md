@@ -81,7 +81,7 @@ This command will print the entitlements XML to the Terminal.
 4. Verify that the entitlements XML contains the `com.apple.developer.associated-domains` key and that it specifies the expected URL for your associated domain. The output should look like the following:
 
 ```xml
-xmlCopy code<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
