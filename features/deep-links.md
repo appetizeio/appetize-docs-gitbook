@@ -59,3 +59,39 @@ await session.openUrl("https://appetize.io")
 ```
 
 See the [API Reference](../javascript-sdk/api-reference.md#openurl) for more information.
+
+### Troubleshooting
+
+#### Verifying Associated Domains Entitlement included in your iOS App
+
+1. Open the Terminal on your macOS machine.
+2. Navigate to the directory where your app's `.app` bundle is located. For example, if your app is named `YourAppName`, and it's in the `/Applications` folder, you can use the following command to change to that directory:
+
+```bash
+cd /Applications/YourAppName.app
+```
+
+3. Run the `codesign` command with the `--entitlements` flag to extract the entitlements XML from your app bundle:
+
+<pre class="language-bash"><code class="lang-bash"><strong>codecodesign -d --entitlements - YourAppName.app/
+</strong></code></pre>
+
+This command will print the entitlements XML to the Terminal.
+
+4. Verify that the entitlements XML contains the `com.apple.developer.associated-domains` key and that it specifies the expected URL for your associated domain. The output should look like the following:
+
+```xml
+xmlCopy code<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>com.apple.developer.associated-domains</key>
+    <array>
+      <string>applinks:yourexpected.domain.com</string>
+    </array>
+  </dict>
+</plist>
+```
+
+Ensure that the `<string>` value within `<array>` corresponds to the domain you expect for your app's associated domains.
+
