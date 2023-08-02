@@ -73,7 +73,7 @@ cd /Applications/YourAppName.app
 
 3. Run the `codesign` command with the `--entitlements` flag to extract the entitlements XML from your app bundle:
 
-<pre class="language-bash"><code class="lang-bash"><strong>codecodesign -d --entitlements - YourAppName.app/
+<pre class="language-bash"><code class="lang-bash"><strong>codesign -d --entitlements - YourAppName.app/
 </strong></code></pre>
 
 This command will print the entitlements XML to the Terminal.
