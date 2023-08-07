@@ -27,7 +27,7 @@ With launch parameters, developers can pass authentication information as part o
 
 #### Preparing your Application:
 
-* Make use of [Launch Params](../features/launch-params.md) to pass user credentials (e.g. username/password or JWT token) to your Application.
+* Make use of [Launch Params](../features/launch-params.md) to pass user credentials (e.g. username/password or authentication token) to your Application.
 
 {% code title="Example of passing in Username and password" fullWidth="false" %}
 ```json
@@ -133,6 +133,10 @@ client.on("session", async session => {
 ```
 
 * Run the automated steps to authenticate the user with the credentials that was provided. See [Touch Interactions](../javascript-sdk/automation/touch-interactions.md) for more samples on how to interact with the session:
+
+{% hint style="warning" %}
+These automated steps are just an example and need to be adjusted to match your actual application
+{% endhint %}
 
 ```typescript
 async function login(session, username, password) {
