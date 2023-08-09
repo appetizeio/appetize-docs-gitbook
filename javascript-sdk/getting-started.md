@@ -53,14 +53,16 @@ We also support getting the client with an initial [configuration](configuration
 
 This will return an Appetize client instance with the initial [configuration](configuration.md) applied e.g.
 
-```javascript
-const client = await window.appetize.getClient("#appetize", {
+```typescript
+const client = await window.appetize.getClient("#appetize", {    
     publicKey: '{publicKey}',
     device: 'iphone13pro',
     osVersion: '15.0'
     ...
 })
 ```
+
+The base URL can be changed with a `data-appetize-url` attribute, e.g. `data-appetize-url="https://sampledomain.appetize.io"`
 {% endhint %}
 
 ## Starting a Session
