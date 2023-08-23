@@ -46,6 +46,10 @@ See [Configuration](../javascript-sdk/configuration.md#proxy) for more informati
 
 ## Account Level Proxy
 
+{% hint style="info" %}
+Account Level Proxy is only available on our Premium and Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
+{% endhint %}
+
 You may also set account-wide proxy settings on your [Account](https://appetize.io/account).
 
 ### Default Proxy
