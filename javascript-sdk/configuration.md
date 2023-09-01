@@ -220,3 +220,9 @@ Enables audio playback on the device
 `"h264" | "jpeg"`
 
 Set the video codec used for the stream. Default is `h264` if the browser supports it, otherwise falls back to `jpeg`.
+
+### toast
+
+`top | bottom`
+
+Adjusts the position of Appetize toast messages used for displaying error or info messages. Default is `bottom`
