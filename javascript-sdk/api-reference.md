@@ -344,6 +344,14 @@ Shakes device (iOS only)
 await session.shake()
 ```
 
+### toggleSoftKeyboard()
+
+Toggles the soft keyboard (iOS only)
+
+```typescript
+await session.toggleSoftKeyboard()
+```
+
 ### biometry(match)
 
 Simulate a matching fingerprint (Android 8+ only)

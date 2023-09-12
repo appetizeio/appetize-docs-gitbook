@@ -126,6 +126,14 @@ Restarts the app
 await session.restartApp()
 ```
 
+### reinstallApp()
+
+Reinstalls the app
+
+```typescript
+await session.reinstallApp()
+```
+
 ### rotate()
 
 Rotates the device 90 degrees left or right
@@ -156,6 +164,14 @@ Shakes device (iOS only)
 
 ```typescript
 await session.shake()
+```
+
+### toggleSoftKeyboard()
+
+Toggles the soft keyboard (iOS only)
+
+```typescript
+await session.toggleSoftKeyboard()
 ```
 
 ### setLanguage()
