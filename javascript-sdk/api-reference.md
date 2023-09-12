@@ -297,6 +297,10 @@ Changes the current language and restarts the app
 await session.setLanguage("fr")
 ```
 
+{% hint style="warning" %}
+Some apps might cache data in the previously used language. Use [reinstallApp](api-reference.md#reinstallapp) to clear any previous cached data.
+{% endhint %}
+
 **Parameters**
 
 | Name     | Type     | Description   |
@@ -364,6 +368,14 @@ Restarts the app
 
 ```typescript
 await session.restartApp()
+```
+
+### reinstallApp()
+
+Reinstalls the app
+
+```typescript
+await session.reinstallApp()
 ```
 
 ### getUI()

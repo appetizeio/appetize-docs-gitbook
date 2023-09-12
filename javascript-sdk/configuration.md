@@ -101,6 +101,12 @@ Sets the language of the device. Must be an [ISO 639-1 & BCP 47](https://stackov
 
 Set the language for the iOS Keyboard. eg. `ja_JP@sw`. [See available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
 
+### iosAutocorrect
+
+`boolean`
+
+Turn on Auto-Correction for iOS. Defaults to `true`
+
 ### disableVirtualKeyboard
 
 `boolean`
