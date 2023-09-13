@@ -442,6 +442,21 @@ await session.playActions(actions)
 | actions          | `Array<Record<string, any>>` | Actions emitted from the [`session.on('action')`](api-reference.md#on-1) event |
 | options.timeout? | `number`                     | Amount of time in ms to wait for an action to succeed (default 10s)            |
 
+### waitForAnimations(options)
+
+Waits until the there are no ongoing animations on the screen by waiting for the image to stabilize for at least 1 second.
+
+```typescript
+await session.waitForAnimations(options)
+```
+
+**Parameters**
+
+| Name                    | Type     | Description                                                                                                                                        |
+| ----------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| options.imageThreshold? | `number` | <p>The threshold for the amount of pixels (in %) that can change between frames before the image is considered to be stable.<br>(default 0.01)</p> |
+| options.timeout?        | `number` | <p>The maximum amount of time (in ms) to wait for the image to stabilize.<br>(default 10s)</p>                                                     |
+
 ### adbConnection
 
 Info for connecting to the Android devices via adb. Requires [enableAdb](configuration.md#enableadb) to be true
