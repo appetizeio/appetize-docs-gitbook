@@ -198,7 +198,7 @@ Waits until the there are no ongoing animations on the screen by waiting for the
 await session.waitForAnimations(options)
 ```
 
-| Name                    | Type     | Description                                                                                                                                        |
-| ----------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| options.imageThreshold? | `number` | <p>The threshold for the amount of pixels (in %) that can change between frames before the image is considered to be stable.<br>(default 0.01)</p> |
-| options.timeout?        | `number` | <p>The maximum amount of time (in ms) to wait for the image to stabilize.<br>(default 10s)</p>                                                     |
+| Name                    | Type     | Description                                                                                                                                         |
+| ----------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| options.imageThreshold? | `number` | <p>The threshold for the amount of pixels (in %) that can change between frames before the image is considered to be stable.<br>(default 0.001)</p> |
+| options.timeout?        | `number` | <p>The maximum amount of time (in ms) to wait for the image to stabilize.<br>(default 10s)</p>                                                      |
