@@ -128,11 +128,7 @@ Retrieves information about an app group and all the apps associated with it.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="publicKey" type="string" required="true" %}
-publicKey for the app group (starts with 
-
-`ag_`
-
-)
+publicKey for the app group (starts with `ag_`)
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}

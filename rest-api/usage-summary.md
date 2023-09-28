@@ -6,11 +6,7 @@ Gets usage summary of all sessions for your account, including number of session
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="startMonth" type="string" %}
-Specify a starting month for the usage summary e.g. 
-
-`2023-07`
-
- will start the usage summary in July 2023.
+Specify a starting month for the usage summary e.g. `2023-07` will start the usage summary in July 2023.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="nextKey" type="string" required="false" %}
