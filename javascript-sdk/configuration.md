@@ -223,7 +223,7 @@ A JSON object that will be passed to your app on launch
 
 `boolean`
 
-Enables audio playback on the device
+(Android Only) Enables audio playback on the device
 
 {% hint style="warning" %}
 This feature is currently in Alpha and might not always work as expected.
