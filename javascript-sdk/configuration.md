@@ -225,6 +225,10 @@ A JSON object that will be passed to your app on launch
 
 Enables audio playback on the device
 
+{% hint style="warning" %}
+This feature is currently in Alpha and might not always work as expected.
+{% endhint %}
+
 ### codec
 
 `"h264" | "jpeg"`
