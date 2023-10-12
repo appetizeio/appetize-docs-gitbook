@@ -137,6 +137,10 @@ Turn on Auto-Correction for iOS. Defaults to `true`
 
 When true, starts streaming the app on device load. Default is `false`
 
+{% hint style="warning" %}
+We recommend starting the session programmatically using `client.startSession()` instead as this could cause the session to start before the SDK is ready.
+{% endhint %}
+
 ### hidePasswords
 
 `boolean`
