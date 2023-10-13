@@ -15,9 +15,9 @@ We understand that every business has unique needs and that's why we also offer 
 | Device                  | Device Identifier    | Operating System Versions           |
 | ----------------------- | -------------------- | ----------------------------------- |
 | **iOS**                 |                      |                                     |
-| iPhone 8                | iphone8              | 13.7, 14.5, 15.5, 16.2              |
-| iPhone 8 Plus           | iphone8plus          | 13.7, 14.5, 15.5, 16.2              |
-| iPhone 11 Pro           | iphone11pro          | 13.7, 14.5, 15.5, 16.2              |
+| iPhone 8                | iphone8              | 14.5, 15.5, 16.2                    |
+| iPhone 8 Plus           | iphone8plus          | 14.5, 15.5, 16.2                    |
+| iPhone 11 Pro           | iphone11pro          | 14.5, 15.5, 16.2                    |
 | iPhone 12               | iphone12             | 14.5, 15.5, 16.2                    |
 | iPhone 13 Pro           | iphone13pro          | 15.5, 16.2                          |
 | iPhone 13 Pro Max       | iphone13promax       | 15.5, 16.2                          |
