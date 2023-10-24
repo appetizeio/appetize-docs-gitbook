@@ -51,7 +51,7 @@ https://appetize.io/app/{publicKey}?&proxy=intercept
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `debug` under the app you want to inspect.
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (2) (1).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
 
 {% hint style="info" %}
 You can download the HAR file and open it in your favorite Network Monitoring tool.

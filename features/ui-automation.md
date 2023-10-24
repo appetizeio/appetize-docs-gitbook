@@ -19,6 +19,30 @@ We welcome [customer feedback](mailto:hello@appetize.io) as we continue to refin
 
 ### Recording Actions
 
+#### With App Page
+
+The app page provides an easy way to enable **AppRecorder** and logging out all of the user actions that took place. You can access this via your app's app link
+
+```
+https://appetize.io/app/{publicKey}
+```
+
+or by going to your [Apps](https://appetize.io/apps) page and clicking `view` under the app you want to inspect.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
+
+Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 120516.png" alt=""><figcaption><p>Enable App Recorder</p></figcaption></figure>
+
+As you interact with the session, **AppRecorder** will automatically pick up all the actions and log them out in the **AppRecorder** tab.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 120558.png" alt=""><figcaption><p>All actions that took place during the session will be logged in the <strong>AppRecorder</strong> tab.</p></figcaption></figure>
+
+These actions can then be exported to either JSON for playback later or to a Playwright test file for testing purposes:
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 121428.png" alt=""><figcaption><p>Export <strong>AppRecorder</strong> Actions for later playback or for testing.</p></figcaption></figure>
+
 #### With JavaScript SDK
 
 When the user interacts with the device, the session will emit an `action` event:
@@ -37,7 +61,7 @@ await session.playActions(Actions)
 
 Recorded actions can be serialized as `JSON` and stored so that you can replay them later.
 
-{% code title="Example of a " fullWidth="false" %}
+{% code title="Example of a 'click' action" fullWidth="false" %}
 ```javascript
 {
     type: 'click',
@@ -53,6 +77,26 @@ Recorded actions can be serialized as `JSON` and stored so that you can replay t
 {% endcode %}
 
 ### Playing Actions
+
+#### With App Page
+
+The app page makes it simple to turn on **AppRecorder** and import a JSON file with past user actions for replay. Just use your app's link to access and get started:
+
+```
+https://appetize.io/app/{publicKey}
+```
+
+or by going to your [Apps](https://appetize.io/apps) page and clicking `view` under the app you want to inspect.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
+
+Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Enable App Recorder</p></figcaption></figure>
+
+To import the JSON file with the user actions to replay, select the "Import JSON" button in the **AppRecorder** tab and then select "Replay" to start a replay of the user actions that took place.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 121707.png" alt=""><figcaption><p>Import your JSON file and select Replay to replay the user actions.</p></figcaption></figure>
 
 #### With JavaScript SDK
 

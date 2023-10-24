@@ -56,7 +56,7 @@ You may also set account-wide proxy settings on your [Account](https://appetize.
 
 By setting a default proxy, the proxy will be used when no other proxy is specified.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt="" width="563"><figcaption><p>Example default proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (3).png" alt="" width="563"><figcaption><p>Example default proxy</p></figcaption></figure>
 
 ### Forced Proxy
 
