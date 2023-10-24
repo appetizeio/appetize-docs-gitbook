@@ -58,10 +58,10 @@ or by going to your [Apps](https://appetize.io/apps) page and clicking `debug` u
 <figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
 
 {% hint style="info" %}
-Debug logs can also be downloaded via the `Download debug log` action at the top right of the log viewer. This is helpful when sharing logs with developers for troubleshooting purposes.
+Debug logs can also be downloaded via the `Download Logs` action at the top right of the log viewer. This is helpful when sharing logs with developers for troubleshooting purposes.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt="Example Debug logs from App Page"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 115137.png" alt="Example Debug logs from App Page"><figcaption></figcaption></figure>
 
 ### With JavaScript SDK
 

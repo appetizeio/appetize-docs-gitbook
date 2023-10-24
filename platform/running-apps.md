@@ -8,16 +8,21 @@ description: >-
 
 ## Features
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Easily switch devices and enable debugging features</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 114520.png" alt=""><figcaption><p>App Page</p></figcaption></figure>
 
 Appetize provides an out-of-the-box App page that provides easy access to:
 
 * Different Supported [Devices and OS Versions](../features/devices-and-os-versions.md).
 * Debugging features:
+  * [UI Automation (AppRecorder)](../features/ui-automation.md)
   * [Network Traffic Monitor](../features/network-traffic-monitor.md)
   * [Debug Logs](../features/debug-logs.md)
   * [Adb Tunnel](../features/advanced-features/android/adb-tunnel.md) (Android Only)
+* Adding Media
+* Saving screenshots
 * Support for all [Query Parameters](../features/query-params-reference.md) to fully customize your experience.
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 115356.png" alt="" width="221"><figcaption><p>Easily switch devices, enable debugging features, save screenshots and more.</p></figcaption></figure>
 
 ## Accessing your App Page
 

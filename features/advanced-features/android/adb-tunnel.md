@@ -62,11 +62,11 @@ or by going to your [Apps](https://appetize.io/apps) page, clicking `view` under
 
 <figure><img src="../../../.gitbook/assets/image (10) (1) (1) (1) (1).png" alt="Example App Link with View Action"><figcaption><p>Select "View" under your app</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-10-24 115916.png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
 
 Select `Tap To Play` (or your equivalent text to start the session). A command will then be generated that you need to copy and paste in your shell environment e.g.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1).png" alt="Example command to paste in shell environment"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-10-24 115910.png" alt="Example command to paste in shell environment"><figcaption></figcaption></figure>
 
 Then, the Appetize virtual Android device will appear with `adb devices`, as if it were a device plugged into your computer via USB.
 
