@@ -163,7 +163,13 @@ async function login(session, username, password) {
     await session.type(password)
     
     // tap login button
-    await session.tap({ element: { text: 'Login' } })
+    await session.tap({ 
+        element: { 
+            attributes: { 
+                text: 'Login' 
+            } 
+        }
+    });
 }
 ```
 
