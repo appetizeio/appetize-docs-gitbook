@@ -54,10 +54,12 @@ or by going to your [Apps](https://appetize.io/apps) page and clicking `debug` u
 <figure><img src="../.gitbook/assets/image (1) (2) (1).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
 
 {% hint style="info" %}
-You can download the HAR file and open it in your favorite Network Monitoring tool.
+You can also open the network logs in Chrome DevTools if you are running the app in a Chrome Browser by selecting the `Chrome DevTools` button.
+
+Alternatively you can download the HAR file and open it in your favorite Network Monitoring tool.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-10-24 114930.png" alt="Example App Network Event Log"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-10-26 191724.png" alt="Example App Network Event Log"><figcaption><p>Network log tab with associated action buttons for downloading the HAR or opening in Chrome DevTools</p></figcaption></figure>
 
 ### With JavaScript SDK
 
