@@ -12,28 +12,32 @@ We understand that every business has unique needs and that's why we also offer 
 
 ## Supported Devices
 
-| Device                  | Device Identifier    | Operating System Versions           |
-| ----------------------- | -------------------- | ----------------------------------- |
-| **iOS**                 |                      |                                     |
-| iPhone 8                | iphone8              | 14.5, 15.5, 16.2                    |
-| iPhone 8 Plus           | iphone8plus          | 14.5, 15.5, 16.2                    |
-| iPhone 11 Pro           | iphone11pro          | 14.5, 15.5, 16.2                    |
-| iPhone 12               | iphone12             | 14.5, 15.5, 16.2                    |
-| iPhone 13 Pro           | iphone13pro          | 15.5, 16.2                          |
-| iPhone 13 Pro Max       | iphone13promax       | 15.5, 16.2                          |
-| iPhone 14 Pro           | iphone14pro          | 16.2                                |
-| iPhone 14 Pro Max       | iphone14promax       | 16.2                                |
-| iPad Air 4th generation | ipadair4thgeneration | 14.5, 15.5, 16.2                    |
-|                         |                      |                                     |
-| **Android**             |                      |                                     |
-| Nexus 5                 | nexus5               | 5.1, 6.0, 7.1, 8.1, 9.0, 10.0, 11.0 |
-| Pixel 4                 | pixel4               | 10.0, 11.0, 12.0                    |
-| Pixel 4 XL              | pixel4xl             | 10.0, 11.0, 12.0                    |
-| Pixel 6                 | pixel6               | 12.0, 13.0                          |
-| Pixel 6 Pro             | pixel6pro            | 12.0, 13.0                          |
-| Pixel 7                 | pixel7               | 13.0                                |
-| Pixel 7 Pro             | pixel7pro            | 13.0                                |
-| Galaxy Tab S7           | galaxytabs7          | 10.0, 11.0, 12.0, 13.0              |
+| Device                        | Device Identifier           | Operating System Versions           |
+| ----------------------------- | --------------------------- | ----------------------------------- |
+| **iOS**                       |                             |                                     |
+| iPhone 8                      | iphone8                     | 14.5, 15.5, 16.2                    |
+| iPhone 8 Plus                 | iphone8plus                 | 14.5, 15.5, 16.2                    |
+| iPhone 11 Pro                 | iphone11pro                 | 14.5, 15.5, 16.2, 17.0              |
+| iPhone 12                     | iphone12                    | 14.5, 15.5, 16.2, 17.0              |
+| iPhone 13 Pro                 | iphone13pro                 | 15.5, 16.2, 17.0                    |
+| iPhone 13 Pro Max             | iphone13promax              | 15.5, 16.2, 17.0                    |
+| iPhone 14 Pro                 | iphone14pro                 | 16.2, 17.0                          |
+| iPhone 14 Pro Max             | iphone14promax              | 16.2, 17.0                          |
+| iPhone 15 Pro                 | iphone15pro                 | 17.0                                |
+| iPhone 15 Pro Max             | iphone15promax              | 17.0                                |
+| iPad Air 4th generation       | ipadair4thgeneration        | 14.5, 15.5, 16.2, 17.0              |
+| iPad Pro 12.9" 5th generation | ipadpro129inch5thgeneration | 14.5, 15.5, 16.2, 17.0              |
+| iPad 9th generation           | ipad9thgeneration           | 15.5, 16.2, 17.0                    |
+|                               |                             |                                     |
+| **Android**                   |                             |                                     |
+| Nexus 5                       | nexus5                      | 5.1, 6.0, 7.1, 8.1, 9.0, 10.0, 11.0 |
+| Pixel 4                       | pixel4                      | 10.0, 11.0, 12.0                    |
+| Pixel 4 XL                    | pixel4xl                    | 10.0, 11.0, 12.0                    |
+| Pixel 6                       | pixel6                      | 12.0, 13.0                          |
+| Pixel 6 Pro                   | pixel6pro                   | 12.0, 13.0                          |
+| Pixel 7                       | pixel7                      | 13.0                                |
+| Pixel 7 Pro                   | pixel7pro                   | 13.0                                |
+| Galaxy Tab S7                 | galaxytabs7                 | 10.0, 11.0, 12.0, 13.0              |
 
 {% hint style="info" %}
 For devices utilizing a PIN/Lock Screen, our default PIN code is set to **1111** for seamless access and testing.
