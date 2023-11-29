@@ -134,7 +134,7 @@ await expect(session).toHaveElement({
 It can take additional options to change the behaviour of the assertion:
 
 ```javascript
-await expect(session).toHaveElement(
+await expect(session).toHaveElement({
     {
         attributes: {
             text: 'Hello',
@@ -147,11 +147,20 @@ await expect(session).toHaveElement(
 )
 ```
 
-If you want to assert that an element does **not** exist:
+#### not.toHaveElement
+
+Asserts that an element does **not** exists in the current application UI
 
 ```javascript
 await expect(session).not.toHaveElement({
-        text: 'Hello',
+    attributes: {
+        text: 'Hello' 
+    },
+    {
+      // We recommend setting a lower timeout for elements we know will not appear, 
+      // as it will spend this time looking for the element.
+      timeout: 1000, // time in ms to wait for element to appear (default 10000)
+    }
  })
 ```
 
