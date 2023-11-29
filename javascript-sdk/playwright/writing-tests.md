@@ -163,7 +163,7 @@ await expect(session).not.toHaveElement(
         // as it will spend this time looking for the element.
         timeout: 1000, // time in ms to wait for element to appear (default 10000)
     }
- })
+ )
 ```
 
 ### Screenshot comparisons
