@@ -30,7 +30,7 @@ A note for your own purposes, will appear on your management dashboard.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="timeout" type="number" required="false" %}
-The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200. Default is 120.
+The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200. Default is 120 or the account default if set.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="disabled" type="boolean" required="false" %}
@@ -60,25 +60,15 @@ Specify a deep link to bring your users to a specific location when your app is 
 {% swagger-parameter in="body" name="appPermissions" type="object" required="false" %}
 Values for each field determine who can perform the specified action.
 
-
-
 See [App Permissions](../platform/app-permissions.md#permissions) for more information.
-
-
 
 **Values**
 
 `authenticated` - must be authenticated into your account
 
-
-
 `public` - anybody with app's [publicKey](../platform/sharing-apps.md#public-key)
 
-
-
 `null` - resets to default
-
-
 
 **Fields**
 
@@ -86,31 +76,21 @@ See [App Permissions](../platform/app-permissions.md#permissions) for more infor
 
 Run your app.
 
-
-
 `networkProxy`
 
 Specify a network proxy when running app.
-
-
 
 `networkIntercept`
 
 Use Appetize's intercepting proxy when running the app.
 
-
-
 `debugLog`
 
 View your app's NSLog/Logger or Logcat output.
 
-
-
 `adbConnect`
 
 Debug your app by connecting ADB to the hosted emulator.
-
-
 
 `androidPackageManager`
 
