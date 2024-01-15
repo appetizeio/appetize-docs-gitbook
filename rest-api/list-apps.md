@@ -1,5 +1,11 @@
 # List apps
 
+## Apps
+
+{% hint style="info" %}
+The returned app(s) will display only explicitly set parameters, with all other values defaulting to the account or Appetize defaults.
+{% endhint %}
+
 {% swagger baseUrl="https://APITOKEN@api.appetize.io" path="/v1/apps/:publicKey" method="get" summary="Get a Single App" %}
 {% swagger-description %}
 Retrieves information about a single app.
@@ -121,6 +127,8 @@ _**NOTE**: No pagination is performed so this query might be slow. It is recomme
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+## App Groups
 
 {% swagger method="get" path="/v1/apps/:publicKey" baseUrl="https://APITOKEN@api.appetize.io" summary="Get an App Group" %}
 {% swagger-description %}
