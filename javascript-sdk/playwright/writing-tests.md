@@ -23,7 +23,7 @@ test('logs in to the app', async ({ session }) => {
             }
         } 
     })
-    await session.type({ value: 'jordan' })
+    await session.type('jordan')
     
     // type password
     await session.tap({ 
@@ -33,7 +33,7 @@ test('logs in to the app', async ({ session }) => {
             }
         } 
     })
-    await session.type({ value: 'secretpassword' })
+    await session.type('secretpassword')
     
     // tap login button
     await session.tap({ 
