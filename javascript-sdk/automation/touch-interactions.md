@@ -71,11 +71,23 @@ await session.tap({
 
 When developing your app, we recommend adding accessibility identifiers wherever possible to aid you when automating interactions with Appetize. This will allow for simpler queries and also help your app be more accessible.
 
+### iOS
+
 On iOS, you should be using **`accessibilityIdentifier`**.
+
+### Android
 
 On Android, you should be using **`resource-id`**.
 
-If you are using React Native, a **`testID`** prop on your component will map to `accessibilityIdentifier` on iOS and `resource-id` on Android.
+### React Native
+
+On React Native, a **`testID`** property on your component will map to **`accessibilityIdentifier`** on iOS and **`resource-id`** on Android.
+
+{% hint style="warning" %}
+Some components may not (yet) support mapping **testID** back to a **resource-id**. In these cases the fallback is to look at **tag** or **content-desc** for the value.
+{% endhint %}
+
+### Sample
 
 ```javascript
 // ios
