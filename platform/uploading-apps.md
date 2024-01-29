@@ -38,7 +38,7 @@ If you have an existing app that you would like to update, you can upload a new 
 
 ### With REST API
 
-Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference/):
+Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference):
 
 {% content-ref url="../rest-api/create-new-app.md" %}
 [create-new-app.md](../rest-api/create-new-app.md)
@@ -54,6 +54,7 @@ Appetize has several 3rd party integrations for popular tools to allow you to qu
 
 * [Fastlane](https://docs.fastlane.tools/actions/appetize/)
 * [Bitrise](https://bitrise.io/integrations/steps/appetize-deploy)
+* [Gitlab](https://about.gitlab.com/blog/2020/05/06/how-to-create-review-apps-for-android-with-gitlab-fastlane-and-appetize-dot-io/)
 * [Github Actions](https://github.com/appetizeio/github-action-appetize)
 * [Expo](https://expo.dev/)
 * [Storybook Native](https://github.com/storybookjs/native)
