@@ -67,8 +67,10 @@ import { test, expect } from '@appetize/playwright'
 
 test('loads the home screen', async ({ session }) => {
     await expect(session).toHaveElement({
-        // replace with text of element that appears on your app
-        text: 'Welcome',
+         attributes: {
+          // replace with text of element that appears on your app
+            text: 'Welcome' 
+        }
     })
 })
 ```
