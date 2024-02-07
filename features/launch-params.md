@@ -69,6 +69,22 @@ preferences.getString("stringKey", null);
 ...
 ```
 {% endcode %}
+
+{% hint style="warning" %}
+Complex types (e.g. arrays or objects) will automatically be serialized and need to be deserialized manually before using e.g. passing an object:
+
+```json
+{
+  "obj": { "stringKey": "value", "boolKey": true }
+}
+```
+
+when queried, will return:
+
+```
+"{"stringKey":"value","boolKey":true}"
+```
+{% endhint %}
 {% endtab %}
 
 {% tab title="Android (Kotlin)" %}
@@ -94,6 +110,22 @@ preferences.getString("stringKey", null)
 ...
 ```
 {% endcode %}
+
+{% hint style="warning" %}
+Complex types (e.g. arrays or objects) will automatically be serialized and need to be deserialized manually before using e.g. passing an object:
+
+```kotlin
+{
+  "obj": { "stringKey": "value", "boolKey": true }
+}
+```
+
+when queried, will return:
+
+```
+"{"stringKey":"value","boolKey":true}"
+```
+{% endhint %}
 {% endtab %}
 
 {% tab title="iOS (ObjC)" %}
