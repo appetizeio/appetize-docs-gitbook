@@ -12,6 +12,10 @@ We understand that every business has unique needs and that's why we also offer 
 
 ## Supported Devices
 
+{% hint style="info" %}
+If possible, we recommend indicating only the major version of an Operating System e.g. `17` instead of `17.2`, this way, if a newer version is released e.g. `17.3`, no updates is required to the app or embed pages.
+{% endhint %}
+
 | Device                        | Device Identifier           | Operating System Versions           |
 | ----------------------------- | --------------------------- | ----------------------------------- |
 | **iOS**                       |                             |                                     |
