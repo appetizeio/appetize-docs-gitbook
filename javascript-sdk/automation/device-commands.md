@@ -28,6 +28,14 @@ _Note: This will end any active sessions._
 await client.setConfig(config)
 ```
 
+### endSession()
+
+Ends the active session or cancels any pending session requests.
+
+```typescript
+await client.endSession()
+```
+
 ## **Session**
 
 ### adbShellCommand
