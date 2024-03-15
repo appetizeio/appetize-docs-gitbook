@@ -48,6 +48,10 @@
   * [Session History](account/reporting/session-history.md)
   * [Usage Summary](account/reporting/usage-summary.md)
 
+## Infrastructure
+
+* [Configure Network Access](infrastructure/configure-network-access.md)
+
 ## REST API
 
 * [Overview](rest-api/overview.md)
