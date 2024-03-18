@@ -62,6 +62,10 @@ See the [API Reference](../javascript-sdk/api-reference.md#openurl) for more inf
 
 ### Troubleshooting
 
+{% hint style="warning" %}
+Please note that the use of AppLinks and Universal Links may be affected if our network traffic monitor feature is enabled.
+{% endhint %}
+
 #### Verifying Associated Domains Entitlement included in your iOS App
 
 1. Open the Terminal on your macOS machine.
