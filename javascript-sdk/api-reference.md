@@ -526,6 +526,7 @@ The Appetize app for the session
   publicKey: string;
   name?: string;
   appDisplayName?: string;
+  appVersionName?: string;
   appVersionCode?: string;
   bundle?: string;
   platform?: string;
