@@ -145,6 +145,7 @@ The currently loaded app
   publicKey: string;
   name?: string;
   appDisplayName?: string;
+  appVersionName?: string;
   appVersionCode?: string;
   bundle?: string;
   platform?: string;
