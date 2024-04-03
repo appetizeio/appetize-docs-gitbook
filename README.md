@@ -11,9 +11,12 @@ Appetize is a cloud-based platform that allows developers and organizations to r
 Our platform is versatile and user-friendly, making it a popular choice for a wide range of scenarios, including:
 
 * [Live App Previews](https://appetize.io/use-cases/live-app-previews)
-* [Training and Support](https://appetize.io/use-cases/training-support)
-* [Sales and Marketing](https://appetize.io/use-cases/sales-marketing)
-* [Testing and Automation](https://appetize.io/use-cases/testing-automation)
+* [Embedded Previews](https://appetize.io/use-cases/embedded-previews)
+* [Mobile App Support](https://appetize.io/use-cases/mobile-app-support)
+* [Training & Onboarding](https://appetize.io/use-cases/training-onboarding)
+* [Mobile Demos](https://appetize.io/use-cases/mobile-demos)
+* [Mobile Testing](https://appetize.io/use-cases/mobile-app-testing)
+* [Screenshot Automation](https://appetize.io/use-cases/screenshot-automation)
 
 and much more!
 
