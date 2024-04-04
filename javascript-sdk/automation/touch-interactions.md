@@ -236,6 +236,14 @@ session.swipe({
 
 Taps on the specified element or coordinates
 
+{% hint style="info" %}
+You can set a duration for a tap to simulate holding it down. For example, if you set it to 2 seconds, the tap will stay pressed for 2 seconds before releasing.
+
+```typescript
+await session.tap({ element, duration: 2000 })
+```
+{% endhint %}
+
 #### By position or coordinate
 
 ```javascript
