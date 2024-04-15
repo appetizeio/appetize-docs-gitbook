@@ -252,6 +252,11 @@ await session.tap({
     position: {
         x: '50%',
         y: '50%'
+    },
+    // optional, defaults to 50%,50%
+    localPosition: { 
+        x: '50%', // middle of element on x-axis
+        y: '50%'  // middle of element on y-axis
     }
 })
 
@@ -260,6 +265,11 @@ await session.tap({
     position: {
         x: 100,
         y: 250
+    },
+    // optional, defaults to 50%,50%
+    localPosition: { 
+        x: '50%', // middle of element on x-axis
+        y: '50%'  // middle of element on y-axis
     }
 })
 ```
@@ -272,6 +282,11 @@ await session.tap({
         attributes: {
             text: 'submit'
         } 
+    },
+    // optional, defaults to 50%,50%
+    localPosition: { 
+        x: '50%', // middle of element on x-axis
+        y: '50%'  // middle of element on y-axis
     }
 })
 ```
