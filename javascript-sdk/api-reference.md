@@ -285,6 +285,10 @@ await session.type("hello")
 | ---- | -------- | ------------ |
 | text | `string` | Text to type |
 
+{% hint style="warning" %}
+Typing is limited to 1000 characters at a time to ensure optimal performance and prevent potential disruptions. For larger payloads, you can use multiple 'type' operations.
+{% endhint %}
+
 ### keypress(character, options)
 
 Sends a single key press to the device

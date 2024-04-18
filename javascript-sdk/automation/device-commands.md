@@ -198,6 +198,10 @@ Types the given text
 await session.type("hello")
 ```
 
+{% hint style="warning" %}
+Typing is limited to 1000 characters at a time to ensure optimal performance and prevent potential disruptions. For larger payloads, you can use multiple 'type' operations.
+{% endhint %}
+
 ### waitForAnimations(options)
 
 Waits until the there are no ongoing animations on the screen by waiting for the image to stabilize for at least 1 second.
