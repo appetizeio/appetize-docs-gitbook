@@ -1,0 +1,832 @@
+openapi: 3.0.3
+info:
+  title: Appetize API
+  description: REST API for managing apps on Appetize.io
+  version: 1.0.0
+servers:
+  - url: https://api.appetize.io/v1
+security:
+  - apiToken: [ ]
+paths:
+  /apps:
+    get:
+      summary: Get All Apps - Paginated
+      tags:
+        - Listing Apps
+      description: |
+        Retrieves information about all apps int he account, with associated metadata.
+        
+        _Recommended approach for retrieving all apps._
+      parameters:
+        - in: query
+          name: nextKey
+          schema:
+            type: string
+            example: "xyz"
+          description: |
+            If results are truncated due to too many apps, response will include `hasMore:true` and a `nextKey` to retrieve the next page. 
+            Pass the nextKey value as query parameter into the GET request to retrieve the next batch of apps.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hasMore:
+                    type: boolean
+                    description: Indicates if results have been truncated
+                  nextKey:
+                    type: string
+                    description: Query parameter for the next batch of results
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        publicKey:
+                          type: string
+                          description: The publicKey for the app.
+                        created:
+                          type: string
+                          format: date-time
+                          description: The date and time when the app was created.
+                        updated:
+                          type: string
+                          format: date-time
+                          description: The date and time when the app was last updated.
+                        platform:
+                          type: string
+                          description: The platform of the app (ios or android).
+                        bundle:
+                          type: string
+                          description: The app identifier of the app.
+                        name:
+                          type: string
+                          description: The name of the app.
+                        appDisplayName:
+                          type: string
+                          description: The display name of the app.
+                        appVersionCode:
+                          type: string
+                          description: The version code of the app.
+                        appVersionName:
+                          type: string
+                          description: The version name of the app.
+                        versionCode:
+                          type: integer
+                          description: The incremental version code, managed by Appetize, for the app.
+                        iconUrl:
+                          type: string
+                          format: uri
+                          description: The URL to the app's icon image.
+                example:
+                  hasMore: true
+                  nextKey: "xyz"
+                  data:
+                    - publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                      created: "2016-02-10T17:46:14.089Z"
+                      updated: "2016-02-10T17:46:14.089Z"
+                      platform: "ios"
+                      bundle: "com.example.app"
+                      name: "example"
+                      appDisplayName: "Example App"
+                      appVersionCode: "1"
+                      appVersionName: "1.0.0"
+                      versionCode: 1
+                      iconUrl: "https://example.com/app.png"
+                    - publicKey: "48g0593mgxut2fz57yw2hdjd24"
+                      created: "2016-02-10T17:44:38.613Z"
+                      updated: "2016-02-10T17:44:38.613Z"
+                      platform: "ios"
+                      bundle: "com.example.app2"
+                      name: "example"
+                      appDisplayName: "Example App"
+                      appVersionCode: "1"
+                      appVersionName: "1.0.0"
+                      versionCode: 3
+                      iconUrl: "https://example.com/app2.png"
+    post:
+      summary: Create new app
+      tags:
+        - Creating a new App
+      description: Creates a new app and returns a new publicKey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - platform
+              properties:
+                url:
+                  type: string
+                  description: A publicly accessible link to your .zip, .tar.gz, or .apk file.
+                  example: "https://example.com/app.zip"
+                platform:
+                  type: string
+                  enum:
+                    - ios
+                    - android
+                  description: The platform of the app. Either ios or android.
+                  example: "ios"
+                fileType:
+                  type: string
+                  enum:
+                    - zip
+                    - tar.gz
+                    - apk
+                  example: "zip"
+                  description: The type of file that the url points to. Default is zip for iOS, apk for Android.
+                note:
+                  type: string
+                  example: "This is a note"
+                  description: A note for your own purposes, will appear on your management dashboard.
+                timeout:
+                  type: number
+                  example: 120
+                  description: |
+                    The number of seconds to wait until automatically ending the session due to user inactivity.  
+                    
+                    Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200, default is 120 or the account default if set.
+                disabled:
+                  type: boolean
+                  example: false
+                  description: Disables streaming for this app.
+                disableHome:
+                  type: boolean
+                  example: false
+                  description: Disables the home button on the iOS simulator when available.
+                useLastFrame:
+                  type: boolean
+                  example: false
+                  description: Show the last image on the screen in the simulator after the session ends.
+                buttonText:
+                  type: string
+                  default: Tap to play
+                  example: "Start"
+                  description: Customize the message prompting the user to start the session. Default is "Tap to play".
+                postSessionButtonText:
+                  type: string
+                  default: Tap to play
+                  example: "Restart"
+                  description: Customize the message prompting the user to restart the session. Default is "Tap to play".
+                launchUrl:
+                  type: string
+                  example: "https://example.com/deeplink"
+                  description: Specify a deep link to bring your users to a specific location when your app is launched.
+                appPermissions:
+                  type: object
+                  example: { "run": "authenticated", "networkProxy": "public", "networkIntercept": "public", "debugLog": "public", "adbConnect": "public", "androidPackageManager": "public" }
+                  description: |
+                    Values for each field determine who can perform the specified action.  
+                    
+                    See [App Permissions](https://docs.appetize.io/platform/app-permissions#permissions) for more information.
+                  properties:
+                    run:
+                      type: string
+                      nullable: true
+                      description: >
+                        Run your app:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    networkProxy:
+                      type: string
+                      nullable: true
+                      description: >
+                        Specify a network proxy when running app:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    networkIntercept:
+                      type: string
+                      nullable: true
+                      description: >
+                        Use Appetize's intercepting proxy when running the app:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    debugLog:
+                      type: string
+                      nullable: true
+                      description: >
+                        View your app's NSLog/Logger/Logcat output:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    adbConnect:
+                      type: string
+                      nullable: true
+                      description: >
+                        Debug your app by connecting ADB to the hosted emulator:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    androidPackageManager:
+                      type: string
+                      nullable: true
+                      description: >
+                        Allow the installation of additional APK's while your app is running:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publicKey:
+                    type: string
+                    description: The unique identifier for the newly created app.
+                  created:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app was created.
+                  updated:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app was last updated.
+                  platform:
+                    type: string
+                    description: The platform of the app (ios or android).
+                  versionCode:
+                    type: integer
+                    description: Increments with each update of the app.
+                example:
+                  publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                  created: "2016-02-10T17:46:14.089Z"
+                  updated: "2016-02-10T17:46:14.089Z"
+                  platform: "ios"
+                  versionCode: 1
+  /apps/all:
+    get:
+      summary: Get All Apps - Not Paginated
+      tags:
+        - Listing Apps
+      description: |
+        Retrieves information about all apps in the account, with associated metadata.
+        
+        **NOTE:** _No pagination is performed so this query might be slow. It is recommended to use the paginated version of this query if possible._
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        publicKey:
+                          type: string
+                          description: The publicKey for the app.
+                        created:
+                          type: string
+                          format: date-time
+                          description: The date and time when the app was created.
+                        updated:
+                          type: string
+                          format: date-time
+                          description: The date and time when the app was last updated.
+                        platform:
+                          type: string
+                          description: The platform of the app (ios or android).
+                        bundle:
+                          type: string
+                          description: The app identifier of the app.
+                        name:
+                          type: string
+                          description: The name of the app.
+                        appDisplayName:
+                          type: string
+                          description: The display name of the app.
+                        appVersionCode:
+                          type: string
+                          description: The version code of the app.
+                        appVersionName:
+                          type: string
+                          description: The version name of the app.
+                        versionCode:
+                          type: integer
+                          description: The incremental version code, managed by Appetize, for the app.
+                        iconUrl:
+                          type: string
+                          format: uri
+                          description: The URL to the app's icon image.
+                example:
+                  data:
+                    - publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                      created: "2016-02-10T17:46:14.089Z"
+                      updated: "2016-02-10T17:46:14.089Z"
+                      platform: "ios"
+                      bundle: "com.example.app"
+                      name: "example"
+                      appDisplayName: "Example App"
+                      appVersionCode: "1"
+                      appVersionName: "1.0.0"
+                      versionCode: 1
+                      iconUrl: "https://example.com/app.png"
+                    - publicKey: "48g0593mgxut2fz57yw2hdjd24"
+                      created: "2016-02-10T17:44:38.613Z"
+                      updated: "2016-02-10T17:44:38.613Z"
+                      platform: "ios"
+                      bundle: "com.example.app2"
+                      name: "example"
+                      appDisplayName: "Example App"
+                      appVersionCode: "1"
+                      appVersionName: "1.0.0"
+                      versionCode: 3
+                      iconUrl: "https://example.com/app2.png"
+  /apps/{app_publicKey}:
+    get:
+      summary: Get a Single App
+      tags:
+        - Listing Apps
+      description: Retrieves information about a single app.
+      parameters:
+        - in: path
+          name: publicKey
+          required: true
+          schema:
+            type: string
+          example: "p7nww3n6ubq73r1nh9jtauqy8w"
+          description: The publicKey for the app.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publicKey:
+                    type: string
+                    description: The publicKey for the app.
+                  created:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app was created.
+                  updated:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app was last updated.
+                  platform:
+                    type: string
+                    description: The platform of the app (ios or android).
+                  bundle:
+                    type: string
+                    description: The app identifier of the app.
+                  name:
+                    type: string
+                    description: The name of the app.
+                  appDisplayName:
+                    type: string
+                    description: The display name of the app.
+                  appVersionCode:
+                    type: string
+                    description: The version code of the app.
+                  appVersionName:
+                    type: string
+                    description: The version name of the app.
+                  versionCode:
+                    type: integer
+                    description: The incremental version code, managed by Appetize, for the app.
+                  iconUrl:
+                    type: string
+                    format: uri
+                    description: The URL to the app's icon image.
+                example:
+                  publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                  created: "2016-02-10T17:46:14.089Z"
+                  updated: "2016-02-10T17:46:14.089Z"
+                  platform: "ios"
+                  bundle: "com.example.app"
+                  name: "example"
+                  appDisplayName: "Example App"
+                  appVersionCode: "1"
+                  appVersionName: "1.0.0"
+                  versionCode: 1
+                  iconUrl: "https://example.com/app.png"
+    delete:
+      summary: Deletes an app.
+      tags:
+        - Deleting an App
+      description: Deletes an app. Your API token must be provisioned to the same account where the app was uploaded.
+      parameters:
+        - in: path
+          name: publicKey
+          required: true
+          schema:
+            type: string
+          example: "p7nww3n6ubq73r1nh9jtauqy8w"
+          description: The publicKey for the app.
+      responses:
+        '200':
+          description: OK
+
+    post:
+      summary: Update existing app
+      tags:
+        - Updating an existing App
+      description: Updates an existing app with a new build while keeping the same publicKey or changes app settings. To unset a previously set field send a `null` value.
+      parameters:
+        - in: path
+          name: publicKey
+          required: true
+          schema:
+            type: string
+          example: "p7nww3n6ubq73r1nh9jtauqy8w"
+          description: The publicKey for the app.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  example: "https://example.com/app.zip"
+                  description: A publicly accessible link to your .zip, .tar.gz, or .apk file.
+                platform:
+                  type: string
+                  enum:
+                    - ios
+                    - android
+                  example: "ios"
+                  description: The platform of the app. Either ios or android.
+                fileType:
+                  type: string
+                  enum:
+                    - zip
+                    - tar.gz
+                    - apk
+                  example: "zip"
+                  description: The type of file that the url points to. Default is zip for iOS, apk for Android.
+                note:
+                  type: string
+                  example: "This is a note"
+                  description: A note for your own purposes, will appear on your management dashboard.
+                timeout:
+                  type: number
+                  example: 120
+                  description: |
+                    The number of seconds to wait until automatically ending the session due to user inactivity.  
+                    
+                    Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200, default is 120 or the account default if set.
+                disabled:
+                  type: boolean
+                  example: false
+                  description: Disables streaming for this app.
+                disableHome:
+                  type: boolean
+                  example: false
+                  description: Disables the home button on the iOS simulator when available.
+                useLastFrame:
+                  type: boolean
+                  example: false
+                  description: Show the last image on the screen in the simulator after the session ends.
+                buttonText:
+                  type: string
+                  default: Tap to play
+                  example: "Start"
+                  description: Customize the message prompting the user to start the session. Default is "Tap to play".
+                postSessionButtonText:
+                  type: string
+                  default: Tap to play
+                  example: "Restart"
+                  description: Customize the message prompting the user to restart the session. Default is "Tap to play".
+                launchUrl:
+                  type: string
+                  example: "https://example.com/deeplink"
+                  description: Specify a deep link to bring your users to a specific location when your app is launched.
+                appPermissions:
+                  type: object
+                  example: { "run": "authenticated", "networkProxy": "public", "networkIntercept": "public", "debugLog": "public", "adbConnect": "public", "androidPackageManager": "public" }
+                  description: |
+                    Values for each field determine who can perform the specified action.  
+                    
+                    See [App Permissions](https://docs.appetize.io/platform/app-permissions#permissions) for more information.
+                  properties:
+                    run:
+                      type: string
+                      nullable: true
+                      description: >
+                        Run your app:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    networkProxy:
+                      type: string
+                      nullable: true
+                      description: >
+                        Specify a network proxy when running app:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    networkIntercept:
+                      type: string
+                      nullable: true
+                      description: >
+                        Use Appetize's intercepting proxy when running the app:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    debugLog:
+                      type: string
+                      nullable: true
+                      description: >
+                        View your app's NSLog/Logger/Logcat output:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    adbConnect:
+                      type: string
+                      nullable: true
+                      description: >
+                        Debug your app by connecting ADB to the hosted emulator:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+                    androidPackageManager:
+                      type: string
+                      nullable: true
+                      description: >
+                        Allow the installation of additional APK's while your app is running:
+                          * `authenticated` - Must be authenticated into your account.
+                          * `public` - Anyone with the app's publicKey.
+                          * `null` - Resets to default.
+                      enum: [ authenticated, public, null ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publicKey:
+                    type: string
+                    description: The unique identifier for the newly created app.
+                  created:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app was created.
+                  updated:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app was last updated.
+                  platform:
+                    type: string
+                    description: The platform of the app (ios or android).
+                  versionCode:
+                    type: integer
+                    description: Increments with each update of the app.
+                example:
+                  publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                  created: "2016-02-10T17:46:14.089Z"
+                  updated: "2016-02-10T17:46:14.089Z"
+                  platform: "ios"
+                  versionCode: 2
+
+  /apps/{appgroup_publicKey}:
+    get:
+      summary: Get an App Group
+      tags:
+        - Listing Apps
+      description: Retrieves information about an app group and all the apps associated with it.
+      parameters:
+        - in: path
+          name: publicKey
+          required: true
+          schema:
+            type: string
+          example: "ag_{publicKey}"
+          description: The publicKey for the app group (starts with `ag_`).
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  publicKey:
+                    type: string
+                    description: The publicKey for the app group.
+                  created:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app group was created.
+                  updated:
+                    type: string
+                    format: date-time
+                    description: The date and time when the app group was last updated.
+                  createdBy:
+                    type: string
+                    description: The user who created the app group.
+                  name:
+                    type: string
+                    description: The name of the app group.
+                  apps:
+                    type: array
+                    items:
+                      type: string
+                      description: The publicKeys of the apps in the app group.
+                example:
+                  publicKey: "ag_{publicKey}"
+                  name: "App Group Name"
+                  created: "2016-02-10T17:46:14.089Z"
+                  updated: "2016-02-10T17:46:14.089Z"
+                  createdBy: "user@appetize.io"
+                  apps: [ "p7nww3n6ubq73r1nh9jtauqy8w", "48g0593mgxut2fz57yw2hdjd24" ]
+  /available-devices:
+    get:
+      summary: Get Available Devices
+      servers:
+        - url: https://appetize.io
+      security: [ ]
+      tags:
+        - Devices & OS Versions
+      description: Get the list of available devices and operating systems.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ios:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+                  android:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+                example:
+                  ios:
+                    iphone4s: [ "8.4", "9.3" ]
+                    iphone5s: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    iphone6: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    iphone6plus: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    iphone6s: [ "9.3", "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone6splus: [ "9.3", "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone7: [ "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone7plus: [ "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone8: [ "11.4", "12.2", "13.3", "14.0" ]
+                    iphone8plus: [ "11.4", "12.2", "13.3", "14.0" ]
+                    iphonex: [ "11.4", "12.2", "13.3", "14.0" ]
+                    iphonexs: [ "12.2", "13.3", "14.0" ]
+                    iphonexsmax: [ "12.2", "13.3", "14.0" ]
+                    iphone11pro: [ "13.3", "14.0" ]
+                    iphone11promax: [ "13.3", "14.0" ]
+                    ipadair: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    ipadair2: [ "9.3", "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    android:
+                      nexus5: [ "4.4", "5.1", "6.0", "7.1", "8.1", "9.0", "10.0", "11.0" ]
+                      nexus7: [ "4.4", "5.1", "6.0", "7.1", "8.1", "9.0", "10.0", "11.0" ]
+                      nexus9: [ "4.4", "5.1", "6.0", "7.1", "8.1", "9.0", "10.0", "11.0" ]
+                      pixel4: [ "10.0", "11.0" ]
+                      pixel4xl: [ "10.0", "11.0" ]
+                      galaxytabs7: [ "10.0", "11.0" ]
+                      hammerhead: [ "6.0.1" ]
+
+  /ip-blocks:
+    get:
+      servers:
+        - url: https://appetize.io
+      summary: Get IP Blocks
+      security: [ ]
+      tags:
+        - IP Blocks
+      description: Get IP blocks for Appetize streaming servers. These are the IPs from which your running apps will be making network calls. Use the IP blocks to whitelist access to your backend if it is not public.
+      parameters:
+        - in: path
+          name: format
+          schema:
+            type: string
+            enum: [ txt, json ]
+            default: json
+          example: "json"
+          description: The format of the response. Default is JSON. If text is specified, the response will be a newline-separated list of IP addresses.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ipv4:
+                    type: array
+                    items:
+                      type: string
+                      description: A list of IPv4 addresses.
+                example:
+                  ipv4:
+                    - "63.135.170.0/24"
+                    - "66.55.157.0/24"
+                    - "66.185.22.0/24"
+                    - "73.15.222.0/24"
+                    - "95.141.32.0/21"
+
+  /usageSummary:
+    get:
+      summary: Get Usage Summary
+      tags:
+        - Usage Summary
+      description: Gets usage summary of all sessions for your account, including number of sessions and session durations.
+      parameters:
+        - in: query
+          name: nextKey
+          schema:
+            type: string
+          example: "xyz"
+          description: |
+            If results are truncated, response will include `hasMore:true` and a `nextKey` to retrieve the next page. 
+            Pass the nextKey value as query parameter into the GET request to retrieve the next batch of results.
+        - in: query
+          name: startMonth
+          schema:
+            type: string
+            format: date
+          example: "2023-05"
+          description: Specify a starting month for the usages summary e.g. '2023-07' will start the usage summary from July 2023.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hasMore:
+                    type: boolean
+                    description: Indicates if results have been truncated
+                  nextKey:
+                    type: string
+                    description: Query parameter for the next batch of results
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        month:
+                          type: string
+                          format: date
+                          description: The month of the session data
+                        publicKey:
+                          type: string
+                          description: The unique identifier for the app.
+                        numSessions:
+                          type: integer
+                          description: The number of sessions for the month
+                        minutes:
+                          type: number
+                          description: The total minutes of all sessions for the month
+                example:
+                  hasMore: true
+                  nextKey: "xyz"
+                  data:
+                    - month: "2023-07"
+                      publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                      numSessions: 325
+                      minutes: 162.5
+                    - month: "2023-08"
+                      publicKey: "p7nww3n6ubq73r1nh9jtauqy8w"
+                      numSessions: 102
+                      minutes: 80.3
+
+
+components:
+  securitySchemes:
+    apiToken:
+      type: http
+      scheme: basic
+      description: Use an API token for authentication.

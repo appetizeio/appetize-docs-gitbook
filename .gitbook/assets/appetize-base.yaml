@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Appetize API
+  description: REST API for managing apps on Appetize.io
+  version: 1.0.0
+servers:
+  - url: https://appetize.io
+paths:
+  /available-devices:
+    get:
+      summary: Get Available Devices
+      servers:
+        - url: https://appetize.io
+      security: [ ]
+      tags:
+        - Devices & OS Versions
+      description: Get the list of available devices and operating systems.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ios:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+                  android:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+                example:
+                  ios:
+                    iphone4s: [ "8.4", "9.3" ]
+                    iphone5s: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    iphone6: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    iphone6plus: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    iphone6s: [ "9.3", "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone6splus: [ "9.3", "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone7: [ "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone7plus: [ "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    iphone8: [ "11.4", "12.2", "13.3", "14.0" ]
+                    iphone8plus: [ "11.4", "12.2", "13.3", "14.0" ]
+                    iphonex: [ "11.4", "12.2", "13.3", "14.0" ]
+                    iphonexs: [ "12.2", "13.3", "14.0" ]
+                    iphonexsmax: [ "12.2", "13.3", "14.0" ]
+                    iphone11pro: [ "13.3", "14.0" ]
+                    iphone11promax: [ "13.3", "14.0" ]
+                    ipadair: [ "8.4", "9.3", "10.3", "11.4", "12.2" ]
+                    ipadair2: [ "9.3", "10.3", "11.4", "12.2", "13.3", "14.0" ]
+                    android:
+                      nexus5: [ "4.4", "5.1", "6.0", "7.1", "8.1", "9.0", "10.0", "11.0" ]
+                      nexus7: [ "4.4", "5.1", "6.0", "7.1", "8.1", "9.0", "10.0", "11.0" ]
+                      nexus9: [ "4.4", "5.1", "6.0", "7.1", "8.1", "9.0", "10.0", "11.0" ]
+                      pixel4: [ "10.0", "11.0" ]
+                      pixel4xl: [ "10.0", "11.0" ]
+                      galaxytabs7: [ "10.0", "11.0" ]
+                      hammerhead: [ "6.0.1" ]
+
+  /ip-blocks:
+    get:
+      servers:
+        - url: https://appetize.io
+      summary: Get IP Blocks
+      security: [ ]
+      tags:
+        - IP Blocks
+      description: Get IP blocks for Appetize streaming servers. These are the IPs from which your running apps will be making network calls. Use the IP blocks to whitelist access to your backend if it is not public.
+      parameters:
+        - in: path
+          name: format
+          schema:
+            type: string
+            enum: [ txt, json ]
+            default: json
+          example: "json"
+          description: The format of the response. Default is JSON. If text is specified, the response will be a newline-separated list of IP addresses.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ipv4:
+                    type: array
+                    items:
+                      type: string
+                      description: A list of IPv4 addresses.
+                example:
+                  ipv4:
+                    - "63.135.170.0/24"
+                    - "66.55.157.0/24"
+                    - "66.185.22.0/24"
+                    - "73.15.222.0/24"
+                    - "95.141.32.0/21"
