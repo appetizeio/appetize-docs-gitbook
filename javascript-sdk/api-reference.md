@@ -313,7 +313,9 @@ await session.setLanguage("fr")
 ```
 
 {% hint style="warning" %}
-Some apps might cache data in the previously used language. Use [reinstallApp](api-reference.md#reinstallapp) to clear any previous cached data.
+If your app does not automatically handle language/locale changes, you would need to explicitly call [restartApp](api-reference.md#restartapp) for this to take effect.\
+\
+Some apps might also cache data in the previously used language. In these cases use [reinstallApp](api-reference.md#reinstallapp) to clear any previous cached data.
 {% endhint %}
 
 **Parameters**

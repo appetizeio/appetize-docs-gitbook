@@ -184,11 +184,19 @@ await session.toggleSoftKeyboard()
 
 ### setLanguage()
 
-Changes the current language and restarts the app
+Changes the current language.
 
 ```typescript
 await session.setLanguage("fr")
 ```
+
+{% hint style="warning" %}
+If your app does not automatically handle language/locale changes, you would need to explicitly call [restartApp](device-commands.md#restartapp) for this to take effect.\
+\
+Some apps might also cache data in the previously used language. In these cases use [reinstallApp](device-commands.md#reinstallapp) to clear any previous cached data.
+{% endhint %}
+
+This&#x20;
 
 ### type()
 
