@@ -16,7 +16,7 @@ If you are using an Enterprise Private Instance of Appetize, please replace all 
    All users with _admin_ or _developer_ roles may request an API token after logging in and navigating to your [Account Dashboard](https://appetize.io/account).
 2. **Use Basic Authentication:**\
    When sending requests to the Appetize REST API that requires authentication, use Basic Authentication.
-3. **Encode your token** using Base64 encoding.&#x20;
+3. **Encode your token** + ":" using Base64 encoding.&#x20;
 4. **Attach Token to Requests**\
    In your HTTP headers, include an Authorization header with the value "Basic" followed by the encoded token.
 
