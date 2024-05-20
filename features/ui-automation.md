@@ -29,7 +29,7 @@ https://appetize.io/app/{publicKey}
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `view` under the app you want to inspect.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
 
 Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
 
@@ -88,7 +88,7 @@ https://appetize.io/app/{publicKey}
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `view` under the app you want to inspect.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
 
 Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
 

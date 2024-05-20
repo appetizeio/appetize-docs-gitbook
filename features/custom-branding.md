@@ -20,7 +20,7 @@ Appetize offers a fully White Label solution. This includes:
 
 ## Custom Domain
 
-<figure><img src="../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption><p>Example Custom Domain</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (3) (1).png" alt=""><figcaption><p>Example Custom Domain</p></figcaption></figure>
 
 If you have a custom domain, the app links you share and embed will display your domain name instead of `appetize.io`. For example, if your domain is `preview.example.com`, that's how the app and embed links will appear.
 

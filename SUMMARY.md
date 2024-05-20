@@ -51,6 +51,7 @@
 ## Infrastructure
 
 * [Configure Network Access](infrastructure/configure-network-access.md)
+* [Enterprise Hosting Options](infrastructure/enterprise-hosting-options.md)
 
 ## REST API
 

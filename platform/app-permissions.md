@@ -40,7 +40,7 @@ App Level Permissions can also be applied when uploading the app via our REST AP
 
 You may also set account-wide permissions on your [Account](https://appetize.io/account).
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Example Account Level Permissions</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption><p>Example Account Level Permissions</p></figcaption></figure>
 
 ## Permissions
 

@@ -48,7 +48,7 @@ Use a companion app that works alongside the target app on Appetize. The compani
 You can run multiple embedded Appetize sessions and use our [JavaScript SDK](broken-reference) to pass the values between them or you could make use of our [App Groups](../platform/listing-apps.md#grouped-applications) to bundle the companion and the main app into a single session.
 {% endhint %}
 
-<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="Sample Structure for using a companion app for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (1) (1).svg" alt="Sample Structure for using a companion app for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
 
 ### **Option 3: App Build for Appetize**
 
@@ -58,7 +58,7 @@ Use a dedicated/custom app build/flavor specifically for Appetize, that includes
 You could confirm that your app is running in an Appetize Session by making use of our default [Launch Param](../features/launch-params.md#retrieving-data-in-your-application) key **`"isAppetize": true`.**
 {% endhint %}
 
-<img src="../.gitbook/assets/file.excalidraw.svg" alt="Sample Structure for using a single app for both generating and utilizing the user token." class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="Sample Structure for using a single app for both generating and utilizing the user token." class="gitbook-drawing">
 
 ## Passing the Impersonated User to your Embedded App
 
