@@ -387,6 +387,24 @@ Enables or disables all interactions on the device. Default is true.
 await session.allowInteractions(true/false)
 ```
 
+### launchApp(appId)
+
+Launches the specified application using the provided `appId`.&#x20;
+
+{% hint style="info" %}
+If the app is already running, it will be brought to the foreground instead of being relaunched. If the app was originally launched with params or a launchUrl, these will also be passed with this method.
+{% endhint %}
+
+```typescript
+await session.launchApp(appId)
+```
+
+**Parameters**
+
+| Name    | Type     | Description                                                                                                                                                                                                                                                                                                                   |
+| ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `appId` | `string` | <p><strong>Android:</strong> <br>The app's package name / appId (e.g., <code>com.example.app</code>) or <code>packageName/activityName</code>. If no activity name is specified, it defaults to the main launch activity. <br><strong>iOS:</strong> <br>The app's bundle identifier (e.g., <code>com.example.app</code>).</p> |
+
 ### restartApp()
 
 Restarts the app
