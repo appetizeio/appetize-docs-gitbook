@@ -128,10 +128,6 @@ await session.openUrl("https://appetize.io")
 
 ### launchApp(appId)
 
-{% hint style="warning" %}
-This feature is currently under development and will be available soon.
-{% endhint %}
-
 Launches the specified application using the provided `appId`.&#x20;
 
 {% hint style="info" %}
