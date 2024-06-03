@@ -1,7 +1,8 @@
 ---
 description: >-
-  With Appetize, you can capture, inspect and troubleshoot all network traffic
-  occurring during your app session for real-time or later analysis.
+  With Appetize, you can capture, inspect, validate and troubleshoot all network
+  traffic (including any API calls) occurring during your app session for
+  real-time or later analysis.
 ---
 
 # Network Traffic Monitor
