@@ -1,75 +1,52 @@
+---
+description: >-
+  Getting Started with Appetize AppRecorder and Playwright for Mobile End-to-End
+  (E2E) Testing on Android and iOS
+---
+
 # Getting Started
 
 You can follow along with the installation steps below to start a new project, or you can clone the [example project here.](https://github.com/appetizeio/appetize-js-sdk-examples/tree/main/playwright-testing)
 
 ## Installation
 
-Create a new Playwright project ([see Playwright documentation](https://playwright.dev/docs/intro#installing-playwright))
+Get started by installing Playwright with Appetize using **npm:**
 
-```bash
-npm init playwright@latest
+```sh
+npm init @appetize/playwright@latest
 ```
 
-Then install `@appetize/playwright`
+Run the install command and select the following to get started:
 
-```bash
-npm install @appetize/playwright
-```
+* Your Appetize App's [**buildId**](#user-content-fn-1)[^1]
+* The **preferred default device**
 
-## Playwright Config
+<figure><img src="https://lh7-us.googleusercontent.com/slidesz/AGV_vUdOgTMhY5_mOGlIO1bM1w1FNQjzN7R9tfbQ8ItN0DnHyeVeA-8b94lKG71uxzWDcOZwnDf5tpGP8TpfS_lGwVgNACY3eXtKx4Ku0XhW61hoMbQXc8QvUmoexW21LJRtwCcNguKCcfeZgoqc9XLOIzYfQTYWzKox=nw?key=Ov-qIhkbe_J50OTU5jQN9g" alt="" width="563"><figcaption></figcaption></figure>
 
-You will need to update `playwright.config.ts` so that it's configured for Appetize. Update it to the following:
+## What's Installed <a href="#whats-installed" id="whats-installed"></a>
 
-```javascript
-const config = {
-    testDir: './tests',
-    outputDir: 'test-results/',
-    timeout: 120 * 1000,
-    expect: {        
-        // recommended ratio for screenshot testing
-        toMatchSnapshot: {
-            maxDiffPixelRatio: 0.05,
-        }
-    },
-    forbidOnly: !!process.env.CI,
-    retries: process.env.CI ? 3 : 0,
-    reporter: 'line',
-    
-    // correlates to number of concurrent Appetize sessions at a time
-    workers: 1,
-    fullyParallel: false,
-    
-    use: {    
-        trace: 'retain-on-failure',
-        baseURL: 'https://appetize.io',
-        
-        // Appetize session configuration
-        config: {
-            device: 'iphone14pro',
-            publicKey: '<PUBLIC KEY>'
-        }    
-    },
-}
-
-export default config;
-```
+* A Playwright project will be created  (see [Playwright documentation](https://playwright.dev/docs/intro#installing-playwright)).
+* The `@appetize/playwright` npm package will be installed.
+* The `playwright.config.ts` file will be configured for Appetize with the specified values for the default device and app. &#x20;
 
 {% hint style="info" %}
 See [Test Configuration](test-configuration.md) for more advanced configurations.
 {% endhint %}
 
+* An example test file, `app.spec.ts`, will be added.
+
 ## Usage
 
-Delete the example test files that Playwright made when you generated the project and instead create an `app.spec.ts` file in your tests folder with the following contents:
+Update the `app.spec.ts` file in your tests folder to include a test relevant to your application
 
 ```javascript
 import { test, expect } from '@appetize/playwright'
 
-test('loads the home screen', async ({ session }) => {
+test('example test', async ({ session }) => {
     await expect(session).toHaveElement({
          attributes: {
-          // replace with text of element that appears on your app
-            text: 'Welcome' 
+          // replace with the text of an element that appears on your app
+            text: 'Hello world' 
         }
     })
 })
@@ -85,3 +62,14 @@ npx playwright test --headed
 npx playwright test
 ```
 
+## Next Steps
+
+{% content-ref url="writing-tests.md" %}
+[writing-tests.md](writing-tests.md)
+{% endcontent-ref %}
+
+{% content-ref url="test-configuration.md" %}
+[test-configuration.md](test-configuration.md)
+{% endcontent-ref %}
+
+[^1]: previously known as **publicKey**

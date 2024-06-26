@@ -74,7 +74,7 @@
   * [Device commands](javascript-sdk/automation/device-commands.md)
   * [Touch interactions](javascript-sdk/automation/touch-interactions.md)
 * [Testing](javascript-sdk/playwright/README.md)
-  * [Playwright for Mobile iOS & Android Apps](javascript-sdk/playwright/getting-started.md)
+  * [Getting Started](javascript-sdk/playwright/getting-started.md)
   * [Writing Tests](javascript-sdk/playwright/writing-tests.md)
   * [Running Tests](javascript-sdk/playwright/running-tests.md)
   * [Test Configuration](javascript-sdk/playwright/test-configuration.md)
