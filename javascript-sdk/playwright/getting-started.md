@@ -1,7 +1,5 @@
 ---
-description: >-
-  Getting Started with Appetize AppRecorder and Playwright for Mobile End-to-End
-  (E2E) Testing on Android and iOS
+description: Getting Started with Appetize AppRecorder and Playwright
 ---
 
 # Getting Started

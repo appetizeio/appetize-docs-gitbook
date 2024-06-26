@@ -1,7 +1,7 @@
 ---
 description: >-
-  Reliably test your Android and iOS mobile apps with Appetize AppRecorder for
-  Playwright
+  Reliably End-to-End (E2E) test your Android and iOS mobile apps with Appetize
+  AppRecorder for Playwright
 ---
 
 # Testing
