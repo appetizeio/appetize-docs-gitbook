@@ -34,12 +34,14 @@ Appetize uses industry standard [Let's Encrypt](https://letsencrypt.org/) for SS
 
 ## Pre-Launch & Post-Session Graphics
 
-From your Appetize [Dashboard](https://appetize.io/apps), select `manage` under one of your uploaded apps.
+From your Appetize [Dashboard](https://appetize.io/apps), select the app and then select the build you want to apply the graphics on
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (4).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption><p>Select the App you want to modify</p></figcaption></figure>
 
-From there, you will see options to customize the Pre-Launch and Post-Session Graphics.
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption><p>Select the build to modify</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (2) (1).png" alt=""><figcaption><p>Example Pre-Launch Styling</p></figcaption></figure>
+From there, you will see options to customize the Pre-Launch and Post-Session Graphics under the settings tab.
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption><p>Example Post-Session Styling</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption><p>Example Pre-Launch Styling</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption><p>Example Post-Session Styling</p></figcaption></figure>

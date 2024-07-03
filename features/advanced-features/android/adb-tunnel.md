@@ -2,7 +2,7 @@
 description: >-
   The ADB tunnel feature allows you to create an SSH tunnel to a running
   Appetize Android session, enabling you to interact with the device via Android
-  Studio or standard adb protocol.
+  Studio or standard ADB protocol.
 ---
 
 # ADB tunnel
@@ -52,17 +52,19 @@ See [Configuration](../../../javascript-sdk/configuration.md#enableadb) for more
 One common practice is to use the ADB tunnel to connect to an Android "standalone" device, without any specific app installed. For more information see [Standalone Device](../../../platform/standalone-device.md).
 {% endhint %}
 
-The app page provides a simple way to retrieve the `adb` information required to connect to the device. You can access this via your app's app link
+The app page provides a simple way to retrieve the `adb` information required to connect to the device.&#x20;
+
+You can access this via your app's app link
 
 {% code overflow="wrap" %}
 ```url
-https://appetize.io/app/{publicKey}?&enableAdb=true
+https://appetize.io/app/{appId|buildId|publicKey}?&enableAdb=true
 ```
 {% endcode %}
 
-or by going to your [Apps](https://appetize.io/apps) page, clicking `view` under the app you want to inspect and then toggling `Adb Tunnel` to `On`
+or by going to your [Apps](https://appetize.io/apps) page, selecting `Play` on the app you want to inspect, and then toggling `Adb Tunnel` to `On`
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (1) (1).png" alt="Example App Link with View Action"><figcaption><p>Select "View" under your app</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Select <code>Play</code> on the app you want to inspect</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-10-24 115916.png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
 

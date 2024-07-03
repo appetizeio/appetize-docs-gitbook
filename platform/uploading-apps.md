@@ -17,26 +17,38 @@ description: >-
 {% endcontent-ref %}
 
 {% hint style="info" %}
-We also support apps made in Flutter, Xamarin, React-Native, Kotlin Multiplatform and other similar cross-platform environments, as long as the resulting `.app` or `.apk` build is generated.
+We support cross-platform apps made in Flutter, Xamarin, React-Native, Kotlin Multiplatform and others which generate`.app` or `.apk` builds.
 
-If you are experiencing any issues, please see our [Knowledge base](https://support.appetize.io/uploading-and-installing-apps) for more information.
+For common issues and troubleshooting, visit our [Knowledge base](https://support.appetize.io/uploading-and-installing-apps).
 {% endhint %}
 
-## Uploading your App
+## Upload your App
 
-### With Upload Page
+### Via Upload Page
 
-You can upload your application directly via a web browser by making use of our [Upload](https://appetize.io/upload) page:
+To upload your application via a web browser use our [Upload](https://appetize.io/upload) dialog:
 
 {% embed url="https://appetize.io/upload" %}
 
-{% hint style="info" %}
-If you have an existing app that you would like to update, you can upload a new build within the manage page of that app. Select `manage` under the app listed in your [Apps Dashboard](https://appetize.io/apps) and navigate to `Upload a new build`.
+#### Update existing Apps
 
-<img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (3).png" alt="Example App with Manage action" data-size="original">
+To update an existing app, follow the same steps as uploading a new app via the [Upload](https://appetize.io/upload) dialog. The [latest build](#user-content-fn-1)[^1] will automatically be associated with your app.
+
+To view all builds for an app, select the app and go to the [App Builds Page](listing-apps.md#app-builds-page).
+
+{% hint style="warning" %}
+In some instances, you might want to explicitly update a particular app build. To do so, follow these steps:
+
+1. Go to the [Apps Dashboard](https://appetize.io/apps).
+2. **Select the app**.
+3. **Search and select the build** you want to update.
+4. Go to **Settings**.
+5. Navigate to "**Update build**"
+
+![Update Build under settings page](<../.gitbook/assets/image (48).png>)
 {% endhint %}
 
-### With REST API
+### Via REST API
 
 Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference):
 
@@ -55,7 +67,7 @@ Appetize has several 3rd party integrations for popular tools to allow you to qu
 * [Fastlane](https://docs.fastlane.tools/actions/appetize/)
 * [Bitrise](https://bitrise.io/integrations/steps/appetize-deploy)
 * [Gitlab](https://about.gitlab.com/blog/2020/05/06/how-to-create-review-apps-for-android-with-gitlab-fastlane-and-appetize-dot-io/)
-* [Github Actions](https://github.com/appetizeio/github-action-appetize)
+* [GitHub Actions](https://github.com/appetizeio/github-action-appetize)
 * [Expo](https://expo.dev/)
 * [Storybook Native](https://github.com/storybookjs/native)
 * [Jenkins](https://plugins.jenkins.io/appetize/)
@@ -63,3 +75,5 @@ Appetize has several 3rd party integrations for popular tools to allow you to qu
 {% hint style="info" %}
 If there is a 3rd party integration that you think should be on this list, please let us [know](mailto:support@appetize.io)!
 {% endhint %}
+
+[^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings), and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleversion).

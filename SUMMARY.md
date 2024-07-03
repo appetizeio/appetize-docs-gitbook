@@ -13,7 +13,7 @@
 * [Sharing Apps](platform/sharing-apps.md)
 * [App Permissions](platform/app-permissions.md)
 * [Session Inactivity Timeout](platform/session-inactivity-timeout.md)
-* [Standalone Device](platform/standalone-device.md)
+* [Device Sandbox](platform/standalone-device.md)
 
 ## Features
 

@@ -62,4 +62,4 @@ By setting a default proxy, the proxy will be used when no other proxy is specif
 
 By setting a forced proxy, the proxy will be used regardless of other proxy settings.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt="" width="563"><figcaption><p>Example forced proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt="" width="563"><figcaption><p>Example forced proxy</p></figcaption></figure>

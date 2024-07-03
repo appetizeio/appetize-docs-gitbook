@@ -27,7 +27,7 @@ Add an `iframe` with an [Appetize embed URL](../platform/embedding-apps.md):
 ```html
 <iframe
     id="appetize"
-    src="https://appetize.io/embed/<PUBLIC KEY>"
+    src="https://appetize.io/embed/<BuildId|PublicKey>"
     width="378px" 
     height="800px" 
     frameborder="0" 
@@ -55,7 +55,7 @@ This will return an Appetize client instance with the initial [configuration](co
 
 ```typescript
 const client = await window.appetize.getClient("#appetize", {    
-    publicKey: '{publicKey}',
+    buildId: '{buildId|publicKey}',
     device: 'iphone13pro',
     osVersion: '15.0'
     ...

@@ -46,13 +46,13 @@ The app page provides a simple network log of all the events that took place. Yo
 
 {% code overflow="wrap" %}
 ```url
-https://appetize.io/app/{publicKey}?&proxy=intercept
+https://appetize.io/app/{appId|buildId|publicKey}?&proxy=intercept
 ```
 {% endcode %}
 
-or by going to your [Apps](https://appetize.io/apps) page and clicking `debug` under the app you want to inspect.
+or by going to your [Apps](https://appetize.io/apps) page, selecting the app you want to inspect, and then clicking `debug` on the latest build or choosing a specific build you would like to debug.
 
-<figure><img src="../.gitbook/assets/image (1) (2) (1).png" alt="Example App Link with Debug Action"><figcaption><p>Select "Debug" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
 
 {% hint style="info" %}
 You can also open the network logs in Chrome DevTools if you are running the app in a Chrome Browser by selecting the `Chrome DevTools` button.

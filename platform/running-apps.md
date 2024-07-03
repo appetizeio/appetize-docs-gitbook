@@ -26,14 +26,32 @@ Appetize provides an out-of-the-box App page that provides easy access to:
 
 ## Accessing your App Page
 
-You can access your app page via your app's app link
+#### Latest Build
+
+You can access the latest build associated with your app by making use of your app identifier and platform in the URL e.g.
 
 {% code overflow="wrap" %}
 ```url
-https://appetize.io/app/{publicKey}
+https://appetize.io/apps/{platform}/{appId}
 ```
 {% endcode %}
 
-or by going to your [Apps](https://appetize.io/apps) page and clicking `view/debug` under the app you want to run.
+Alternatively you can go to  your [Apps](https://appetize.io/apps) page and click **play** on the app you want to run.
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1).png" alt="Example App Link with Debug Action"><figcaption><p>Select "View" or "Debug" under your app</p></figcaption></figure>
+#### Specific Build
+
+You can access a specific build of your app by making use of your buildId (or previously known as publicKey) in the URL e.g.
+
+```
+https://appetize.io/app/{buildId}
+```
+
+{% hint style="info" %}
+If you are still using our v1 API, the buildId and the publicKey will be interchangeable e.g.
+
+```
+https://appetize.io/app/{publicKey|buildId}
+```
+{% endhint %}
+
+Alternatively you can go to  your [Apps](https://appetize.io/apps) page and select the App with which the build is associated. From here you can access the individual builds as explained [here](listing-apps.md#app-builds-page). &#x20;

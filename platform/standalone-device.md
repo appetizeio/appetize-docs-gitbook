@@ -1,12 +1,12 @@
 ---
 description: >-
-  Appetize provides standalone devices that launch without any preinstalled
-  apps, offering a clean testing environment for optimal web app evaluation and
-  compatibility testing.
+  Appetize provides a device sandbox that launches our devices without any
+  preinstalled apps, offering a clean testing environment for optimal web app
+  evaluation and compatibility testing.
 ---
 
-# Standalone Device
+# Device Sandbox
 
-You can access your standalone device by logging in and then opening your [Standalone Page](https://appetize.io/standalone) or by selecting `Standalone` in the left-hand menu.
+You can access your device sandbox by logging in and then opening your [Device Sandbox](https://appetize.io/app/standalone) page or by selecting **Device Sandbox** in the left-hand menu.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Select <code>Standalone</code> in the left-hand menu.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption><p>Select <code>Device Sandbox</code> in the left-hand menu.</p></figcaption></figure>

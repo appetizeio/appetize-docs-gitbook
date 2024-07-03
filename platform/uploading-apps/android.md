@@ -16,7 +16,7 @@ Once the build is complete you can locate the `.apk` file by selecting `locate` 
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-05-02 at 15.07.06.png" alt="" width="368"><figcaption><p>Select <code>locate</code> in the dialog to navigate to the apk</p></figcaption></figure>
 
-or by navigating to&#x20;
+or by navigating to
 
 ```
 {project name}/{app module name}/build/outputs/apk/
@@ -26,11 +26,11 @@ or by navigating to&#x20;
 
 Generate your build with `gradle` by running the `assemble` command for your preferred app build variant e.g. `debug` variant
 
-```shell-session
+```
 ./gradlew assembleDebug
 ```
 
-Once the build is complete you can locate the `.apk` file by navigating to&#x20;
+Once the build is complete you can locate the `.apk` file by navigating to
 
 ```
 {project name}/{app module name}/build/outputs/apk/
@@ -56,7 +56,7 @@ unzip -p /{your app}/{app name}.apks universal.apk > /{your app}/{app name}.apk
 
 ## Troubleshooting
 
-If you are having trouble running your uploaded Android app in Appetize, we recommend trying to run the same APK on the standard Google-provided Android emulator locally over ADB.&#x20;
+If you are having trouble running your uploaded Android app in Appetize, we recommend trying to run the same APK on the standard Google-provided Android emulator locally over ADB.
 
 Once your emulator is launched and available via `adb devices`, you can install it using the `install` command:
 

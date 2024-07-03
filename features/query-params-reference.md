@@ -15,7 +15,7 @@ You may see these query parameters in action when you run our [online demo](http
 
 {% code title="Sample Structure" overflow="wrap" %}
 ```url
-https://appetize.io/{app/embed}/{publicKey}?{queryParameter1}={value1}&{queryParameter2}={value2}
+https://appetize.io/{app/embed}/{buildId|appId|publicKey}?{queryParameter1}={value1}&{queryParameter2}={value2}
 e.g.
 https://appetize.io/app/1234?device=pixel4&language=en
 ```

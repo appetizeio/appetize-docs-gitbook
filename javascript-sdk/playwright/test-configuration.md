@@ -15,7 +15,7 @@ import { test, expect } from '@appetize/playwright'
 
 test.use({
   config: {
-    publicKey: '<PUBLIC KEY >'
+    publicKey: '<buildId|publicKey>'
     device: 'nexus5'
   },
 });
@@ -73,7 +73,7 @@ const config = {
             use: {
                 config: {
                     device: 'iphone14pro',
-                    publicKey: '<IOS APP PUBLIC KEY>'
+                    publicKey: '<IOS APP BUILD ID (PUBLIC KEY)>'
                 }
             },
         },
@@ -83,7 +83,7 @@ const config = {
             use: {
                 config: {
                     device: 'pixel6',
-                    publicKey: '<ANDROID APP PUBLIC KEY>'
+                    publicKey: '<ANDROID APP BUILD ID (PUBLIC KEY)>'
                 }
             },
         }      
@@ -102,7 +102,7 @@ const config = {
     
     use: {
         config: {
-            publicKey: '<PUBLIC KEY>'
+            publicKey: '<BUILD ID (PUBLIC KEY)>'
         }
     },
     projects: [
@@ -139,7 +139,7 @@ const config = {
     
     use: {
         config: {
-            publicKey: '<PUBLIC KEY>'
+            publicKey: '<BUILD ID (PUBLIC KEY)>'
         }
     },
     projects: [

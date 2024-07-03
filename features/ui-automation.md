@@ -24,12 +24,12 @@ We welcome [customer feedback](mailto:hello@appetize.io) as we continue to refin
 The app page provides an easy way to enable **AppRecorder** and logging out all of the user actions that took place. You can access this via your app's app link
 
 ```
-https://appetize.io/app/{publicKey}
+https://appetize.io/app/{appId|buildId|publicKey}
 ```
 
-or by going to your [Apps](https://appetize.io/apps) page and clicking `view` under the app you want to inspect.
+or by going to your [Apps](https://appetize.io/apps) page and clicking `Play` on the app you want to inspect.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Select <code>Play</code> on your app</p></figcaption></figure>
 
 Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
 
@@ -83,12 +83,12 @@ Recorded actions can be serialized as `JSON` and stored so that you can replay t
 The app page makes it simple to turn on **AppRecorder** and import a JSON file with past user actions for replay. Just use your app's link to access and get started:
 
 ```
-https://appetize.io/app/{publicKey}
+https://appetize.io/app/{appId|buildId|publicKey}
 ```
 
-or by going to your [Apps](https://appetize.io/apps) page and clicking `view` under the app you want to inspect.
+or by going to your [Apps](https://appetize.io/apps) page and clicking `Play` on the app you want to play the actions on.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Select "View" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Select <code>Play</code> on your app</p></figcaption></figure>
 
 Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
 

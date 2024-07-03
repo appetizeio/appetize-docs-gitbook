@@ -31,11 +31,11 @@ Initial values may also be provided in the embed URL. See [Query Params Referenc
 
 ## Configuration Options
 
-### publicKey
+### buildId
 
 `string`
 
-The publicKey of the Appetize app that you wish to run
+The buildId (previously known as publicKey) of the Appetize app that you wish to run
 
 ### device
 

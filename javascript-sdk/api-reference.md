@@ -22,7 +22,7 @@ _Useful when the embed link might not be known up front and the configuration ha
 
 ```javascript
 const client = await window.appetize.getClient('#my_iframe', {
-    publicKey: '{publicKey}',
+    buildId: '{buildId|publicKey}',
     device: 'iphone11pro',
     osVersion: '15.0'
     ...
@@ -142,7 +142,7 @@ The currently loaded app
 
 ```typescript
 {
-  publicKey: string;
+  buildId: string;
   name?: string;
   appDisplayName?: string;
   appVersionName?: string;

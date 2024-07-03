@@ -8,39 +8,43 @@ description: >-
 
 ## Who can run your app
 
-When you upload an app to Appetize, you receive a link to view your app. This link includes the app's assigned [**publicKey**](sharing-apps.md#public-key), and looks like this:
+### App Identifier Link
 
-```
-https://appetize.io/app/:publicKey
-```
+See Sharing [App Identifier Links](sharing-apps.md#app-identifier).
 
-This **`publicKey`** is an unguessable cryptographically generated 128-bit random string. By default, anybody who has your app's link, i.e. its **publicKey**, will have permission to run your app. Your app link can be easily shared with whomever you'd like, or [embedded](embedding-apps.md) into your own applications.
+By default, only users signed in to your account will have access to your App Identifier link.
 
-Some customers want to restrict access, so that only authenticated users may run their app. For this purpose, we have a configuration option which can be set at either the app-level or the account-level.
+### Build Identifier Link
 
-### App Level Permissions
+See Sharing [Build Identifier Links](sharing-apps.md#build-identifier).
+
+By default, anybody who has your app's Build Identifier link, i.e. its **buildId** (previously known as **publicKey**), will have permission to run your app.
+
+Some customers want to restrict access, so that only authenticated users may run their app. For this purpose, we have a configuration option which can be set at either the account-level or the app-build-level.
+
+## Account Level Permissions
+
+You can apply account-wide permissions on your [Account](https://appetize.io/account).
+
+<figure><img src="../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption><p>Example Account Level Permissions</p></figcaption></figure>
+
+## App Build Level Permissions
 
 {% hint style="warning" %}
-App Level Permissions will override Account Level Permission Defaults
+App Build Level Permissions will override Account Level Permission Defaults. We recommend using Account Level Defaults. In the future we will introduce more granular ways to provide permissions for your apps.
 {% endhint %}
 
-For the app-level setting, navigate to your [Dashboard](https://appetize.io/dashboard), then click the "manage" link for your app
+For the app-level setting, navigate to your [Dashboard](https://appetize.io/dashboard), select your preferred app and then select the build you want to change permissions for:
 
-<figure><img src="../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Select "Manage" under your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Select the build you want to apply permission to</p></figcaption></figure>
 
-and finally configure the option under App Permissions.
+and finally configure the option under Settings >  App Permissions.
 
 {% hint style="info" %}
 App Level Permissions can also be applied when uploading the app via our REST API. See [Create new app](../rest-api/create-new-app.md) and [Update existing app](../rest-api/update-existing-app.md) for more information.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption><p>Example App Level Permissions</p></figcaption></figure>
-
-### Account Level Permissions
-
-You may also set account-wide permissions on your [Account](https://appetize.io/account).
-
-<figure><img src="../.gitbook/assets/image (1) (1) (3).png" alt=""><figcaption><p>Example Account Level Permissions</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Example App Build Level Permissions</p></figcaption></figure>
 
 ## Permissions
 
