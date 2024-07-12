@@ -129,7 +129,7 @@ Turn on Auto-Correction for iOS. Defaults to `true`
 
 `boolean`
 
-(Android only) Automatically grant all required app permissions
+Automatically grant all required app permissions. [See Auto-grant permissions](../features/auto-grant-permissions.md).
 
 ### autoPlay
 
