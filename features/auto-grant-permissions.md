@@ -32,25 +32,25 @@ Eliminate the hassle of manual permission grants. This feature ensures app [runt
 {% endtab %}
 
 {% tab title="iOS" %}
-| Permission    |           Supported          |
-| ------------- | :--------------------------: |
-| Bluetooth     |               ❌              |
-| Calendar      |               ✅              |
-| Camera        |               ✅              |
-| Contacts      |               ✅              |
-| Health        |               ❌              |
-| HomeKit       |               ✅              |
-| Location      |               ✅              |
-| Media Library |               ✅              |
-| Microphone    |               ✅              |
-| Motion        |               ✅              |
-| Notifications |               ❌              |
-| Deep Links    | :blue\_circle: (coming soon) |
-| Photos        |               ✅              |
-| Reminders     |               ✅              |
-| Siri          |               ✅              |
-| Speech        |               ❌              |
-| UserTracking  |               ✅              |
+| Permission    | Supported |
+| ------------- | :-------: |
+| Bluetooth     |     ❌     |
+| Calendar      |     ✅     |
+| Camera        |     ✅     |
+| Contacts      |     ✅     |
+| Health        |     ❌     |
+| HomeKit       |     ✅     |
+| Location      |     ✅     |
+| Media Library |     ✅     |
+| Microphone    |     ✅     |
+| Motion        |     ✅     |
+| Notifications |     ❌     |
+| Deep Links    |     ✅     |
+| Photos        |     ✅     |
+| Reminders     |     ✅     |
+| Siri          |     ✅     |
+| Speech        |     ❌     |
+| UserTracking  |     ✅     |
 {% endtab %}
 {% endtabs %}
 
