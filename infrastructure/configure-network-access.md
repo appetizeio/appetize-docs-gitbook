@@ -36,3 +36,15 @@ For our Enterprise Private Cloud Instances, you can also configure which IPs hav
 
 Our system relies on WebSockets to communicate with our streaming servers. However, corporate web proxies may block WebSocket connections, preventing you to successfully make use of our service. To ensure proper setup, you can verify your connection using websites like [https://websocketstest.com/](https://websocketstest.com/).
 
+## Storage and Resource Access
+
+To ensure that all necessary static content, scripts, and uploaded resources (such as builds) can be accessed from behind a firewall, please whitelist the following URLs:
+
+* [x] `appetizeio-static.s3.amazonaws.com`
+* [x] `appetizeio.s3.amazonaws.com`
+* [x] `js.appetize.io`
+
+{% hint style="info" %}
+For Enterprise Private Cloud Instances, the URLs will be specific to your organization. For example, they might be in the format `appetize-{custom}.s3.amazonaws.com`.
+{% endhint %}
+
