@@ -45,6 +45,6 @@ To ensure that all necessary static content, scripts, and uploaded resources (su
 * [x] `js.appetize.io`
 
 {% hint style="info" %}
-For Enterprise Private Cloud Instances, the URLs will be specific to your organization. For example, they might be in the format `appetize-{custom}.s3.amazonaws.com`.
+For Enterprise Private Cloud Instances, the URLs will be specific to your organization.  [Contact us](https://appetize.io/support-request) for more information.
 {% endhint %}
 
