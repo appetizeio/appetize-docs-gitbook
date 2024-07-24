@@ -75,7 +75,7 @@ See [Launch Params](impersonation.md#launch-params) for more info.
 {% endhint %}
 
 ```javascript
-await client.config({
+await client.setConfig({
     params: {"impersonatedUserToken":"user_token_to_impersonate"},
     ...
 })

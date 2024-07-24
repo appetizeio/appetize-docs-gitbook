@@ -30,7 +30,7 @@ See [Query Params Reference](query-params-reference.md#params) for more informat
 Send the params data to pass to your application as part of the configuration. The data needs to be a JSON Object e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     params: {"foo":"bar"},
     ...
 })

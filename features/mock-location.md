@@ -25,7 +25,7 @@ Set the location of the device via our JavaScript SDK
 Specify the location by passing in a number array in format `[latitude, longitude]` e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     location: [-33.924434, 18.418391],
     ...
 })

@@ -69,7 +69,7 @@ See [Query Params Reference](query-params-reference.md#grantpermissions) for mor
 Set `grantPermissions: true` in the configuration e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     grantPermissions: true,
     ...
 })

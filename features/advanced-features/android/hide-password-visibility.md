@@ -21,7 +21,7 @@ See [Query Params Reference](../../query-params-reference.md#hidepasswords) for 
 Set `hidePasswords: true` in the configuration e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     hidePasswords: true,
     ...
 })

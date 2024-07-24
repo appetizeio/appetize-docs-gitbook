@@ -36,7 +36,7 @@ See [Query Params Reference](../../query-params-reference.md#enableadb) for more
 Set `enableAdb: true` in the configuration e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     enableAdb: true,
     ...
 })

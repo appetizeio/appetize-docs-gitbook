@@ -29,7 +29,7 @@ Set the language of the device via our JavaScript SDK
 #### With Configuration
 
 ```typescript
-await client.config({
+await client.setConfig({
     language: 'af_ZA',
     ...
 })
@@ -64,7 +64,7 @@ See [Query Params Reference](query-params-reference.md#locale) for more informat
 Set the locale of the device via our JavaScript SDK configuration
 
 ```typescript
-await client.config({
+await client.setConfig({
     locale: 'fr_FR',
     ...
 })
@@ -91,7 +91,7 @@ See [Query Params Reference](query-params-reference.md#timezone) for more inform
 Set the time zone of the device via our JavaScript SDK configuration
 
 ```typescript
-await client.config({
+await client.setConfig({
     timezone: 'Australia/Adelaide',
     ...
 })
@@ -120,7 +120,7 @@ See [Query Params Reference](query-params-reference.md#ioskeyboard) for more inf
 Set the time zone of the device via our JavaScript SDK configuration
 
 ```typescript
-await client.config({
+await client.setConfig({
     iosKeyboard: 'ja_JP@sw',
     ...
 })
@@ -136,6 +136,4 @@ See [Configuration](../javascript-sdk/configuration.md#ioskeyboard) for more inf
 
 #### French language with French AZERTY keyboard
 
-[https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw](https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw)\
-
-
+[https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw](https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw)\\

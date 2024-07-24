@@ -76,7 +76,7 @@ See [Query Params Reference](query-params-reference.md#device) for more informat
 Set the device type and Operating System version by adding the `device` and/or `osVersion` properties during configuration.
 
 ```typescript
-await client.config({
+await client.setConfig({
     device: 'pixel4',
     osVersion: '12.0'
 })

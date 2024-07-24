@@ -33,7 +33,7 @@ See [Query Params Reference](query-params-reference.md#debug) for more informati
 Set `debug: true` in the configuration e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     debug: true,
     ...
 })

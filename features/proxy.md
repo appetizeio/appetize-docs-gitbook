@@ -36,7 +36,7 @@ See [Query Params Reference](query-params-reference.md#proxy) for more informati
 Set `proxy` to `http://example.com:8080/` in the configuration e.g.
 
 ```typescript
-await client.config({
+await client.setConfig({
     proxy: "http://example.com:8080",
     ...
 })

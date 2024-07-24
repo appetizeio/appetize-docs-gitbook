@@ -40,7 +40,7 @@ This URL will be invoked on launch of the device.
 {% endhint %}
 
 ```typescript
-await client.config({
+await client.setConfig({
     launchUrl: "https://www.appetize.io",
     ...
 })
