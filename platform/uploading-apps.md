@@ -69,7 +69,6 @@ Available integrations include:
 * [GitHub Actions](https://github.com/appetizeio/github-action-appetize)
 * [Expo](https://expo.dev/)
 * [Storybook Native](https://github.com/storybookjs/native)
-* [Jenkins](https://plugins.jenkins.io/appetize/)
 
 {% hint style="info" %}
 If there is a 3rd party integration that you think should be on this list, please let us [know](mailto:support@appetize.io)!
