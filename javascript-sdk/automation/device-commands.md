@@ -214,8 +214,6 @@ If your app does not automatically handle language/locale changes, you would nee
 Some apps might also cache data in the previously used language. In these cases use [reinstallApp](device-commands.md#reinstallapp) to clear any previous cached data.
 {% endhint %}
 
-This&#x20;
-
 ### type()
 
 Types the given text
