@@ -186,7 +186,7 @@ const { data, mimeType } = await session.screenshot('base64')
 
 ### shake()
 
-Shakes device (iOS only)
+Shakes device
 
 ```typescript
 await session.shake()

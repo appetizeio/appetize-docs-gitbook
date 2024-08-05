@@ -355,7 +355,7 @@ await session.openUrl("https://appetize.io")
 
 ### shake()
 
-Shakes device (iOS only)
+Shakes device
 
 ```typescript
 await session.shake()
