@@ -23,7 +23,7 @@ If you would like to use any of these features, we recommend using [adbShellComm
 
 ### With Query Parameter
 
-Add the `debug=true` query parameter to your app or embed URL
+Add the `enableAdb=true` query parameter to your app or embed URL
 
 ```uri
 &enableAdb=true
