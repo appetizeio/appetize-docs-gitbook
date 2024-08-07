@@ -547,7 +547,7 @@ The Appetize app for the session
 
 ```typescript
 {
-  publicKey: string;
+  publicKey|buildId: string;
   name?: string;
   appDisplayName?: string;
   appVersionName?: string;
