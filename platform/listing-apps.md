@@ -83,9 +83,13 @@ To get a specific App Build you can navigate to the [App Dashboard](https://appe
 
 ### Unknown Builds
 
-If a build provided to Appetize cannot be correctly processed for any reason, it will be added to the Unknown Builds page. From there, you can either delete the build or provide the necessary information in a [Support request](https://appetize.io/support-request) so our team can investigate further.
+If a build provided to Appetize cannot be correctly processed for any reason, it will be added to the Unknown Builds page. From there, you have the option to either reupload the build, delete it, or provide the necessary information in a [Support request](https://appetize.io/support-request) so our team can investigate further.
 
-<figure><img src="../.gitbook/assets/image (49).png" alt=""><figcaption><p>Unknown builds page</p></figcaption></figure>
+<div data-full-width="true">
+
+<figure><img src="../.gitbook/assets/unknownbuilds.png" alt=""><figcaption><p>Unknown Builds Page</p></figcaption></figure>
+
+</div>
 
 ## Grouped Applications
 
