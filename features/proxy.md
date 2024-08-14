@@ -44,22 +44,22 @@ await client.setConfig({
 
 See [Configuration](../javascript-sdk/configuration.md#proxy) for more information.
 
-## Account Level Proxy
+## Organization Level Proxy
 
 {% hint style="info" %}
-Account Level Proxy is only available on our Premium and Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
+Organization Level Proxy is only available on our Premium and Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
 {% endhint %}
 
-You may also set account-wide proxy settings on your [Account](https://appetize.io/account).
+You may also set organization-wide proxy settings by navigating to [**Organization -> Apps**](https://appetize.io/organization/apps) **->** Proxy settings.
 
 ### Default Proxy
 
 By setting a default proxy, the proxy will be used when no other proxy is specified.
 
-<figure><img src="../.gitbook/assets/image (3) (3).png" alt="" width="563"><figcaption><p>Example default proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (54).png" alt="" width="536"><figcaption><p>Example default proxy</p></figcaption></figure>
 
 ### Forced Proxy
 
 By setting a forced proxy, the proxy will be used regardless of other proxy settings.
 
-<figure><img src="../.gitbook/assets/image (10) (1).png" alt="" width="563"><figcaption><p>Example forced proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55).png" alt="" width="537"><figcaption><p>Example forced proxy</p></figcaption></figure>

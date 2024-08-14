@@ -14,11 +14,11 @@ Our embed links support all our [Query Parameters](../features/query-params-refe
 
 The easiest way to find your embed link is by going to your [Apps](https://appetize.io/apps) or [App Builds](listing-apps.md#app-builds-page) page and selecting **share** under the app, App Group or build that you want to embed on your website.
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption><p>Find your embed link by clicking the share button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32).png" alt="" width="371"><figcaption><p>Find your embed link by clicking the share button</p></figcaption></figure>
 
 Currently, `Share` will share a specific build of your application. Soon, we will introduce new sharing features that will allow you to share the latest build without changing the URL.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Example Share dialog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
 
 {% hint style="info" %}
 You can customize and test out all the [Query Parameters](../features/query-params-reference.md) on your [App Page](running-apps.md) before switching out the `app` link with an `embed` link.

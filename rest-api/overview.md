@@ -13,7 +13,7 @@ If you are using an Enterprise Private Instance of Appetize, please replace all 
 {% endhint %}
 
 1. **Get Your API Token**\
-   All users with _admin_ or _developer_ roles may request an API token after logging in and navigating to your [Account Dashboard](https://appetize.io/account).
+   All users with _admin_ or _developer_ roles may request an API token after logging in and navigating to [**Organization -> API Token**](https://appetize.io/organization/api-token)**.**
 2. **Use Basic Authentication:**\
    When sending requests to the Appetize REST API that requires authentication, use Basic Authentication.
 3. **Encode your token** + ":" using Base64 encoding.&#x20;

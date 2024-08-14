@@ -10,11 +10,11 @@ description: >-
 
 The easiest way to find your external share link is by going to your [Apps](https://appetize.io/apps) or [App Builds](listing-apps.md#app-builds-page) page and selecting **share** under the app, App Group or build that you want to embed on your website.
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt="" width="371"><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
 
 Currently, `Share` will share a specific build of your application. Soon, we will introduce new sharing features that will allow you to share the latest build without changing the URL.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>Example Share dialog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
 
 ## App Identifier
 
@@ -27,7 +27,7 @@ https://appetize.io/apps/{platform}/{appId}
 ```
 
 {% hint style="warning" %}
-By default, only users signed in to your account will have access to your App Identifier link.
+By default, only users linked to your organization and signed in to Appetize will have access to your App Identifier link.
 {% endhint %}
 
 This link can also be further filtered to a specific type of build by passing in the preferred metadata e.g.

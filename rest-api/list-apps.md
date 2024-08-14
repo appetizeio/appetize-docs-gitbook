@@ -3,7 +3,7 @@
 ## Apps
 
 {% hint style="info" %}
-The returned app(s) will display only explicitly set parameters, with all other values defaulting to the account or Appetize defaults.
+The returned app(s) will display only explicitly set parameters, with all other values defaulting to the organization or Appetize defaults.
 {% endhint %}
 
 {% swagger src="../.gitbook/assets/appetize-v1 (1).yaml" path="/apps" method="get" %}

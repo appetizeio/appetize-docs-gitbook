@@ -1,6 +1,6 @@
 ---
 description: >-
-  With Appetize's session inactivity timeout, users can manage how long their
+  With Appetize's Session Inactivity Timeout, users can manage how long their
   device's session stays active, before being freed up for reuse.
 ---
 
@@ -10,15 +10,15 @@ By **default**, your Appetize session will end after **2 minutes** of inactivity
 
 ## Default App Timeout
 
-Navigate to your [**Account Dashboard**](https://appetize.io/account) **->** **Default app settings** -> **Default inactivity timeout**
+Navigate to [**Organization -> Apps**](https://appetize.io/organization/apps) **->** **Session Timeout**
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt="" width="563"><figcaption><p>Default App Inactivity Timeout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (53).png" alt="" width="395"><figcaption><p>Default App Session Timeout</p></figcaption></figure>
 
 ## App Build Specific Timeout
 
 Navigate to your [**Apps Dashboard**](https://appetize.io/apps) **-> Select** your preferred **app -> Select the build** you want to modify **-> Settings ->  Session timeout**
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption><p>Select the App you want to modify</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43).png" alt="" width="372"><figcaption><p>Select the App you want to modify</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption><p>Select the build you want to modify</p></figcaption></figure>
 
