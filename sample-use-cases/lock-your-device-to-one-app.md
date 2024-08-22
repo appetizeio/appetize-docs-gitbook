@@ -24,7 +24,7 @@ Follow our [Getting Started](../javascript-sdk/getting-started.md) steps to set 
 
 Once your SDK setup is complete, you can enable App Pinning by running the following function after the session has started:
 
-{% code title="Pin Running Application" %}
+{% code title="Pin Running Application" overflow="wrap" fullWidth="false" %}
 ```typescript
 async function pinRunningApp(session) {
     // Apply app pinning to the currently launched application
