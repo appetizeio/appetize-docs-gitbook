@@ -27,7 +27,7 @@ Set the deep-link URL by adding the URL encoded `launchUrl` query parameter to y
 &launchUrl=https%3A%2F%2Fwww.appetize.io
 ```
 
-See [Query Params Reference](query-params-reference.md#launchurl) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#launchurl) for more information.
 
 ### With JavaScript SDK
 

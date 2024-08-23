@@ -23,7 +23,7 @@ should be encoded to
 &params=%7B%22foo%22%3A%22bar%22%7D
 ```
 
-See [Query Params Reference](query-params-reference.md#params) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#params) for more information.
 
 ### With JavaScript SDK
 

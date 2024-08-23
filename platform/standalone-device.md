@@ -3,6 +3,7 @@ description: >-
   Appetize provides a device sandbox that launches our devices without any
   preinstalled apps, offering a clean testing environment for optimal web app
   evaluation and compatibility testing.
+icon: tablet-screen-button
 ---
 
 # Device Sandbox

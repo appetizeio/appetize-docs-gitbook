@@ -2,6 +2,7 @@
 description: >-
   With Appetize's app permissions, users can manage who has access to their app,
   can debug apps or view network traffic logs and more.
+icon: key
 ---
 
 # App Permissions
@@ -10,13 +11,13 @@ description: >-
 
 ### App Identifier Link
 
-See Sharing [**App Identifier Links**](sharing-apps.md#app-identifier).
+See Sharing [**App Identifier Links**](../sharing-apps.md#app-identifier).
 
 By default, only users linked to your organization and signed in to Appetize will have access to your App Identifier link.
 
 ### Build Identifier Link
 
-See Sharing [**Build Identifier Links**](sharing-apps.md#build-identifier).
+See Sharing [**Build Identifier Links**](../sharing-apps.md#build-identifier).
 
 By default, anybody who has your app's Build Identifier link, i.e. its **buildId** (previously known as **publicKey**), will have permission to run your app.
 
@@ -26,7 +27,7 @@ Some customers want to restrict access, so that only authenticated users may run
 
 Set and control default app build permissions across your organization by navigating to [**Organization -> Apps**](https://appetize.io/organization/apps).
 
-<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption><p>Example Organization App Build Permissions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption><p>Example Organization App Build Permissions</p></figcaption></figure>
 
 ## App Build Permissions
 
@@ -36,15 +37,15 @@ App Build Permissions will override Organization Build Permission Defaults. We r
 
 For the app-level setting, navigate to your [**Dashboard**](https://appetize.io/dashboard), select your preferred app and then select the build you want to change permissions for:
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Select the build you want to apply permission to</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Select the build you want to apply permission to</p></figcaption></figure>
 
 and finally configure the option under Settings >  App Permissions.
 
 {% hint style="info" %}
-App Level Permissions can also be applied when uploading the app via our REST API. See [Create new app](../rest-api/create-new-app.md) and [Update existing app](../rest-api/update-existing-app.md) for more information.
+App Level Permissions can also be applied when uploading the app via our REST API. See [Create new app](../../rest-api/create-new-app.md) and [Update existing app](../../rest-api/update-existing-app.md) for more information.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Example App Build Level Permissions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Example App Build Level Permissions</p></figcaption></figure>
 
 ## Permissions
 

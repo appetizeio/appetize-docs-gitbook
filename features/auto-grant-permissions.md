@@ -4,9 +4,9 @@ description: >-
   with a seamless experience.
 ---
 
-# Auto-grant permissions
+# Auto-grant Permissions
 
-## Enable Auto-grant permissions
+## Enable Auto-grant Permissions
 
 Eliminate the hassle of manual permission grants. This feature ensures app [runtime permissions](https://source.android.com/docs/core/permissions/runtime\_perms) are automatically handled for each session. Examples of runtime permissions include location, external storage, microphone, camera, and more. Simplify your users' journey.
 
@@ -62,7 +62,7 @@ Add the `grantPermissions=true` query parameter to your app or embed URL.
 &grantPermissions=true
 ```
 
-See [Query Params Reference](query-params-reference.md#grantpermissions) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#grantpermissions) for more information.
 
 ### With JavaScript SDK
 

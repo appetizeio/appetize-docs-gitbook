@@ -20,7 +20,7 @@ Set the language of the device by adding the `language` query parameter to your 
 &language=af_ZA
 ```
 
-See [Query Params Reference](query-params-reference.md#language) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#language) for more information.
 
 ### With JavaScript SDK
 
@@ -57,7 +57,7 @@ Set the locale of the device by adding the `locale` query parameter to your app 
 &locale=fr_FR
 ```
 
-See [Query Params Reference](query-params-reference.md#locale) for more information
+See [Query Params Reference](../platform/query-params-reference.md#locale) for more information
 
 ### **With JavaScript SDK Configuration**
 
@@ -84,7 +84,7 @@ Set the time zone of the device by adding the `timezone` query parameter to your
 &timezone=Australia%2FAdelaide
 ```
 
-See [Query Params Reference](query-params-reference.md#timezone) for more information
+See [Query Params Reference](../platform/query-params-reference.md#timezone) for more information
 
 ### **With JavaScript SDK Configuration**
 
@@ -113,7 +113,7 @@ Set the keyboard of the device by adding the `iosKeyboard` query parameter to yo
 &iosKeyboard=ja_JP@sw
 ```
 
-See [Query Params Reference](query-params-reference.md#ioskeyboard) for more information
+See [Query Params Reference](../platform/query-params-reference.md#ioskeyboard) for more information
 
 ### **With JavaScript SDK Configuration**
 
@@ -136,4 +136,4 @@ See [Configuration](../javascript-sdk/configuration.md#ioskeyboard) for more inf
 
 #### French language with French AZERTY keyboard
 
-[https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw](https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw)\\
+[https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw](https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw)

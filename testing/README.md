@@ -2,6 +2,18 @@
 description: >-
   Reliably End-to-End (E2E) test your Android and iOS mobile apps with Appetize
   AppRecorder for Playwright
+icon: check-double
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Testing
@@ -34,7 +46,7 @@ The Playwright integration with Appetize provides a unified testing solution fam
 
 <figure><img src="https://lh7-us.googleusercontent.com/slidesz/AGV_vUdeXA9PgE2hoG38KEV5OzNW10DnN8a81tzJ1WqSEj-XS3xcQxfKSXEd6QS5-J0dZn6HfsjNIdp2fiv3f0sPjWEqzB4fyqpRZUUDMouEEHNcws49zEVxunD_1S9h97kRRwvckFRDtqe0j1zR5aVufDKexzaSyINZ=nw?key=Ov-qIhkbe_J50OTU5jQN9g" alt="" width="563"><figcaption><p>Low-code automation example</p></figcaption></figure>
 
-See [UI Automation](../../features/ui-automation.md) for more information.
+See [UI Automation](../features/ui-automation.md) for more information.
 
 ### **Consistent and Reliable Test Environments**
 

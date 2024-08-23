@@ -86,7 +86,7 @@ Using our UI automation functionality, developers can _script_ the steps a user 
 For the best stability and to to facilitate the auto sign-in process, ensure your mobile application has all the necessary accessibility identifiers or resource identifiers set for the sign-in elements, such as the username input field, password input field, and sign-in button.
 {% endhint %}
 
-* Set up your Launch with our [JavaScript SDK](../javascript-sdk/getting-started.md).
+* Set up your Launch with our [JavaScript SDK](broken-reference).
 * Determine how to retrieve the credentials e.g. via inputs on your Launch Page e.g.
 
 ```html

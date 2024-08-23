@@ -2,18 +2,19 @@
 description: >-
   Effortlessly upload your mobile app on Appetize within minutes, and start
   using it across various devices and operating systems.
+icon: arrow-up-from-bracket
 ---
 
 # Uploading Apps
 
 ## Preparing your Build
 
-{% content-ref url="uploading-apps/android.md" %}
-[android.md](uploading-apps/android.md)
+{% content-ref url="android.md" %}
+[android.md](android.md)
 {% endcontent-ref %}
 
-{% content-ref url="uploading-apps/ios.md" %}
-[ios.md](uploading-apps/ios.md)
+{% content-ref url="ios.md" %}
+[ios.md](ios.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
@@ -34,7 +35,7 @@ To upload your application via a web browser use our [Upload](https://appetize.i
 
 To update an existing app, follow the same steps as uploading a new app via the [Upload](https://appetize.io/upload) dialog. The [latest build](#user-content-fn-1)[^1] will automatically be associated with your app.
 
-To view all builds for an app, select the app and go to the [App Builds Page](listing-apps.md#app-builds-page).
+To view all builds for an app, select the app and go to the [App Builds Page](../listing-apps.md#app-builds-page).
 
 {% hint style="warning" %}
 In some instances, you might want to explicitly update a particular app build. To do so, follow these steps:
@@ -45,7 +46,7 @@ In some instances, you might want to explicitly update a particular app build. T
 4. Go to **Settings**.
 5. Navigate to "**Update build**"
 
-![Update Build under settings page](<../.gitbook/assets/image (48).png>)
+![Update Build under settings page](<../../../.gitbook/assets/image (48).png>)
 {% endhint %}
 
 ### With CI/CD and Third-Party Integrations
@@ -78,12 +79,12 @@ If there is a 3rd party integration that you think should be on this list, pleas
 
 Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference):
 
-{% content-ref url="../rest-api/create-new-app.md" %}
-[create-new-app.md](../rest-api/create-new-app.md)
+{% content-ref url="../../../rest-api/create-new-app.md" %}
+[create-new-app.md](../../../rest-api/create-new-app.md)
 {% endcontent-ref %}
 
-{% content-ref url="../rest-api/update-existing-app.md" %}
-[update-existing-app.md](../rest-api/update-existing-app.md)
+{% content-ref url="../../../rest-api/update-existing-app.md" %}
+[update-existing-app.md](../../../rest-api/update-existing-app.md)
 {% endcontent-ref %}
 
 [^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings), and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleversion).

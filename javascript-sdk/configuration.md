@@ -26,7 +26,7 @@ const session = await client.startSession({
 ```
 
 {% hint style="info" %}
-Initial values may also be provided in the embed URL. See [Query Params Reference](../features/query-params-reference.md).
+Initial values may also be provided in the embed URL. See [Query Params Reference](../platform/query-params-reference.md).
 {% endhint %}
 
 ## Configuration Options

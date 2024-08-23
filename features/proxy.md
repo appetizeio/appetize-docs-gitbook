@@ -29,7 +29,7 @@ Add the `proxy` query parameter to your app or embed URL with your URL encoded p
 &proxy=http%3A%2F%2Fexample.com%3A8080%2F
 ```
 
-See [Query Params Reference](query-params-reference.md#proxy) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#proxy) for more information.
 
 ### With JavaScript SDK
 

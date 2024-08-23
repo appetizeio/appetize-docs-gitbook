@@ -8,7 +8,7 @@ description: >-
 # Network Traffic Monitor
 
 {% hint style="warning" %}
-Note by default, a user needs to be authenticated to view network traffic using the built-in intercept proxy. See [App Permissions](../platform/app-permissions.md) for more information.
+Note by default, a user needs to be authenticated to view network traffic using the built-in intercept proxy. See [App Permissions](../platform/app-management/app-permissions.md) for more information.
 {% endhint %}
 
 ## Capture Network Traffic
@@ -23,7 +23,7 @@ Add the `proxy` query parameter to your app or embed URL with `intercept` as val
 &proxy=intercept
 ```
 
-See [Query Params Reference](query-params-reference.md#proxy) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#proxy) for more information.
 
 ### With JavaScript SDK
 

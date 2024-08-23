@@ -14,7 +14,7 @@ Add the `hidePasswords=true` query parameter to your app or embed URL
 &hidePasswords=true
 ```
 
-See [Query Params Reference](../../query-params-reference.md#hidepasswords) for more information.
+See [Query Params Reference](../../../platform/query-params-reference.md#hidepasswords) for more information.
 
 ### With JavaScript SDK
 

@@ -18,7 +18,7 @@ In this guide we will cover how you can enable app pinning for the current runni
 
 Before enabling App Pinning, you need to ensure that the Appetize JavaScript SDK is properly set up in your project. The SDK allows you to control various aspects of the device, including sending ADB shell commands.
 
-Follow our [Getting Started](../javascript-sdk/getting-started.md) steps to set up the JavaScript SDK.
+Follow our [Getting Started](broken-reference) steps to set up the JavaScript SDK.
 
 ## Enabling App Pinning
 

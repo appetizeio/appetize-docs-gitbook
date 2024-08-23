@@ -14,15 +14,15 @@ Appetize currently only supports iOS Simulator builds (**.app**). A simulator bu
 
 The easiest way to get the iOS Simulator build is to run and build your application in Xcode while targeting an iOS Simulator
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-04-28 at 15.42.41.png" alt=""><figcaption><p>Build and run your application from Xcode while targeting a simulator</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-04-28 at 15.42.41.png" alt=""><figcaption><p>Build and run your application from Xcode while targeting a simulator</p></figcaption></figure>
 
 Once the build is complete and the app is running in the simulator, you can locate the `.app` file by navigating to **Product** -> **Show Build Folder in Finder** -> **Products/Debug-iphonesimulator**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-04-28 at 15.45.53.png" alt="" width="265"><figcaption><p>Show build folder in Xcode</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-04-28 at 15.45.53.png" alt="" width="265"><figcaption><p>Show build folder in Xcode</p></figcaption></figure>
 
-### With Xcode Command Line Tools&#x20;
+### With Xcode Command Line Tools
 
-You can also generate the iOS Simulator build of your app by building it directly via the command line using `xcodebuild`.&#x20;
+You can also generate the iOS Simulator build of your app by building it directly via the command line using `xcodebuild`.
 
 #### With .xcodeproj
 
@@ -46,7 +46,7 @@ xcodebuild -workspace '{your_workspace_name}.xcworkspace' \
 ```
 {% endcode %}
 
-The `app` file can then be found under&#x20;
+The `app` file can then be found under
 
 ```
 build/Debug-iphonesimulator/

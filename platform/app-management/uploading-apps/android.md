@@ -10,11 +10,11 @@ description: To get started, Appetize requires the APK containing your applicati
 
 Select **Build** -> **Build APK(s)** -> **Build APK(s)** or **Build** -> **Generated Signed APK** (and following the prompts)
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="563"><figcaption><p>Building with Android Studio</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt="" width="563"><figcaption><p>Building with Android Studio</p></figcaption></figure>
 
 Once the build is complete you can locate the `.apk` file by selecting `locate` in the dialog that appears
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-02 at 15.07.06.png" alt="" width="368"><figcaption><p>Select <code>locate</code> in the dialog to navigate to the apk</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2023-05-02 at 15.07.06.png" alt="" width="368"><figcaption><p>Select <code>locate</code> in the dialog to navigate to the apk</p></figcaption></figure>
 
 or by navigating to
 

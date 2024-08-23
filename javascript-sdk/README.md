@@ -3,9 +3,10 @@ description: >-
   Our JavaScript SDK offers an API to programmatically interact with Appetize
   devices. This allows you to automate interactions with the device, verify app
   behavior, and more.
+icon: js
 ---
 
-# Getting Started
+# JavaScript SDK
 
 ## Installation
 

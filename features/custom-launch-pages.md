@@ -10,7 +10,7 @@ description: >-
 Custom Launch Pages is only available on our Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
 {% endhint %}
 
-Customers can create highly customized integrations using Appetize virtual devices, thanks to our [embedding](../platform/embedding-apps.md), [Query Parameter](query-params-reference.md) support, and [JavaScript SDK](../javascript-sdk/getting-started.md).
+Customers can create highly customized integrations using Appetize virtual devices, thanks to our [embedding](../platform/embedding-apps.md), [Query Parameter](../platform/query-params-reference.md) support, and [JavaScript SDK](broken-reference).
 
 For convenience, we also provide templated "launch pages" that can provide a simple bookmark-friendly page for your team. We are happy to assist you in designing and implementing such as page for your specific business use.
 

@@ -29,7 +29,7 @@ Add the `enableAdb=true` query parameter to your app or embed URL
 &enableAdb=true
 ```
 
-See [Query Params Reference](../../query-params-reference.md#enableadb) for more information.
+See [Query Params Reference](../../../platform/query-params-reference.md#enableadb) for more information.
 
 ### With JavaScript SDK
 

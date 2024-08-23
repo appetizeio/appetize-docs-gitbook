@@ -1,6 +1,6 @@
 # Writing Tests
 
-Each test will have an [Appetize session](../api-reference.md#session-1) for you to interact with your device (like a [page](https://playwright.dev/docs/pages) in Playwright). You can then assert the app based on some criteria, such as the existence of a UI element, a network request, or do a screenshot test.
+Each test will have an [Appetize session](../javascript-sdk/api-reference.md#session-1) for you to interact with your device (like a [page](https://playwright.dev/docs/pages) in Playwright). You can then assert the app based on some criteria, such as the existence of a UI element, a network request, or do a screenshot test.
 
 ## Your first test
 
@@ -57,7 +57,7 @@ This will load a hypothetical app with a login screen. It will tap on the userna
 
 ## Actions
 
-Each test provides the `session` for your app. You can use [Automation](../automation/) actions here to interact with it as you need.
+Each test provides the `session` for your app. You can use [Automation](../javascript-sdk/automation/) actions here to interact with it as you need.
 
 ```javascript
 test('scrolls through the news feed', async ({ session }) => {
@@ -73,7 +73,7 @@ test('scrolls through the news feed', async ({ session }) => {
 
 ### Sequencing actions
 
-All actions are promises that will await until the interaction has been played on the device. If your action [targets an element](../automation/touch-interactions.md#targeting-elements), Appetize will wait for the element to appear before proceeding, which is helpful when your action results in a change in UI.
+All actions are promises that will await until the interaction has been played on the device. If your action [targets an element](../javascript-sdk/automation/touch-interactions.md#targeting-elements), Appetize will wait for the element to appear before proceeding, which is helpful when your action results in a change in UI.
 
 ```javascript
 test('navigates to a settings menu', async ({ session }) => {
@@ -111,7 +111,7 @@ test('screenshot of the settings page', async ({ session }) => {
 })
 ```
 
-These timeouts are also configurable (see [Timeouts](../automation/touch-interactions.md#timeouts).)
+These timeouts are also configurable (see [Timeouts](../javascript-sdk/automation/touch-interactions.md#timeouts).)
 
 ## Assertions
 
@@ -168,7 +168,7 @@ await expect(session).not.toHaveElement(
 
 ### Screenshot comparisons
 
-[toMatchSnapshot()](https://playwright.dev/docs/api/class-snapshotassertions#snapshot-assertions-to-match-snapshot-2) works with [session.screenshot()](../automation/device-commands.md#screenshot), allowing you to do screenshot comparisons of your app.
+[toMatchSnapshot()](https://playwright.dev/docs/api/class-snapshotassertions#snapshot-assertions-to-match-snapshot-2) works with [session.screenshot()](../javascript-sdk/automation/device-commands.md#screenshot), allowing you to do screenshot comparisons of your app.
 
 _Note: screenshot tests are fragile by nature as any change in the UI could cause it to fail. It is always better to assert on a narrow piece of application state, such as_ [_toHaveElement_](writing-tests.md#tohaveelement)_, or on network/debug log output._
 
@@ -186,7 +186,7 @@ test('loads the home tab', async ({ sesssion }) => {
 
 An example of how you can assert that a network request was made.
 
-[See documentation for network events](../api-reference.md#on-session)
+[See documentation for network events](../javascript-sdk/api-reference.md#on-session)
 
 ```javascript
 test.use({

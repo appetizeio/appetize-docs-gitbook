@@ -2,13 +2,14 @@
 description: >-
   Sharing your app on Appetize is easy! Simply upload your build and share the
   link with others for instant access on any device.
+icon: share-nodes
 ---
 
-# Sharing Apps
+# Sharing
 
 ## Where is my share link?
 
-The easiest way to find your external share link is by going to your [Apps](https://appetize.io/apps) or [App Builds](listing-apps.md#app-builds-page) page and selecting **share** under the app, App Group or build that you want to embed on your website.
+The easiest way to find your external share link is by going to your [Apps](https://appetize.io/apps) or [App Builds](app-management/listing-apps.md#app-builds-page) page and selecting **share** under the app, App Group or build that you want to embed on your website.
 
 <figure><img src="../.gitbook/assets/image (12).png" alt="" width="371"><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
 
@@ -50,7 +51,7 @@ By default, anybody who has your app's build link, i.e. its **buildId** (previou
 Your app link can be easily shared with whomever you'd like, or [embedded](embedding-apps.md) into your own applications.
 
 {% hint style="info" %}
-Some customers want to restrict access, so that only authenticated users may run their app (or certain features). See [App Build Permissions](app-permissions.md) for more information on how to do this.
+Some customers want to restrict access, so that only authenticated users may run their app (or certain features). See [App Build Permissions](app-management/app-permissions.md) for more information on how to do this.
 {% endhint %}
 
 [^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings) , and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleversion).

@@ -14,7 +14,7 @@ To specify the device location, include the `location` query parameter in your a
 &location=-33.924434,18.418391
 ```
 
-See [Query Params Reference](query-params-reference.md#location) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#location) for more information.
 
 ### With JavaScript SDK
 

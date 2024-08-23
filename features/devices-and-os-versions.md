@@ -69,7 +69,7 @@ Set the device type and Operating System version by adding the `device` and/or `
 &device=pixel4&osVersion=12.0
 ```
 
-See [Query Params Reference](query-params-reference.md#device) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#device) for more information.
 
 ### With JavaScript SDK
 

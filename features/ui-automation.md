@@ -152,6 +152,6 @@ The device can also be interacted with programmatically through our JavaScript A
 
 We offer a [Playwright](https://playwright.dev/) integration that uses our JavaScript SDK to test your apps.
 
-{% content-ref url="../javascript-sdk/playwright/" %}
-[playwright](../javascript-sdk/playwright/)
+{% content-ref url="../testing/" %}
+[testing](../testing/)
 {% endcontent-ref %}

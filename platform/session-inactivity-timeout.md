@@ -2,6 +2,7 @@
 description: >-
   With Appetize's Session Inactivity Timeout, users can manage how long their
   device's session stays active, before being freed up for reuse.
+icon: alarm-clock
 ---
 
 # Session Inactivity Timeout

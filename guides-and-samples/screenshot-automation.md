@@ -24,7 +24,7 @@ Automated screenshots can be used to verify the visual appearance and layout of 
 
 By making use of Playwright, you can write [Visual Comparison](https://playwright.dev/docs/test-snapshots) (Snapshot) tests to verify that screens are rendered as expected whenever a new build/pull request (or other condition) occurs.
 
-For more information see [Screenshot Comparisons](https://docs.appetize.io/javascript-sdk/playwright/writing-tests#screenshot-comparisons) under our [Writing Tests](../javascript-sdk/playwright/writing-tests.md) article.
+For more information see [Screenshot Comparisons](https://docs.appetize.io/javascript-sdk/playwright/writing-tests#screenshot-comparisons) under our [Writing Tests](../testing/writing-tests.md) article.
 
 {% hint style="info" %}
 For clients who prefer manually reviewing the generated screenshots, Playwright generates files for all requested screenshots in the output folder. Alternatively, you can follow a process similar to [App store submissions](screenshot-automation.md#apple-appstore-and-google-playstore-submissions) to generate and save screenshots without requiring a Playwright setup.
@@ -47,7 +47,7 @@ To get started:
 
 ### 2. Set up our Javascript SDK
 
-In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](../javascript-sdk/getting-started.md) page for more info on how to get that set up.
+In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](broken-reference) page for more info on how to get that set up.
 
 ### 3.  Build out an object/structure that would match your requirements
 
@@ -217,7 +217,7 @@ With Appetize, you could automate generating of a screenshot on every step the u
 
 ### 1. Set up our Javascript SDK and start a session
 
-In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](../javascript-sdk/getting-started.md) page for more info on how to get that set up.
+In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](broken-reference) page for more info on how to get that set up.
 
 ```typescript
 const session = await client.startSession()

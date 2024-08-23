@@ -7,7 +7,7 @@ description: >-
 # Debug Logs
 
 {% hint style="warning" %}
-Note by default, a user needs to be authenticated to view debug logs for their app. See [App Permissions](../platform/app-permissions.md) for more information.
+Note by default, a user needs to be authenticated to view debug logs for their app. See [App Permissions](../platform/app-management/app-permissions.md) for more information.
 {% endhint %}
 
 ## Capture Debug Logs
@@ -26,7 +26,7 @@ Add the `debug=true` query parameter to your app or embed URL
 &debug=true
 ```
 
-See [Query Params Reference](query-params-reference.md#debug) for more information.
+See [Query Params Reference](../platform/query-params-reference.md#debug) for more information.
 
 ### With JavaScript SDK
 

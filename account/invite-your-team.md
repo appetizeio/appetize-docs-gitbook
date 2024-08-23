@@ -37,6 +37,6 @@ On our Enterprise plans, you can take advantage of our Single Sign-On (SSO) inte
 
 ## Related Links
 
-{% content-ref url="../platform/app-permissions.md" %}
-[app-permissions.md](../platform/app-permissions.md)
+{% content-ref url="../platform/app-management/app-permissions.md" %}
+[app-permissions.md](../platform/app-management/app-permissions.md)
 {% endcontent-ref %}

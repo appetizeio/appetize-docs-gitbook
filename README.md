@@ -4,7 +4,7 @@ description: >-
   no downloads, plugins, or extra permissions required!
 ---
 
-# Getting Started
+# Introduction
 
 Appetize is a cloud-based platform that allows developers and organizations to run and test their mobile apps on a virtual mobile device directly from their web browser.
 
@@ -26,16 +26,16 @@ Ready to experience Appetize for yourself? You can get started in just a few cli
 
 The first thing to do at Appetize is upload your app. Follow our steps at:
 
-{% content-ref url="platform/uploading-apps.md" %}
-[uploading-apps.md](platform/uploading-apps.md)
+{% content-ref url="platform/app-management/uploading-apps/" %}
+[uploading-apps](platform/app-management/uploading-apps/)
 {% endcontent-ref %}
 
-## Run/Embed your App
+## Run, Embed & Share your App
 
 Once you have your app uploaded, you can follow our steps at
 
-{% content-ref url="platform/running-apps.md" %}
-[running-apps.md](platform/running-apps.md)
+{% content-ref url="platform/app-management/running-apps.md" %}
+[running-apps.md](platform/app-management/running-apps.md)
 {% endcontent-ref %}
 
 and/or
@@ -44,16 +44,20 @@ and/or
 [embedding-apps.md](platform/embedding-apps.md)
 {% endcontent-ref %}
 
+{% content-ref url="platform/sharing-apps.md" %}
+[sharing-apps.md](platform/sharing-apps.md)
+{% endcontent-ref %}
+
 to view your application in action.
 
 ## Customize your experience
 
-Now that your app is up and running on Appetize, it's time to take control of your app experience. Check out all our [features](broken-reference/) and customization options:
+Now that your app is up and running on Appetize, it's time to take control of your app experience. Check out all our[ features](features/) and customization options:
 
-{% content-ref url="features/query-params-reference.md" %}
-[query-params-reference.md](features/query-params-reference.md)
+{% content-ref url="platform/query-params-reference.md" %}
+[query-params-reference.md](platform/query-params-reference.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="javascript-sdk/" %}
+[javascript-sdk](javascript-sdk/)
 {% endcontent-ref %}

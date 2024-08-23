@@ -2,9 +2,10 @@
 description: >-
   Seamlessly integrate Appetize into your CI/CD pipeline by making use of our
   REST API.
+icon: cloud
 ---
 
-# Overview
+# REST API
 
 ## Getting Started
 
