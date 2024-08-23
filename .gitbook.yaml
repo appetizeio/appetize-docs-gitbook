@@ -33,9 +33,9 @@ redirects:
     platform/app-permissions: platform/app-management/app-permissions.md
     platform/listing-apps: platform/app-management/listing-apps.md
     platform/running-apps: platform/app-management/running-apps.md
-    rest-api/overview: rest-api.md
-    javascript-sdk/getting-started: javascript-sdk.md
-    javascript-sdk/playwright: testing.md
+    rest-api/overview: rest-api/README.md
+    javascript-sdk/getting-started: javascript-sdk/README.md
+    javascript-sdk/playwright: testing/README.md
     javascript-sdk/playwright/getting-started: testing/getting-started.md
     javascript-sdk/playwright/writing-tests: testing/writing-tests.md
     javascript-sdk/playwright/running-tests: testing/running-tests.md
