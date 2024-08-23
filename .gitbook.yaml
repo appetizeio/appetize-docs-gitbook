@@ -5,10 +5,10 @@ structure:
     summary: SUMMARY.md
 
 redirects:
-    core-features/uploading-apps: platform/uploading-apps.md
-    core-features/playback-options: features/query-params-reference.md
+    core-features/uploading-apps: platform/app-management/uploading-apps.md
+    core-features/playback-options: platform/query-params-reference.md
     core-features/embed-your-app: platform/embedding-apps.md
-    core-features/app-permissions: platform/app-permissions.md
+    core-features/app-permissions: platform/app-management/app-permissions.md
     core-features/cross-document-messages: deprecated/cross-document-messages.md
     core-features/custom-launch-pages: features/custom-launch-pages.md
     rest-api/devices-and-ips: rest-api/devices-os-versions.md
@@ -21,9 +21,33 @@ redirects:
     advanced-features/single-sign-on/azure-active-directory: account/single-sign-on/azure-active-directory.md
     advanced-features/single-sign-on/google-workspace-gsuite: account/single-sign-on/google-workspace-gsuite.md
     javascript-sdk/automation/recording-and-playback: features/ui-automation.md
-    javascript-sdk/automation/recording-and-playback/playback-event-matching: javascript-sdk/automation/playback-event-matching.md
+    javascript-sdk/automation/recording-and-playback/playback-event-matching: javascript-sdk/automation/touch-interactions.md
     javascript-sdk/automation/events: javascript-sdk/api-reference.md
-    javascript-sdk/use-cases/log-in-with-username-and-password: sample-use-cases/automate-sign-in-flow.md
-    javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device: sample-use-cases/swipe-a-pattern-to-unlock-an-android-device.md
-    javascript-sdk/use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen: sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md
-    javascript-sdk/use-cases/save-screenshots-of-an-app-in-multiple-languages: sample-use-cases/save-screenshots-of-an-app-in-multiple-languages.md
+    javascript-sdk/use-cases/log-in-with-username-and-password: guides-and-sample/automate-sign-in-flow.md
+    javascript-sdk/use-cases/swipe-a-pattern-to-unlock-an-android-device: guides-and-sample/swipe-a-pattern-to-unlock-an-android-device.md
+    javascript-sdk/use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen: guides-and-sample/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md
+    javascript-sdk/use-cases/save-screenshots-of-an-app-in-multiple-languages: guides-and-sample/screenshot-automation.md
+    features/query-params-reference: platform/query-params-reference.md
+    platform/uploading-apps/android: platform/app-management/uploading-apps/android.md
+    platform/uploading-apps/ios: platform/app-management/uploading-apps/ios.md
+    platform/app-permissions: platform/app-management/app-permissions.md
+    platform/listing-apps: platform/app-management/listing-apps.md
+    platform/running-apps: platform/app-management/running-apps.md
+    rest-api/overview: rest-api.md
+    javascript-sdk/getting-started: javascript-sdk.md
+    javascript-sdk/playwright: testing.md
+    javascript-sdk/playwright/getting-started: testing/getting-started.md
+    javascript-sdk/playwright/writing-tests: testing/writing-tests.md
+    javascript-sdk/playwright/running-tests: testing/running-tests.md
+    javascript-sdk/playwright/test-configuration: testing/test-configuration.md
+    javascript-sdk/playwright/continuous-integration: testing/continuous-integration.md
+    javascript-sdk/playwright/record-tests-experimental: testing/record-tests-experimental.md
+    javascript-sdk/playwright/trace-viewer: testing/trace-viewer.md
+    sample-use-cases/impersonation: guides-and-samples/impersonation.md
+    sample-use-cases/automate-sign-in-flow: guides-and-samples/automate-sign-in-flow.md
+    sample-use-cases/screenshot-automation: guides-and-samples/screenshot-automation.md
+    sample-use-cases/swipe-a-pattern-to-unlock-an-android-device: guides-and-samples/swipe-a-pattern-to-unlock-an-android-device.md
+    sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen: guides-and-samples/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md
+    sample-use-cases/lock-your-device-to-one-app: guides-and-samples/lock-your-device-to-one-app.md
+    sample-use-cases/test-accessibility-font-sizes: guides-and-samples/test-accessibility-font-sizes.md
+
