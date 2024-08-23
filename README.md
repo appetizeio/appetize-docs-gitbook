@@ -2,6 +2,17 @@
 description: >-
   Experience native iOS and Android mobile apps in your browser with Appetize -
   no downloads, plugins, or extra permissions required!
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Introduction
