@@ -262,7 +262,7 @@ await session.tap({
 
 // tap at x/y coordinate
 await session.tap({
-    position: {
+    coordinates: {
         x: 100,
         y: 250
     },
