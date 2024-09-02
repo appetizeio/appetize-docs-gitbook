@@ -34,3 +34,12 @@ async function pinRunningApp(session) {
 ```
 {% endcode %}
 
+## Disable System Toasts (Optional)
+
+You can choose to disable toast notifications during the session, such as the confirmation message indicating that your app has been pinned. This is optional and can help reduce distractions or clutter.
+
+```typescript
+async function disableToastMessages(session) {
+    await session.adbShellCommand('appops set com.android.systemui TOAST_WINDOW deny');
+}
+```
