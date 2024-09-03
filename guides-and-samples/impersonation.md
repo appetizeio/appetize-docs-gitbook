@@ -36,7 +36,7 @@ Understand how authentication works in your target app and use a strategy to gen
 
 ### **Option 1: Internal REST API and Web Interface (recommended)**
 
-Use an internal REST API and web interface that allows administrators or call center agents to generate tokens with specific user roles and behaviors. The web interface can provide an intuitive interface for administrators to input the desired parameters, and the API can generate and return the corresponding token. This token can then be passed to the Appetize client via our [JavaScript SDK](broken-reference). See [Implementing Impersonation in Your App](impersonation.md#implementing-impersonation-in-your-app).
+Use an internal REST API and web interface that allows administrators or call center agents to generate tokens with specific user roles and behaviors. The web interface can provide an intuitive interface for administrators to input the desired parameters, and the API can generate and return the corresponding token. This token can then be passed to the Appetize client via our [JavaScript SDK](../javascript-sdk/). See [Implementing Impersonation in Your App](impersonation.md#implementing-impersonation-in-your-app).
 
 <img src="../.gitbook/assets/file.excalidraw (2).svg" alt="Sample Structure for using an internal API for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
 
@@ -120,7 +120,7 @@ Note `authenticationService` is just an example to represent how authentication 
 
 #### Webpage
 
-Pass the generated token via a deep link while your app is running in Appetize by making use of our [JavaScript SDK](broken-reference) on your webpage.
+Pass the generated token via a deep link while your app is running in Appetize by making use of our [JavaScript SDK](../javascript-sdk/) on your webpage.
 
 {% hint style="info" %}
 See [Deep Links](../features/deep-links.md) for more info.
