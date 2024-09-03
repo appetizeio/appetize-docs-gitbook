@@ -45,7 +45,7 @@ Use an internal REST API and web interface that allows administrators or call ce
 Use a companion app that works alongside the target app on Appetize. The companion app can include features to generate tokens with desired user roles and behaviors. The generated token can then be passed to the target app as a launch parameter or via deep link. See [Implementing Impersonation in Your App](impersonation.md#implementing-impersonation-in-your-app).
 
 {% hint style="info" %}
-You can run multiple embedded Appetize sessions and use our [JavaScript SDK](broken-reference) to pass the values between them or you could make use of our [App Groups](../platform/app-management/listing-apps.md#grouped-applications) to bundle the companion and the main app into a single session.
+You can run multiple embedded Appetize sessions and use our [JavaScript SDK](../javascript-sdk/) to pass the values between them or you could make use of our [App Groups](../platform/app-management/listing-apps.md#grouped-applications) to bundle the companion and the main app into a single session.
 {% endhint %}
 
 <img src="../.gitbook/assets/file.excalidraw (1) (1).svg" alt="Sample Structure for using a companion app for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
@@ -68,7 +68,7 @@ Once you have the required user information (e.g. user token), proceed with pass
 
 #### Webpage
 
-Pass the generated token as a launch parameter when launching your app via Appetize by making use of our [JavaScript SDK](broken-reference) on your webpage.
+Pass the generated token as a launch parameter when launching your app via Appetize by making use of our [JavaScript SDK](../javascript-sdk/) on your webpage.
 
 {% hint style="info" %}
 See [Launch Params](impersonation.md#launch-params) for more info.

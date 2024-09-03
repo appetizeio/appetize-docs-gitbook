@@ -12,13 +12,13 @@ App Pinning is currently only available on Android devices
 
 App pinning, also known as Kiosk Mode, is a feature that restricts users to a single app, preventing access to other applications, settings, or the home screen. This is especially useful in scenarios where you want to restrict access to other parts of the device.&#x20;
 
-In this guide we will cover how you can enable app pinning for the current running application using our [JavaScript SDK](broken-reference) and [adbShellCommand](../javascript-sdk/automation/device-commands.md#adbshellcommand) functionality.
+In this guide we will cover how you can enable app pinning for the current running application using our [JavaScript SDK](../javascript-sdk/) and [adbShellCommand](../javascript-sdk/automation/device-commands.md#adbshellcommand) functionality.
 
 ## JavaScript SDK Setup
 
 Before enabling App Pinning, you need to ensure that the Appetize JavaScript SDK is properly set up in your project. The SDK allows you to control various aspects of the device, including sending ADB shell commands.
 
-Follow our [Getting Started](broken-reference) steps to set up the JavaScript SDK.
+Follow our [Getting Started](../javascript-sdk/) steps to set up the JavaScript SDK.
 
 ## Enabling App Pinning
 
