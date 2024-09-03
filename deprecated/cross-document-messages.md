@@ -7,7 +7,7 @@ description: Interact with the virtual device via a Javascript post-message API
 {% hint style="danger" %}
 Cross-document messages API is no longer receiving updates.
 
-Please use our [Javascript SDK](broken-reference) for any new development.
+Please use our J[avascript SDK](../javascript-sdk/) for any new development.
 {% endhint %}
 
 Cross-document messaging, when enabled via the `&xdocMsg=true` query parameter, allows you to issue commands to the embedded iFrame via Javascript via [`postMessage(message, targetOrigin)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).

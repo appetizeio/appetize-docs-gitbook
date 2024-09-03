@@ -47,7 +47,7 @@ To get started:
 
 ### 2. Set up our Javascript SDK
 
-In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](broken-reference) page for more info on how to get that set up.
+In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](../javascript-sdk/) page for more info on how to get that set up.
 
 ### 3.  Build out an object/structure that would match your requirements
 
@@ -217,7 +217,7 @@ With Appetize, you could automate generating of a screenshot on every step the u
 
 ### 1. Set up our Javascript SDK and start a session
 
-In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](broken-reference) page for more info on how to get that set up.
+In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](../javascript-sdk/) page for more info on how to get that set up.
 
 ```typescript
 const session = await client.startSession()
