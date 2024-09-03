@@ -1,8 +1,8 @@
 ---
+icon: arrow-up-from-bracket
 description: >-
   Effortlessly upload your mobile app on Appetize within minutes, and start
   using it across various devices and operating systems.
-icon: arrow-up-from-bracket
 ---
 
 # Uploading Apps
@@ -77,7 +77,7 @@ If there is a 3rd party integration that you think should be on this list, pleas
 
 ### With REST API
 
-Appetize also supports uploading your application programmatically by making use of our [REST API](broken-reference):
+Appetize also supports uploading your application programmatically by making use of our [REST API](../../../rest-api/):
 
 {% content-ref url="../../../rest-api/create-new-app.md" %}
 [create-new-app.md](../../../rest-api/create-new-app.md)

@@ -1,8 +1,8 @@
 ---
+icon: grid-horizontal
 description: >-
   Organize your apps effortlessly with Appetize's App Dashboard and Groups,
   enabling seamless app management and access.
-icon: grid-horizontal
 ---
 
 # App Dashboard
@@ -70,7 +70,7 @@ From there, you can:
 
 ### Rest API
 
-Appetize also supports retrieving a list of your uploaded app builds (or a single app build by **buildId**) by making use of our [REST API](broken-reference):
+Appetize also supports retrieving a list of your uploaded app builds (or a single app build by **buildId**) by making use of our [REST API](../../rest-api/):
 
 {% hint style="info" %}
 Each uploaded app build has a uniquely assigned **buildId** (previously known as [**publicKey**](../sharing-apps.md#public-key)**)**.

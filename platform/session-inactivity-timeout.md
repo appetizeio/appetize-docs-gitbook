@@ -1,8 +1,8 @@
 ---
+icon: alarm-clock
 description: >-
   With Appetize's Session Inactivity Timeout, users can manage how long their
   device's session stays active, before being freed up for reuse.
-icon: alarm-clock
 ---
 
 # Session Inactivity Timeout
@@ -28,7 +28,7 @@ Navigate to your [**Apps Dashboard**](https://appetize.io/apps) **-> Select** yo
 
 
 {% hint style="info" %}
-You can also[ set](../rest-api/create-new-app.md)/[update](../rest-api/update-existing-app.md) the inactivity timeout of your app with our [REST API](broken-reference) when uploading your app.
+You can also[ set](../rest-api/create-new-app.md)/[update](../rest-api/update-existing-app.md) the inactivity timeout of your app with our [REST API](../rest-api/) when uploading your app.
 {% endhint %}
 
 ## What's the behavior if you reach your concurrency limit?
