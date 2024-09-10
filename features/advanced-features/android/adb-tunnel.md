@@ -11,16 +11,6 @@ description: >-
 
 To enable the ADB tunnel feature, you can either choose to enable it through a query parameter or by utilizing the JavaScript SDK.
 
-{% hint style="warning" %}
-Enabling the SSH ADB tunnel has a limitation that causes our ADB connection to terminate. Consequently, the following Appetize features will be affected and unavailable:
-
-1. [AppRecorder](../../ui-automation.md)
-2. [Screenshots](../../../javascript-sdk/api-reference.md#screenshot-format)
-3. [Debug Logs](../../debug-logs.md)
-
-If you would like to use any of these features, we recommend using [adbShellCommand](../../../javascript-sdk/automation/device-commands.md#adbshellcommand) from our JavaScript SDK instead.
-{% endhint %}
-
 ### With Query Parameter
 
 Add the `enableAdb=true` query parameter to your app or embed URL
