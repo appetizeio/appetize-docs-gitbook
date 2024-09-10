@@ -13,6 +13,10 @@ You can access your session history by navigating to your [Reports Dashboard](ht
 
 <figure><img src="../../.gitbook/assets/image (58).png" alt="" width="365"><figcaption><p>Select "Download" under session logs after specifying the month you are interested in</p></figcaption></figure>
 
+{% hint style="info" %}
+All reports are downloaded in UTC (Coordinated Universal Time) times.
+{% endhint %}
+
 ## Glossary
 
 {% hint style="warning" %}

@@ -7,7 +7,7 @@ description: >-
 
 # Uploading Apps
 
-## Preparing your Build
+## eparing your Build
 
 {% content-ref url="android.md" %}
 [android.md](android.md)
@@ -63,6 +63,10 @@ Appetize integrates with several popular CI/CD tools and other third-party servi
   Automatically upload and test builds on Pull Requests for efficient quality assurance.
 
 Available integrations include:
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Github Actions</td><td></td><td></td><td><a href="../../../.gitbook/assets/brands-github.svg">brands-github.svg</a></td></tr><tr><td>Gitlab</td><td></td><td></td><td><a href="../../../.gitbook/assets/brands-gitlab.svg">brands-gitlab.svg</a></td></tr><tr><td>Bitrise</td><td></td><td></td><td></td></tr><tr><td>Expo</td><td></td><td></td><td></td></tr><tr><td>Fastlane</td><td></td><td></td><td></td></tr><tr><td>Storybook native</td><td></td><td></td><td></td></tr></tbody></table>
+
+
 
 * [Fastlane](https://docs.fastlane.tools/actions/appetize/)
 * [Bitrise](https://bitrise.io/integrations/steps/appetize-deploy)
