@@ -15,6 +15,10 @@ You can access your usage summary by navigating to your [Reports Dashboard](http
 
 <figure><img src="../../.gitbook/assets/image (59).png" alt="" width="368"><figcaption><p>Select "Download" under Monthly or Daily usage report</p></figcaption></figure>
 
+{% hint style="info" %}
+All reports are downloaded in UTC (Coordinated Universal Time) times.
+{% endhint %}
+
 ### With REST API
 
 You can access your usage report via our REST API. For more information, see
