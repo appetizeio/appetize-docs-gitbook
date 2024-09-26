@@ -77,6 +77,7 @@
   * [Validate Analytics Events](guides-and-samples/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md)
   * [Lock Your Device to One App](guides-and-samples/lock-your-device-to-one-app.md)
   * [Test Accessibility Font Sizes](guides-and-samples/test-accessibility-font-sizes.md)
+  * [Common testing scenarios](guides-and-samples/common-testing-scenarios.md)
   * [Samples Repository](https://samples.appetize.io/)
 * [Deprecated](deprecated/README.md)
   * [Cross-document messages](deprecated/cross-document-messages.md)

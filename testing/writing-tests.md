@@ -251,3 +251,7 @@ Waits for the given time to elapse (in ms)
 ```javascript
 await session.waitForTimeout(5000)
 ```
+
+## Real life applications
+
+The [Common Testing Scenarios](../guides-and-samples/common-testing-scenarios.md) page highlights typical challenges mobile developers face when writing tests and explains how to use key features covered on this page, such as waiting for network events, validating elements, and comparing screenshots.
