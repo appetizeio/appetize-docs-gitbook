@@ -15,29 +15,29 @@ Supported Links
 * Web Links
 {% endhint %}
 
-### With Query Parameter
+Appetize allows configuration of deep links at app launch with[ launchUrl](deep-links.md#launchurl) or during runtime with [openUrl](deep-links.md#openurl), depending on when and how the link needs to be triggered.
+
+## launchUrl
+
+To launch a URL (deep link or regular) when the device starts.
 
 {% hint style="info" %}
-This URL will be invoked on launch of the device.
+Verifies AppLink or Universal Link associations (if applicable), which may delay the device launch until the validation is complete
 {% endhint %}
 
+{% tabs %}
+{% tab title="Query Parameter" %}
 Set the deep-link URL by adding the URL encoded `launchUrl` query parameter to your app or embed URL.
 
-```uri
+```url
 &launchUrl=https%3A%2F%2Fwww.appetize.io
 ```
 
 See [Query Params Reference](../platform/query-params-reference.md#launchurl) for more information.
+{% endtab %}
 
-### With JavaScript SDK
-
+{% tab title="JavaScript SDK" %}
 Set the deep-link URL of the device via our JavaScript SDK
-
-#### With Configuration
-
-{% hint style="info" %}
-This URL will be invoked on launch of the device.
-{% endhint %}
 
 ```typescript
 await client.setConfig({
@@ -47,11 +47,15 @@ await client.setConfig({
 ```
 
 See [Configuration](../javascript-sdk/configuration.md#launchurl) for more information.
+{% endtab %}
+{% endtabs %}
 
-#### With openUrl()
+## openUrl
+
+To launch a URL (deep link or regular) while the device (or application) is already running.
 
 {% hint style="info" %}
-This can be called multiple times after launch of the device.
+This can be called multiple times after launch of the device, with the assumption that all AppLink and Universal Link associations are already established.
 {% endhint %}
 
 ```typescript
@@ -60,13 +64,13 @@ await session.openUrl("https://appetize.io")
 
 See the [API Reference](../javascript-sdk/api-reference.md#openurl) for more information.
 
-### Troubleshooting
+## Troubleshooting
 
 {% hint style="warning" %}
 Please note that the use of AppLinks and Universal Links may be affected if our network traffic monitor feature is enabled.
 {% endhint %}
 
-#### Verifying Associated Domains Entitlement included in your iOS App
+### Verifying Associated Domains Entitlement included in your iOS App
 
 1. Open the Terminal on your macOS machine.
 2. Navigate to the directory where your app's `.app` bundle is located. For example, if your app is named `YourAppName`, and it's in the `/Applications` folder, you can use the following command to change to that directory:
