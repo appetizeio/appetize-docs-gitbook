@@ -7,6 +7,6 @@ description: >-
 
 # IP Blocks
 
-{% swagger src="../.gitbook/assets/appetize-base.yaml" path="/ip-blocks" method="get" %}
-[appetize-base.yaml](../.gitbook/assets/appetize-base.yaml)
+{% swagger src="../../.gitbook/assets/openapi-spec-public (2).yml" path="/v2/service/ips" method="get" %}
+[openapi-spec-public (2).yml](<../../.gitbook/assets/openapi-spec-public (2).yml>)
 {% endswagger %}
