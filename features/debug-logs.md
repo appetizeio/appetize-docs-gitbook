@@ -55,7 +55,7 @@ https://appetize.io/app/{appId|buildId|publicKey}?&debug=true
 
 or by going to your [Apps](https://appetize.io/apps) page, selecting the app you want to inspect, and then clicking `debug` on the latest build or choosing a specific build you would like to debug.
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
 
 {% hint style="info" %}
 Debug logs can also be downloaded via the `Download Logs` action at the top right of the log viewer. This is helpful when sharing logs with developers for troubleshooting purposes.

@@ -34,7 +34,7 @@
     * [Reserved Devices](features/advanced-features/reserved-devices.md)
 * [Account](account/README.md)
   * [Invite your team](account/invite-your-team.md)
-  * [Single Sign-On](account/single-sign-on.md)
+  * [Single Sign-On](account/single-sign-on/README.md)
     * [OpenID Connect](account/single-sign-on/openid-connect.md)
     * [SAML](account/single-sign-on/saml.md)
     * [Azure Active Directory](account/single-sign-on/azure-active-directory.md)

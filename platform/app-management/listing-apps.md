@@ -21,9 +21,9 @@ App builds hosted on Appetize are distinguished by their unique Application Iden
 
 The [App Dashboard](https://appetize.io/apps) on Appetize provides you with an overview of all your uploaded apps.
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption><p>Apps Dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption><p>Apps Dashboard</p></figcaption></figure>
 
-The App Dashboard displays the [latest build](#user-content-fn-1)[^1] uploaded for a specific application. &#x20;
+The App Dashboard displays the [latest build](#user-content-fn-1)[^1] uploaded for a specific application.
 
 From there, you can:
 
@@ -38,7 +38,7 @@ From there, you can:
 
 The App Builds page provides an overview of all the builds that was uploaded for a particular application. These are sorted by version and build information as defined by the platform.
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption><p>App Builds page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption><p>App Builds page</p></figcaption></figure>
 
 From there, you can:
 
@@ -57,7 +57,7 @@ From there, you can:
 
 The Build page provides an overview of a specific build that was uploaded to Appetize.
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption><p>App Build Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (33).png" alt=""><figcaption><p>App Build Page</p></figcaption></figure>
 
 From there, you can:
 
@@ -106,18 +106,18 @@ You can view all your App Groups on the [App Group Dashboard](https://appetize.i
 
 To create a new group, select the `Add group` button
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt="" width="230"><figcaption><p>Add Group action button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35).png" alt="" width="230"><figcaption><p>Add Group action button</p></figcaption></figure>
 
 The new group dialog will appear, where you can:
 
 * Enter the preferred name for the group
 * Specify the associated platform of the group
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt="" width="374"><figcaption><p>Add Group Dialog</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40).png" alt="" width="374"><figcaption><p>Add Group Dialog</p></figcaption></figure>
 
 A new group will be created with no applications attached
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt="" width="563"><figcaption><p>New Group page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42).png" alt="" width="563"><figcaption><p>New Group page</p></figcaption></figure>
 
 #### Add Applications
 
@@ -129,11 +129,11 @@ To add applications to the group, follow these steps:
    * Browse the list of available applications.
 3. Select one or multiple applications to add to the group.
 
-<figure><img src="../../.gitbook/assets/image (36).png" alt="" width="419"><figcaption><p>Example Add App modal</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43).png" alt="" width="419"><figcaption><p>Example Add App modal</p></figcaption></figure>
 
 By default, the latest build associated with the app will always be used:
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt="" width="410"><figcaption><p>Example of an app added.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (44).png" alt="" width="410"><figcaption><p>Example of an app added.</p></figcaption></figure>
 
 To modify this, you can:
 
@@ -141,29 +141,27 @@ To modify this, you can:
 2. Specify a version and/or tags that match the build.
 3. Choose a specific build or select the latest one from the dropdown menu.
 
-<figure><img src="../../.gitbook/assets/image (38).png" alt="" width="530"><figcaption><p>Specify which build of an application you want by version, tag or buildId</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45).png" alt="" width="530"><figcaption><p>Specify which build of an application you want by version, tag or buildId</p></figcaption></figure>
 
 #### Remove Applications
 
 To remove any of the added applications, simply click on the trash bin icon next to the app and confirm in the dialog box that appears.
 
-<figure><img src="../../.gitbook/assets/image (41).png" alt="" width="89"><figcaption><p>Example Trash Bin Icon next to app</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (48).png" alt="" width="89"><figcaption><p>Example Trash Bin Icon next to app</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt="" width="350"><figcaption><p>Remove App Confirmation Dialog</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (47).png" alt="" width="350"><figcaption><p>Remove App Confirmation Dialog</p></figcaption></figure>
 
 ### Unknown builds
 
 If a build filter specified in an App Group can no longer be found or resolved, this information will appear at the bottom of the App Group. You can then remove or adjust the filter to find a new matching build.
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt="" width="563"><figcaption><p>App Build Filter not found example </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57).png" alt="" width="563"><figcaption><p>App Build Filter not found example</p></figcaption></figure>
 
 ### Playing and embedding your App Group
 
 Once you have added all the applications to the group, you can use the group in the same way that you would have used the individual applications (e.g. play, embed etc.). You can view all your App Groups on the [App Group Dashboard](https://appetize.io/app-groups).
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt="" width="314"><figcaption><p>Example App Group</p></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (46).png" alt="" width="314"><figcaption><p>Example App Group</p></figcaption></figure>
 
 [^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings) , and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleversion).
 

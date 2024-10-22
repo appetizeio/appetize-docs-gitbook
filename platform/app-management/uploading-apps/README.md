@@ -46,25 +46,25 @@ In some instances, you might want to explicitly update a particular app build. T
 4. Go to **Settings**.
 5. Navigate to "**Update build**"
 
-![Update Build under settings page](<../../../.gitbook/assets/image (48).png>)
+<img src="../../../.gitbook/assets/image (55).png" alt="Update Build under settings page" data-size="original">
 {% endhint %}
 
 ### With CI/CD and Third-Party Integrations
 
 Appetize integrates with several popular CI/CD tools and other third-party services, allowing you to:
 
-* **Ensure Your App is Always Up-To-Date:** \
+* **Ensure Your App is Always Up-To-Date:**\
   Automatically upload the latest builds with one of our many CI/CD integrations.
-* **Eliminate Manual Processes:** \
+* **Eliminate Manual Processes:**\
   Automate rolling out of updated apps or specific builds, saving time and effort.
-* **Improve User and Development Workflows:** \
+* **Improve User and Development Workflows:**\
   Integrate with tools such as Storybook Native and Expo to improve user and developer experiences.
-* **Run Tests on Pull Requests:** \
+* **Run Tests on Pull Requests:**\
   Automatically upload and test builds on Pull Requests for efficient quality assurance.
 
 Available integrations include:
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Github Actions</td><td><a href="https://github.com/appetizeio/github-action-appetize">https://github.com/appetizeio/github-action-appetize</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/brands-gitlab.svg">brands-gitlab.svg</a></td></tr><tr><td>Gitlab</td><td><a href="https://about.gitlab.com/blog/2020/05/06/how-to-create-review-apps-for-android-with-gitlab-fastlane-and-appetize-dot-io/">https://about.gitlab.com/blog/2020/05/06/how-to-create-review-apps-for-android-with-gitlab-fastlane-and-appetize-dot-io/</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td>Bitrise</td><td><a href="https://bitrise.io/integrations/steps/appetize-deploy">https://bitrise.io/integrations/steps/appetize-deploy</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/bitrise.png">bitrise.png</a></td></tr><tr><td>Expo</td><td><a href="https://expo.dev/">https://expo.dev/</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/expo.png">expo.png</a></td></tr><tr><td>Fastlane</td><td><a href="https://docs.fastlane.tools/actions/appetize/">https://docs.fastlane.tools/actions/appetize/</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/fastlane.png">fastlane.png</a></td></tr><tr><td>Storybook native</td><td><a href="https://github.com/storybookjs/native">https://github.com/storybookjs/native</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/storybook.png">storybook.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Github Actions</td><td><a href="https://github.com/appetizeio/github-action-appetize">https://github.com/appetizeio/github-action-appetize</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/github.png">github.png</a></td></tr><tr><td>Gitlab</td><td><a href="https://about.gitlab.com/blog/2020/05/06/how-to-create-review-apps-for-android-with-gitlab-fastlane-and-appetize-dot-io/">https://about.gitlab.com/blog/2020/05/06/how-to-create-review-apps-for-android-with-gitlab-fastlane-and-appetize-dot-io/</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/gitlab.png">gitlab.png</a></td></tr><tr><td>Bitrise</td><td><a href="https://bitrise.io/integrations/steps/appetize-deploy">https://bitrise.io/integrations/steps/appetize-deploy</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/bitrise.png">bitrise.png</a></td></tr><tr><td>Expo</td><td><a href="https://expo.dev/">https://expo.dev/</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/expo.png">expo.png</a></td></tr><tr><td>Fastlane</td><td><a href="https://docs.fastlane.tools/actions/appetize/">https://docs.fastlane.tools/actions/appetize/</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/fastlane.png">fastlane.png</a></td></tr><tr><td>Storybook native</td><td><a href="https://github.com/storybookjs/native">https://github.com/storybookjs/native</a></td><td></td><td></td><td><a href="../../../.gitbook/assets/storybook.png">storybook.png</a></td></tr></tbody></table>
 
 {% hint style="info" %}
 If there is a 3rd party integration that you think should be on this list, please let us [know](mailto:support@appetize.io)!

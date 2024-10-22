@@ -1,8 +1,8 @@
 ---
+icon: share-nodes
 description: >-
   Sharing your app on Appetize is easy! Simply upload your build and share the
   link with others for instant access on any device.
-icon: share-nodes
 ---
 
 # Sharing
@@ -11,11 +11,11 @@ icon: share-nodes
 
 The easiest way to find your external share link is by going to your [Apps](https://appetize.io/apps) or [App Builds](app-management/listing-apps.md#app-builds-page) page and selecting **share** under the app, App Group or build that you want to embed on your website.
 
-<figure><img src="../.gitbook/assets/image (12).png" alt="" width="371"><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18).png" alt="" width="371"><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
 
 Currently, `Share` will share a specific build of your application. Soon, we will introduce new sharing features that will allow you to share the latest build without changing the URL.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
 
 ## App Identifier
 

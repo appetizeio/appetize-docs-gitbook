@@ -25,22 +25,22 @@ This documentation provides insights on leveraging Appetize's capabilities to im
 
 To begin the impersonation process, identify the target user's relevant information, such as identity, roles, and permissions that you would like to impersonate.
 
-### **Token Generation Strategy**&#x20;
+### **Token Generation Strategy**
 
 Understand how authentication works in your target app and use a strategy to generate a token based on the target user's context or specific scenarios. Some sample strategies could include:
 
 * **Session-based Authentication**: Generate a JWT token based on the authenticated user's session.
 * **OAuth2 Authentication**: Utilize the impersonation scope in OAuth2 to generate a token for specific users and behaviors.
 * **OpenID Connect Authentication:** Update the token's subject (sub) claim and re-sign it to assume the identity of the desired user
-* **Override Authentication:**  Implement a mechanism that allows admin users with elevated privileges to bypass the standard token validation process.
+* **Override Authentication:** Implement a mechanism that allows admin users with elevated privileges to bypass the standard token validation process.
 
 ### **Option 1: Internal REST API and Web Interface (recommended)**
 
 Use an internal REST API and web interface that allows administrators or call center agents to generate tokens with specific user roles and behaviors. The web interface can provide an intuitive interface for administrators to input the desired parameters, and the API can generate and return the corresponding token. This token can then be passed to the Appetize client via our [JavaScript SDK](../javascript-sdk/). See [Implementing Impersonation in Your App](impersonation.md#implementing-impersonation-in-your-app).
 
-<img src="../.gitbook/assets/file.excalidraw (2).svg" alt="Sample Structure for using an internal API for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (1).svg" alt="Sample Structure for using an internal API for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
 
-### **Option 2: Companion App**&#x20;
+### **Option 2: Companion App**
 
 Use a companion app that works alongside the target app on Appetize. The companion app can include features to generate tokens with desired user roles and behaviors. The generated token can then be passed to the target app as a launch parameter or via deep link. See [Implementing Impersonation in Your App](impersonation.md#implementing-impersonation-in-your-app).
 
@@ -48,17 +48,17 @@ Use a companion app that works alongside the target app on Appetize. The compani
 You can run multiple embedded Appetize sessions and use our [JavaScript SDK](../javascript-sdk/) to pass the values between them or you could make use of our [App Groups](../platform/app-management/listing-apps.md#grouped-applications) to bundle the companion and the main app into a single session.
 {% endhint %}
 
-<img src="../.gitbook/assets/file.excalidraw (1) (1).svg" alt="Sample Structure for using a companion app for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw.svg" alt="Sample Structure for using a companion app for generating the user token and passing it back to your embedded app." class="gitbook-drawing">
 
 ### **Option 3: App Build for Appetize**
 
-Use a dedicated/custom app build/flavor specifically for Appetize, that includes a token generation feature. This app can allow administrators or call center agents to input desired user roles and behaviors (or user id / email) and generate the corresponding token.&#x20;
+Use a dedicated/custom app build/flavor specifically for Appetize, that includes a token generation feature. This app can allow administrators or call center agents to input desired user roles and behaviors (or user id / email) and generate the corresponding token.
 
 {% hint style="info" %}
 You could confirm that your app is running in an Appetize Session by making use of our default [Launch Param](../features/launch-params.md#retrieving-data-in-your-application) key **`"isAppetize": true`.**
 {% endhint %}
 
-<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="Sample Structure for using a single app for both generating and utilizing the user token." class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (2).svg" alt="Sample Structure for using a single app for both generating and utilizing the user token." class="gitbook-drawing">
 
 ## Passing the Impersonated User to your Embedded App
 
@@ -91,8 +91,8 @@ Update your app to retrieve, interpret and utilize the token passed in order to 
 
 val isAppetizeSession = preferences.getBoolean("isAppetize", false)
 <strong>val impersonatedUserToken = preferences.getString("impersonatedUserToken", null)
-</strong><strong>
-</strong><strong>if(isAppetizeSession &#x26;&#x26; impersonatedUserToken != null) {
+</strong>
+<strong>if(isAppetizeSession &#x26;&#x26; impersonatedUserToken != null) {
 </strong><strong>   //autenticate the user with the token passed
 </strong><strong>   authenticationService.authenticateUserWithToken(impersonatedUserToken)
 </strong><strong>}
@@ -208,6 +208,3 @@ Maintain detailed documentation outlining the impersonation process, including h
 #### **Auditing and Accountability**
 
 Maintain an audit trail of impersonation activities, including the purpose, duration, and actions performed. This log should be accessible for review and compliance purposes.
-
-
-

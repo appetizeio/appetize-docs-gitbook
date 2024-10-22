@@ -16,12 +16,22 @@ When an incoming session is requested for your app, the session can be served fr
 
 ### Requesting Reserved Devices
 
-When requesting reserved devices, please share the specific app build link you would like reserved. The app link will include the **buildId** (previously known as publicKey) for the app, as well as the **specific device type** and **operating system version**.
+To request a reserved device through Appetize, you need to provide specific information.
+
+* **buildId:** Application build identifier (previously known as publicKey).
+* **deviceType:** The device that is going to be reserved. e.g., iphone14pro.
+* **OSVersion:** The operating system version for the device. e.g., 17.2.
+
+See [Devices & OS Versions](../devices-and-os-versions.md) for possible device combinations.
+
+### Accessing your Reserved Device
+
+Once your reserved device has been configured and is ready for use, you can access it through the following URL:
+
+Replace the **buildId**, **deviceType**, and **OSVersion** placeholders with the values provided.
 
 {% code overflow="wrap" %}
 ```
 https://appetize.io/app/{buildId}?device={deviceType}&osVersion={OSVersion}
 ```
 {% endcode %}
-
-See [Devices & OS Versions](../devices-and-os-versions.md) for possible device combinations.

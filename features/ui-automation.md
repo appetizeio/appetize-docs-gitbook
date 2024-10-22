@@ -29,7 +29,7 @@ https://appetize.io/app/{appId|buildId|publicKey}
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `Play` on the app you want to inspect.
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Select <code>Play</code> on your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption><p>Select <code>Play</code> on your app</p></figcaption></figure>
 
 Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
 
@@ -61,7 +61,7 @@ await session.playActions(Actions)
 
 Recorded actions can be serialized as `JSON` and stored so that you can replay them later.
 
-{% code title="Example of a 'click' action" fullWidth="false" %}
+{% code title="Example of a " fullWidth="false" %}
 ```javascript
 {
     type: 'click',
@@ -88,7 +88,7 @@ https://appetize.io/app/{appId|buildId|publicKey}
 
 or by going to your [Apps](https://appetize.io/apps) page and clicking `Play` on the app you want to play the actions on.
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Select <code>Play</code> on your app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Select <code>Play</code> on your app</p></figcaption></figure>
 
 Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
 

@@ -42,7 +42,7 @@ See [Configuration](../../../javascript-sdk/configuration.md#enableadb) for more
 One common practice is to use the ADB tunnel to connect to an Android "standalone" device, without any specific app installed. For more information see [Standalone Device](../../../platform/standalone-device.md).
 {% endhint %}
 
-The app page provides a simple way to retrieve the `adb` information required to connect to the device.&#x20;
+The app page provides a simple way to retrieve the `adb` information required to connect to the device.
 
 You can access this via your app's app link
 
@@ -54,7 +54,7 @@ https://appetize.io/app/{appId|buildId|publicKey}?&enableAdb=true
 
 or by going to your [Apps](https://appetize.io/apps) page, selecting `Play` on the app you want to inspect, and then toggling `Adb Tunnel` to `On`
 
-<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Select <code>Play</code> on the app you want to inspect</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption><p>Select <code>Play</code> on the app you want to inspect</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-10-24 115916.png" alt="Example ADB Tunnel Action Switched to On"><figcaption><p>Toggle ADB tunnel to "On"</p></figcaption></figure>
 

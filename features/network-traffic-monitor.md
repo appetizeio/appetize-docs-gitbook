@@ -52,7 +52,7 @@ https://appetize.io/app/{appId|buildId|publicKey}?&proxy=intercept
 
 or by going to your [Apps](https://appetize.io/apps) page, selecting the app you want to inspect, and then clicking `debug` on the latest build or choosing a specific build you would like to debug.
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
 
 {% hint style="info" %}
 You can also open the network logs in Chrome DevTools if you are running the app in a Chrome Browser by selecting the `Chrome DevTools` button.
