@@ -56,9 +56,17 @@ Enables or disables all interactions on the device.
 await session.allowInteractions(false)
 ```
 
+### biometryEnrollment()
+
+Sets the biometry enrollment status (_iOS Only_)
+
+```typescript
+await session.biometryEnrollment(true/false)
+```
+
 ### biometry()
 
-Simulate a matching fingerprint (Android 8+ only)
+Simulate a matching fingerprint (Android 8+ only) or Face ID (iOS)
 
 ```typescript
 await session.biometry({
@@ -77,7 +85,7 @@ await session.end()
 ### getUI()
 
 {% hint style="warning" %}
-**Experimental** \
+**Experimental**\
 The data structure of the response is subject to change
 {% endhint %}
 
@@ -128,7 +136,7 @@ await session.openUrl("https://appetize.io")
 
 ### launchApp(appId)
 
-Launches the specified application using the provided `appId`.&#x20;
+Launches the specified application using the provided `appId`.
 
 {% hint style="info" %}
 If the app is already running, it will be brought to the foreground instead of being relaunched. If the app was originally launched with params or a launchUrl, these will also be passed with this method.
@@ -140,9 +148,9 @@ await session.launchApp(appId)
 
 **Parameters**
 
-| Name    | Type     | Description                                                                                                                                                                                                                                                                                                                   |
-| ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `appId` | `string` | <p><strong>Android:</strong> <br>The app's package name / appId (e.g., <code>com.example.app</code>) or <code>packageName/activityName</code>. If no activity name is specified, it defaults to the main launch activity. <br><strong>iOS:</strong> <br>The app's bundle identifier (e.g., <code>com.example.app</code>).</p> |
+| Name    | Type     | Description                                                                                                                                                                                                                                                                                                                |
+| ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `appId` | `string` | <p><strong>Android:</strong><br>The app's package name / appId (e.g., <code>com.example.app</code>) or <code>packageName/activityName</code>. If no activity name is specified, it defaults to the main launch activity.<br><strong>iOS:</strong><br>The app's bundle identifier (e.g., <code>com.example.app</code>).</p> |
 
 ### restartApp()
 
