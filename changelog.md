@@ -20,13 +20,14 @@ layout:
 
 ## October 2024
 
-### JS SDK Updates
+### Biometry Support for iOS, JS SDK Updates & Other Improvements
 
 <figure><img src=".gitbook/assets/biometrics (1).png" alt=""><figcaption><p>We now support Biometry features on both iOS and Android</p></figcaption></figure>
 
 * **New Features**:&#x20;
   * Added [biometry support](https://docs.appetize.io/javascript-sdk/automation/device-commands#biometry) for iOS.
   * Improved SDK action titles in Playwright trace sidebar.
+  * Support for Google and Github Login Providers.
 * **Bug fixes & Improvements**:&#x20;
   * Faster build ID validation.
   * &#x20;[ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be used for sessions using [AppRecorder](features/ui-automation.md), network proxies, and debug logs
