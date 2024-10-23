@@ -34,7 +34,7 @@
     * [Reserved Devices](features/advanced-features/reserved-devices.md)
 * [Account](account/README.md)
   * [Invite your team](account/invite-your-team.md)
-  * [Single Sign-On](account/single-sign-on/README.md)
+  * [Single Sign-On](account/single-sign-on.md)
     * [OpenID Connect](account/single-sign-on/openid-connect.md)
     * [SAML](account/single-sign-on/saml.md)
     * [Azure Active Directory](account/single-sign-on/azure-active-directory.md)
@@ -83,6 +83,7 @@
   * [Samples Repository](https://samples.appetize.io/)
 * [Deprecated](deprecated/README.md)
   * [Cross-document messages](deprecated/cross-document-messages.md)
+* [Changelog](changelog.md)
 
 ## Additional Support
 

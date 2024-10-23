@@ -33,7 +33,7 @@ To **delete** an account, select the dustbin next to the account you want to rem
 
 ## Single Sign-On (SSO)
 
-On our Enterprise plans, you can take advantage of our Single Sign-On (SSO) integrations for seamless user management on Appetize. Visit our [documentation](single-sign-on/) for more details.
+On our Enterprise plans, you can take advantage of our Single Sign-On (SSO) integrations for seamless user management on Appetize. Visit our [documentation](single-sign-on.md) for more details.
 
 ## Related Links
 
