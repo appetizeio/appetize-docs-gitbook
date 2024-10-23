@@ -1,8 +1,8 @@
 ---
+icon: paper-plane
 description: >-
   Stay updated on Appetize’s latest releases, including new features,
   improvements, and key updates.
-icon: paper-plane
 layout:
   title:
     visible: true
@@ -20,7 +20,7 @@ layout:
 
 ## October 2024
 
-### JS SDK Updates, iOS Biometry & Other Improvements
+### JS SDK Updates
 
 <figure><img src=".gitbook/assets/biometrics (1).png" alt=""><figcaption><p>We now support Biometry features on both iOS and Android</p></figcaption></figure>
 
@@ -29,7 +29,7 @@ layout:
   * Improved SDK action titles in Playwright trace sidebar.
 * **Bug fixes & Improvements**:&#x20;
   * Faster build ID validation.
-  * Ability to set up [ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) while using other Appetize features that depends on ADB.
+  * &#x20;[ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be used for sessions using [AppRecorder](features/ui-automation.md), network proxies, and debug logs
   * Debug log and session info attached to test results.
   * Playwright peer dependency upgrade.
   * Fixed issue where `startSession` was not throwing errors on `userError`.
