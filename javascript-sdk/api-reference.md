@@ -448,6 +448,18 @@ const ui = await session.getUI()
 */
 ```
 
+### addMedia(file)
+
+{% hint style="info" %}
+The maximum file size for uploading media is **50 MB**.
+{% endhint %}
+
+Upload media to the device.
+
+```typescript
+await session.addMedia(file)
+```
+
 ### playAction(action, options)
 
 Play an automation Action or array of Actions.

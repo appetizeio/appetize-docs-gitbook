@@ -24,6 +24,7 @@
   * [Mock Location](features/mock-location.md)
   * [Deep links](features/deep-links.md)
   * [Launch Params](features/launch-params.md)
+  * [Media](features/media.md)
   * [Auto-grant Permissions](features/auto-grant-permissions.md)
   * [Custom Branding](features/custom-branding.md)
   * [Custom Launch Pages](features/custom-launch-pages.md)

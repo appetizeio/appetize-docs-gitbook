@@ -234,6 +234,18 @@ await session.type("hello")
 Typing is limited to 1000 characters at a time to ensure optimal performance and prevent potential disruptions. For larger payloads, you can use multiple 'type' operations.
 {% endhint %}
 
+### addMedia(file)
+
+{% hint style="info" %}
+The maximum file size for uploading media is **50 MB**.
+{% endhint %}
+
+Upload media to the device.
+
+```typescript
+await session.addMedia(file)
+```
+
 ### waitForAnimations(options)
 
 Waits until the there are no ongoing animations on the screen by waiting for the image to stabilize for at least 1 second.
