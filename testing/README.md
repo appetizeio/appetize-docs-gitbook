@@ -1,8 +1,8 @@
 ---
+icon: check-double
 description: >-
   Reliably End-to-End (E2E) test your Android and iOS mobile apps with Appetize
   AppRecorder for Playwright
-icon: check-double
 layout:
   title:
     visible: true
@@ -32,7 +32,7 @@ Appetize AppRecorder for [Playwright](https://playwright.dev/) is an integration
 
 ### **Unified Testing Solution**
 
-The Playwright integration with Appetize provides a unified testing solution familiar to web teams, enabling seamless testing across mobile, mobile-web, and web applications.&#x20;
+The Playwright integration with Appetize provides a unified testing solution familiar to web teams, enabling seamless testing across mobile, [mobile-web](web-tests-on-mobile-browsers.md), and web applications.
 
 ### **Ease of Use**
 
