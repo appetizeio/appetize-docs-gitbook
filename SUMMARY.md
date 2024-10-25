@@ -55,6 +55,7 @@
   * [Getting Started](testing/getting-started.md)
   * [Writing Tests](testing/writing-tests.md)
   * [Running Tests](testing/running-tests.md)
+  * [Web Tests on Mobile Browsers](testing/web-tests-on-mobile-browsers.md)
   * [Test Configuration](testing/test-configuration.md)
   * [Continuous Integration](testing/continuous-integration.md)
   * [Record Tests (experimental)](testing/record-tests-experimental.md)
