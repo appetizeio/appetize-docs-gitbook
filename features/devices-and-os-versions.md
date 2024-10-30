@@ -16,36 +16,36 @@ We understand that every business has unique needs and that's why we also offer 
 If possible, we recommend indicating only the major version of an Operating System e.g. `17` instead of `17.2`, this way, if a newer version is released e.g. `17.3`, no updates is required to the app or embed pages.
 {% endhint %}
 
-| Device            | Device Identifier           | Operating System Versions    |
-| ----------------- | --------------------------- | ---------------------------- |
-| **iOS**           |                             |                              |
-| iPhone 8          | iphone8                     | 14.5, 15.5, 16.2             |
-| iPhone 8 Plus     | iphone8plus                 | 14.5, 15.5, 16.2             |
-| iPhone 11 Pro     | iphone11pro                 | 14.5, 15.5, 16.2, 17.2, 18.0 |
-| iPhone 12         | iphone12                    | 14.5, 15.5, 16.2, 17.2, 18.0 |
-| iPhone 13 Pro     | iphone13pro                 | 15.5, 16.2, 17.2, 18.0       |
-| iPhone 13 Pro Max | iphone13promax              | 15.5, 16.2, 17.2, 18.0       |
-| iPhone 14 Pro     | iphone14pro                 | 16.2, 17.2, 18.0             |
-| iPhone 14 Pro Max | iphone14promax              | 16.2, 17.2, 18.0             |
-| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.0                   |
-| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.0                   |
-| iPhone 16 Pro     | iphone16pro                 | 18.0                         |
-| iPhone 16 Pro Max | iphone16promax              | 18.0                         |
-| iPad Air          | ipadair4thgeneration        | 14.5, 15.5, 16.2, 17.2, 18.0 |
-| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 14.5, 15.5, 16.2, 17.2, 18.0 |
-| iPad              | ipad9thgeneration           | 15.5, 16.2, 17.2             |
-| iPad Mini         | ipadmini6thgeneration       | 18.0                         |
-| **Android**       |                             |                              |
-| Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0         |
-| Pixel 4           | pixel4                      | 10.0, 11.0, 12.0             |
-| Pixel 4 XL        | pixel4xl                    | 10.0, 11.0, 12.0             |
-| Pixel 6           | pixel6                      | 12.0, 13.0, 14.0             |
-| Pixel 6 Pro       | pixel6pro                   | 12.0, 13.0, 14.0             |
-| Pixel 7           | pixel7                      | 13.0, 14.0                   |
-| Pixel 7 Pro       | pixel7pro                   | 13.0, 14.0                   |
-| Pixel 8           | pixel8                      | 14.0                         |
-| Pixel 8 Pro       | pixel8pro                   | 14.0                         |
-| Galaxy Tab S7     | galaxytabs7                 | 10.0, 11.0, 12.0, 13.0       |
+| Device            | Device Identifier           | Operating System Versions |
+| ----------------- | --------------------------- | ------------------------- |
+| **iOS**           |                             |                           |
+| iPhone 8          | iphone8                     | 15.5, 16.2                |
+| iPhone 8 Plus     | iphone8plus                 | 15.5, 16.2                |
+| iPhone 11 Pro     | iphone11pro                 | 15.5, 16.2, 17.2, 18.0    |
+| iPhone 12         | iphone12                    | 15.5, 16.2, 17.2, 18.0    |
+| iPhone 13 Pro     | iphone13pro                 | 15.5, 16.2, 17.2, 18.0    |
+| iPhone 13 Pro Max | iphone13promax              | 15.5, 16.2, 17.2, 18.0    |
+| iPhone 14 Pro     | iphone14pro                 | 16.2, 17.2, 18.0          |
+| iPhone 14 Pro Max | iphone14promax              | 16.2, 17.2, 18.0          |
+| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.0                |
+| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.0                |
+| iPhone 16 Pro     | iphone16pro                 | 18.0                      |
+| iPhone 16 Pro Max | iphone16promax              | 18.0                      |
+| iPad Air          | ipadair4thgeneration        | 15.5, 16.2, 17.2, 18.0    |
+| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 15.5, 16.2, 17.2, 18.0    |
+| iPad              | ipad9thgeneration           | 15.5, 16.2, 17.2          |
+| iPad Mini         | ipadmini6thgeneration       | 18.0                      |
+| **Android**       |                             |                           |
+| Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0      |
+| Pixel 4           | pixel4                      | 10.0, 11.0, 12.0          |
+| Pixel 4 XL        | pixel4xl                    | 10.0, 11.0, 12.0          |
+| Pixel 6           | pixel6                      | 12.0, 13.0, 14.0          |
+| Pixel 6 Pro       | pixel6pro                   | 12.0, 13.0, 14.0          |
+| Pixel 7           | pixel7                      | 13.0, 14.0                |
+| Pixel 7 Pro       | pixel7pro                   | 13.0, 14.0                |
+| Pixel 8           | pixel8                      | 14.0                      |
+| Pixel 8 Pro       | pixel8pro                   | 14.0                      |
+| Galaxy Tab S7     | galaxytabs7                 | 10.0, 11.0, 12.0, 13.0    |
 
 {% hint style="info" %}
 For devices utilizing a PIN/Lock Screen, our default PIN code is set to **1111** for seamless access and testing.
