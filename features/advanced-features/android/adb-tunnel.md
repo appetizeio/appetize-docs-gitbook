@@ -73,4 +73,4 @@ const adbInfo = session.adbConnection
 const command = adbInfo.command
 ```
 
-See our JavaScript [API Reference](../../../javascript-sdk/api-reference.md#adbconnection) for more information.
+See our JavaScript [API Reference](../../../javascript-sdk/api-reference/#adbconnection) for more information.

@@ -15,11 +15,11 @@ In this section, we'll cover several scenarios you might encounter, and how to s
 
 ## Scenarios
 
-### Change location and language&#x20;
+### Change location and language
 
 Developing localization testing can be a challenging and complex scenario to set up. These tests are relevant since some functionalities apply to specific areas.
 
-The [Mock Location](../features/mock-location.md) and [Language & Locale](../features/language-and-locale.md) documentation pages provides an example of how to implement it using our JS SDK.  Sometimes you may wan't to change the location and language for all test cases, pass the configuration as an option of the [test.use](https://playwright.dev/docs/api/class-test#test-use) method from playwright to achieve it.
+The [Mock Location](../features/mock-location.md) and [Language & Locale](../features/language-and-locale.md) documentation pages provides an example of how to implement it using our JS SDK. Sometimes you may wan't to change the location and language for all test cases, pass the configuration as an option of the [test.use](https://playwright.dev/docs/api/class-test#test-use) method from playwright to achieve it.
 
 ```typescript
 import { test } from '@appetize/playwright';
@@ -38,7 +38,7 @@ test.use({
 
 ### Clear the application state between tests
 
-Independent state for each one of the test scripts is critical to have reliable runs. The best way to guarantee no trace left of any data related to the installed application from previous runs is to re-install the application after each test. Declare in the tests this behavior by utilizing the [reinstallApp](../javascript-sdk/api-reference.md#reinstallapp) method inside the [afterEach hook](https://playwright.dev/docs/api/class-test#test-after-each) from Playwright.
+Independent state for each one of the test scripts is critical to have reliable runs. The best way to guarantee no trace left of any data related to the installed application from previous runs is to re-install the application after each test. Declare in the tests this behavior by utilizing the [reinstallApp](../javascript-sdk/api-reference/#reinstallapp) method inside the [afterEach hook](https://playwright.dev/docs/api/class-test#test-after-each) from Playwright.
 
 ```typescript
 import { test } from '@appetize/playwright';
@@ -51,7 +51,7 @@ test.afterEach(async ({ session }) => {
 
 ### Test Deep Links inside the application
 
-Deep Links and Universal/App Links play a critical role in mobile application functionality. To open and test any URL that your application supports in a test script, use the [openUrl](../javascript-sdk/api-reference.md#openurl-url) method to trigger a Deep Link or the [launchUrl](../javascript-sdk/configuration.md#launchurl) configuration property to invoke it at launch and validate that the expected view is visible after handling the link. For more information, visit the [Deep Links](../features/deep-links.md) section from the documentation.
+Deep Links and Universal/App Links play a critical role in mobile application functionality. To open and test any URL that your application supports in a test script, use the [openUrl](../javascript-sdk/api-reference/#openurl-url) method to trigger a Deep Link or the [launchUrl](../javascript-sdk/configuration.md#launchurl) configuration property to invoke it at launch and validate that the expected view is visible after handling the link. For more information, visit the [Deep Links](../features/deep-links.md) section from the documentation.
 
 {% hint style="info" %}
 [Auto-grant permissions](../features/auto-grant-permissions.md) allow to automatically trust incoming Deep Links that the application can handle.
@@ -84,7 +84,7 @@ test('Check my deep link view is displayed', ({ session }) => {
 
 ### Analytics tests
 
-Analytics in mobile development allow us to understand how the application is being used or the effectiveness of a new feature. The validation of analytics events is a common scenario to test that can get complicated as your application grows.&#x20;
+Analytics in mobile development allow us to understand how the application is being used or the effectiveness of a new feature. The validation of analytics events is a common scenario to test that can get complicated as your application grows.
 
 Network assertions allows to seamlessly validate an analytic event has been triggered, using the [network validation example](../testing/writing-tests.md) from our docs we can adapt the code to validate that a request with an specific url contains the event in the body.
 

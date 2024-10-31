@@ -74,4 +74,4 @@ session.on('log', (data) => {
 })
 ```
 
-See our JavaScript [API Reference](../javascript-sdk/api-reference.md#on-1) for more information.
+See our JavaScript [API Reference](../javascript-sdk/api-reference/#on-1) for more information.

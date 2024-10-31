@@ -41,4 +41,4 @@ Specify the location by passing in the number parameters `latitude` and `longitu
 await setLocation(-33.924434, 18.418391)
 ```
 
-See the [API Reference](../javascript-sdk/api-reference.md#setlocation) for more information.
+See the [API Reference](../javascript-sdk/api-reference/#setlocation) for more information.

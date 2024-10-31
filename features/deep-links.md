@@ -62,7 +62,7 @@ This can be called multiple times after launch of the device, with the assumptio
 await session.openUrl("https://appetize.io")
 ```
 
-See the [API Reference](../javascript-sdk/api-reference.md#openurl) for more information.
+See the [API Reference](../javascript-sdk/api-reference/#openurl) for more information.
 
 ## Troubleshooting
 
@@ -102,4 +102,3 @@ This command will print the entitlements XML to the Terminal.
 ```
 
 Ensure that the `<string>` value within `<array>` corresponds to the domain you expect for your app's associated domains.
-

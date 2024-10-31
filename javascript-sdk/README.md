@@ -1,9 +1,9 @@
 ---
+icon: js
 description: >-
   Our JavaScript SDK offers an API to programmatically interact with Appetize
   devices. This allows you to automate interactions with the device, verify app
   behavior, and more.
-icon: js
 ---
 
 # JavaScript SDK
@@ -36,12 +36,12 @@ Add an `iframe` with an [Appetize embed URL](../platform/embedding-apps.md):
 ```
 
 {% hint style="info" %}
-We gave the iframe an id of `appetize`, but it can be anything you wish.&#x20;
+We gave the iframe an id of `appetize`, but it can be anything you wish.
 {% endhint %}
 
 ## Get the Client
 
-The easiest way to get the client is by calling [`window.appetize.getClient(selector)`](api-reference.md#getclient-selector).&#x20;
+The easiest way to get the client is by calling [`window.appetize.getClient(selector)`](api-reference/#getclient-selector).
 
 This will return an Appetize client instance for the embed e.g.
 
@@ -50,7 +50,7 @@ const client = await window.appetize.getClient("#appetize")
 ```
 
 {% hint style="info" %}
-We also support getting the client with an initial [configuration](configuration.md) - for scenarios where the initial embed link might not be known on launching of the page  (no `src` specified on the `iframe`) by making use of [`window.appetize.getClient(selector, config)`](api-reference.md#getclient-selector-config).&#x20;
+We also support getting the client with an initial [configuration](configuration.md) - for scenarios where the initial embed link might not be known on launching of the page (no `src` specified on the `iframe`) by making use of [`window.appetize.getClient(selector, config)`](api-reference/#getclient-selector-config).
 
 This will return an Appetize client instance with the initial [configuration](configuration.md) applied e.g.
 

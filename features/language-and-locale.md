@@ -43,7 +43,7 @@ See [Configuration](../javascript-sdk/configuration.md#language) for more inform
 await session.setLanguage("af_ZA")
 ```
 
-See [API Reference](../javascript-sdk/api-reference.md#setlanguage) for more information
+See [API Reference](../javascript-sdk/api-reference/#setlanguage) for more information
 
 ## Locale
 

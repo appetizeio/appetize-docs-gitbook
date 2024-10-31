@@ -35,7 +35,7 @@ Initial values may also be provided in the embed URL. See [Query Params Referenc
 
 `string`
 
-The buildId (previously known as publicKey) of the Appetize app that you wish to run
+The buildId (previously known as publicKey) of the Appetize app that you wish to run.
 
 ### device
 
@@ -49,7 +49,7 @@ The device to run on. [See Devices & OS Versions](../features/devices-and-os-ver
 
 The operating system version on which to run your app. e.g. 11.4, 12.2, 13.3, 14.0
 
-_Note: We recommend leaving this blank so it will always use our latest default for the device_
+_Note: We recommend leaving this blank so it will always use our latest default for the device._
 
 ### scale
 
@@ -59,71 +59,75 @@ Sets the scale of the device in the iframe.
 
 If a number is provided it must be between 10 and 100. If `'auto'`, the device will scale up to fit inside the iframe.
 
-### orientation
+### autoPlay
 
-`"portrait" | "horizontal"`
+`boolean`
 
-Sets the orientation of the device
+When true, starts streaming the app on device load. Default is `false`.
 
-### centered
+{% hint style="warning" %}
+We recommend starting the session programmatically using `client.startSession()` instead as this could cause the session to start before the SDK is ready.
+{% endhint %}
 
-`"vertical" | "horizontal" | "both"`
+### adbShellCommand
 
-Centers the device within the embed
+`string`
+
+&#x20;(Android only) Executes an `adb shell` command on the device.
+
+### androidPackageManager
+
+`boolean`
+
+(Android only) Allows installation of additional APKs after app launch.
+
+### appearance
+
+`"dark" | "light"`
+
+(iOS 13+ and Android 10+) Sets dark or light mode UI.
+
+### audio
+
+`boolean`
+
+(Android Only) Enables audio playback on the device.
+
+{% hint style="warning" %}
+This feature is currently in Alpha and might not always work as expected.
+{% endhint %}
+
+### codec
+
+`"h264" | "jpeg"`
+
+Set the video codec used for the stream. Default is `h264` if the browser supports it, otherwise falls back to `jpeg`.
+
+### debug
+
+`boolean`
+
+When true, the session will listen for debug logs and emit them as a `log` event.
 
 ### deviceColor
 
 `"black" | "white"`
 
-Sets the color of the device chrome
-
-### screenOnly
-
-`boolean`
-
-If true, only show the screen and not the device chrome
-
-### language
-
-`string`
-
-Sets the language of the device. Must be an [ISO 639-1 & BCP 47](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) language code.
-
-### locale
-
-`string`
-
-(iOS only) Sets the locale of the device. Must be a locale ID e.g. `en_GB`, `fr_FR`
-
-### iosKeyboard
-
-`string`
-
-Set the language for the iOS Keyboard. eg. `ja_JP@sw`. [See available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html)
-
-### iosAutocorrect
-
-`boolean`
-
-Turn on Auto-Correction for iOS. Defaults to `true`
+Sets the color of the device chrome.
 
 ### disableVirtualKeyboard
 
 `boolean`
 
-(Android only) When true, disabled the onscreen keyboard
+(Android only) When true, disabled the onscreen keyboard.
 
-### location
+### enableAdb
 
-`number[]`
+`boolean`
 
-(iOS 12+, Android 10+) Sets location of the device in latitude and longitude. eg. \[`39.903924,116.391432]`
+(Android only) Sets up an SSH tunnel to allow ADB connections to the emulator. SSH command and info can be found by accessing the [adbConnection](api-reference/#adbconnection) property on the session.
 
-### timezone
-
-`string`
-
-(Android only) Sets the timezone of the device. [See available values](https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones)
+For more information see [ADB tunnel](../features/advanced-features/android/adb-tunnel.md).
 
 ### grantPermissions
 
@@ -131,39 +135,83 @@ Turn on Auto-Correction for iOS. Defaults to `true`
 
 Automatically grant all required app permissions. [See Auto-grant permissions](../features/auto-grant-permissions.md).
 
-### autoPlay
-
-`boolean`
-
-When true, starts streaming the app on device load. Default is `false`
-
-{% hint style="warning" %}
-We recommend starting the session programmatically using `client.startSession()` instead as this could cause the session to start before the SDK is ready.
-{% endhint %}
-
 ### hidePasswords
 
 `boolean`
 
-(Android only) Hide password visibility when typing
+(Android only) Hide password visibility when typing.
+
+### iosKeyboard
+
+`string`
+
+Set the language for the iOS Keyboard. eg. `ja_JP@sw`. [See available values](https://pgssoft.github.io/AutoMate/Enums/SoftwareKeyboard.html).
+
+### iosAutocorrect
+
+`boolean`
+
+Turn on Auto-Correction for iOS. Defaults to `true`.
+
+### language
+
+`string`
+
+Sets the language of the device. Must be an [ISO 639-1 & BCP 47](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) language code.
 
 ### launchUrl
 
 `string`
 
-Specify a deep link to open when your app is launched
+Specify a deep link to open when your app is launched.
 
 ### launchArgs
 
 `string[]`
 
-(iOS only) An array of strings to pass when launching your app
+(iOS only) An array of strings to pass when launching your app.
 
-### debug
+### locale
+
+`string`
+
+(iOS only) Sets the locale of the device. Must be a locale ID e.g. `en_GB`, `fr_FR`.
+
+### location
+
+`number[]`
+
+(iOS 12+, Android 10+) Sets location of the device in latitude and longitude. e.g.. \[`39.903924,116.391432]`
+
+### noVideo
 
 `boolean`
 
-When true, the session will listen for debug logs and emit them as a `log` event.
+Sets whether the video feed is enabled.
+
+### orientation
+
+`"portrait" | "horizontal"`
+
+Sets the orientation of the device
+
+### platform
+
+`'ios' | 'android'`
+
+Sets the platform of the device.
+
+### params
+
+`object`
+
+A JSON object that will be passed to your app on launch
+
+### plistEdit
+
+`Object`
+
+Represents an object that allows additional key-value properties to be added to the app's plist, enabling customization or configuration of the app behavior during launch.
 
 ### proxy
 
@@ -183,20 +231,6 @@ Our current support is limited to HTTP Proxies. When your app makes HTTPS connec
 
 Enables recording of all user actions that took place during the session. See [UI Automation](../features/ui-automation.md) for more information. Default is true.
 
-### enableAdb
-
-`boolean`
-
-(Android only) Sets up an SSH tunnel to allow ADB connections to the emulator. SSH command and info can be found by accessing the [adbConnection](api-reference.md#adbconnection) property on the session.
-
-For more information see [ADB tunnel](../features/advanced-features/android/adb-tunnel.md).
-
-### androidPackageManager
-
-`boolean`
-
-(Android only) Allows installation of additional APKs after app launch
-
 ### region
 
 `us` | `eu`
@@ -207,36 +241,38 @@ Ensures that Appetize sessions are launched only from servers in a specific regi
 It is best to avoid setting this property unless absolutely necessary. Our system automatically directs requests to the closest servers for optimal performance. Using this property could lead to longer queues in busy regions.
 {% endhint %}
 
-### appearance
-
-`"dark" | "light"`
-
-(iOS 13+ and Android 10+) Sets dark or light mode UI
-
-### params
-
-`object`
-
-A JSON object that will be passed to your app on launch
-
-### audio
+### screenOnly
 
 `boolean`
 
-(Android Only) Enables audio playback on the device
+If true, only show the screen and not the device chrome.
 
-{% hint style="warning" %}
-This feature is currently in Alpha and might not always work as expected.
-{% endhint %}
+### showRotateButtons
 
-### codec
+`boolean`
 
-`"h264" | "jpeg"`
+Enables the display of rotate buttons next to the device. Requires `scale` to be set to `auto`.
 
-Set the video codec used for the stream. Default is `h264` if the browser supports it, otherwise falls back to `jpeg`.
+### timezone
 
-### toast
+`string`
 
-`top | bottom`
+(Android only) Sets the timezone of the device. [See available values](https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones).
 
-Adjusts the position of Appetize toast messages used for displaying error or info messages. Default is `bottom`
+### endSessionRedirectUrl
+
+`string`
+
+Specifies the URL to redirect users to at the end of the session.&#x20;
+
+### userInteractionDisabled
+
+`boolean`
+
+Sets whether user interaction is disabled.
+
+### volume
+
+`number`
+
+Sets the audio playback level. The value ranges from `0` to `1`, defaults to `0.5`

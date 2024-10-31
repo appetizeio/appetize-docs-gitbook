@@ -80,8 +80,8 @@ session.on('network', (data) => {
 })
 ```
 
-See our JavaScript [API Reference](../javascript-sdk/api-reference.md#on-1) for more information.
+See our JavaScript [API Reference](../javascript-sdk/api-reference/#on-1) for more information.
 
 {% hint style="info" %}
-[getNetworkInspectorUrl](../javascript-sdk/api-reference.md#getnetworkinspectorurl) provides a direct URL for opening network logs in Chrome DevTools
+[getNetworkInspectorUrl](../javascript-sdk/api-reference/#getnetworkinspectorurl) provides a direct URL for opening network logs in Chrome DevTools
 {% endhint %}

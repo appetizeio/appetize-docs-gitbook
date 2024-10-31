@@ -18,7 +18,7 @@ The [App Page](../platform/app-management/running-apps.md#accessing-your-app-pag
 
 ## With JavaScript SDK
 
-Appetize’s [JavaScript SDK](../javascript-sdk/) offers a convenient [addMedia](../javascript-sdk/api-reference.md#addmedia-file) function for adding media files directly to your active simulator sessions. This function is ideal for automating media uploads as part of your testing or development workflows.
+Appetize’s [JavaScript SDK](../javascript-sdk/) offers a convenient [addMedia](../javascript-sdk/api-reference/#addmedia-file) function for adding media files directly to your active simulator sessions. This function is ideal for automating media uploads as part of your testing or development workflows.
 
 ```typescript
 await session.addMedia(file)

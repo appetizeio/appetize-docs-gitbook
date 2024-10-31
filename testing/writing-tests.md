@@ -1,6 +1,6 @@
 # Writing Tests
 
-Each test will have an [Appetize session](../javascript-sdk/api-reference.md#session-1) for you to interact with your device (like a [page](https://playwright.dev/docs/pages) in Playwright). You can then assert the app based on some criteria, such as the existence of a UI element, a network request, or do a screenshot test.
+Each test will have an [Appetize session](../javascript-sdk/api-reference/#session-1) for you to interact with your device (like a [page](https://playwright.dev/docs/pages) in Playwright). You can then assert the app based on some criteria, such as the existence of a UI element, a network request, or do a screenshot test.
 
 ## Your first test
 
@@ -186,7 +186,7 @@ test('loads the home tab', async ({ sesssion }) => {
 
 An example of how you can assert that a network request was made.
 
-[See documentation for network events](../javascript-sdk/api-reference.md#on-session)
+[See documentation for network events](../javascript-sdk/api-reference/#on-session)
 
 ```javascript
 test.use({

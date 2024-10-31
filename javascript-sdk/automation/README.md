@@ -19,6 +19,6 @@ See [UI Automation](../../features/ui-automation.md) for more information.
 [touch-interactions.md](touch-interactions.md)
 {% endcontent-ref %}
 
-{% content-ref url="../api-reference.md" %}
-[api-reference.md](../api-reference.md)
+{% content-ref url="../api-reference/" %}
+[api-reference](../api-reference/)
 {% endcontent-ref %}

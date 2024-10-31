@@ -12,7 +12,7 @@ Screenshot automation refers to the process of automatically capturing screensho
 
 Screenshot automation can serve various purposes, including:
 
-* [**Testing and Quality Assurance** ](screenshot-automation.md#testing-and-quality-assurance)
+* [**Testing and Quality Assurance**](screenshot-automation.md#testing-and-quality-assurance)
 * [**Apple AppStore and Google PlayStore Submissions**](screenshot-automation.md#apple-appstore-and-google-playstore-submissions)
 * [**Compliance and Customer Support**](screenshot-automation.md#compliance-and-customer-support)
 * **Reporting and Documentation**
@@ -32,13 +32,13 @@ For clients who prefer manually reviewing the generated screenshots, Playwright 
 
 ## Apple AppStore and Google PlayStore Submissions
 
-Both Apple and Google (and other App stores) have specific requirements for screenshot submissions that includes submitting compelling images that accurately represent the app's features.&#x20;
+Both Apple and Google (and other App stores) have specific requirements for screenshot submissions that includes submitting compelling images that accurately represent the app's features.
 
 Screenshot automation offers substantial advantages in this context. By automating the screenshot capture process, developers can automatically generate the required images for all their app features on all the supported device types and in the correct locale and language.
 
 To get started:
 
-### 1.  Gather the requirements of the screenshots
+### 1. Gather the requirements of the screenshots
 
 * Determine the key **features** that you would like to capture in your screenshots
 * If the app supports multiple **languages** and **locales**, plan for localised screenshots to cater to the different regions/stores.
@@ -49,7 +49,7 @@ To get started:
 
 In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](../javascript-sdk/) page for more info on how to get that set up.
 
-### 3.  Build out an object/structure that would match your requirements
+### 3. Build out an object/structure that would match your requirements
 
 For illustrative purposes, lets imagine the following requirements:
 
@@ -123,13 +123,13 @@ const config = {
 
 ### 4. Navigate to appropriate screen/feature
 
-In the above structure, we've defined an asynchronous  function called `playbackActions` that we can call to navigate to a particular screen/feature in our app.
+In the above structure, we've defined an asynchronous function called `playbackActions` that we can call to navigate to a particular screen/feature in our app.
 
 {% hint style="info" %}
 We recommend treating each `playbackActions` function as independent from another for better consistency e.g. if you provide permissions in a previous function, do not assume it will be available in the next function.
 {% endhint %}
 
-To define the steps to navigate to the particular screen, you can make use of all our automation functions available in our Javascript SDK. See [Touch interactions](../javascript-sdk/automation/touch-interactions.md) and [API Reference](../javascript-sdk/api-reference.md) for more information. A sample screen navigation could look like this:
+To define the steps to navigate to the particular screen, you can make use of all our automation functions available in our Javascript SDK. See [Touch interactions](../javascript-sdk/automation/touch-interactions.md) and [API Reference](../javascript-sdk/api-reference/) for more information. A sample screen navigation could look like this:
 
 ```javascript
 async function playbackActions(client, session. language) {
@@ -210,7 +210,7 @@ For a complete example of this scenario and how to download these images locally
 
 There are several scenarios where you might want a step by step screenshot of actions taken by the user interacting with the Appetize session e.g.
 
-* Support agents can use screenshot automation to provide step-by-step visual instructions to customers. When guiding users on how to perform specific tasks or resolve issues, a series of annotated screenshots can be incredibly helpful and user-friendly.&#x20;
+* Support agents can use screenshot automation to provide step-by-step visual instructions to customers. When guiding users on how to perform specific tasks or resolve issues, a series of annotated screenshots can be incredibly helpful and user-friendly.
 * For compliance purposes you might want screenshots of all actions taken
 
 With Appetize, you could automate generating of a screenshot on every step the user takes.
@@ -232,7 +232,7 @@ session.on('action', action => {
 })
 ```
 
-### 3. Take  a screenshot and keep it locally or remotely
+### 3. Take a screenshot and keep it locally or remotely
 
 {% code fullWidth="false" %}
 ```javascript
