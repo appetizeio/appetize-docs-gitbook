@@ -68,6 +68,7 @@
       * [NetworkRequest](javascript-sdk/api-reference/types/networkrequest.md)
       * [NetworkResponse](javascript-sdk/api-reference/types/networkresponse.md)
       * [SessionConfig](javascript-sdk/api-reference/types/sessionconfig.md)
+      * [SwipeMove](javascript-sdk/api-reference/types/swipemove.md)
       * [RecordedAction](javascript-sdk/api-reference/types/recordedaction.md)
       * [RecordedSwipeAction](javascript-sdk/api-reference/types/recordedswipeaction.md)
       * [RecordedKeypressAction](javascript-sdk/api-reference/types/recordedkeypressaction.md)

@@ -11,4 +11,4 @@
 | coordinates    | [Coordinates](coordinates.md)           |
 | position       | [RecordedPosition](recordedposition.md) |
 | localPosition? | [RecordedPosition](recordedposition.md) |
-| moves          | SwipeMove\[]                            |
+| moves          | [SwipeMove](swipemove.md)\[]            |
