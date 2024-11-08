@@ -32,7 +32,7 @@ Set and control default session permissions across your organization by navigati
 ## App Build Permissions
 
 {% hint style="warning" %}
-App Build Permissions will override Organization Build Permission Defaults. We recommend using Organization Build Permission Defaults. In the future we will introduce more granular ways to provide permissions for your apps.
+App Build Permissions will override Organization Session Default Permissions. We recommend using Organization Session Default Permissions. In the future we will introduce more granular ways to provide permissions for your apps.
 {% endhint %}
 
 For the app-level setting, navigate to your [**Dashboard**](https://appetize.io/dashboard), select your preferred app and then select the build you want to change permissions for:
