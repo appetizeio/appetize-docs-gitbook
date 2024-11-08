@@ -23,9 +23,9 @@ By default, anybody who has your app's Build Identifier link, i.e. its **buildId
 
 Some customers want to restrict access, so that only authenticated users may run their app. For this purpose, we have a configuration option which can be set at either the organization level or the app build level.
 
-## Organization App Build Permissions
+## Organization Session Default Permissions
 
-Set and control default app build permissions across your organization by navigating to [**Organization -> Apps**](https://appetize.io/organization/apps).
+Set and control default session permissions across your organization by navigating to [**Organization -> Session Defaults**](https://appetize.io/organization/session-defaults).
 
 <figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption><p>Example Organization App Build Permissions</p></figcaption></figure>
 

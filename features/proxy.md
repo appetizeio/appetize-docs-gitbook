@@ -50,7 +50,7 @@ See [Configuration](../javascript-sdk/configuration.md#proxy) for more informati
 Organization Level Proxy is only available on our Premium and Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
 {% endhint %}
 
-You may also set organization-wide proxy settings by navigating to [**Organization -> Apps**](https://appetize.io/organization/apps) **->** Proxy settings.
+You may also set organization-wide proxy settings by navigating to [**Organization** **->** **Proxy settings**](https://appetize.io/organization/proxy-settings).
 
 ### Default Proxy
 

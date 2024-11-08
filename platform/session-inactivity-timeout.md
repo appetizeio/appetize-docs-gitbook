@@ -11,7 +11,7 @@ By **default**, your Appetize session will end after **2 minutes** of inactivity
 
 ## Default App Timeout
 
-Navigate to [**Organization -> Apps**](https://appetize.io/organization/apps) **->** **Session Timeout**
+Navigate to [**Organization -> Session Defaults**](https://appetize.io/organization/session-defaults) **->** **Session Timeout**
 
 <figure><img src="../.gitbook/assets/image (60).png" alt="" width="395"><figcaption><p>Default App Session Timeout</p></figcaption></figure>
 

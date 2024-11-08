@@ -8,6 +8,6 @@ description: >-
 
 # Device Sandbox
 
-You can access your device sandbox by logging in and then opening your [Device Sandbox](https://appetize.io/app/standalone) page or by selecting **Device Sandbox** in the left-hand menu.
+You can access your device sandbox by logging in and then opening your [**Device Sandbox**](https://appetize.io/app/standalone) page or by selecting **Device Sandbox** in the left-hand menu.
 
 <figure><img src="../.gitbook/assets/image (49).png" alt=""><figcaption><p>Select <code>Device Sandbox</code> in the left-hand menu.</p></figcaption></figure>
