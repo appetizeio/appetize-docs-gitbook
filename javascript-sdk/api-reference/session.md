@@ -147,10 +147,10 @@ await session.keypress("a")
 
 **Parameters**
 
-| Name           | Type      | Description                                                                                                                                                                                                                                             |
-| -------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)<br><br>Also takes special values for hardware keys:<br><br><code>HOME</code><br><code>VOLUME_UP</code> (android only)<br><code>VOLUME_DOWN</code> (android only)<br><code>ANDROID_KEYCODE_MENU</code></p> |
-| options.shift? | `boolean` |                                                                                                                                                                                                                                                         |
+| Name           | Type      | Description                                                                                                                                                                                                                                                                                                                                                                             |
+| -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)<br><br>Also takes special values for hardware keys:<br><br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code> <br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
+| options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                         |
 
 ### setLanguage(language)
 

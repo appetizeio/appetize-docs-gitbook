@@ -125,6 +125,9 @@ This can also be used to send hardware keys:
 * `VOLUME_UP` (Android)
 * `VOLUME_DOWN` (Android)
 * `ANDROID_KEYCODE_MENU` (Android)
+* `LOCK_SCREEN` (Android)
+* `UNLOCK_SCREEN` (Android)
+* `TOGGLE_SCREEN_LOCK` (iOS)
 
 ### openUrl()
 
