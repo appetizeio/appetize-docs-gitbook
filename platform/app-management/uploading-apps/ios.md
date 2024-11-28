@@ -8,6 +8,10 @@ description: >-
 
 Appetize currently only supports iOS Simulator builds (**.app**). A simulator build can be run in the iOS Simulator with Xcode. AppStore distribution device builds (**.ipa**) are not currently supported.
 
+{% hint style="info" %}
+For optimal performance and compatibility, we recommend uploading ARM builds of your iOS app.&#x20;
+{% endhint %}
+
 ## Finding your .app file
 
 ### With Xcode
