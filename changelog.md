@@ -18,6 +18,26 @@ layout:
 
 # Changelog
 
+## November 2024
+
+### iOS 18 & iPhone 16 Pro/Max Support
+
+<figure><img src=".gitbook/assets/ios18.png" alt=""><figcaption><p>iOS 18 and iPhone 16 Pro/Max support has been added</p></figcaption></figure>
+
+* **New Features**:&#x20;
+  * Support for **iOS 18** and **iPhone 16** **Pro/Max** devices.
+  * Improved **Organization Settings** UI with clearer section names and options.
+  * **Stripe** checkout flow added for credit card updates.
+  * Updated default devices to **iPhone 14 Pro** and **Pixel 7**.
+* **Bug fixes & Improvements**:&#x20;
+  * Fixed **video rotation** issues on Chrome 130.
+  * Fixed session parameters and **configuration** handling in consecutive sessions.
+  * Improved **login** redirects and federated login flow.
+  * Addressed **duplicate invite token** for registered users.
+  * Improved clarity for overage charges and invoice details.
+  * Improved **@appetize/create-playwright** template & intro messaging.
+  * **Android 5-7** has been retired due to their age and limited usage, allowing us to focus on improving compatibility with modern devices.
+
 ## October 2024
 
 ### Biometry Support for iOS, JS SDK Updates & Other Improvements
