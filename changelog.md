@@ -36,7 +36,7 @@ layout:
   * Addressed **duplicate invite token** for registered users.
   * Improved clarity for overage charges and invoice details.
   * Improved **@appetize/create-playwright** template & intro messaging.
-  * **Android 5-7** has been retired due to their age and limited usage, allowing us to focus on improving compatibility with modern devices.
+  * **Android 5-7** have been retired due to their age and limited usage, allowing us to focus on improving compatibility with modern devices.
 
 ## October 2024
 
