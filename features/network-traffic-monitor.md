@@ -85,3 +85,24 @@ See our JavaScript [API Reference](../javascript-sdk/api-reference/#on-1) for mo
 {% hint style="info" %}
 [getNetworkInspectorUrl](../javascript-sdk/api-reference/#getnetworkinspectorurl) provides a direct URL for opening network logs in Chrome DevTools
 {% endhint %}
+
+## Troubleshooting
+
+### Certificate Issues
+
+When using Appetize’s **Network Intercept Proxy** to monitor **HTTPS traffic**, your app might encounter certificate errors if it uses certificate pinning. To resolve this, you can either:
+
+1. **Remove the certificate pinning** from the app uploaded to Appetize, or
+2. **Add Appetize's proxy's** SHA-256 hash to the list of trusted certificates in the app:
+
+```
+RNgAjJJXM4cdpieGhVEqa813muPE2imOWGQpFzwI63E=
+```
+
+By doing so, the app will trust the proxy’s certificate and allow secure HTTPS traffic monitoring.
+
+{% hint style="warning" %}
+If your app uses third-party libraries that also make HTTPS requests, those libraries might not be aware of the SHA-256 hash you add. In such cases, you may need to update the library’s certificate pinning or trust settings as well.
+{% endhint %}
+
+> **Note:**&#x20;
