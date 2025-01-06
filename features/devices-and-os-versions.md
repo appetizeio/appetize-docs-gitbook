@@ -39,12 +39,12 @@ If possible, we recommend indicating only the major version of an Operating Syst
 | Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0      |
 | Pixel 4           | pixel4                      | 10.0, 11.0, 12.0          |
 | Pixel 4 XL        | pixel4xl                    | 10.0, 11.0, 12.0          |
-| Pixel 6           | pixel6                      | 12.0, 13.0, 14.0          |
-| Pixel 6 Pro       | pixel6pro                   | 12.0, 13.0, 14.0          |
-| Pixel 7           | pixel7                      | 13.0, 14.0                |
-| Pixel 7 Pro       | pixel7pro                   | 13.0, 14.0                |
-| Pixel 8           | pixel8                      | 14.0                      |
-| Pixel 8 Pro       | pixel8pro                   | 14.0                      |
+| Pixel 6           | pixel6                      | 12.0, 13.0, 14.0, 15.0    |
+| Pixel 6 Pro       | pixel6pro                   | 12.0, 13.0, 14.0, 15.0    |
+| Pixel 7           | pixel7                      | 13.0, 14.0, 15.0          |
+| Pixel 7 Pro       | pixel7pro                   | 13.0, 14.0, 15.0          |
+| Pixel 8           | pixel8                      | 14.0, 15.0                |
+| Pixel 8 Pro       | pixel8pro                   | 14.0, 15.0                |
 | Galaxy Tab S7     | galaxytabs7                 | 10.0, 11.0, 12.0, 13.0    |
 
 {% hint style="info" %}

@@ -18,11 +18,32 @@ layout:
 
 # Changelog
 
+## December 2024
+
+### Android 15 Support
+
+<figure><img src=".gitbook/assets/Android 15.png" alt=""><figcaption><p>Android 15 Support</p></figcaption></figure>
+
+* **New Features:**
+  * Support for **Android 15** on newer devices.
+  * Support for multiple iOS keyboards, now configurable as an array.
+  * Added **build.maxConcurrent** for enhanced concurrency management.
+* **Bug Fixes and Improvements:**
+  * Expanded [v1 API](https://docs.appetize.io/rest-api/create-new-app) to support additional fields:
+    * `timeLimit`
+    * `maxConcurrent`
+    * `referrerHostnamesRestricted`
+  * Android back camera now defaults to virtual scene on newer OS Versions.
+  * Improved localization and framework parsing logic for iOS.
+  * Fixed incorrect handling of `shiftKey` values during keypress events.
+  * Resolved Android loopback issues and enhanced HTTP redirector functionality.
+  * Prevented default behavior for `cmd/ctrl + K` to avoid conflicts.
+
 ## November 2024
 
 ### iOS 18 & iPhone 16 Pro/Max Support
 
-<figure><img src=".gitbook/assets/ios18.png" alt=""><figcaption><p>iOS 18 and iPhone 16 Pro/Max support has been added</p></figcaption></figure>
+<figure><img src=".gitbook/assets/product-devices-noround.png" alt=""><figcaption><p>iOS 18 and iPhone 16 Pro/Max support has been added</p></figcaption></figure>
 
 * **New Features**:&#x20;
   * Support for **iOS 18** and **iPhone 16** **Pro/Max** devices.
