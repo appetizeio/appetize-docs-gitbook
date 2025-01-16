@@ -63,9 +63,3 @@ By setting a default proxy, the proxy will be used when no other proxy is specif
 By setting a forced proxy, the proxy will be used regardless of other proxy settings.
 
 <figure><img src="../.gitbook/assets/image (62).png" alt="" width="537"><figcaption><p>Example forced proxy</p></figcaption></figure>
-
-## Troubleshooting
-
-### Localhost access
-
-If a proxy is applied to the session, but you need access to a locally running server, use the [loopback](../platform/query-params-reference.md) query parameter. This ensures that localhost traffic is redirected to the emulator, allowing seamless interaction with your local server.
