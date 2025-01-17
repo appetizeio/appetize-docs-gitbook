@@ -14,8 +14,6 @@ Appetize's App and Embed links can contain several additional query parameters t
 
 You may see these query parameters in action when you run our [online demo](https://appetize.io/demo), and observe changes to your browser's address bar.
 
-#### device
-
 {% code title="Sample Structure" overflow="wrap" %}
 ```url
 https://appetize.io/{app/embed}/{buildId|appId|publicKey}?{queryParameter1}={value1}&{queryParameter2}={value2}
