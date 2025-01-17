@@ -17,7 +17,7 @@ Note that for `iOS` we currently only set the language at the app level. Our Pri
 Set the language of the device by adding the `language` query parameter to your app or embed URL.
 
 ```uri
-&language=af_ZA
+&language=af-ZA
 ```
 
 See [Query Params Reference](../platform/query-params-reference.md#language) for more information.
@@ -30,7 +30,7 @@ Set the language of the device via our JavaScript SDK
 
 ```typescript
 await client.setConfig({
-    language: 'af_ZA',
+    language: 'af-ZA',
     ...
 })
 ```
@@ -40,7 +40,7 @@ See [Configuration](../javascript-sdk/configuration.md#language) for more inform
 #### With `SetLanguage`
 
 ```typescript
-await session.setLanguage("af_ZA")
+await session.setLanguage("af-ZA")
 ```
 
 See [API Reference](../javascript-sdk/api-reference/#setlanguage) for more information
@@ -132,8 +132,8 @@ See [Configuration](../javascript-sdk/configuration.md#ioskeyboard) for more inf
 
 #### Japanese language and keyboard
 
-[https://appetize.io/demo?language=ja\&iosKeyboard=ja\_JP@sw](https://appetize.io/demo?language=ja\&iosKeyboard=ja\_JP@sw)
+[https://appetize.io/demo?language=ja\&iosKeyboard=ja\_JP@sw](https://appetize.io/demo?language=ja\&iosKeyboard=ja_JP@sw)
 
 #### French language with French AZERTY keyboard
 
-[https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw](https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw)
+[https://appetize.io/demo?language=fr\&iosKeyboard=fr\_FR@sw](https://appetize.io/demo?language=fr\&iosKeyboard=fr_FR@sw)
