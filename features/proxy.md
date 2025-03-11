@@ -8,7 +8,10 @@ description: >-
 # Proxy
 
 {% hint style="info" %}
-Our current support is limited to HTTP Proxies. When your app makes HTTPS connections, the data remains encrypted despite the unencrypted connection to the proxy. The app sends a CONNECT request to the proxy for the destination HTTPS server, initiating an SSL handshake. The proxy acts as a TCP connection forwarder, ensuring end-to-end encryption for app data.
+Our current support is limited to unauthenticated HTTP Proxies. When your app makes HTTPS connections, the data remains encrypted despite the unencrypted connection to the proxy. The app sends a CONNECT request to the proxy for the destination HTTPS server, initiating an SSL handshake. The proxy acts as a TCP connection forwarder, ensuring end-to-end encryption for app data.\
+
+
+If you need to allow-list specific IPs for proxy access, you can use our [IP Blocks endpoint](../rest-api/ip-blocks/) to retrieve the necessary IP ranges.
 {% endhint %}
 
 ## App Level Proxy
