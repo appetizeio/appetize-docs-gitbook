@@ -159,6 +159,18 @@ Turn on Auto-Correction for iOS. Defaults to `true`.
 
 Sets the language of the device. Must be an [ISO 639-1 & BCP 47](https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android) language code.
 
+### launchApp
+
+`boolean | string`
+
+Indicates whether an app launches after installation and allows specifying which installed app to open.
+
+**Possible values:**
+
+* `false` - Apps install but do not launch.
+* `true` or `undefined` – Default behavior
+* `appId` - Launches the app with the specified [app Identifier](../platform/sharing-apps.md#app-identifier) (e.g., `com.android.chrome`).
+
 ### launchUrl
 
 `string`
@@ -257,7 +269,7 @@ Enables the display of rotate buttons next to the device. Requires `scale` to be
 
 `string`
 
-(Android only) Sets the timezone of the device. [See available values](https://en.wikipedia.org/wiki/List\_of\_tz\_database\_time\_zones).
+(Android only) Sets the timezone of the device. [See available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### endSessionRedirectUrl
 
