@@ -21,20 +21,20 @@ If possible, we recommend indicating only the major version of an Operating Syst
 | **iOS**           |                             |                           |
 | iPhone 8          | iphone8                     | 15.5, 16.2                |
 | iPhone 8 Plus     | iphone8plus                 | 15.5, 16.2                |
-| iPhone 11 Pro     | iphone11pro                 | 15.5, 16.2, 17.2, 18.0    |
-| iPhone 12         | iphone12                    | 15.5, 16.2, 17.2, 18.0    |
-| iPhone 13 Pro     | iphone13pro                 | 15.5, 16.2, 17.2, 18.0    |
-| iPhone 13 Pro Max | iphone13promax              | 15.5, 16.2, 17.2, 18.0    |
-| iPhone 14 Pro     | iphone14pro                 | 16.2, 17.2, 18.0          |
-| iPhone 14 Pro Max | iphone14promax              | 16.2, 17.2, 18.0          |
-| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.0                |
-| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.0                |
-| iPhone 16 Pro     | iphone16pro                 | 18.0                      |
-| iPhone 16 Pro Max | iphone16promax              | 18.0                      |
-| iPad Air          | ipadair4thgeneration        | 15.5, 16.2, 17.2, 18.0    |
-| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 15.5, 16.2, 17.2, 18.0    |
+| iPhone 11 Pro     | iphone11pro                 | 15.5, 16.2, 17.2, 18.2    |
+| iPhone 12         | iphone12                    | 15.5, 16.2, 17.2, 18.2    |
+| iPhone 13 Pro     | iphone13pro                 | 15.5, 16.2, 17.2, 18.2    |
+| iPhone 13 Pro Max | iphone13promax              | 15.5, 16.2, 17.2, 18.2    |
+| iPhone 14 Pro     | iphone14pro                 | 16.2, 17.2, 18.2          |
+| iPhone 14 Pro Max | iphone14promax              | 16.2, 17.2, 18.2          |
+| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.2                |
+| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.2                |
+| iPhone 16 Pro     | iphone16pro                 | 18.2                      |
+| iPhone 16 Pro Max | iphone16promax              | 18.2                      |
+| iPad Air          | ipadair4thgeneration        | 15.5, 16.2, 17.2, 18.2    |
+| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 15.5, 16.2, 17.2, 18.2    |
 | iPad              | ipad9thgeneration           | 15.5, 16.2, 17.2          |
-| iPad Mini         | ipadmini6thgeneration       | 18.0                      |
+| iPad Mini         | ipadmini6thgeneration       | 18.2                      |
 | **Android**       |                             |                           |
 | Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0      |
 | Pixel 4           | pixel4                      | 10.0, 11.0, 12.0          |
