@@ -11,7 +11,7 @@ description: >-
 
 You can access your session history by navigating to your [Reports Dashboard](https://appetize.io/reports) and selecting **download** under session logs after specifying the month that you are interested in:
 
-<figure><img src="../../.gitbook/assets/image (65).png" alt="" width="365"><figcaption><p>Select "Download" under session logs after specifying the month you are interested in</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 114947.png" alt=""><figcaption><p>Select "Download" under session logs after specifying the month you are interested in</p></figcaption></figure>
 
 {% hint style="info" %}
 All reports are downloaded in UTC (Coordinated Universal Time) times.

@@ -2,7 +2,7 @@
 description: >-
   Experience native iOS and Android mobile apps in your browser with Appetize -
   no downloads, plugins, or extra permissions required!
-cover: .gitbook/assets/cover_image_2.png
+cover: .gitbook/assets/Intro(1).jpg
 coverY: 0
 layout:
   cover:

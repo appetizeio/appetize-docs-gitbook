@@ -9,7 +9,7 @@ icon: play
 
 ## Features
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-10-24 114520.png" alt=""><figcaption><p>App Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 111738.png" alt=""><figcaption><p>App Page</p></figcaption></figure>
 
 Appetize provides an out-of-the-box App page that provides easy access to:
 
@@ -19,11 +19,24 @@ Appetize provides an out-of-the-box App page that provides easy access to:
   * [Network Traffic Monitor](../../features/network-traffic-monitor.md)
   * [Debug Logs](../../features/debug-logs.md)
   * [Adb Tunnel](../../features/advanced-features/android/adb-tunnel.md) (Android Only)
-* Adding Media
-* Saving screenshots
+*   Device toolbar:
+
+    * Home/Lock buttons
+    * Biometry
+    * Light/Dark mode
+    * Rotate the device
+    * Change Location
+    * Switch between supported languages
+    * Shake device
+    * Font Scale
+    * Add Media
+    * Save screenshots
+    * Toggle soft keyboard
+
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Device Toolbar</p></figcaption></figure>
 * Support for all [Query Parameters](../query-params-reference.md) to fully customize your experience.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-10-24 115356.png" alt="" width="221"><figcaption><p>Easily switch devices, enable debugging features, save screenshots and more.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 112110.png" alt=""><figcaption><p>Easily switch devices, enable debugging features and more.</p></figcaption></figure>
 
 ## Accessing your App Page
 
@@ -37,7 +50,7 @@ https://appetize.io/apps/{platform}/{appId}
 ```
 {% endcode %}
 
-Alternatively you can go to  your [Apps](https://appetize.io/apps) page and click **play** on the app you want to run.
+Alternatively you can go to your [Apps](https://appetize.io/apps) page and click **play** on the app you want to run.
 
 #### Specific Build
 
@@ -55,4 +68,4 @@ https://appetize.io/app/{publicKey|buildId}
 ```
 {% endhint %}
 
-Alternatively you can go to  your [Apps](https://appetize.io/apps) page and select the App with which the build is associated. From here you can access the individual builds as explained [here](listing-apps.md#app-builds-page). &#x20;
+Alternatively you can go to your [Apps](https://appetize.io/apps) page and select the App with which the build is associated. From here you can access the individual builds as explained [here](listing-apps.md#app-builds-page).

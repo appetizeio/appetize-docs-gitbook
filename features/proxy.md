@@ -59,10 +59,10 @@ You may also set organization-wide proxy settings by navigating to [**Organizati
 
 By setting a default proxy, the proxy will be used when no other proxy is specified.
 
-<figure><img src="../.gitbook/assets/image (61).png" alt="" width="536"><figcaption><p>Example default proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114319.png" alt=""><figcaption><p>Example default proxy</p></figcaption></figure>
 
 ### Forced Proxy
 
 By setting a forced proxy, the proxy will be used regardless of other proxy settings.
 
-<figure><img src="../.gitbook/assets/image (62).png" alt="" width="537"><figcaption><p>Example forced proxy</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114342.png" alt=""><figcaption><p>Example forced proxy</p></figcaption></figure>

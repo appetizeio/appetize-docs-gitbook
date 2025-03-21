@@ -52,7 +52,7 @@ https://appetize.io/app/{appId|buildId|publicKey}?&proxy=intercept
 
 or by going to your [Apps](https://appetize.io/apps) page, selecting the app you want to inspect, and then clicking `debug` on the latest build or choosing a specific build you would like to debug.
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113309.png" alt=""><figcaption><p>Select <code>Debug</code> for the app or a specific build</p></figcaption></figure>
 
 {% hint style="info" %}
 You can also open the network logs in Chrome DevTools if you are running the app in a Chrome Browser by selecting the `Chrome DevTools` button.
@@ -60,7 +60,7 @@ You can also open the network logs in Chrome DevTools if you are running the app
 Alternatively you can download the HAR file and open it in your favorite Network Monitoring tool.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-10-26 191724.png" alt="Example App Network Event Log"><figcaption><p>Network log tab with associated action buttons for downloading the HAR or opening in Chrome DevTools</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113732.png" alt="Example App Network Event Log"><figcaption><p>Network log tab with associated action buttons for downloading the HAR or opening in Chrome DevTools</p></figcaption></figure>
 
 ### With JavaScript SDK
 

@@ -1,8 +1,8 @@
 ---
-icon: share-nodes
 description: >-
   Sharing your app on Appetize is easy! Simply upload your build and share the
   link with others for instant access on any device.
+icon: share-nodes
 ---
 
 # Sharing
@@ -11,7 +11,7 @@ description: >-
 
 The easiest way to find your external share link is by going to your [Apps](https://appetize.io/apps) or [App Builds](app-management/listing-apps.md#app-builds-page) page and selecting **share** under the app, App Group or build that you want to embed on your website.
 
-<figure><img src="../.gitbook/assets/image (18).png" alt="" width="371"><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113309.png" alt=""><figcaption><p>Find your share link by clicking the share button</p></figcaption></figure>
 
 Currently, `Share` will share a specific build of your application. Soon, we will introduce new sharing features that will allow you to share the latest build without changing the URL.
 
@@ -19,7 +19,7 @@ Currently, `Share` will share a specific build of your application. Soon, we wil
 
 ## App Identifier
 
-App builds hosted on Appetize are distinguished by their unique Application Identifier. On Android, this identifier corresponds to the [Application ID](https://developer.android.com/build/configure-app-module#set-application-id), while on iOS, it is known as the [Bundle Identifier](https://developer.apple.com/documentation/appstoreconnectapi/bundle\_ids).
+App builds hosted on Appetize are distinguished by their unique Application Identifier. On Android, this identifier corresponds to the [Application ID](https://developer.android.com/build/configure-app-module#set-application-id), while on iOS, it is known as the [Bundle Identifier](https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids).
 
 You can access the [latest build](#user-content-fn-1)[^1] of a particular application like this:
 
@@ -54,4 +54,4 @@ Your app link can be easily shared with whomever you'd like, or [embedded](embed
 Some customers want to restrict access, so that only authenticated users may run their app (or certain features). See [App Build Permissions](app-management/app-permissions.md) for more information on how to do this.
 {% endhint %}
 
-[^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings) , and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleversion).
+[^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings) , and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion).

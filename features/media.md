@@ -12,9 +12,9 @@ The maximum file size for uploading media is **50 MB**.
 
 ## With App Page
 
-The [App Page](../platform/app-management/running-apps.md#accessing-your-app-page) provides an **Add Media** button during active sessions, allowing you to upload media files directly to the device’s photo library.
+The [App Page](../platform/app-management/running-apps.md#accessing-your-app-page) provides an **Upload File** button on the device toolbar during active sessions, allowing you to upload media files directly to the device’s photo library.
 
-<figure><img src="../.gitbook/assets/image (68).png" alt="" width="221"><figcaption><p>"Add Media" button during active sessions</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114500.png" alt=""><figcaption><p>"Upload File" button during active sessions</p></figcaption></figure>
 
 ## With JavaScript SDK
 

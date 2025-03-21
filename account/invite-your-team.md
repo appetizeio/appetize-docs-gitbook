@@ -16,7 +16,7 @@ Simply navigate to the **Invitations** section and add all the user emails that 
 Users must accept the invite before joining the account
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (63).png" alt="" width="440"><figcaption><p>Invite users from Organization Settings > Team Management</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114846.png" alt=""><figcaption><p>Invite users from Organization Settings > Team Management</p></figcaption></figure>
 
 Once a user is added to your account, all their existing and future uploaded apps will be linked to this account.
 

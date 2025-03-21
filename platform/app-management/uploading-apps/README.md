@@ -1,8 +1,8 @@
 ---
-icon: arrow-up-from-bracket
 description: >-
   Effortlessly upload your mobile app on Appetize within minutes, and start
   using it across various devices and operating systems.
+icon: arrow-up-from-bracket
 ---
 
 # Uploading Apps
@@ -46,7 +46,7 @@ In some instances, you might want to explicitly update a particular app build. T
 4. Go to **Settings**.
 5. Navigate to "**Update build**"
 
-<img src="../../../.gitbook/assets/image (55).png" alt="Update Build under settings page" data-size="original">
+![](../../../.gitbook/assets/image.png)
 {% endhint %}
 
 ### With CI/CD and Third-Party Integrations
@@ -82,4 +82,4 @@ Appetize also supports uploading your application programmatically by making use
 [update-existing-app.md](../../../rest-api/update-existing-app.md)
 {% endcontent-ref %}
 
-[^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings), and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information\_property\_list/cfbundleversion).
+[^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings), and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion).

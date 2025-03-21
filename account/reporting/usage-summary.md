@@ -13,7 +13,7 @@ You can access your usage summary by navigating to your [Reports Dashboard](http
 * **Monthly usage report**
 * **Daily usage report** after specifying the month that you are interested in e.g. May 2023
 
-<figure><img src="../../.gitbook/assets/image (66).png" alt="" width="368"><figcaption><p>Select "Download" under Monthly or Daily usage report</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 115008.png" alt=""><figcaption><p>Select "Download" under Monthly or Daily usage report</p></figcaption></figure>
 
 {% hint style="info" %}
 All reports are downloaded in UTC (Coordinated Universal Time) times.

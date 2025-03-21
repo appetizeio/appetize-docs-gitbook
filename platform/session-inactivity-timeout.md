@@ -1,8 +1,8 @@
 ---
-icon: alarm-clock
 description: >-
   With Appetize's Session Inactivity Timeout, users can manage how long their
   device's session stays active, before being freed up for reuse.
+icon: alarm-clock
 ---
 
 # Session Inactivity Timeout
@@ -13,17 +13,17 @@ By **default**, your Appetize session will end after **2 minutes** of inactivity
 
 Navigate to [**Organization -> Session Defaults**](https://appetize.io/organization/session-defaults) **->** **Session Timeout**
 
-<figure><img src="../.gitbook/assets/image (60).png" alt="" width="395"><figcaption><p>Default App Session Timeout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113431.png" alt=""><figcaption><p>Default App Session Timeout</p></figcaption></figure>
 
 ## App Build Specific Timeout
 
 Navigate to your [**Apps Dashboard**](https://appetize.io/apps) **-> Select** your preferred **app -> Select the build** you want to modify **-> Settings -> Session timeout**
 
-<figure><img src="../.gitbook/assets/image (50).png" alt="" width="372"><figcaption><p>Select the App you want to modify</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113458.png" alt=""><figcaption><p>Select the App you want to modify</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption><p>Select the build you want to modify</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113201.png" alt=""><figcaption><p>Select the build you want to modify</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption><p>Build Specific Inactivity Timeout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113546.png" alt=""><figcaption><p>Build Specific Inactivity Timeout</p></figcaption></figure>
 
 {% hint style="info" %}
 You can also[ set](../rest-api/create-new-app.md)/[update](../rest-api/update-existing-app.md) the inactivity timeout of your app with our [REST API](../rest-api/) when uploading your app.
