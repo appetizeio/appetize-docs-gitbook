@@ -166,15 +166,6 @@ session.swipe({
     },
     duration: 1000 // optional, in ms
 })
-
-// swipe up at x/y coordinate
-session.swipe({
-    gesture: 'up',
-    coordinates: {
-        x: 100,
-        y: 100
-    }
-})
 ```
 
 #### By element
@@ -198,7 +189,7 @@ session.swipe({
 
 #### Complex Gestures
 
-You can describe a more complex gesture by providing a function to `gesture`.&#x20;
+You can describe a more complex gesture by providing a function to `gesture`.
 
 ```javascript
 // swipe from middle of screen to the left and then down
