@@ -154,7 +154,7 @@ const elements = await session.findElements({
 
 Swipes from the screen position or element
 
-#### By position or coordinates
+#### By position
 
 ```javascript
 // swipe up at middle of the screen
