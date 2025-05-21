@@ -33,7 +33,7 @@ If possible, we recommend indicating only the major version of an Operating Syst
 | iPhone 16 Pro Max | iphone16promax              | 18.2                      |
 | iPad Air          | ipadair4thgeneration        | 15.5, 16.2, 17.2, 18.2    |
 | iPad Pro 12.9"    | ipadpro129inch5thgeneration | 15.5, 16.2, 17.2, 18.2    |
-| iPad              | ipad9thgeneration           | 15.5, 16.2, 17.2          |
+| iPad              | ipad9thgeneration           | 15.5, 16.2, 17.2, 18.2    |
 | iPad Mini         | ipadmini6thgeneration       | 18.2                      |
 | **Android**       |                             |                           |
 | Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0      |
@@ -45,7 +45,10 @@ If possible, we recommend indicating only the major version of an Operating Syst
 | Pixel 7 Pro       | pixel7pro                   | 13.0, 14.0, 15.0          |
 | Pixel 8           | pixel8                      | 14.0, 15.0                |
 | Pixel 8 Pro       | pixel8pro                   | 14.0, 15.0                |
+| Pixel 9 Pro       | pixel9pro                   | 15.0                      |
+| Pixel 9 XL        | pixel9xl                    | 15.0                      |
 | Galaxy Tab S7     | galaxytabs7                 | 10.0, 11.0, 12.0, 13.0    |
+| Pixel Tablet      | pixeltablet                 | 13.0, 14.0, 15.0          |
 
 {% hint style="info" %}
 For devices utilizing a PIN/Lock Screen, our default PIN code is set to **1111** for seamless access and testing.
