@@ -96,7 +96,6 @@
     * [v1](rest-api/devices-and-os-versions/v1.md)
   * [IP Blocks](rest-api/ip-blocks/README.md)
     * [v1](rest-api/ip-blocks/v1.md)
-  * [Sample code](rest-api/sample-code.md)
 * [Guides & Samples](guides-and-samples/README.md)
   * [Impersonation](guides-and-samples/impersonation.md)
   * [Automate Sign-in Flow](guides-and-samples/automate-sign-in-flow.md)

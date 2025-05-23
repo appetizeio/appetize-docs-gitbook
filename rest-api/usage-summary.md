@@ -1,5 +1,5 @@
 # Usage summary
 
-{% swagger src="../.gitbook/assets/appetize-v1 (1).yaml" path="/usageSummary" method="get" %}
-[appetize-v1 (1).yaml](<../.gitbook/assets/appetize-v1 (1).yaml>)
-{% endswagger %}
+{% openapi-operation spec="appetize-v1-api" path="/usageSummary" method="get" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}

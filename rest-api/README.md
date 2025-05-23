@@ -7,33 +7,70 @@ icon: cloud
 
 # REST API
 
-## Getting Started
+## 🚀 Getting Started
 
-{% hint style="warning" %}
-If you are using an Enterprise Private Instance of Appetize, please replace all API calls from **api.appetize.io** to your custom domain, e.g.  v1 - **custom.appetize.io**, v2 - **custom.appetize.io/api/**
+{% hint style="success" %}
+**Private Instance Users**\
+If you're using a **Private Enterprise Instance**, update the domain for your requests:
+
+* For **v1 APIs**, use: `https://custom.appetize.io`
+* For **v2 APIs**, use: `https://custom.appetize.io/api/`
 {% endhint %}
 
-1. **Get Your API Token**\
-   All users with _admin_ or _developer_ roles may request an API token after logging in and navigating to [**Organization -> API Token**](https://appetize.io/organization/api-token)**.**
-2. **Use Basic Authentication:**\
-   When sending requests to the Appetize REST API that requires authentication, use Basic Authentication.
-3. **Encode your token** + ":" using Base64 encoding.
-4. **Attach Token to Requests**\
-   In your HTTP headers, include an Authorization header with the value "Basic" followed by the encoded token.
+### 1. Get Your API Token
 
-See our [Sample Code](sample-code.md) for an example on how to get started.
+To authenticate your requests:
 
-### HTTP Requests
+* Log in to your Appetize account.
+* Navigate to [**Organization → API Token**](https://appetize.io/organization/api-token) to generate your API token.
 
 {% hint style="info" %}
-All HTTP POST Requests must use JSON.
+Only users with **admin** or **developer** roles can access API tokens.
 {% endhint %}
 
-### HTTP Responses
+### 2.  Authenticate Your Requests
 
-{% hint style="info" %}
-All HTTP Responses will be in JSON.
-{% endhint %}
+Use the `X-API-KEY` header to authenticate every API request.
+
+{% tabs %}
+{% tab title="cURL" %}
+```bash
+curl -X GET https://api.appetize.io/v1/apps \
+  -H "X-API-KEY: your_api_token"
+```
+{% endtab %}
+
+{% tab title="JavaScript " %}
+```typescript
+fetch("https://api.appetize.io/v1/apps", {
+  headers: {
+    "X-API-KEY": "your_api_token"
+  }
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error(error));
+```
+{% endtab %}
+{% endtabs %}
+
+### 3. Explore our API
+
+You’re all set to start using the API.
+
+Each endpoint includes:
+
+* 📦 Sample requests and responses
+* 🌐 Code samples in multiple languages (like cURL, Python, JavaScript)
+
+Use these to quickly understand how each endpoint works and integrate it into your own tools.
+
+## Format & Conventions
+
+* **POST** requests must include a `Content-Type: application/json` header.
+* All responses are in **JSON** format.
+
+## Response Codes
 
 | Status code            | Details                                               |
 | ---------------------- | ----------------------------------------------------- |

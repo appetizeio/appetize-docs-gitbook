@@ -1,20 +1,45 @@
 # Direct file uploads
 
-[Create new app](create-new-app.md) and [Update existing app](update-existing-app.md) require that you first upload your app to a publicly accessible website URL, from which we then retrieve your app.
+The[ Create New App](create-new-app.md) and [Update Existing App](update-existing-app.md) endpoints require your app to be hosted at a **publicly accessible URL**.
 
-If you would prefer to directly upload the app as part of the API call, our endpoints also accept multipart/form-data requests.
+If you prefer, you can upload the app **directly** as part of the API request using a `multipart/form-data` request.
 
-You may use the field name `file` to send a direct upload from the local filesystem, rather than using the field `url`. All other field names are identical. To delete a field, set it to an empty string.
+### 🧾 Notes
 
-The `appPermissions` field is an object in the JSON API. For direct uploads, you should specify the fields as "appPermissions.run", "appPermissions.networkProxy", etc.
+* Use the field **`file`** to upload from your local file-system instead of the **`url`** field.
+* All other field names stay the same.
+* To **delete a field**, pass an **empty string** (e.g., `-F "field="`).
+* `appPermissions` (normally a nested object in JSON) should be flattened:
+  * e.g., `appPermissions.run`, `appPermissions.networkProxy`, etc.
 
+### 📦 Examples
+
+{% tabs %}
+{% tab title="Upload New App" %}
 ```bash
-# uploading a new app
-curl --http1.1 https://APITOKEN@api.appetize.io/v1/apps -F "file=@file_to_upload.zip" -F "platform=ios"
-
-# updating an existing app
-curl --http1.1 https://APITOKEN@api.appetize.io/v1/apps/PUBLICKEY -F "file=@file_to_upload.zip" -F "platform=ios"
-
-# specifying appPermissions
-curl --http1.1 https://APITOKEN@api.appetize.io/v1/apps -F "file=@file_to_upload.zip" -F "platform=ios" -F "appPermissions.run=public"
+curl -X POST https://api.appetize.io/v1/apps \
+  -H "X-API-KEY: your_api_token" \
+  -F "file=@file_to_upload.zip" \
+  -F "platform=ios"
 ```
+{% endtab %}
+
+{% tab title="Update Existing App" %}
+```bash
+curl -X POST https://api.appetize.io/v1/apps/PUBLICKEY \
+  -H "X-API-KEY: your_api_token" \
+  -F "file=@file_to_upload.zip" \
+  -F "platform=ios"
+```
+{% endtab %}
+
+{% tab title="Specifying App Permissions" %}
+```bash
+curl -X POST https://api.appetize.io/v1/apps \
+  -H "X-API-KEY: your_api_key_here" \
+  -F "file=@file_to_upload.zip" \
+  -F "platform=ios" \
+  -F "appPermissions.run=public"
+```
+{% endtab %}
+{% endtabs %}

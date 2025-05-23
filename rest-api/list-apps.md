@@ -6,20 +6,20 @@
 The returned app(s) will display only explicitly set parameters, with all other values defaulting to the organization or Appetize defaults.
 {% endhint %}
 
-{% swagger src="../.gitbook/assets/appetize-v1 (1).yaml" path="/apps" method="get" %}
-[appetize-v1 (1).yaml](<../.gitbook/assets/appetize-v1 (1).yaml>)
-{% endswagger %}
+{% openapi-operation spec="appetize-v1-api" path="/apps" method="get" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
 
-{% swagger src="../.gitbook/assets/appetize-v1 (1).yaml" path="/apps/all" method="get" %}
-[appetize-v1 (1).yaml](<../.gitbook/assets/appetize-v1 (1).yaml>)
-{% endswagger %}
+{% openapi-operation spec="appetize-v1-api" path="/apps/all" method="get" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
 
-{% swagger src="../.gitbook/assets/appetize-v1 (1).yaml" path="/apps/{app_publicKey}" method="get" %}
-[appetize-v1 (1).yaml](<../.gitbook/assets/appetize-v1 (1).yaml>)
-{% endswagger %}
+{% openapi-operation spec="appetize-v1-api" path="/apps/{app_publicKey}" method="get" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
 
 ## App Groups
 
-{% swagger src="../.gitbook/assets/appetize-v1 (1).yaml" path="/apps/{appgroup_publicKey}" method="get" %}
-[appetize-v1 (1).yaml](<../.gitbook/assets/appetize-v1 (1).yaml>)
-{% endswagger %}
+{% openapi-operation spec="appetize-v1-api" path="/apps/{appgroup_publicKey}" method="get" %}
+[Broken link](broken-reference)
+{% endopenapi-operation %}
