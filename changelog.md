@@ -1,8 +1,8 @@
 ---
-icon: paper-plane
 description: >-
   Stay updated on Appetize’s latest releases, including new features,
   improvements, and key updates.
+icon: paper-plane
 layout:
   title:
     visible: true
@@ -17,6 +17,28 @@ layout:
 ---
 
 # Changelog
+
+## March 2025
+
+### Redesigned App Experience
+
+<figure><img src=".gitbook/assets/Changelog Update 2028.jpg" alt=""><figcaption><p>Updated App Page Experience </p></figcaption></figure>
+
+* **New Features:**
+  * Web app redesign
+    * The app page now includes a new toolbar for faster access to often used actions such as taking screenshots, biometric data, changing location and much more!
+    * Refreshed visual design across all pages for a more consistent and intuitive experience.
+  * Introduced `launchApp` parameter
+    * Indicates whether an app should launch after installation, and allows specifying which installed app to open automatically.
+  * Broadened device support with new Pixel 9 options and enhanced custom device configuration.
+* **Bug Fixes and Improvements:**
+  * Improved Android 15 support with enhancements to language changes, proxy behaviour, and general reliability.
+  * Enabled Android emulators to unlock extended host CPU features.
+  * Upgraded iOS runtime support to version 18.2
+  * Resolved session stability issues in app groups and improved build resolution accuracy.
+  * Improved UI consistency with improvements to buttons, layout spacing, tab behaviour, and component styling.
+  * Strengthened federated login flows with better handling of missing user details and stricter redirect validation.
+  * Corrected device-specific behaviour such as toolbar spacing and biometric icon rendering on older iOS devices.
 
 ## December 2024
 
