@@ -18,14 +18,14 @@ Appetize supports regular  username and password logins by _default_. As an admi
    *   Or click **+ Add More** to add separate email groups with different roles.\
 
 
-       <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Invite new members section</p></figcaption></figure>
+       <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Invite new members section</p></figcaption></figure>
 3. Use the dropdown next to each email group to assign a role:
    * **Viewer** – Can only run uploaded apps.
    * **Developer** – Upload apps and manage app settings.
    *   **Admin** – View account page, edit billing, manage users, and change account settings.\
 
 
-       <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>User Roles Drop-down</p></figcaption></figure>
+       <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>User Roles Drop-down</p></figcaption></figure>
 
 
 4. Click **Send Invites** to send all invitations at once.

@@ -18,6 +18,26 @@ layout:
 
 # Changelog
 
+## May 2025
+
+### Improved User Invitation Journey & Easier API Access
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>New User Invitation Journey</p></figcaption></figure>
+
+* **New Features**
+  * Introduced a [new **user invitation journey**](https://docs.appetize.io/account/invite-your-team) with predefined roles and better onboarding experience.
+  * Added support for the `x-api-key` header in both v1 and v2 API authentication.
+  * Enabled linking to **external launch pages** from within the Appetize App Experience.
+  * Added **Pixel Tablet** to supported devices.
+* **Bug Fixes and Improvements**
+  * Fixed crash caused by unsafe `endSession` calls during app downloads
+  * Resolved APK reinstall and upload issues
+  * Improved Android emulator performance
+  * Fixed memory issues caused by large app aggregations
+  * Corrected issues with `lastPlayed` property updates
+  * Improved iOS architecture metadata display
+  * Updated email styling and fixed layout issues across login, signup, and developer tools UI
+
 ## March 2025
 
 ### Redesigned App Experience
