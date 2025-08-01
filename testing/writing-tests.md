@@ -178,7 +178,7 @@ test('loads the home tab', async ({ sesssion }) => {
     
     const screenshot = await session.screenshot()
     
-    await expect(session.data).toMatchSnapshot()
+    await expect(screenshot.data).toMatchSnapshot()
 })
 ```
 
