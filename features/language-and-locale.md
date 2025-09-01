@@ -117,7 +117,7 @@ See [Query Params Reference](../platform/query-params-reference.md#ioskeyboard) 
 
 ### **With JavaScript SDK Configuration**
 
-Set the time zone of the device via our JavaScript SDK configuration
+Set the keyboard of the device by adding the `iosKeyboard` field via our JavaScript SDK configuration
 
 ```typescript
 await client.setConfig({
