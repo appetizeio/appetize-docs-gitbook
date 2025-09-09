@@ -3,20 +3,37 @@ description: >-
   Stay updated on Appetize’s latest releases, including new features,
   improvements, and key updates.
 icon: paper-plane
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Changelog
+
+## August 2025
+
+### Session History View and Android 16 Support
+
+<figure><img src=".gitbook/assets/image (69).png" alt="Picture of the new Session History View"><figcaption><p>New Session History View</p></figcaption></figure>
+
+* **New Features**
+  * Released the new [**Session History**](https://appetize.io/sessions) view
+    * Easily view, search and export previous sessions to help with debugging, tracking activity, and understanding recent usage across your team.
+  * Added support for **Android 16** and **Pixel 9 devices**
+    * Ensures compatibility with the latest Android OS and new device models
+* **Bug Fixes and Improvements**
+  * Added support for **split APKs** (including non-Bundletool) build variants.
+  * Redesigned the **Build Metadata** page for clearer app build details.
+  * Added **syntax highlighting** to debug logs for easier reading and troubleshooting
+  * Enabled **S3 Transfer Acceleration** to speed up file uploads and downloads in supported regions
+  * Added **version-based search** in the Builds view
+  * Increased screenshot timeout to 60 seconds for better reliability on slower or complex apps
+  * Extended accepted file types for uploads on both iOS and Android devices
+  * Fixed session parameters not being saved properly
+  * Improved error handling for SSO logins and duplicate email invitations
+  * Resolved issues with tooltips causing duplicate clicks
+  * Improved OIDC login flow, including **support for Amazon Cognito**
+  * Fixed device OS selection and APK parsing issues during app installs
+  * Fixed layout bugs in debug logs, toolbars, and developer settings
+  * Persisted sidebar drawer state using cookies
+  * Improved pointer accuracy in the Inspector tool when overlapping UI elements are present
 
 ## May 2025
 
