@@ -1,15 +1,15 @@
 ---
 description: >-
   Capture user interactions and play them back with ease using Appetize's
-  AppRecorder. Test and reuse app workflows (e.g. user login) on different
-  devices effortlessly.
+  Automation Recorder. Test and reuse app workflows (e.g. user login) on
+  different devices effortlessly.
 ---
 
-# UI Automation
+# Automations
 
-## AppRecorder
+## Automation Recorder
 
-Users can easily record and replay their interactions with our Appetize Devices using `AppRecorder`. These recordings capture the running application's user interface elements and are designed to handle minor app changes without any issues.
+Users can easily record and replay their interactions with our Appetize Devices using Appetize's Automation Recorder. These recordings capture the running application's user interface elements and are designed to handle minor app changes without any issues.
 
 You can even record on one device, like an iPhone, and play it back on another device, such as an iPad.
 
@@ -21,7 +21,7 @@ We welcome [customer feedback](mailto:hello@appetize.io) as we continue to refin
 
 #### With App Page
 
-The app page provides an easy way to enable **AppRecorder** and logging out all of the user actions that took place. You can access this via your app's app link
+The app page provides an easy way to enable **Automation Recorder** and logging out all of the user actions that took place. You can access this via your app's app link
 
 ```
 https://appetize.io/app/{appId|buildId|publicKey}
@@ -31,11 +31,11 @@ or by going to your [Apps](https://appetize.io/apps) page and clicking `Start` o
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113458.png" alt=""><figcaption><p>Select <code>Start</code> on your app</p></figcaption></figure>
 
-Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
+Once you are on your app page, you can enable **Automation Recorder** by toggling the button to on.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114013.png" alt=""><figcaption><p>Enable App Recorder</p></figcaption></figure>
 
-As you interact with the session, **AppRecorder** will automatically pick up all the actions and log them out in the **AppRecorder** tab.
+As you interact with the session, **Automation Recorder** will automatically pick up all the actions and log them out in the **Automation Recorder** tab.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114047.png" alt=""><figcaption><p>All actions that took place during the session will be logged in the <strong>AppRecorder</strong> tab.</p></figcaption></figure>
 
@@ -61,16 +61,14 @@ await session.playActions(Actions)
 
 Recorded actions can be serialized as `JSON` and stored so that you can replay them later.
 
-{% code title="Example of a " fullWidth="false" %}
+{% code title="Example of an action" fullWidth="false" %}
 ```javascript
 {
     type: 'click',
     xPos: 105,
     yPos: 645,    
     element: {
-        text: 'Login',
-        class: 'UIView',
-        baseClass: 'UIResponder',        
+        text: 'Login'       
     }
 }
 ```
@@ -90,11 +88,11 @@ or by going to your [Apps](https://appetize.io/apps) page and clicking `Start` o
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113458.png" alt=""><figcaption><p>Select <code>Start</code> on your app</p></figcaption></figure>
 
-Once you are on your app page, you can enable **AppRecorder** by toggling the button to on.
+Once you are on your app page, you can enable **Automation Recorder** by toggling the button to on.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114013.png" alt=""><figcaption><p>Enable App Recorder</p></figcaption></figure>
 
-To import the JSON file with the user actions to replay, select the "Import JSON" button in the **AppRecorder** tab and then select "Replay" to start a replay of the user actions that took place.
+To import the JSON file with the user actions to replay, select the "Import JSON" button in the **Automation Recorder** tab and then select "Replay" to start a replay of the user actions that took place.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 114226.png" alt=""><figcaption><p>Import your JSON file and select Replay to replay the user actions.</p></figcaption></figure>
 

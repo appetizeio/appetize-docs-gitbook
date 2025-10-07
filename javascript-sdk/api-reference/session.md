@@ -19,20 +19,20 @@ session.on(event, data => {
 })
 ```
 
-| Event                       | Data Type                                                                                                                                                                | Description                                                                                                                                                                                                                                                                                           |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **action**                  | [RecordedAction](types/recordedaction.md)                                                                                                                                | <p>A user action has been recorded. This can be played back later with <a href="session.md#playaction-action-options">playAction</a>.<br><br>Requires <a href="../configuration.md#record">record</a> to be set to <code>true</code></p>                                                              |
-| <h4>appLaunch</h4>          | `void`                                                                                                                                                                   | App launch event occurred.                                                                                                                                                                                                                                                                            |
-| **audio**                   | <p><code>{</code><br><code>buffer: Uint8Array, codec: 'aac',</code><br><code>duration: number</code><br><code>}</code></p>                                               | <p>Audio frames of the current session.<br><br>Requires <a href="../configuration.md#audio">audio</a> to be set to <code>true</code></p>                                                                                                                                                              |
-| **error**                   | `{ message: string }`                                                                                                                                                    | An error has occurred on the session                                                                                                                                                                                                                                                                  |
-| <h4>firstFrameReceived</h4> | `void`                                                                                                                                                                   | First video frame received.                                                                                                                                                                                                                                                                           |
-| **inactivityWarning**       | `{ secondsRemaining: number }`                                                                                                                                           | <p>Session is about to timeout due to inactivity.</p><p>Any user interaction or a <a href="session.md#heartbeat">heartbeat</a> will reset the timeout.</p>                                                                                                                                            |
-| **interaction**             | [UserInteraction](types/userinteraction.md)                                                                                                                              | User has interacted with the device.                                                                                                                                                                                                                                                                  |
-| **log**                     | `{ message: string }`                                                                                                                                                    | <p>Debug log from the device<br><br>Requires <a href="../configuration.md#debug">debug</a> to be set to <code>true</code></p>                                                                                                                                                                         |
-| **network**                 | [NetworkRequest](types/networkrequest.md) \| [NetworkResponse](types/networkresponse.md)                                                                                 | <p>Intercepted network request or responses.<br></p><p>Requires <a href="../configuration.md#proxy">proxy</a> to be set to <code>intercept</code></p>                                                                                                                                                 |
-| **orientationChanged**      | `'portrait' \| 'landscape'`                                                                                                                                              | The device has changed orientation                                                                                                                                                                                                                                                                    |
-| **video**                   | <p><code>{</code><br><code>buffer: Uint8Array,</code><br><code>width: number,</code><br><code>height: number,</code><br><code>codec: string</code><br><code>}</code></p> | <p>Video frames of the current session.<br><br>These frames can be muxed (e.g. using <a href="https://github.com/samirkumardas/jmuxer">jmuxer</a>) to turn it into a video format.<br><br>When <a href="../configuration.md#codec">codec</a> is <code>jpeg</code> the buffers are of jpeg images.</p> |
-| **end**                     | `void`                                                                                                                                                                   | The session has ended                                                                                                                                                                                                                                                                                 |
+| Event                                        | Data Type                                                                                                                                                                | Description                                                                                                                                                                                                                                                                                           |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <h4><strong>action</strong></h4>             | [RecordedAction](types/recordedaction.md)                                                                                                                                | <p>A user action has been recorded. This can be played back later with <a href="session.md#playaction-action-options">playAction</a>.<br><br>Requires <a href="../configuration.md#record">record</a> to be set to <code>true</code></p>                                                              |
+| <h4>appLaunch</h4>                           | `void`                                                                                                                                                                   | App launch event occurred.                                                                                                                                                                                                                                                                            |
+| <h4><strong>audio</strong></h4>              | <p><code>{</code><br><code>buffer: Uint8Array, codec: 'aac',</code><br><code>duration: number</code><br><code>}</code></p>                                               | <p>Audio frames of the current session.<br><br>Requires <a href="../configuration.md#audio">audio</a> to be set to <code>true</code></p>                                                                                                                                                              |
+| <h4><strong>error</strong></h4>              | `{ message: string }`                                                                                                                                                    | An error has occurred on the session                                                                                                                                                                                                                                                                  |
+| <h4>firstFrameReceived</h4>                  | `void`                                                                                                                                                                   | First video frame received.                                                                                                                                                                                                                                                                           |
+| <h4><strong>inactivityWarning</strong></h4>  | `{ secondsRemaining: number }`                                                                                                                                           | <p>Session is about to timeout due to inactivity.</p><p>Any user interaction or a <a href="session.md#heartbeat">heartbeat</a> will reset the timeout.</p>                                                                                                                                            |
+| <h4><strong>interaction</strong></h4>        | [UserInteraction](types/userinteraction.md)                                                                                                                              | User has interacted with the device.                                                                                                                                                                                                                                                                  |
+| <h4><strong>log</strong></h4>                | `{ message: string }`                                                                                                                                                    | <p>Debug log from the device<br><br>Requires <a href="../configuration.md#debug">debug</a> to be set to <code>true</code></p>                                                                                                                                                                         |
+| <h4><strong>network</strong></h4>            | [NetworkRequest](types/networkrequest.md) \| [NetworkResponse](types/networkresponse.md)                                                                                 | <p>Intercepted network request or responses.<br></p><p>Requires <a href="../configuration.md#proxy">proxy</a> to be set to <code>intercept</code></p>                                                                                                                                                 |
+| <h4><strong>orientationChanged</strong></h4> | `'portrait' \| 'landscape'`                                                                                                                                              | The device has changed orientation                                                                                                                                                                                                                                                                    |
+| <h4><strong>video</strong></h4>              | <p><code>{</code><br><code>buffer: Uint8Array,</code><br><code>width: number,</code><br><code>height: number,</code><br><code>codec: string</code><br><code>}</code></p> | <p>Video frames of the current session.<br><br>These frames can be muxed (e.g. using <a href="https://github.com/samirkumardas/jmuxer">jmuxer</a>) to turn it into a video format.<br><br>When <a href="../configuration.md#codec">codec</a> is <code>jpeg</code> the buffers are of jpeg images.</p> |
+| <h4><strong>end</strong></h4>                | `void`                                                                                                                                                                   | The session has ended                                                                                                                                                                                                                                                                                 |
 
 ### end()
 
@@ -297,18 +297,40 @@ await session.getUI()
 The data structure of the response is subject to change
 {% endhint %}
 
-Returns an array of elements describing the current UI on the device.
+{% tabs %}
+{% tab title="Old Engine" %}
+Returns an array of elements, with app and system content separated into two sections.
 
-```typescript
-const ui = await session.getUI()
-
-/*
+```json
 [
-  { type: 'app', appId: 'com.my.app', children: [...] },
-  { type: 'app', appId: 'com.apple.springboard', children: [...] }
+  {
+    "type": "app",
+    "appId": {running app},
+    "children": [ ... ] // Your app content
+  },
+  {
+    "type": "app",
+    "appId": "com.apple.springboard",
+    "children": [ ... ] // Springboard (system UI) content
+  }
 ]
-*/
 ```
+{% endtab %}
+
+{% tab title="New Engine" %}
+A single combined hierarchy is returned, representing what’s actually visible to the user.
+
+```json
+[
+  {
+    "type": "app",
+    "appId": {possible appId},
+    "children": [ ... ] // All visible content on screen (e.g. Springboard/Navigation etc. related content too)
+  }
+]
+```
+{% endtab %}
+{% endtabs %}
 
 ### addMedia(file)
 

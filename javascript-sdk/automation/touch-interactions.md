@@ -20,8 +20,6 @@ Element Selectors work regardless of the device or screen size, meaning you can 
 | accessibilityLabel      | The element's [accessibilityLabel](https://developer.apple.com/documentation/objectivec/nsobject/1615181-accessibilitylabel)                           |
 | accessibilityHint       | The element's [accessibilityHint](https://developer.apple.com/documentation/objectivec/nsobject/1615093-accessibilityhint)                             |
 | accessibilityValue      | The element's [accessibilityValue](https://developer.apple.com/documentation/objectivec/nsobject/1615117-accessibilityvalue)                           |
-| baseClass               | Name of the element's base (or inherited) class                                                                                                        |
-| class                   | Name of the element's class                                                                                                                            |
 | text                    | Text content of the element and its children (case sensitive)                                                                                          |
 {% endtab %}
 
