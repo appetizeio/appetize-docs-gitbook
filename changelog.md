@@ -7,6 +7,27 @@ icon: paper-plane
 
 # Changelog
 
+## September 2025
+
+### iOS 26, iPhone 17 Support, and a New Automation Engine
+
+<figure><img src=".gitbook/assets/image (70).png" alt="iOS 26 &#x26; iPhone 17 devices added"><figcaption><p>iOS 26 &#x26; iPhone 17 devices added</p></figcaption></figure>
+
+* **New Features**
+  * Added support for **iOS 26** and the latest **iPhone 17** and **iPhone 17 Pro Max** devices
+  *   Launched a new **automation engine**
+
+      * Faster, more reliable, and built to support modern declarative frameworks like SwiftUI, Compose, Flutter and more.
+      * The new engine is **more integrated with the Appetize platform**, laying the groundwork for richer automation features ahead.
+
+      [Read the announcement →](https://appetize.io/blog/posts/introducing-our-new-automation-engine)
+* **Bug Fixes and Improvements**
+  * Added **"All iOS"** and **"All Android"** filters to easily explore sessions across entire platforms
+  * Updated the **App Page** for anonymous users to match the styling of logged-in views
+  * Improved support for **split APK installations** across Android devices
+  * Fixed SSO configuration issues and improved fallback when multiple strategies are in use
+  * Android app metadata now includes signing information for better visibility
+
 ## August 2025
 
 ### Session History View and Android 16 Support
