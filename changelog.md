@@ -20,7 +20,7 @@ icon: paper-plane
       * Faster, more reliable, and built to support modern declarative frameworks like SwiftUI, Compose, Flutter and more.
       * The new engine is **more integrated with the Appetize platform**, laying the groundwork for richer automation features ahead.
 
-      [Read the announcement →](https://appetize.io/blog/posts/introducing-our-new-automation-engine)
+      [Read the announcement](https://appetize.io/blog/posts/introducing-our-new-automation-engine)
 * **Bug Fixes and Improvements**
   * Added **"All iOS"** and **"All Android"** filters to easily explore sessions across entire platforms
   * Updated the **App Page** for anonymous users to match the styling of logged-in views
