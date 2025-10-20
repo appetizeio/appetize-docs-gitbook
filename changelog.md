@@ -60,7 +60,7 @@ icon: paper-plane
 
 ### Improved User Invitation Journey & Easier API Access
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>New User Invitation Journey</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Changelog Update - Invites.jpg" alt="New User Invitation Journey"><figcaption><p>New User Invitation Journey</p></figcaption></figure>
 
 * **New Features**
   * Introduced a [new **user invitation journey**](https://docs.appetize.io/account/invite-your-team) with predefined roles and better onboarding experience.
