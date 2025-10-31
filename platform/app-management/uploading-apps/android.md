@@ -1,5 +1,7 @@
 ---
-description: To get started, Appetize requires the APK containing your application.
+description: >-
+  To get started, Appetize requires the APK (or APKs) containing your
+  application.
 ---
 
 # Android
@@ -36,11 +38,11 @@ Once the build is complete you can locate the `.apk` file by navigating to
 {project name}/{app module name}/build/outputs/apk/
 ```
 
-## Converting AAB to APK
+## Converting AAB to APK or APKs
 
-Appetize currently only support `apk` files for Android. In order to get your application to work with Appetize you will need to convert your `aab` to an `apk` by making use of the [`bundletool`](https://developer.android.com/tools/bundletool) provided by Google.
+Appetize currently supports the `.apk` format and also accepts `.apks` (APK Set archive) files for upload. In order to get your application to work with Appetize you will need to convert your `aab` to an `apk`  or `apks` by making use of the [`bundletool`](https://developer.android.com/tools/bundletool) provided by Google.
 
-#### Generate Universal APKS
+#### Generate Universal APK Set archive
 
 ```shell-session
 bundletool build-apks --bundle=/<your app>/{aab name}.aab \
@@ -48,7 +50,7 @@ bundletool build-apks --bundle=/<your app>/{aab name}.aab \
     --mode=universal
 ```
 
-#### Generate Single APK file from the Universal APKs
+#### Generate Single APK file from the Universal APKs (optional)
 
 ```
 unzip -p /{your app}/{app name}.apks universal.apk > /{your app}/{app name}.apk
