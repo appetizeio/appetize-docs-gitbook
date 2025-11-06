@@ -12,7 +12,7 @@ description: >-
 
 Select **Build** -> **Build APK(s)** -> **Build APK(s)** or **Build** -> **Generated Signed APK** (and following the prompts)
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (2).png" alt="" width="563"><figcaption><p>Building with Android Studio</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (2) (1).png" alt="" width="563"><figcaption><p>Building with Android Studio</p></figcaption></figure>
 
 Once the build is complete you can locate the `.apk` file by selecting `locate` in the dialog that appears
 
