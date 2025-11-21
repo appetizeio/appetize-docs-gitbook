@@ -19,13 +19,12 @@ If you're using a **Private Enterprise Instance**, update the domain for your re
 
 ### 1. Get Your API Token
 
-To authenticate your requests:
+Log in to the Appetize dashboard and navigate to [**Organization → API Token**](https://appetize.io/organization/api-token)
 
-* Log in to your Appetize account.
-* Navigate to [**Organization → API Token**](https://appetize.io/organization/api-token) to generate your API token.
+For full instructions on how to generate, manage and revoke tokens, see the [API Tokens guide](../account/api-tokens.md).
 
 {% hint style="info" %}
-Only users with **admin** or **developer** roles can access API tokens.
+You must be an organization admin to create or view tokens.
 {% endhint %}
 
 ### 2.  Authenticate Your Requests

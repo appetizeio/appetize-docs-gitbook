@@ -40,6 +40,7 @@
     * [SAML](account/single-sign-on/saml.md)
     * [Azure Active Directory](account/single-sign-on/azure-active-directory.md)
     * [Google Workspace (GSuite)](account/single-sign-on/google-workspace-gsuite.md)
+  * [API Tokens](account/api-tokens.md)
   * [Reporting](account/reporting/README.md)
     * [Session History](account/reporting/session-history.md)
     * [Usage Summary](account/reporting/usage-summary.md)
