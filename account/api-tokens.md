@@ -14,6 +14,8 @@ Tokens belong to the organization, not to individual users.&#x20;
 If a user who generated a token is removed from the organization, the token continues to work.
 {% endhint %}
 
+***
+
 ## Generating an API Token
 
 Admins can create a new token by selecting **Generate API Token**.
@@ -37,6 +39,8 @@ After the token is created:
 
 <figure><img src="../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
+***
+
 ## Viewing Tokens
 
 <figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
@@ -55,6 +59,8 @@ Admins can view all API Tokens in the organization. Each token displays:
   Indicates whether the token was created with Developer or Admin privileges.
 * **Delete icon**\
   Allows an admin to revoke the token.
+
+***
 
 ## **Revoking Tokens**
 
