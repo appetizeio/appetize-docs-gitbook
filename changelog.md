@@ -7,6 +7,26 @@ icon: paper-plane
 
 # Changelog
 
+## November 2025
+
+### **New API Token Management Page**
+
+<figure><img src=".gitbook/assets/image (86).png" alt=""><figcaption><p>New API Token Management Page</p></figcaption></figure>
+
+* **New Features**
+  *   Released the new [**API Token Management**](https://appetize.io/organization/api-tokens) page
+
+      Create, revoke, and manage API tokens directly from your dashboard\
+      [View documentation](https://docs.appetize.io/account/api-tokens)
+  * Added **Shake Device** button to the toolbar for Android apps
+* **Bug Fixes and Improvements**
+  * Improved **Billing page** to show all invoices including their statuses
+  * Fixed issue where app groups sometimes selected the wrong build when the same `appId` was used across platforms
+  * Improved file download names for network and debug logs
+  * Resolved errors when dragging non-files onto the upload area
+  * Fixed session invite behavior and role handling when re-inviting users
+  * Show tooltip when session history username gets clipped
+
 ## September 2025
 
 ### iOS 26, iPhone 17 Support, and a New Automation Engine
