@@ -65,6 +65,8 @@ Filter sessions by OS version, or choose **All OS Versions** to include all vers
 An **Export CSV** button allows you to download the sessions that match your current filters.\
 The exported file includes all visible columns along with additional session fields that may not appear in the table.
 
+***
+
 ## **Session Details**
 
 <figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption><p>Session Detail Row</p></figcaption></figure>
