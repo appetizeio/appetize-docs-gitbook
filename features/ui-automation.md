@@ -33,11 +33,11 @@ or by going to your [Apps](https://appetize.io/apps) page and clicking `Start` o
 
 Once you are on your app page, you can enable **Automation Recorder** by toggling the button to on.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Enable Automation Recorder</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Enable Automation Recorder</p></figcaption></figure>
 
 As you interact with the session, **Automation Recorder** will automatically pick up all the actions and log them out in the **Automation Recorder** tab.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>All actions that took place during the session will be logged in the <strong>Automation Recorder</strong> tab.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>All actions that took place during the session will be logged in the <strong>Automation Recorder</strong> tab.</p></figcaption></figure>
 
 These actions can then be exported to either JSON for playback later or to a Playwright test file for testing purposes:
 
@@ -90,7 +90,7 @@ or by going to your [Apps](https://appetize.io/apps) page and clicking `Start` o
 
 Once you are on your app page, you can enable **Automation Recorder** by toggling the button to on.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Enable <strong>Automation Recorder</strong></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Enable <strong>Automation Recorder</strong></p></figcaption></figure>
 
 To import the JSON file with the user actions to replay, select the "Import JSON" button in the **Automation Recorder** tab and then select "Replay" to start a replay of the user actions that took place.
 

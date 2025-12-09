@@ -23,7 +23,7 @@ Appetize supports regular  username and password logins by _default_. As an admi
    * **Developer** – Upload apps and manage app settings.
    *   **Admin** – View account page, edit billing, manage users, and change account settings.<br>
 
-       <figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>User Roles Drop-down</p></figcaption></figure>
+       <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>User Roles Drop-down</p></figcaption></figure>
 
 
 4. Click **Send Invites** to send all invitations at once.

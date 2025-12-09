@@ -67,6 +67,6 @@ Admins can view all API Tokens in the organization. Each token displays:
 To revoke a token, select the bin icon next to it.\
 A confirmation dialog appears and you will be asked to type the token’s label to confirm the removal.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Once a token is revoked, any integrations using this token will lose its functionality immediately.
