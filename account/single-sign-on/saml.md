@@ -32,10 +32,10 @@ your provider may provide an **IdP metadata file** that contains both the **entr
 
 ## Example Configuration with OKTA
 
-<figure><img src="https://github.com/appetizeio/appetize-docs-gitbook/raw/master/.gitbook/assets/screenshot-okta-saml-1-app.png" alt="Creating a SAML app"><figcaption><p>Creating a SAML app</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot-okta-saml-1-app.png" alt="Creating a SAML app"><figcaption><p>Creating a SAML app</p></figcaption></figure>
 
-<figure><img src="https://github.com/appetizeio/appetize-docs-gitbook/raw/master/.gitbook/assets/screenshot-okta-saml-2-general.png" alt="General Settings - you may customize as you see fit"><figcaption><p>General Settings - you may customize as you see fit</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot-okta-saml-2-general.png" alt="General Settings - you may customize as you see fit"><figcaption><p>General Settings - you may customize as you see fit</p></figcaption></figure>
 
-<figure><img src="https://github.com/appetizeio/appetize-docs-gitbook/raw/master/.gitbook/assets/screenshot-okta-saml-3-samlconfig.png" alt="Enter the Single Sign On URL Provided by Appetize"><figcaption><p>Enter the Single Sign On URL Provided by Appetize. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot-okta-saml-3-samlconfig.png" alt="Enter the Single Sign On URL Provided by Appetize"><figcaption><p>Enter the Single Sign On URL Provided by Appetize.</p></figcaption></figure>
 
-<figure><img src="https://github.com/appetizeio/appetize-docs-gitbook/raw/master/.gitbook/assets/screenshot-okta-saml-4-idp-metadata.png" alt="Save the IdP metadata file and send to Appetize.io"><figcaption><p>Save the IdP metadata file and send to Appetize.io</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot-okta-saml-4-idp-metadata.png" alt="Save the IdP metadata file and send to Appetize.io"><figcaption><p>Save the IdP metadata file and send to Appetize.io</p></figcaption></figure>
