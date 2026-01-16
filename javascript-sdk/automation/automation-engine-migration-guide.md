@@ -180,10 +180,6 @@ This structure makes the UI tree easier to reason about and aligns with what app
 Automations running in **landscape orientation currently do not work** with the new engine.\
 We are actively working on a fix and expect to resolve this **before the full iOS rollout**.
 
-### **In-App Browser Elements (iOS 26)**
-
-On iOS 26, elements opened inside an **in-app browser** (for example, a web view launched from within your app for login or external content) are currently **not accessible to automation**.
-
 ***
 
 ## 🗓️ Rollout Timeline
