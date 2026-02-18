@@ -152,6 +152,18 @@ await session.keypress("a")
 | key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)<br><br>Also takes special values for hardware keys:<br><br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code> <br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
 | options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                         |
 
+### setAppearance(appearance)
+
+(iOS 13+ and Android 10+) Sets dark or light mode UI.
+
+```typescript
+await session.setAppearance("dark")
+```
+
+**Parameters**
+
+<table><thead><tr><th>Name</th><th width="236">Type</th></tr></thead><tbody><tr><td>appearance</td><td><code>"dark" | "light"</code></td></tr></tbody></table>
+
 ### setLanguage(language)
 
 Changes the current language and restarts the app
