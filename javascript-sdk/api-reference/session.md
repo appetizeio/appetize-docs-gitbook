@@ -356,6 +356,8 @@ Upload media to the device.
 await session.addMedia(file)
 ```
 
+Platform specific format support applies. See the [Media - Supported File Types documentation](../../features/media.md#supported-files) for supported file types on Android and iOS.
+
 ### findElement(selector)
 
 Returns an element that matches the selector. See [Targeting Elements](../automation/touch-interactions.md#targeting-elements).

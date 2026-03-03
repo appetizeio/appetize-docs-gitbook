@@ -10,6 +10,17 @@ description: >-
 The maximum file size for uploading media is **50 MB**.
 {% endhint %}
 
+## Supported Files
+
+| Platform | Supported File Types     |
+| -------- | ------------------------ |
+| Android  | All file types           |
+| iOS      | PNG, JPEG, JPG, GIF, MP4 |
+
+{% hint style="warning" %}
+Files outside of these formats will not be processed on iOS simulators.
+{% endhint %}
+
 ## With App Page
 
 The [App Page](../platform/app-management/running-apps.md#accessing-your-app-page) provides an **Upload File** button on the device toolbar during active sessions, allowing you to upload media files directly to the device’s photo library.
