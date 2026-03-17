@@ -5,7 +5,7 @@ description: Interact with the virtual device via a Javascript post-message API
 # Cross-document messages
 
 {% hint style="danger" %}
-Cross-document messages API is no longer receiving updates.
+Cross-document messages API is no longer receiving updates and will be removed in a future release.
 
 Please use our [Javascript SDK](../javascript-sdk/) for any new development.
 {% endhint %}
