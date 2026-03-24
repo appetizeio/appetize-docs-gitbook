@@ -1,19 +1,13 @@
 ---
-description: Migrating to the New Appetize Automation Engine (iOS 26 and Beyond)
+description: Migrating to the New Appetize Automation Engine
 ---
 
 # Automation Engine - Migration Guide
 
-We’re excited to introduce our **new automation engine**, launching first with **iOS 26**.\
-This update brings improved **stability**, **stronger integration with Appetize**, and full support for **modern frameworks** like **SwiftUI**, **Flutter**, **Compose Multi-Platform,** **React Native** and more.&#x20;
+We’re excited to introduce our **new automation engine**.\
+This update brings improved **stability**, **stronger integration with Appetize**, and full support for **modern frameworks** like **SwiftUI**, **Flutter**, **Compose Multi-Platform, Jetpack Compose,** **React Native** and more.&#x20;
 
 It’s largely **backward-compatible with existing automation flows**, so in most cases your existing **JS SDK commands will continue to work without changes**.
-
-{% hint style="warning" %}
-The new engine will reach **all iOS versions within about one month**, after which the old engine will be retired.
-
-Android will follow later, with minimal migration expected.
-{% endhint %}
 
 ***
 
@@ -42,9 +36,9 @@ This is helpful when text values change dynamically, such as in localized or dat
 
 ## :dart:  Main Areas to Focus On
 
-Most existing automations will continue to work, but there are a few key areas to review when testing on iOS 26.
+Most existing automations will continue to work, but there are a few key areas to review when testing.
 
-### 1. Remove UIKit-Specific Selector
+### 1. Remove UIKit/Android Specific Selectors
 
 The new engine continues to support **accessibility-based selectors** - the same pattern many teams already use - but now makes this the **recommended and primary approach**.
 
@@ -53,7 +47,10 @@ Prefer using **accessibility elements** such as labels, identifiers, or visible 
 They’re stable across app frameworks and align with how modern apps expose their UI.
 {% endhint %}
 
-In previous versions, the engine also exposed some UIKit-specific attributes (`class`, `baseClass`, `isHidden`). These are no longer available. If your tests relied on them, you should update to use accessibility identifiers or text instead.
+In previous versions, the engine also exposed some platform-specific attributes. These are no longer available:
+
+* **iOS (UIKit):** `class`, `baseClass`, `isHidden`
+* **Android:** `className`
 
 See our[ Selectors Reference](touch-interactions.md#targeting-elements) for guidance and examples.
 
@@ -170,25 +167,6 @@ A single combined hierarchy is returned, representing what’s actually visible 
 {% endtabs %}
 
 This structure makes the UI tree easier to reason about and aligns with what appears on screen.
-
-***
-
-## ⚠️ Known Issues
-
-### Landscape Automations
-
-Automations running in **landscape orientation currently do not work** with the new engine.\
-We are actively working on a fix and expect to resolve this **before the full iOS rollout**.
-
-***
-
-## 🗓️ Rollout Timeline
-
-| Phase        | Platform         | Status                               |
-| ------------ | ---------------- | ------------------------------------ |
-| ✅ Now        | iOS 26           | New engine live                      |
-| 🔜 \~1 month | All iOS versions | Full iOS rollout, old engine retired |
-| 📅 Later     | Android          | Planned rollout                      |
 
 ***
 

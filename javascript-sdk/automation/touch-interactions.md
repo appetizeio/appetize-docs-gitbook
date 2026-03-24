@@ -28,7 +28,6 @@ Element Selectors work regardless of the device or screen size, meaning you can 
 | ------------ | ------------------------------------------------------------------------------------- |
 | resource-id  | <p>Value of the element's Resource ID<br><br>ex: <code>com.example:id/icon</code></p> |
 | content-desc | Value of the element's Content Description (case sensitive)                           |
-| class        | <p>Name of the element's class<br><br>ex: <code>android.widget.TextView</code></p>    |
 | text         | Text content of the element and its children (case sensitive)                         |
 {% endtab %}
 {% endtabs %}
