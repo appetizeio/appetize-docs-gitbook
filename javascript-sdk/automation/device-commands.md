@@ -119,10 +119,10 @@ Sends a single key press to the device.
 await session.keypress("a")
 ```
 
-This can also be used to send hardware keys:
+This can also be used to send hardware and text-editing keys:
 
-* `HOME` Navigate to the home screen.
 * `Backspace`  Delete a type character
+* `HOME` Navigate to the home screen.
 * `VOLUME_UP` (Android)
 * `VOLUME_DOWN` (Android)
 * `ANDROID_KEYCODE_MENU` (Android)
