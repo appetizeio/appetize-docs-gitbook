@@ -121,7 +121,8 @@ await session.keypress("a")
 
 This can also be used to send hardware keys:
 
-* `HOME`
+* `HOME` Navigate to the home screen.
+* `Backspace`  Delete a type character
 * `VOLUME_UP` (Android)
 * `VOLUME_DOWN` (Android)
 * `ANDROID_KEYCODE_MENU` (Android)

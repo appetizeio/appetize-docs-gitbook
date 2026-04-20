@@ -137,6 +137,14 @@ await session.type("hello")
 Typing is limited to 1000 characters at a time to ensure optimal performance and prevent potential disruptions. For larger payloads, you can use multiple 'type' operations.
 {% endhint %}
 
+{% hint style="info" %}
+💡 **Tip:** Need to delete a character after typing? Use `keypress`:
+
+```js
+await session.keypress('Backspace')
+```
+{% endhint %}
+
 ### keypress(character, options)
 
 Sends a single key press to the device
@@ -147,10 +155,10 @@ await session.keypress("a")
 
 **Parameters**
 
-| Name           | Type      | Description                                                                                                                                                                                                                                                                                                                                                                             |
-| -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)<br><br>Also takes special values for hardware keys:<br><br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code> <br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
-| options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                         |
+| Name           | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| -------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)</p><p></p><p>Also accepts text-editing <strong>keys:</strong> <code>Backspace</code><br><br>And hardware keys:<br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code> <br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
+| options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 ### setAppearance(appearance)
 
