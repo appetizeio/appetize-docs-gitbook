@@ -137,8 +137,8 @@ await session.type("hello")
 Typing is limited to 1000 characters at a time to ensure optimal performance and prevent potential disruptions. For larger payloads, you can use multiple 'type' operations.
 {% endhint %}
 
-{% hint style="info" %}
-💡 **Tip:** Need to delete a character after typing? Use `keypress`:
+{% hint style="info" icon="lightbulb-exclamation-on" %}
+**Tip:** Need to delete a character after typing? Use `keypress`:
 
 ```js
 await session.keypress('Backspace')
