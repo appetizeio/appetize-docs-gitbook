@@ -19,7 +19,7 @@ Please create the following groups within your SSO provider. Assigning users to 
 {% hint style="info" %}
 Appetize supports role names that matches the following regex:
 
-`/(^|[_-])appetize[_-]{role}?$/i`
+`/(^|[_-])appetize[_-](admin|developer|user)?$/i`
 {% endhint %}
 
 | Role                | Permissions                                                               |
