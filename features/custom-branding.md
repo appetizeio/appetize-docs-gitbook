@@ -8,7 +8,7 @@ description: >-
 # Custom Branding
 
 {% hint style="info" %}
-Custom Branding is only available on our Premium and Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
+Custom Branding is only available on our Enterprise plans. [Contact us](https://appetize.io/contact-us) to learn more.
 {% endhint %}
 
 Appetize offers a fully White Label solution. This includes:
