@@ -58,8 +58,8 @@ For devices utilizing a PIN/Lock Screen, our default PIN code is set to **1111**
 
 A dynamic, up-to-date list of all the devices and operating systems we support can be retrieved via our REST API
 
-{% content-ref url="../rest-api/devices-and-os-versions/" %}
-[devices-and-os-versions](../rest-api/devices-and-os-versions/)
+{% content-ref url="../rest-api/v1/devices-and-os-versions/" %}
+[devices-and-os-versions](../rest-api/v1/devices-and-os-versions/)
 {% endcontent-ref %}
 
 ## Usage

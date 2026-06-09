@@ -3,6 +3,24 @@ description: >-
   Reliably End-to-End (E2E) test your Android and iOS mobile apps with Appetize
   AppRecorder for Playwright
 icon: check-double
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Testing

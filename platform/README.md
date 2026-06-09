@@ -4,6 +4,24 @@ description: >-
   Sandbox, Embedding, Sharing, Session Inactivity timeouts and custom
   configurations using Query Parameters.
 icon: building
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Platform

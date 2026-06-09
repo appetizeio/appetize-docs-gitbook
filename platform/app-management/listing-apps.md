@@ -78,8 +78,8 @@ Each uploaded app build has a uniquely assigned **buildId** (previously known as
 To get a specific App Build you can navigate to the [App Dashboard](https://appetize.io/apps) and open the [App Builds ](listing-apps.md#app-builds-page)page for the preferred App. Here you will be able to select individual builds that you might want to share or customize.
 {% endhint %}
 
-{% content-ref url="../../rest-api/list-apps.md" %}
-[list-apps.md](../../rest-api/list-apps.md)
+{% content-ref url="../../rest-api/v1/list-apps.md" %}
+[list-apps.md](../../rest-api/v1/list-apps.md)
 {% endcontent-ref %}
 
 ### Unknown Builds

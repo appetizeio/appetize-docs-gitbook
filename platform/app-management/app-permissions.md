@@ -42,7 +42,7 @@ For the app-level setting, navigate to your [**Dashboard**](https://appetize.io/
 and finally configure the option under Settings > App Permissions.
 
 {% hint style="info" %}
-App Level Permissions can also be applied when uploading the app via our REST API. See [Create new app](../../rest-api/create-new-app.md) and [Update existing app](../../rest-api/update-existing-app.md) for more information.
+App Level Permissions can also be applied when uploading the app via our REST API. See [Create new app](../../rest-api/v1/create-new-app.md) and [Update existing app](../../rest-api/v1/update-existing-app.md) for more information.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 113050.png" alt=""><figcaption><p>Example App Build Level Permissions</p></figcaption></figure>

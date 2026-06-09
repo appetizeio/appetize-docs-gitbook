@@ -89,16 +89,28 @@
   * [Trace Viewer](testing/trace-viewer.md)
   * [Web Tests on Mobile Browsers](testing/web-tests-on-mobile-browsers.md)
 * [REST API](rest-api/README.md)
-  * [Create new app](rest-api/create-new-app.md)
-  * [Update existing app](rest-api/update-existing-app.md)
-  * [Direct file uploads](rest-api/direct-file-uploads.md)
-  * [Delete app](rest-api/delete-app.md)
-  * [List apps](rest-api/list-apps.md)
-  * [Usage summary](rest-api/usage-summary.md)
-  * [Devices & OS Versions](rest-api/devices-and-os-versions/README.md)
-    * [v1](rest-api/devices-and-os-versions/v1.md)
-  * [IP Blocks](rest-api/ip-blocks/README.md)
-    * [v1](rest-api/ip-blocks/v1.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: false
+      downloadLink: false
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: appetize-v2-public-spec
+    ```
+  * [V1](rest-api/v1/README.md)
+    * [Create new app](rest-api/v1/create-new-app.md)
+    * [Update existing app](rest-api/v1/update-existing-app.md)
+    * [Direct file uploads](rest-api/v1/direct-file-uploads.md)
+    * [Delete app](rest-api/v1/delete-app.md)
+    * [List apps](rest-api/v1/list-apps.md)
+    * [Usage summary](rest-api/v1/usage-summary.md)
+    * [Devices & OS Versions](rest-api/v1/devices-and-os-versions/README.md)
+      * [v1](rest-api/v1/devices-and-os-versions/v1.md)
+    * [IP Blocks](rest-api/v1/ip-blocks/README.md)
+      * [v1](rest-api/v1/ip-blocks/v1.md)
 * [Guides & Samples](guides-and-samples/README.md)
   * [Impersonation](guides-and-samples/impersonation.md)
   * [Automate Sign-in Flow](guides-and-samples/automate-sign-in-flow.md)

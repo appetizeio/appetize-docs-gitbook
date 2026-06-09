@@ -3,6 +3,24 @@ description: >-
   With  a simple import change and a configuration update, you can use your
   existing Playwright tests  to also do native browser testing with the Appetize
   integration
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Web Tests on Mobile Browsers

@@ -93,10 +93,6 @@ We recommend starting the session programmatically using `client.startSession()`
 
 (Android Only) Enables audio playback on the device.
 
-{% hint style="warning" %}
-This feature is currently in Alpha and might not always work as expected.
-{% endhint %}
-
 ### codec
 
 `"h264" | "jpeg"`

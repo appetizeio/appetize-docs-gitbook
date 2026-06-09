@@ -23,8 +23,8 @@ All reports are downloaded in UTC (Coordinated Universal Time) times.
 
 You can access your usage report via our REST API. For more information, see
 
-{% content-ref url="../../rest-api/usage-summary.md" %}
-[usage-summary.md](../../rest-api/usage-summary.md)
+{% content-ref url="../../rest-api/v1/usage-summary.md" %}
+[usage-summary.md](../../rest-api/v1/usage-summary.md)
 {% endcontent-ref %}
 
 ## Glossary

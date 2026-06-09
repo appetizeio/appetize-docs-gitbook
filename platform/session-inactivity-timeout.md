@@ -26,7 +26,7 @@ Navigate to your [**Apps Dashboard**](https://appetize.io/apps) **-> Select** yo
 <figure><img src="../.gitbook/assets/Screenshot 2025-03-21 113546.png" alt=""><figcaption><p>Build Specific Inactivity Timeout</p></figcaption></figure>
 
 {% hint style="info" %}
-You can also[ set](../rest-api/create-new-app.md)/[update](../rest-api/update-existing-app.md) the inactivity timeout of your app with our [REST API](../rest-api/) when uploading your app.
+You can also[ set](../rest-api/v1/create-new-app.md)/[update](../rest-api/v1/update-existing-app.md) the inactivity timeout of your app with our [REST API](../rest-api/) when uploading your app.
 {% endhint %}
 
 ## What's the behavior if you reach your concurrency limit?

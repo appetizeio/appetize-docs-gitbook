@@ -1,6 +1,24 @@
 ---
 description: Easily manage your apps and builds on Appetize by following the guides below
 icon: grid
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # App Management

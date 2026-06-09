@@ -74,12 +74,12 @@ If there is a 3rd party integration that you think should be on this list, pleas
 
 Appetize also supports uploading your application programmatically by making use of our [REST API](../../../rest-api/):
 
-{% content-ref url="../../../rest-api/create-new-app.md" %}
-[create-new-app.md](../../../rest-api/create-new-app.md)
+{% content-ref url="../../../rest-api/v1/create-new-app.md" %}
+[create-new-app.md](../../../rest-api/v1/create-new-app.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../../rest-api/update-existing-app.md" %}
-[update-existing-app.md](../../../rest-api/update-existing-app.md)
+{% content-ref url="../../../rest-api/v1/update-existing-app.md" %}
+[update-existing-app.md](../../../rest-api/v1/update-existing-app.md)
 {% endcontent-ref %}
 
 [^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings), and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion).

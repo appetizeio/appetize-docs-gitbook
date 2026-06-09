@@ -3,6 +3,24 @@ description: >-
   Explore and Learn to Use Appetize’s Built-In Features: Switch Device Types,
   Monitor Network Traffic, Add Debug Logs, Automate User Actions, and More
 icon: sparkles
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Features

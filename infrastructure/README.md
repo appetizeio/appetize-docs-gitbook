@@ -3,6 +3,24 @@ description: >-
   Follow Our Guides for Best Practices on Network Configuration and Explore
   Enterprise Hosting Options
 icon: building-columns
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
 ---
 
 # Infrastructure
