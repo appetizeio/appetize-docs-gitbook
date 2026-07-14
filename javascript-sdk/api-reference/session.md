@@ -155,10 +155,10 @@ await session.keypress("a")
 
 **Parameters**
 
-| Name           | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| -------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)</p><p></p><p>Also accepts text-editing <strong>keys:</strong> <code>Backspace</code><br><br>And hardware keys:<br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code> <br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
-| options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Name           | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| -------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)</p><p>Also accepts text-editing <strong>keys:</strong> <code>Backspace</code><br><br>And hardware keys:<br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code><br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
+| options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ### setAppearance(appearance)
 
@@ -209,7 +209,11 @@ await setLocation(-33.924434, 18.418391)
 
 ### openUrl(url)
 
-Opens a deep-link or web URL
+Opens a deep-link or web URL.&#x20;
+
+{% hint style="info" %}
+On iOS, the URL is limited to 2048 characters.
+{% endhint %}
 
 ```typescript
 await session.openUrl("https://appetize.io")
@@ -488,13 +492,13 @@ See [AdbConnectionInfo](types/adbconnectioninfo.md).
 
 ### app
 
-The Appetize app for the session, if applicable.&#x20;
+The Appetize app for the session, if applicable.
 
 See [AppetizeApp](types/appetizeapp.md).
 
 ### config
 
-The [config](../configuration.md) applied to the current session.&#x20;
+The [config](../configuration.md) applied to the current session.
 
 See [SessionConfig](types/sessionconfig.md).
 

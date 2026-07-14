@@ -52,7 +52,7 @@ See [Configuration](../javascript-sdk/configuration.md#launchurl) for more infor
 
 ## openUrl
 
-To launch a URL (deep link or regular) while the device (or application) is already running.
+To launch a URL (deep link or regular) while the device (or application) is already running. On iOS, URLs passed with `launchUrl` or `openUrl` are limited to 2048 characters.
 
 {% hint style="info" %}
 This can be called multiple times after launch of the device, with the assumption that all AppLink and Universal Link associations are already established.
