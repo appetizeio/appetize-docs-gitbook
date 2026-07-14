@@ -4,7 +4,7 @@ description: Getting Started with Appetize AppRecorder and Playwright
 
 # Getting Started
 
-You can follow along with the installation steps below to start a new project, or you can clone the [example project here.](https://github.com/appetizeio/appetize-js-sdk-examples/tree/main/playwright-testing)
+You can follow along with the installation steps below to start a new project.
 
 ## Installation
 
@@ -23,9 +23,9 @@ Run the install command and select the following to get started:
 
 ## What's Installed <a href="#whats-installed" id="whats-installed"></a>
 
-* A Playwright project will be created  (see [Playwright documentation](https://playwright.dev/docs/intro#installing-playwright)).
+* A Playwright project will be created (see [Playwright documentation](https://playwright.dev/docs/intro#installing-playwright)).
 * The `@appetize/playwright` npm package will be installed.
-* The `playwright.config.ts` file will be configured for Appetize with the specified values for the default device and app. &#x20;
+* The `playwright.config.ts` file will be configured for Appetize with the specified values for the default device and app.
 
 {% hint style="info" %}
 See [Test Configuration](test-configuration.md) for more advanced configurations.
