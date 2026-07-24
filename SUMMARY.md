@@ -123,6 +123,7 @@
   * [Test Accessibility Font Sizes](guides-and-samples/test-accessibility-font-sizes.md)
   * [Common testing scenarios](guides-and-samples/common-testing-scenarios.md)
   * [Samples Repository](https://samples.appetize.io/)
+  * [Handle session startup failures](guides-and-samples/handle-session-startup-failures.md)
 * [Deprecated](deprecated/README.md)
   * [Cross-document messages](deprecated/cross-document-messages.md)
 * [Changelog](changelog.md)
