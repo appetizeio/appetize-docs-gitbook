@@ -9,6 +9,10 @@ description: >-
 
 ## Passing Data to your Application
 
+{% hint style="info" %}
+For iOS, use [launch-arguments.md](launch-arguments.md "mention") for faster launches when your app reads values from `UserDefaults`.
+{% endhint %}
+
 ### With Query Parameter
 
 Set the params data to pass to your application. The data needs to be an URL-Encoded JSON Object e.g.
@@ -32,7 +36,7 @@ Send the params data to pass to your application as part of the configuration. T
 ```typescript
 await client.setConfig({
     params: {"foo":"bar"},
-    ...
+    // Rest of the configuration
 })
 ```
 
@@ -139,7 +143,7 @@ The data passed will be stored in the shared defaults object, accessible by call
 ```
 
 {% hint style="warning" %}
-Note that extension bundles will not have access to the app's standard `UserDefaults`. To work around this issue, please see [Sharing Data with Your Containing App](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple\_ref/doc/uid/TP40014214-CH21-SW1).
+Note that extension bundles will not have access to the app's standard `UserDefaults`. To work around this issue, please see [Sharing Data with Your Containing App](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW1).
 {% endhint %}
 {% endtab %}
 
@@ -154,7 +158,7 @@ UserDefaults.standard.string(forKey: "stringKey")
 ```
 
 {% hint style="warning" %}
-Note that extension bundles will not have access to the app's standard `UserDefaults`. To work around this issue, please see [Sharing Data with Your Containing App](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple\_ref/doc/uid/TP40014214-CH21-SW1).
+Note that extension bundles will not have access to the app's standard `UserDefaults`. To work around this issue, please see [Sharing Data with Your Containing App](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW1).
 {% endhint %}
 {% endtab %}
 {% endtabs %}
