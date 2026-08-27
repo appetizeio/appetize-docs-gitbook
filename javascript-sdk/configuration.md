@@ -73,7 +73,7 @@ We recommend starting the session programmatically using `client.startSession()`
 
 `string`
 
-&#x20;(Android only) Executes an `adb shell` command on the device.
+(Android only) Executes an `adb shell` command on the device.
 
 ### androidPackageManager
 
@@ -237,7 +237,11 @@ Our current support is limited to HTTP Proxies. When your app makes HTTPS connec
 
 `boolean`
 
-Enables recording of all user actions that took place during the session. See [UI Automation](../features/ui-automation.md) for more information. Default is true.
+{% hint style="warning" %}
+Deprecated. Do not use this option in new integrations.
+{% endhint %}
+
+Enables recording of all user actions that take place during the session. Default is true.
 
 ### region
 
@@ -271,7 +275,7 @@ Enables the display of rotate buttons next to the device. Requires `scale` to be
 
 `string`
 
-Specifies the URL to redirect users to at the end of the session.&#x20;
+Specifies the URL to redirect users to at the end of the session.
 
 ### userInteractionDisabled
 

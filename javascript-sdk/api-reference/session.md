@@ -21,7 +21,6 @@ session.on(event, data => {
 
 | Event                                        | Data Type                                                                                                                                                                | Description                                                                                                                                                                                                                                                                                           |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <h4><strong>action</strong></h4>             | [RecordedAction](types/recordedaction.md)                                                                                                                                | <p>A user action has been recorded. This can be played back later with <a href="session.md#playaction-action-options">playAction</a>.<br><br>Requires <a href="../configuration.md#record">record</a> to be set to <code>true</code></p>                                                              |
 | <h4>appLaunch</h4>                           | `void`                                                                                                                                                                   | App launch event occurred.                                                                                                                                                                                                                                                                            |
 | <h4><strong>audio</strong></h4>              | <p><code>{</code><br><code>buffer: Uint8Array, codec: 'aac',</code><br><code>duration: number</code><br><code>}</code></p>                                               | <p>Audio frames of the current session.<br><br>Requires <a href="../configuration.md#audio">audio</a> to be set to <code>true</code></p>                                                                                                                                                              |
 | <h4><strong>error</strong></h4>              | `{ message: string }`                                                                                                                                                    | An error has occurred on the session                                                                                                                                                                                                                                                                  |
@@ -209,7 +208,7 @@ await setLocation(-33.924434, 18.418391)
 
 ### openUrl(url)
 
-Opens a deep-link or web URL.&#x20;
+Opens a deep-link or web URL.
 
 {% hint style="info" %}
 On iOS, the URL is limited to 2048 characters.
@@ -397,36 +396,6 @@ const elements = await session.findElements({
     }
 })
 ```
-
-### playAction(action, options)
-
-Play an automation Action or array of Actions.
-
-```typescript
-await session.playAction(action)
-```
-
-**Parameters**
-
-| Name             | Type                  | Description                                                              |
-| ---------------- | --------------------- | ------------------------------------------------------------------------ |
-| action           | `Record<string, any>` | Actions emitted from the [`session.on('action')`](session.md#on-1) event |
-| options.timeout? | `number`              | Amount of time in ms to wait for the action to succeed (default 10s)     |
-
-### playAction**s(actions, options)**
-
-Plays an array of actions.
-
-```typescript
-await session.playActions(actions)
-```
-
-**Parameters**
-
-| Name             | Type                         | Description                                                              |
-| ---------------- | ---------------------------- | ------------------------------------------------------------------------ |
-| actions          | `Array<Record<string, any>>` | Actions emitted from the [`session.on('action')`](session.md#on-1) event |
-| options.timeout? | `number`                     | Amount of time in ms to wait for an action to succeed (default 10s)      |
 
 ### waitForAnimations(options)
 

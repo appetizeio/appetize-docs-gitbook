@@ -189,7 +189,7 @@ layout:
   * Support for Google and Github Login Providers.
 * **Bug fixes & Improvements**:&#x20;
   * Faster build ID validation.
-  * &#x20;[ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be used for sessions using [AppRecorder](features/ui-automation.md), network proxies, and debug logs
+  * &#x20;[ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be used for sessions using [AppRecorder](/broken/pages/Gm30V6WlKjLSc4ey0eXF), network proxies, and debug logs
   * Debug log and session info attached to test results.
   * Playwright peer dependency upgrade.
   * Fixed issue where `startSession` was not throwing errors on `userError`.

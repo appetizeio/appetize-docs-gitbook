@@ -7,7 +7,7 @@ description: >-
 
 # Automation
 
-See [UI Automation](../../features/ui-automation.md) for more information.
+See [UI Automation](/broken/pages/Gm30V6WlKjLSc4ey0eXF) for more information.
 
 ### Next Steps
 

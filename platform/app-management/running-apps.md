@@ -15,7 +15,7 @@ Appetize provides an out-of-the-box App page that provides easy access to:
 
 * Different Supported [Devices and OS Versions](../../features/devices-and-os-versions.md).
 * Debugging features:
-  * [Automation Recorder](../../features/ui-automation.md)
+  * [Automation Recorder](/broken/pages/Gm30V6WlKjLSc4ey0eXF)
   * [Network Traffic Monitor](../../features/network-traffic-monitor.md)
   * [Debug Logs](../../features/debug-logs.md)
   * [Adb Tunnel](../../features/advanced-features/android/adb-tunnel.md) (Android Only)

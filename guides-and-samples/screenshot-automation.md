@@ -203,55 +203,5 @@ for (const app of config.apps) {
 ```
 
 {% hint style="info" %}
-For a complete example of this scenario and how to download these images locally, have a look at our [Screenshot Automation](https://github.com/appetizeio/appetize-samples/tree/main/screenshot\_automation) sample in our [Samples Repository](https://samples.appetize.io/).
-{% endhint %}
-
-## Compliance and Customer Support
-
-There are several scenarios where you might want a step by step screenshot of actions taken by the user interacting with the Appetize session e.g.
-
-* Support agents can use screenshot automation to provide step-by-step visual instructions to customers. When guiding users on how to perform specific tasks or resolve issues, a series of annotated screenshots can be incredibly helpful and user-friendly.
-* For compliance purposes you might want screenshots of all actions taken
-
-With Appetize, you could automate generating of a screenshot on every step the user takes.
-
-### 1. Set up our Javascript SDK and start a session
-
-In order to take screenshots of the device session, you will need to make use of our Javascript SDK. See our [Getting Started](../javascript-sdk/) page for more info on how to get that set up.
-
-```typescript
-const session = await client.startSession()
-```
-
-### 2. Listen to all customer support interactions with the Appetize session
-
-```typescript
-session.on('action', action => {
-   // a user interaction took place so take a screenshot
-   await takeScreenshot(action);
-})
-```
-
-### 3. Take a screenshot and keep it locally or remotely
-
-{% code fullWidth="false" %}
-```javascript
-async function takeScreenshot(action) {
-    // upload the screenshot remotely
-    const screenshot = await session.screenshot();
-    await uploadSomewhere(screenshot.data, screenshot.mimeType);
-    
-    // OR store it in memory to download it later locally
-    const screenshot = await session.screenshot('base64');
-    imageData.push({
-        data: screenshot.data,
-        mimeType: screenshot.mimeType,
-        action: action
-    });
-}
-```
-{% endcode %}
-
-{% hint style="info" %}
-For a more complete example on how to store the screenshots locally for download, see our [Screenshot Automation Sample Repository](https://github.com/appetizeio/appetize-samples/tree/main/screenshot\_automation).
+For a complete example of this scenario and how to download these images locally, have a look at our [Screenshot Automation](https://github.com/appetizeio/appetize-samples/tree/main/screenshot_automation) sample in our [Samples Repository](https://samples.appetize.io/).
 {% endhint %}
