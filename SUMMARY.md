@@ -82,6 +82,12 @@
   * [Continuous Integration](testing/continuous-integration.md)
   * [Trace Viewer](testing/trace-viewer.md)
   * [Web Tests on Mobile Browsers](testing/web-tests-on-mobile-browsers.md)
+* [Agentic Flows](agentic-flows/README.md)
+  * [Getting started](agentic-flows/getting-started.md)
+  * [Sessions](agentic-flows/sessions.md)
+  * [Automation](agentic-flows/automation.md)
+  * [Screenshots and recordings](agentic-flows/screenshots-and-recordings.md)
+  * [Command reference](agentic-flows/command-reference.md)
 * [REST API](rest-api/README.md)
   * ```yaml
     type: builtin:openapi
