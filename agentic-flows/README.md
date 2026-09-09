@@ -12,8 +12,12 @@ Point an AI coding agent at a real iOS or Android device and let it work.
 
 The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
 
+{% hint style="danger" %}
+**Beta.** Command names, flags and output are all still changing between releases, so pin the version you install.
+{% endhint %}
+
 ```bash
-npm install -g @appetize/cli
+npm install -g @appetize/cli@0.15
 ```
 
 Node 22 or later is required. Confirm the install with `appetize --version`.

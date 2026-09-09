@@ -3,7 +3,7 @@
 ## 1. Install the CLI
 
 ```bash
-npm install -g @appetize/cli
+npm install -g @appetize/cli@0.15
 appetize --version
 ```
 
