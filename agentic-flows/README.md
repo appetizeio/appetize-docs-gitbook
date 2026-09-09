@@ -33,3 +33,11 @@ What the skill really teaches is the loop that keeps this reliable: inspect the 
 ### Or drive it yourself
 
 Every command the agent runs, you can run by hand — same flags, same JSON on stdout. That is what makes an agent's session debuggable: when it says the tap missed, you can start the same session and look.
+
+### Next steps
+
+* [Getting started](https://docs.appetize.io/agentic-flows/getting-started) — install, token, and your first agent task
+* [Sessions](https://docs.appetize.io/agentic-flows/sessions) — lifecycle, logs and network traffic
+* [Automation](https://docs.appetize.io/agentic-flows/automation) — inspect the screen and act on it
+* [Screenshots and recordings](https://docs.appetize.io/agentic-flows/screenshots-and-recordings) — capture PNGs and MP4s
+* [Command reference](https://docs.appetize.io/agentic-flows/command-reference) — every command, its values and examples
