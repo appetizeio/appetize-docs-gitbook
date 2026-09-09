@@ -17,7 +17,7 @@ appetize session start pixel7 b_a1b2c3 --session-id checkout
 appetize session start pixel7 b_a1b2c3 --no-wait
 ```
 
-The session JSON goes to stdout and the boot progress to stderr, so you can capture the result without losing sight of the launch:
+Save the session record while you watch it boot — the record goes to stdout, the progress to stderr:
 
 ```bash
 appetize session start pixel7 b_a1b2c3 > session.json
