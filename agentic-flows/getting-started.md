@@ -49,6 +49,7 @@ A session holds a device for as long as it runs. If an agent leaves one behind, 
 Every command the agent runs works by hand:
 
 ```bash
+appetize --help                           # every command; add --help to any of them
 appetize device list --platform android   # device ids and their OS versions
 appetize build list                       # your builds; each id is a target
 appetize session start pixel7 b_a1b2c3
