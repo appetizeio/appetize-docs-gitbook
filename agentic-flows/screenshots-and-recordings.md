@@ -36,10 +36,6 @@ Recording over an existing file fails unless you pass `--force`, so name a new f
 
 Ending the session while recording closes the file cleanly, and a session that dies unexpectedly still leaves the file playable, losing at most the last second.
 
-{% hint style="info" %}
-Frames are written at a constant 30fps, so playback does not track real time — a slow-loading screen plays back at the same speed as everything else.
-{% endhint %}
-
 ## See it run
 
 The same session from both sides: the commands on the left, the device video they produced on the right. recording start opens the stream, the taps and typing land on the device, and recording stop closes the file.
