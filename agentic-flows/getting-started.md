@@ -41,7 +41,7 @@ Ask for something that needs the app running, and name the device and build if y
 The agent will find a target with `appetize build list`, start a session, inspect the screen to locate elements, act through selectors, screenshot each meaningful step, and stop the session when it's done.
 
 {% hint style="info" %}
-A session holds a device for as long as it runs. If an agent leaves one behind, `appetize session stop` releases it.
+A session holds a device for as long as it runs. If an agent leaves one behind, `appetize session stop` releases it. It also ends on its own once it goes idle, under the same [session inactivity timeout](https://docs.appetize.io/platform/session-inactivity-timeout) as any other Appetize session.
 {% endhint %}
 
 ## 5. Drive it yourself
