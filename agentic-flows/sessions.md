@@ -6,18 +6,26 @@ A session is one device running one app. `session start` requests the device, wa
 appetize session start <device-id> <target>
 ```
 
-| Argument      | What it is                                                                                                                                      |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<device-id>` | A device model — `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service) |
-| `<target>`    | A build id from `appetize build list`, or an app's public key                                                                                   |
+| Argument      | What it is                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<device-id>` | A device model — `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
+| `<target>`    | A **buildId** — the `id` from `appetize build list`. Previously called publicKey; see [Running apps](https://docs.appetize.io/platform/app-management/running-apps) |
 
 ```bash
-appetize session start iphone15pro b_zt5w2yb3hn6vqk4a --device-os-version 18.2
-appetize session start pixel7 b_zt5w2yb3hn6vqk4a --session-id checkout
-appetize session start pixel7 b_zt5w2yb3hn6vqk4a --no-wait
+appetize session start iphone15pro b_a1b2c3 --device-os-version 18.2
+appetize session start pixel7 b_a1b2c3 --session-id checkout
+appetize session start pixel7 b_a1b2c3 --no-wait
 ```
 
-Phases are logged to stderr while the device boots: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. A slow start tells you whether you are queued for capacity or waiting on an install. `--no-wait` skips the blocking and returns the session id straight away.
+The session JSON goes to stdout and the boot progress to stderr, so you can capture the result without losing sight of the launch:
+
+```bash
+appetize session start pixel7 b_a1b2c3 > session.json
+```
+
+Phases arrive on stderr in this order: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. Not every session shows all of them — `queued` appears only when you are waiting (for a free device, or for an account concurrency limit to clear) and `downloadingApp` only when the build still has to be fetched. A slow start tells you which of those you are waiting on.
+
+`--no-wait` skips the blocking and returns the session id straight away.
 
 ## Naming and picking a session
 
@@ -48,7 +56,7 @@ tail -f ~/.appetize/cli/sessions/checkout/device.log.jsonl
 `--proxy` intercepts the app's traffic and captures it to `logs.network`, one JSON event per request, response and error:
 
 ```bash
-appetize session start pixel7 b_zt5w2yb3hn6vqk4a --proxy --session-id checkout
+appetize session start pixel7 b_a1b2c3 --proxy --session-id checkout
 ```
 
 ```bash

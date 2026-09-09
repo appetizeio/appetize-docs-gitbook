@@ -99,10 +99,10 @@ appetize type '{Enter}'   # iOS
 appetize press back       # Android
 ```
 
-Both leave you on the same screen. Confirm with `inspect`: the keyboard's own nodes disappear once it is down.
+Both leave you on the same screen with the field still focused. Confirm with `screenshot`, not `inspect` — the keyboard is a separate window and does not appear in the hierarchy `inspect` returns.
 
 ## Watch an agent do it
 
-A real Claude Code session driving a device with these commands. It inspects the screen, taps through two permission dialogs it did not expect, screenshots the file list, then stops the session — about 45 seconds end to end.
+A real Claude Code session driving a device with these commands. It inspects the screen to find its way in, taps by test id, types, screenshots to check the result, then stops the session — about 50 seconds end to end.
 
-<figure><img src="../.gitbook/assets/claude-drives-device (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/claude-drives-device (2).gif" alt=""><figcaption></figcaption></figure>

@@ -36,7 +36,7 @@ It teaches the session lifecycle, how to match elements by test id and text, whe
 
 Ask for something that needs the app running, and name the device and build if you care which:
 
-> Run build `b_zt5w2yb3hn6vqk4a` on a Pixel 7, tap through to the checkout screen and screenshot it.
+> Run build `b_a1b2c3` on a Pixel 7, tap through to the checkout screen and screenshot it.
 
 The agent will find a target with `appetize build list`, start a session, inspect the screen to locate elements, act through selectors, screenshot each meaningful step, and stop the session when it's done.
 
@@ -51,7 +51,7 @@ Every command the agent runs works by hand:
 ```bash
 appetize device list --platform android   # device ids and their OS versions
 appetize build list                       # your builds; each id is a target
-appetize session start pixel7 b_zt5w2yb3hn6vqk4a
+appetize session start pixel7 b_a1b2c3
 appetize inspect                          # what is on screen
 appetize tap --select-text 'Log in'
 appetize screenshot after-login

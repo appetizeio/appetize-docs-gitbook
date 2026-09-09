@@ -24,7 +24,7 @@ Global flags: `--version` prints the CLI version, `--help` prints usage for the 
 
 `--session-id` is accepted by every command that acts on a device. On `session start` it names the session being created; elsewhere it picks which running session to act on, defaulting to the only one.
 
-Results go to stdout as JSON. Progress and errors go to stderr. Commands exit `0` on success and non-zero on failure — including when a `--timeout` expires, which is what makes it usable as a wait.
+Every command follows the same split: **stdout carries the result, stderr carries diagnostics** — progress, warnings and errors alike. That is what makes the commands scriptable — `appetize session start … > session.json` leaves valid JSON in the file with the boot progress still on screen, where merging the streams with `2>&1` would corrupt it. Commands exit `0` on success and non-zero on failure — including when a `--timeout` expires, which is what makes it usable as a wait.
 
 ## session start
 
@@ -34,10 +34,10 @@ Requests a device, waits for the app to launch, and leaves a daemon holding the 
 appetize session start <device-id> <target> [options]
 ```
 
-| Argument      | Values                                                                                                                                       |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<device-id>` | Any `id` from `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service), e.g. `pixel7`, `iphone15pro` |
-| `<target>`    | A build `id` from `appetize build list`, or an app's public key                                                                              |
+| Argument      | Values                                                                                                                                                         |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<device-id>` | Any `id` from `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service), e.g. `pixel7`, `iphone15pro`                   |
+| `<target>`    | A **buildId** — the `id` from `appetize build list`, previously called publicKey ([what it is](https://docs.appetize.io/platform/app-management/running-apps)) |
 
 | Flag                  | Values                                      | Meaning                                                 |
 | --------------------- | ------------------------------------------- | ------------------------------------------------------- |
@@ -50,14 +50,14 @@ appetize session start <device-id> <target> [options]
 **Examples**
 
 ```bash
-appetize session start iphone15pro b_zt5w2yb3hn6vqk4a
-appetize session start pixel7 b_zt5w2yb3hn6vqk4a --device-os-version 14
-appetize session start pixel7 b_zt5w2yb3hn6vqk4a --session-id checkout --proxy
+appetize session start iphone15pro b_a1b2c3
+appetize session start pixel7 b_a1b2c3 --device-os-version 14
+appetize session start pixel7 b_a1b2c3 --session-id checkout --proxy
 ```
 
 Prints `{ adbSerial, baseUrl, controlSocket, logs, sessionId }` once the device is ready, or `{ logs, sessionId }` immediately with `--no-wait`. `adbSerial` is Android only. `logs` gains a `network` path when traffic is intercepted with `--proxy`.
 
-Phases are logged to stderr as the session starts: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. Starting a session with an id already in use fails.
+Phases are logged to stderr as the session starts, in this order: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. `queued` and `downloadingApp` are skipped when they do not apply. The result itself goes to stdout, so `> session.json` captures the JSON and leaves the progress on screen. Starting a session with an id already in use fails.
 
 ## session stop
 
@@ -99,7 +99,7 @@ appetize build list --app com.example.app
 appetize build list --app com.example.app --page 2
 ```
 
-Prints `{ builds, nextPage, total }`. Each build carries `id` — a `session start` target — plus `appId`, `platform`, `versionName`, `buildNumber` and `created`. Pass a non-null `nextPage` back as `--page` to continue. Requires `APPETIZE_API_TOKEN`.
+Prints `{ builds, nextPage, total }`. Each build carries `id` — the buildId, which is what `session start` takes as its target — plus `appId`, `platform`, `versionName`, `buildNumber` and `created`. Pass a non-null `nextPage` back as `--page` to continue. Requires `APPETIZE_API_TOKEN`.
 
 Same data as [`GET /v2/builds`](https://docs.appetize.io/rest-api/builds) in the REST API; `--app` filters the way [`GET /v2/apps/{platform}/{appId}/builds`](https://docs.appetize.io/rest-api/app-builds) does.
 
