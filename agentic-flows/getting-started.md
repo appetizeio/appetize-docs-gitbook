@@ -60,3 +60,22 @@ appetize session stop
 ```
 
 `session start` prints the session as JSON — the id, the streaming host and the log paths. Everything after it acts on that session, so there is no id to pass. For anything not shown here, `appetize --help` lists every command and `appetize <command> --help` prints its flags and examples.
+
+### Environment variables
+
+| Variable             | Values          | Meaning                                          |
+| -------------------- | --------------- | ------------------------------------------------ |
+| `APPETIZE_API_TOKEN` | `tok_…`         | Authorizes uploads, listings and session targets |
+| `APPETIZE_ENDPOINT`  | An Appetize URL | Used when `--endpoint` is omitted                |
+
+### Common failures
+
+| Message                                          | What to check                                                                       |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| `APPETIZE_API_TOKEN must be set`                 | Export a token from your organization settings.                                     |
+| `No active sessions`                             | Start one; if one should be live, `daemon.log` says why it exited.                  |
+| `Multiple active sessions; specify --session-id` | Pass the id of the session you mean.                                                |
+| `No session found for id X`                      | That session ended, or the id is wrong — `session start` prints the id it created.  |
+| `Session is not ready`                           | The start hasn't finished; the phases logged by `session start` say how far it got. |
+| `No video recording in progress`                 | `recording stop` ran without a `recording start`.                                   |
+| Element not found                                | Inspect again. It is off screen, covered, or the screen changed.                    |

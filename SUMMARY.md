@@ -87,7 +87,6 @@
   * [Sessions](agentic-flows/sessions.md)
   * [Automation](agentic-flows/automation.md)
   * [Screenshots and recordings](agentic-flows/screenshots-and-recordings.md)
-  * [Command reference](agentic-flows/command-reference.md)
 * [REST API](rest-api/README.md)
   * ```yaml
     type: builtin:openapi

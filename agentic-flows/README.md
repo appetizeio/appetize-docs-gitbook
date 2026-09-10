@@ -8,11 +8,11 @@ icon: terminal
 
 # Agentic Flows
 
-Point an AI coding agent at a real iOS or Android device and let it work.
+Point an AI coding agent at an iOS or Android emulator and let it work.
 
 The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
 
-{% hint style="warning" %}
+{% hint style="warning" icon="triangle-exclamation" %}
 **Beta.** Command names, flags and output are all still changing between releases, so pin the version you install.
 {% endhint %}
 
@@ -43,4 +43,3 @@ Every command the agent runs, you can run by hand. That is what makes an agent's
 * [Sessions](https://docs.appetize.io/agentic-flows/sessions) — lifecycle, logs and network traffic
 * [Automation](https://docs.appetize.io/agentic-flows/automation) — inspect the screen and act on it
 * [Screenshots and recordings](https://docs.appetize.io/agentic-flows/screenshots-and-recordings) — capture PNGs and MP4s
-* [Command reference](https://docs.appetize.io/agentic-flows/command-reference) — every command, its values and examples
