@@ -8,7 +8,7 @@ icon: terminal
 
 # Agentic Flows
 
-Point an AI coding agent at an iOS or Android emulator and let it work.
+Give an AI coding agent the Appetize CLI and let it drive your app.
 
 The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
 
