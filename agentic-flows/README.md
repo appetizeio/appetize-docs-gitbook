@@ -13,11 +13,11 @@ Give an AI coding agent the Appetize CLI and let it drive your app.
 The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
 
 {% hint style="warning" icon="triangle-exclamation" %}
-**Beta.** Command names, flags and output are all still changing between releases, so pin the version you install.
+**Beta.** Command names, flags and output are all still changing between releases.
 {% endhint %}
 
 ```bash
-npm install -g @appetize/cli@0.15
+npm install -g @appetize/cli
 appetize skill install
 ```
 
