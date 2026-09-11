@@ -105,4 +105,5 @@ Both leave you on the same screen with the field still focused. Confirm with `sc
 
 A real Claude Code session driving a device with these commands. It inspects the screen to find its way in, taps by test id, types, screenshots to check the result, then stops the session — about 50 seconds end to end.
 
-<figure><img src="../.gitbook/assets/claude-drives-device (2).gif" alt=""><figcaption></figcaption></figure>
+{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FkIobeDpPbGhF18GYBkFf%2Fclaude-drives-device.mp4?alt=media&token=ce3af548-d744-481f-8ceb-9b3b4c8ddd33" %}
+

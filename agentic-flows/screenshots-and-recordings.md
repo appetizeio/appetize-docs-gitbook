@@ -40,4 +40,4 @@ Ending the session while recording closes the file cleanly, and a session that d
 
 The same session from both sides: the commands on the left, the device video they produced on the right. recording start opens the stream, the taps and typing land on the device, and recording stop closes the file.
 
-<figure><img src="../.gitbook/assets/recording-side-by-side (1).gif" alt=""><figcaption></figcaption></figure>
+{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FsX3n8XF0SlMNdbVGzbxP%2Frecording-side-by-side.mp4?alt=media&token=5bfcbbd7-dad3-4d10-810c-917e946fa685" %}
