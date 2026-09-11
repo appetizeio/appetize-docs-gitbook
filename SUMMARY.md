@@ -46,6 +46,7 @@
   * [Reporting](account/reporting/README.md)
     * [Session History](account/reporting/session-history.md)
     * [Usage Summary](account/reporting/usage-summary.md)
+  * [Access Rules](account/access-rules.md)
 * [Infrastructure](infrastructure/README.md)
   * [Configure Network Access](infrastructure/configure-network-access.md)
   * [Enterprise Hosting Options](infrastructure/enterprise-hosting-options.md)
