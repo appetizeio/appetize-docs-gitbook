@@ -42,10 +42,10 @@ Starting a session with an id already in use fails.
 
 `session start` prints both paths, so you never have to guess where they are.
 
-| Path          | Holds                                                        |
-| ------------- | ------------------------------------------------------------ |
-| `logs.device` | the app's own log lines, streamed as JSONL                   |
-| `logs.daemon` | the CLI's own output — read this when the session misbehaves |
+| Path          | Holds                                      |
+| ------------- | ------------------------------------------ |
+| `logs.device` | the app's own log lines, streamed as JSONL |
+| `logs.daemon` | the CLI's own output                       |
 
 ```bash
 tail -f ~/.appetize/cli/sessions/checkout/device.log.jsonl
