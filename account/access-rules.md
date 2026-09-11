@@ -15,7 +15,9 @@ Any team member with the developer role can view this page. Only **admins** can 
 
 An IP access rule is a list of IPv4 addresses or CIDR ranges, labelled, and marked either **Allow** or **Deny**.
 
-<figure><img src="../.gitbook/assets/access-rules-ip-final.gif" alt=""><figcaption></figcaption></figure>
+{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FfPzIAMV4GgsDPYIl9MZD%2Faccess-rules-ip.mp4?alt=media&token=a9ef5f29-1451-4ce4-9458-d568729d3dad" %}
+
+
 
 
 
@@ -78,7 +80,7 @@ Appetize matches the hostname of the browser's `Referer` header against your lis
 
 Enter hostnames only — no scheme, port or path. An empty list means no restriction at all.
 
-<figure><img src="../.gitbook/assets/access-rules-domains-final.gif" alt=""><figcaption></figcaption></figure>
+{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FoRO1HXWcCEozlw9hsLD2%2Faccess-rules-domains.mp4?alt=media&token=949d23c2-f87a-46eb-b153-542423c399cb" %}
 
 ### Requests with no Referer
 
