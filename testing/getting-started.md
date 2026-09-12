@@ -17,6 +17,8 @@ It asks two questions:
 * Your app's **buildId** (previously known as `publicKey`). Press enter to accept `demo` and try the flow against Appetize's demo app first.
 * The **default device**, picked from the devices available to your account.
 
+{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@4b0abeb/.gitbook/assets/npm-init-final.mp4" %}
+
 To scaffold into a new folder, pass its name:
 
 ```sh

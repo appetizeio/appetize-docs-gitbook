@@ -12,6 +12,8 @@ npx playwright test --headed
 
 [See the Playwright documentation for running tests](https://playwright.dev/docs/running-tests)
 
+{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@4b0abeb/.gitbook/assets/running-tests-demo-v2.mp4" %}
+
 ## Sessions and workers
 
 Every test in a suite runs serially on the **same** Appetize session, for as long as the session configuration stays the same. That avoids re-entering the queue for each test and makes the suite much faster.

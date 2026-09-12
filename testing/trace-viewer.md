@@ -24,6 +24,8 @@ From CI, download the artifact and open it the same way, or drop the file on [tr
 
 Trace Viewer was built for web testing, so two panels describe the page hosting the device rather than your app: **Network** lists the embed page's requests, not your app's traffic, and **Console** and **Source** belong to the test runner. Everything else applies:
 
+![](https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@4b0abeb/.gitbook/assets/trace-viewer.png)
+
 | Panel                    | For an Appetize test                                         |
 | ------------------------ | ------------------------------------------------------------ |
 | **Filmstrip and player** | The device screen across the whole run — scrub to any moment |
@@ -42,6 +44,8 @@ Each test attaches three files, visible under **Attachments** and in `test-resul
 | `session`    | The session's resolved device config, and its token                    |
 
 When a selector fails, `ui` is usually the quickest fix: it is the list of what was actually on screen, so you can see what to match instead.
+
+{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@4b0abeb/.gitbook/assets/trace-attachments-v3.mp4" %}
 
 ## The session token
 
