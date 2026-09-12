@@ -4,165 +4,70 @@ description: Run your tests against multiple device configurations
 
 # Test Configuration
 
-## Changing configuration
+The Appetize session configuration lives under `use.config` in `playwright.config.ts`. It accepts the same values you can set per session anywhere else — see the [JavaScript SDK configuration](https://docs.appetize.io/javascript-sdk/configuration) reference for the full list.
 
-You can change the configuration for a test suite with `test.use`. Note that config changes will start a new session when used within a `test.describe`.
+{% code title="playwright.config.ts" %}
+```typescript
+use: {
+    config: {
+        buildId: '<your build id>',
+        device: 'iphone15pro',
+        osVersion: '18.2',
+        language: 'fr',
+    },
+}
+```
+{% endcode %}
 
-See [Playwright documentation](https://playwright.dev/docs/test-use-options) for more details on `test.use`.
+{% hint style="info" %}
+`buildId` was previously called `publicKey`. Both still work, but `buildId` is the current name.
+{% endhint %}
+
+## Changing configuration for a suite
+
+`test.use` overrides the config for a file or a `describe` block. Changing config starts a new session, so keep it at the top of the suite rather than inside individual tests.
 
 ```javascript
 import { test, expect } from '@appetize/playwright'
 
 test.use({
   config: {
-    publicKey: '<buildId|publicKey>'
-    device: 'nexus5'
+    device: 'nexus5',
   },
 });
 
 test('app works on nexus5', async ({ session }) => {
-  ...
+  // ...
 })
 ```
 
-## Getting configuration
+Unlike projects, `test.use` **merges** onto the config it inherits, so you only need to name what changes.
 
-The current configuration can be accessed with the `config` argument in the test
+See the [Playwright documentation](https://playwright.dev/docs/test-use-options) for more on `test.use`.
+
+## Reading the configuration
+
+The resolved config for the current test is available as an argument:
 
 ```javascript
 test('my test', async ({ session, config }) => {
    if (config.osVersion === '7.0') {
       // do os 7.0 specific behaviour
-   } else {
-      
    }
 })
 ```
 
-You can also use this to skip tests
+You can also use it to skip tests:
 
 ```javascript
 test.describe('iOS 16 features', () => {
     // skip suite if osVersion is less than 16
     test.skip(({ config }) => parseInt(config.osVersion) < 16);
-    
-    test('some feature', async ({ session }) => { ... })
+
+    test('some feature', async ({ session }) => { /* ... */ })
 })
 ```
 
-## Projects
+## Running against several configurations
 
-[Projects](https://playwright.dev/docs/test-projects) allow you to run your entire test suite with different configurations. This is useful if you have a cross platform app or wish to test against a set of devices and/or osVersions.
-
-Below are some examples that may fit your use case.
-
-### Examples
-
-#### Test Android and iOS apps
-
-Runs tests under `tests/ios` for the iOS configuration, and `tests/android` for the Android configuration
-
-```javascript
-const config = {
-    // ... 
-    
-    projects: [
-        {
-            name: 'ios',
-            testDir: './tests/ios',
-            use: {
-                config: {
-                    device: 'iphone14pro',
-                    publicKey: '<IOS APP BUILD ID (PUBLIC KEY)>'
-                }
-            },
-        },
-        {
-            name: 'android',
-            testDir: './tests/android',
-            use: {
-                config: {
-                    device: 'pixel6',
-                    publicKey: '<ANDROID APP BUILD ID (PUBLIC KEY)>'
-                }
-            },
-        }      
-    ]
-} 
-   
-```
-
-#### Test iOS app against multiple iOS Versions
-
-Runs the test suite against iOS 16 and iOS 15
-
-```javascript
-const config = {
-    // ... 
-    
-    use: {
-        config: {
-            publicKey: '<BUILD ID (PUBLIC KEY)>'
-        }
-    },
-    projects: [
-        {
-            name: 'ios-16',
-            use: {
-                config: {
-                    device: 'iphone14pro',
-                    osVersion: '16',
-                }
-            },
-        },
-        {
-            name: 'ios-15',
-            use: {
-                config: {
-                    device: 'iphone14pro',
-                    osVersion: '15'
-                }
-            },
-        }
-    ]
-} 
-   
-```
-
-#### Test Android against multiple devices
-
-Runs the test suite against a Pixel 7 and a Pixel 6
-
-```javascript
-const config = {
-    // ... 
-    
-    use: {
-        config: {
-            publicKey: '<BUILD ID (PUBLIC KEY)>'
-        }
-    },
-    projects: [
-        {
-            name: 'pixel7',
-            use: {
-                config: {
-                    device: 'pixel7'
-                }
-            },
-        },
-        {
-            name: 'pixel6',
-            use: {
-                config: {
-                    device: 'pixel6'
-                }
-            },
-        }
-    ]
-}
-```
-
-## During tests
-
-You can reference the current project configuration in your tests. This is useful if you need to change or skip a test based on a certain device
+To run your suite against more than one device, OS version or app, see [Projects](https://docs.appetize.io/testing/projects).

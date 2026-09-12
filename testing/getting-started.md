@@ -4,53 +4,84 @@ description: Getting Started with Appetize AppRecorder and Playwright
 
 # Getting Started
 
-You can follow along with the installation steps below to start a new project.
+Get a Playwright project running against your app on Appetize.
 
 ## Installation
-
-Get started by installing Playwright with Appetize using **npm:**
 
 ```sh
 npm init @appetize/playwright@latest
 ```
 
-Run the install command and select the following to get started:
+It asks two questions:
 
-* Your Appetize App's [**buildId**](#user-content-fn-1)[^1]
-* The **preferred default device**
+* Your app's **buildId** (previously known as `publicKey`). Press enter to accept `demo` and try the flow against Appetize's demo app first.
+* The **default device**, picked from the devices available to your account.
 
-<figure><img src="https://lh7-us.googleusercontent.com/slidesz/AGV_vUdOgTMhY5_mOGlIO1bM1w1FNQjzN7R9tfbQ8ItN0DnHyeVeA-8b94lKG71uxzWDcOZwnDf5tpGP8TpfS_lGwVgNACY3eXtKx4Ku0XhW61hoMbQXc8QvUmoexW21LJRtwCcNguKCcfeZgoqc9XLOIzYfQTYWzKox=nw?key=Ov-qIhkbe_J50OTU5jQN9g" alt="" width="563"><figcaption></figcaption></figure>
+To scaffold into a new folder, pass its name:
 
-## What's Installed <a href="#whats-installed" id="whats-installed"></a>
+```sh
+npm init @appetize/playwright@latest my-app-tests
+```
 
-* A Playwright project will be created (see [Playwright documentation](https://playwright.dev/docs/intro#installing-playwright)).
-* The `@appetize/playwright` npm package will be installed.
-* The `playwright.config.ts` file will be configured for Appetize with the specified values for the default device and app.
-
-{% hint style="info" %}
-See [Test Configuration](test-configuration.md) for more advanced configurations.
+{% hint style="warning" %}
+Run this in a new or empty folder. In the directory it targets it empties `tests/` and deletes `tests-examples/`.
 {% endhint %}
 
-* An example test file, `app.spec.ts`, will be added.
+## What you get
 
-## Usage
+* A Playwright project (see the [Playwright docs](https://playwright.dev/docs/intro#installing-playwright))
+* The `@appetize/playwright` package
+* `playwright.config.ts`, already pointed at your app and device
+* `tests/app.spec.ts`, a placeholder test
 
-Update the `app.spec.ts` file in your tests folder to include a test relevant to your application
+{% code title="playwright.config.ts" %}
+```typescript
+export default defineConfig<AppetizeTestOptions>({
+    testDir: './tests',
+    outputDir: 'test-results/',
+    timeout: 120 * 1000,
+    forbidOnly: !!process.env.CI,
+    retries: process.env.CI ? 3 : 0,
+    reporter: 'line',
+
+    // correlates to the number of concurrent Appetize sessions at a time
+    workers: 1,
+    fullyParallel: false,
+
+    use: {
+        trace: 'retain-on-failure',
+        baseURL: 'https://appetize.io',
+
+        // Appetize session configuration
+        config: {
+            device: 'iphone16promax',
+            buildId: 'demo',
+        },
+    },
+});
+```
+{% endcode %}
+
+`use.config` is the Appetize session configuration — device, OS version, language, and anything else you can set per session. Override it for a suite with `test.use`, or per [project](https://docs.appetize.io/testing/projects).
+
+## Write a test
+
+Update `tests/app.spec.ts` to match something in your own app:
 
 ```javascript
 import { test, expect } from '@appetize/playwright'
 
 test('example test', async ({ session }) => {
     await expect(session).toHaveElement({
-         attributes: {
-          // replace with the text of an element that appears on your app
-            text: 'Hello world' 
+        attributes: {
+            // replace with the text of an element that appears in your app
+            text: 'Hello world'
         }
     })
 })
 ```
 
-Once you've updated the test file for your app, run the test with:
+## Run it
 
 ```bash
 npx playwright test --headed
@@ -60,14 +91,4 @@ npx playwright test --headed
 npx playwright test
 ```
 
-## Next Steps
-
-{% content-ref url="writing-tests.md" %}
-[writing-tests.md](writing-tests.md)
-{% endcontent-ref %}
-
-{% content-ref url="test-configuration.md" %}
-[test-configuration.md](test-configuration.md)
-{% endcontent-ref %}
-
-[^1]: previously known as **publicKey**
+When a test fails, Appetize attaches the device screenshot, the full UI hierarchy and the session details to the result — see [Trace Viewer](https://docs.appetize.io/testing/trace-viewer).

@@ -84,6 +84,7 @@
   * [Continuous Integration](testing/continuous-integration.md)
   * [Trace Viewer](testing/trace-viewer.md)
   * [Web Tests on Mobile Browsers](testing/web-tests-on-mobile-browsers.md)
+  * [Projects](testing/projects.md)
 * [Agentic Flows](agentic-flows/README.md)
   * [Getting started](agentic-flows/getting-started.md)
   * [Sessions](agentic-flows/sessions.md)
