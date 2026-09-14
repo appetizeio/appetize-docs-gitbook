@@ -47,13 +47,11 @@ The Playwright integration with Appetize provides a unified testing solution fam
 
 #### Inspector Mode
 
-<figure><img src="https://lh7-us.googleusercontent.com/slidesz/AGV_vUcsTEgw8qRe7gDZSXmjatB7OiejviWbp1elsBjdxnHl8qhx0BZ2i-2Y-DhkyzSo5WK7owLZ434lBuwjUDG-dTQsKzZsSmBlUtRjnnlbYQy7wRP_fa-x3ZsdE4L57z0CjyHrfDt6huXw1Wup90K0tu1FvfkPmLk=nw?key=Ov-qIhkbe_J50OTU5jQN9g" alt="" width="563"><figcaption><p>AppRecorder Inspector Mode</p></figcaption></figure>
+Inspector Mode overlays the running app with its UI hierarchy. Hover or tap any element to see its attributes — text, `resource-id`, `class`, bounds, and whether it is clickable, enabled or scrollable — so you can pick a selector that matches what is actually on screen.
 
-#### **Low-Code Automation Tool (**&#x41;utomation Recorder)
+Turn it on with **Inspect**, in the Automation Recorder tab of the Developer Tools panel, while a session is running.
 
-<figure><img src="https://lh7-us.googleusercontent.com/slidesz/AGV_vUdeXA9PgE2hoG38KEV5OzNW10DnN8a81tzJ1WqSEj-XS3xcQxfKSXEd6QS5-J0dZn6HfsjNIdp2fiv3f0sPjWEqzB4fyqpRZUUDMouEEHNcws49zEVxunD_1S9h97kRRwvckFRDtqe0j1zR5aVufDKexzaSyINZ=nw?key=Ov-qIhkbe_J50OTU5jQN9g" alt="" width="563"><figcaption><p>Low-code automation example</p></figcaption></figure>
-
-See [UI Automation](/broken/pages/Gm30V6WlKjLSc4ey0eXF) for more information.
+<figure><img src="../.gitbook/assets/inspector-mode-annotated.png" alt=""><figcaption></figcaption></figure>
 
 ### **Consistent and Reliable Test Environments**
 
