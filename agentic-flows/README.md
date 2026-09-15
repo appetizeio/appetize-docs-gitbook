@@ -27,11 +27,13 @@ Node 22 or later is required. Confirm the install with `appetize --version`.
 
 ## Let an agent drive
 
-An agent can create a session and drive a device to complete your tasks:
+An agent can take a whole task end to end — investigate, fix, verify, ship:
 
-* "Write the new sign-up copy and give me a screenshot."
-* "Reproduce the crash in checkout and give me a screenshot and the device log."
-* "Walk the onboarding flow on an iPhone 15 Pro and record it."
+* "Take this crash log. Validate it, use the app and network logs to find the root cause, fix it, test it and ship it."
+* "Ship the new sign-up copy. Update it, check it on an iPhone 15 Pro and a Pixel 7, and put the screenshots on the PR."
+* "Onboarding regressed. Walk it, find where it breaks, fix it, and send me a recording of it working."
+
+Every step is a terminal command, so it loops on its own: change the code, re-run on a device, check the recording, repeat.
 
 ### Or drive it yourself
 
