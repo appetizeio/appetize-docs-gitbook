@@ -23,7 +23,7 @@ appetize skill install
 
 Node 22 or later is required. Confirm the install with `appetize --version`.
 
-{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FVWaXAmAd0n9NlPYz6Noz%2Fclaude-demo-2x.mp4?alt=media&token=8bb00711-1019-43d3-a9ad-579d3da385cf" %}
+{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@master/.gitbook/assets/agent-side-by-side.mp4" %}
 
 ## Let an agent drive
 
