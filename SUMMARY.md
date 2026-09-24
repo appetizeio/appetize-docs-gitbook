@@ -9,6 +9,8 @@
     * [App Dashboard](platform/app-management/listing-apps.md)
     * [Running Apps](platform/app-management/running-apps.md)
     * [App Permissions](platform/app-management/app-permissions.md)
+    * [App Groups](platform/app-management/app-groups/README.md)
+      * [Creating a group](platform/app-management/app-groups/creating-a-group.md)
   * [Device Sandbox](platform/standalone-device.md)
   * [Embedding](platform/embedding-apps.md)
   * [Sharing](platform/sharing-apps.md)
