@@ -54,16 +54,6 @@ appetize session start pixel7 ag_...
 
 Groups are created and edited in the dashboard or through the **v2 API** (`/v2/app-groups`); the v1 API can read a group but not change one.
 
-### Limits
-
-| Limit               | Value                |
-| ------------------- | -------------------- |
-| Apps per group      | 10                   |
-| Platforms per group | 1, fixed at creation |
-| Group name          | 50 characters        |
-
-Launch arguments, launch params and auto-granted permissions are **session-wide**, not per app — they apply to the app that gets launched.
-
 ### Next steps
 
 * [Creating a group](https://docs.appetize.io/platform/app-management/app-groups/creating-a-group) — build it and choose which build each app uses
