@@ -27,6 +27,34 @@ Phases arrive on stderr in this order: `requesting`, `queued`, `starting`, `down
 
 `--no-wait` skips the blocking and returns the session id straight away.
 
+### Watching the session
+
+Every session serves a small viewer page on your machine. `session start` prints its address as `viewerUrl`:
+
+```json
+{
+  "sessionId": "tidy-pandas-jump",
+  "viewerUrl": "http://127.0.0.1:52518/"
+}
+```
+
+Open it in a browser and you see the device screen, live, while the agent works. The page is only the screen — no logs, no controls, no session details.
+
+It is not read-only. Click and type on the page and the input goes to the device, so you can take over mid-run, fix something by hand, and let the agent carry on. One pointer at a time, and the screen needs focus before typing, so click it first.
+
+{% hint style="warning" %}
+No authentication: anyone with access to the machine can open that port and drive the device.
+{% endhint %}
+
+A few details worth knowing:
+
+* The port is assigned by the OS each run and cannot be set.
+* **One viewer at a time.** Opening the same session in a second tab leaves that tab blank — reload the first one instead.
+* Closing the tab does not affect the session, and the viewer closes with `session stop`.
+* With `--no-wait`, `session start` returns before the URL is known — read it from the session record instead.
+
+Available since `@appetize/cli` 0.16.0.
+
 ## Naming and picking a session
 
 Each session gets a three-word id such as `tidy-pandas-jump`, or the one you pass to `--session-id`. Other commands act on the only running session, so you rarely pass anything:
