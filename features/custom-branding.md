@@ -36,7 +36,7 @@ Appetize uses industry standard [Let's Encrypt](https://letsencrypt.org/) for SS
 
 From your Appetize [Dashboard](https://appetize.io/apps), select the app and then select the build you want to apply the graphics on
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption><p>Select the App you want to modify</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Select the App you want to modify</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption><p>Select the build to modify</p></figcaption></figure>
 

@@ -21,6 +21,8 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 ---
 
 # Changelog
@@ -29,7 +31,7 @@ layout:
 
 ### **New API Token Management Page**
 
-<figure><img src=".gitbook/assets/image (86).png" alt=""><figcaption><p>New API Token Management Page</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (72).png" alt=""><figcaption><p>New API Token Management Page</p></figcaption></figure>
 
 * **New Features**
   *   Released the new [**API Token Management**](https://appetize.io/organization/api-tokens) page
@@ -118,7 +120,7 @@ layout:
 
 ### Redesigned App Experience
 
-<figure><img src=".gitbook/assets/Changelog Update 2028.jpg" alt=""><figcaption><p>Updated App Page Experience </p></figcaption></figure>
+<figure><img src=".gitbook/assets/Changelog Update 2028.jpg" alt=""><figcaption><p>Updated App Page Experience</p></figcaption></figure>
 
 * **New Features:**
   * Web app redesign
@@ -163,12 +165,12 @@ layout:
 
 <figure><img src=".gitbook/assets/product-devices-noround.png" alt=""><figcaption><p>iOS 18 and iPhone 16 Pro/Max support has been added</p></figcaption></figure>
 
-* **New Features**:&#x20;
+* **New Features**:
   * Support for **iOS 18** and **iPhone 16** **Pro/Max** devices.
   * Improved **Organization Settings** UI with clearer section names and options.
   * **Stripe** checkout flow added for credit card updates.
   * Updated default devices to **iPhone 14 Pro** and **Pixel 7**.
-* **Bug fixes & Improvements**:&#x20;
+* **Bug fixes & Improvements**:
   * Fixed **video rotation** issues on Chrome 130.
   * Fixed session parameters and **configuration** handling in consecutive sessions.
   * Improved **login** redirects and federated login flow.
@@ -183,13 +185,13 @@ layout:
 
 <figure><img src=".gitbook/assets/biometrics (1).png" alt=""><figcaption><p>We now support Biometry features on both iOS and Android</p></figcaption></figure>
 
-* **New Features**:&#x20;
+* **New Features**:
   * Added [biometry support](https://docs.appetize.io/javascript-sdk/automation/device-commands#biometry) for iOS.
   * Improved SDK action titles in Playwright trace sidebar.
   * Support for Google and Github Login Providers.
-* **Bug fixes & Improvements**:&#x20;
+* **Bug fixes & Improvements**:
   * Faster build ID validation.
-  * &#x20;[ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be used for sessions using [AppRecorder](/broken/pages/Gm30V6WlKjLSc4ey0eXF), network proxies, and debug logs
+  * [ADB Tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be used for sessions using [AppRecorder](/broken/pages/Gm30V6WlKjLSc4ey0eXF), network proxies, and debug logs
   * Debug log and session info attached to test results.
   * Playwright peer dependency upgrade.
   * Fixed issue where `startSession` was not throwing errors on `userError`.
@@ -202,17 +204,17 @@ layout:
 
 ## July 2024
 
-### New App Dashboard&#x20;
+### New App Dashboard
 
 <figure><img src=".gitbook/assets/image (67).png" alt="New App Dashboard: Streamlined to find the right apps faster"><figcaption><p>New App Dashboard: Streamlined to find the right apps faster</p></figcaption></figure>
 
-* **Enhanced App Organization**: \
+* **Enhanced App Organization**:\
   Apps are now organized by their unique application identifier. See our [App Dashboard documentation](https://docs.appetize.io/platform/app-management/listing-apps) for more info.
-* **Simplified App Group Management**: \
+* **Simplified App Group Management**:\
   Easier creation and management of App Groups, with options to always use the latest build.
-* **Improved Dashboard Performance**: \
+* **Improved Dashboard Performance**:\
   Faster load times and responsiveness, paving the way for future features.
-* **Upcoming Features**: \
+* **Upcoming Features**:\
   Look forward to more API versatility, granular management options, and new UI automation tools.
 
 For more information, see our [blog post](https://appetize.io/posts/updates/2024/07/03/new-app-dashboard-streamlined-to-find-the-right-apps-faster).
