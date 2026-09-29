@@ -87,7 +87,7 @@
   * [Trace Viewer](testing/trace-viewer.md)
   * [Web Tests on Mobile Browsers](testing/web-tests-on-mobile-browsers.md)
   * [Projects](testing/projects.md)
-* [AI Agents for Mobile App Testing](ai-agents/README.md "AI Agents")
+* [AI Agents](ai-agents/README.md "AI Agents")
   * [Getting started](ai-agents/getting-started.md)
   * [Sessions](ai-agents/sessions.md)
   * [Automation](ai-agents/automation.md)
