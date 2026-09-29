@@ -92,6 +92,7 @@
   * [Sessions](ai-agents/sessions.md)
   * [Automation](ai-agents/automation.md)
   * [Screenshots and recordings](ai-agents/screenshots-and-recordings.md)
+* [Agentic Flows has moved](agentic-flows.md)
 * [REST API](rest-api/README.md)
   * ```yaml
     props:
