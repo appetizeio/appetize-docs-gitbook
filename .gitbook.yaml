@@ -50,7 +50,7 @@ redirects:
     sample-use-cases/open-a-deeplink-and-make-sure-analytics-api-calls-happen: guides-and-samples/open-a-deeplink-and-make-sure-analytics-api-calls-happen.md
     sample-use-cases/lock-your-device-to-one-app: guides-and-samples/lock-your-device-to-one-app.md
     sample-use-cases/test-accessibility-font-sizes: guides-and-samples/test-accessibility-font-sizes.md
-    agentic-flows: ai-agents/README.md
+    agentic-flows: ai-agents.md
     agentic-flows/getting-started: ai-agents/getting-started.md
     agentic-flows/sessions: ai-agents/sessions.md
     agentic-flows/automation: ai-agents/automation.md
