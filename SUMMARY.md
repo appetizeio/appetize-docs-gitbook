@@ -87,11 +87,11 @@
   * [Trace Viewer](testing/trace-viewer.md)
   * [Web Tests on Mobile Browsers](testing/web-tests-on-mobile-browsers.md)
   * [Projects](testing/projects.md)
-* [Agentic Flows](agentic-flows/README.md)
-  * [Getting started](agentic-flows/getting-started.md)
-  * [Sessions](agentic-flows/sessions.md)
-  * [Automation](agentic-flows/automation.md)
-  * [Screenshots and recordings](agentic-flows/screenshots-and-recordings.md)
+* [AI Agents](ai-agents/README.md)
+  * [Getting started](ai-agents/getting-started.md)
+  * [Sessions](ai-agents/sessions.md)
+  * [Automation](ai-agents/automation.md)
+  * [Screenshots and recordings](ai-agents/screenshots-and-recordings.md)
 * [REST API](rest-api/README.md)
   * ```yaml
     type: builtin:openapi

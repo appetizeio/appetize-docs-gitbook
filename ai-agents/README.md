@@ -1,14 +1,14 @@
 ---
 description: >-
-  Run and test mobile apps with AI coding agents — artificial intelligence
-  workflows powered by the appetize CLI and its agent skill.
+  Agentic mobile testing on real devices. Give an AI coding agent the Appetize
+  CLI and let it run, drive and debug your iOS and Android apps.
 hidden: true
 icon: terminal
 ---
 
-# Agentic Flows
+# AI Agents
 
-Give an AI coding agent the Appetize CLI and let it drive your app.
+Agentic mobile development on real hardware: give an AI coding agent the Appetize CLI and let it drive your iOS or Android app.
 
 The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
 
@@ -41,7 +41,7 @@ Every command the agent runs, you can run by hand. That is what makes an agent's
 
 ### Next steps
 
-* [Getting started](https://docs.appetize.io/agentic-flows/getting-started) — install, token, and your first agent task
-* [Sessions](https://docs.appetize.io/agentic-flows/sessions) — lifecycle, logs and network traffic
-* [Automation](https://docs.appetize.io/agentic-flows/automation) — inspect the screen and act on it
-* [Screenshots and recordings](https://docs.appetize.io/agentic-flows/screenshots-and-recordings) — capture PNGs and MP4s
+* [Getting started](https://docs.appetize.io/ai-agents/getting-started) — install, token, and your first agent task
+* [Sessions](https://docs.appetize.io/ai-agents/sessions) — lifecycle, logs and network traffic
+* [Automation](https://docs.appetize.io/ai-agents/automation) — inspect the screen and act on it
+* [Screenshots and recordings](https://docs.appetize.io/ai-agents/screenshots-and-recordings) — capture PNGs and MP4s
