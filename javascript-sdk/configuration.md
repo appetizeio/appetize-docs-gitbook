@@ -269,7 +269,7 @@ Enables the display of rotate buttons next to the device. Requires `scale` to be
 
 `string`
 
-(Android only) Sets the timezone of the device. [See available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+Sets the timezone of the device. [See available values](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### endSessionRedirectUrl
 
