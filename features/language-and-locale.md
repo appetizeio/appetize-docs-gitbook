@@ -74,8 +74,6 @@ See [Configuration](../javascript-sdk/configuration.md#locale) for more informat
 
 ## Timezone
 
-_Android Only_
-
 ### **With Query Parameter**
 
 Set the time zone of the device by adding the `timezone` query parameter to your app or embed URL.
