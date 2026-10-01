@@ -2,7 +2,6 @@
 description: >-
   Agentic mobile testing on real devices. Give an AI coding agent the Appetize
   CLI and let it run, drive and debug your iOS and Android apps.
-hidden: true
 icon: terminal
 ---
 
