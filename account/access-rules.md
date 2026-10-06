@@ -25,7 +25,7 @@ An IP access rule is a list of IPv4 addresses or CIDR ranges, labelled, and mark
 
 Only rules you have applied to the organization are evaluated. Among those, the order is:
 
-1. **Deny always wins.** If the IP matches any deny rule, the request is blocked — even if an allow rule also matches it.
+1. **Deny always wins.** If the IP matches any deny rule, the request is blocked, even if an allow rule also matches it.
 2. **If any allow rule exists, the IP must match one.** Anything not on an allow list is blocked.
 3. **If no allow rules exist,** every IP is allowed except those explicitly denied.
 
@@ -33,14 +33,14 @@ So a single applied allow rule switches the organization from "open to everyone"
 
 ### Applying a rule
 
-Saving a rule does not enforce it. Each rule has an **Apply to my organization** toggle, and only applied rules are evaluated — so you can write a rule, check it reads the way you meant, and turn it on separately.
+Saving a rule does not enforce it. Each rule has an **Apply to my organization** toggle, and only applied rules are evaluated, so you can write a rule, check it reads the way you meant, and turn it on separately.
 
 To stop enforcing a rule without losing it, edit it and turn that toggle off. Deleting is only for rules you no longer want at all.
 
 Appetize will not let you lock yourself out: if saving or applying a rule would block the address you are currently on, the save is rejected with _"This change would block your current IP … from accessing this account."_ Add your own address to an allow list first, then apply.
 
 {% hint style="warning" %}
-That check only covers **your** address at the moment you save. It cannot know about teammates on other networks, or your own address changing later — so list every range your team connects from before you apply an allow rule.
+That check only covers **your** address at the moment you save. It cannot know about teammates on other networks, or your own address changing later, so list every range your team connects from before you apply an allow rule.
 {% endhint %}
 
 ### What the rules apply to
@@ -59,7 +59,7 @@ They do **not** apply to:
 | A CIDR range                                        | `203.0.113.0/24`                |
 | Several of either, separated by commas or new lines | `203.0.113.10, 198.51.100.0/24` |
 
-IPv6 is not supported. Decimal-integer forms of an address (`3405803786`) are rejected — use dotted quads.
+IPv6 is not supported. Decimal-integer forms of an address (`3405803786`) are rejected. Use dotted quads.
 
 ### When someone is blocked
 
@@ -78,7 +78,7 @@ Appetize matches the hostname of the browser's `Referer` header against your lis
 | `example.com`   | that hostname exactly            |
 | `*.example.com` | any single-level subdomain of it |
 
-Enter hostnames only — no scheme, port or path. An empty list means no restriction at all.
+Enter hostnames only: no scheme, port or path. An empty list means no restriction at all.
 
 {% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FoRO1HXWcCEozlw9hsLD2%2Faccess-rules-domains.mp4?alt=media&token=949d23c2-f87a-46eb-b153-542423c399cb" %}
 
@@ -86,7 +86,7 @@ Enter hostnames only — no scheme, port or path. An empty list means no restric
 
 Some browsers and privacy tools strip the `Referer` header, and a request without one cannot be matched against your list. The **If Referer is not provided** toggle decides what happens then:
 
-* **Allow** — requests with no Referer are let through. Fewer false blocks, weaker restriction.
-* **Deny** — only requests carrying a matching Referer are allowed. Stricter, and will block some legitimate visitors.
+* **Allow:** requests with no Referer are let through. Fewer false blocks, weaker restriction.
+* **Deny:** only requests carrying a matching Referer are allowed. Stricter, and will block some legitimate visitors.
 
 The toggle appears once you have added at least one domain.

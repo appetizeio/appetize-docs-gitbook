@@ -64,7 +64,7 @@ export default defineConfig<AppetizeTestOptions>({
 ```
 {% endcode %}
 
-`use.config` is the Appetize session configuration — device, OS version, language, and anything else you can set per session. Override it for a suite with `test.use`, or per [project](https://docs.appetize.io/testing/projects).
+`use.config` is the Appetize session configuration: device, OS version, language, and anything else you can set per session. Override it for a suite with `test.use`, or per [project](https://docs.appetize.io/testing/projects).
 
 ## Write a test
 
@@ -93,4 +93,4 @@ npx playwright test --headed
 npx playwright test
 ```
 
-When a test fails, Appetize attaches the device screenshot, the full UI hierarchy and the session details to the result — see [Trace Viewer](https://docs.appetize.io/testing/trace-viewer).
+When a test fails, Appetize attaches the device screenshot, the full UI hierarchy and the session details to the result. See [Trace Viewer](https://docs.appetize.io/testing/trace-viewer).

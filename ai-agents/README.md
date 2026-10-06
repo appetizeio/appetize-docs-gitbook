@@ -9,7 +9,7 @@ icon: terminal
 
 Agentic mobile development on simulators: give an AI coding agent the Appetize CLI and let it drive your iOS or Android app.
 
-The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
+The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless (no browser, no embed), so the same commands work on your machine and in CI.
 
 {% hint style="warning" icon="triangle-exclamation" %}
 **Beta.** Command names, flags and output are all still changing between releases.
@@ -26,7 +26,7 @@ Node 22 or later is required. Confirm the install with `appetize --version`.
 
 ## Let an agent drive
 
-An agent can take a whole task end to end — investigate, fix, verify, ship:
+An agent can take a whole task end to end. Investigate, fix, verify, ship:
 
 * "Take this crash log. Validate it, use the app and network logs to find the root cause, fix it, test it and ship it."
 * "Ship the new sign-up copy. Update it, check it on an iPhone 15 Pro and a Pixel 7, and put the screenshots on the PR."
@@ -40,7 +40,7 @@ Every command the agent runs, you can run by hand. That is what makes an agent's
 
 ### Next steps
 
-* [Getting started](https://docs.appetize.io/ai-agents/getting-started) — install, token, and your first agent task
-* [Sessions](https://docs.appetize.io/ai-agents/sessions) — lifecycle, logs and network traffic
-* [Automation](https://docs.appetize.io/ai-agents/automation) — inspect the screen and act on it
-* [Screenshots and recordings](https://docs.appetize.io/ai-agents/screenshots-and-recordings) — capture PNGs and MP4s
+* [Getting started](https://docs.appetize.io/ai-agents/getting-started): install, token, and your first agent task
+* [Sessions](https://docs.appetize.io/ai-agents/sessions): lifecycle, logs and network traffic
+* [Automation](https://docs.appetize.io/ai-agents/automation): inspect the screen and act on it
+* [Screenshots and recordings](https://docs.appetize.io/ai-agents/screenshots-and-recordings): capture PNGs and MP4s

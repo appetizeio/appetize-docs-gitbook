@@ -9,7 +9,7 @@ appetize inspect
 appetize inspect --select-test-id login-form --pretty
 ```
 
-The hierarchy is written to `inspect.json` — name a path to choose another file — and a summary is printed:
+The hierarchy is written to `inspect.json` (name a path to choose another file) and a summary is printed:
 
 ```json
 {
@@ -37,7 +37,7 @@ Match what an element is, not where it happens to sit.
 | `--select-position`        | A screen position as `x,y`, each 0-1                                               |
 | `--select-x`, `--select-y` | A point within the matched element (0-1; outside that range reaches past its edge) |
 
-Pick one of `--select-test-id`, `--select-text` or `--select-position`. A test id is the most durable, then text. Coordinates are right for canvases, maps and slider tracks, and wrong everywhere else — a selector survives a layout change and a coordinate does not.
+Pick one of `--select-test-id`, `--select-text` or `--select-position`. A test id is the most durable, then text. Coordinates are right for canvases, maps and slider tracks, and wrong everywhere else. A selector survives a layout change and a coordinate does not.
 
 `swipe` names two points, so it takes the same suffixes under `--from-*` and `--to-*`.
 
@@ -55,7 +55,7 @@ appetize type 'user@example.com{Tab}hunter2{Enter}'
 appetize type '{Backspace>16/}'
 ```
 
-Typing does not focus a field — tap it first. In `type`, `{...}` names a key (`Enter`, `Tab`, `Backspace`, the arrows), `{Backspace>16/}` repeats one 16 times, and `{{` types a literal `{`.
+Typing does not focus a field, so tap it first. In `type`, `{...}` names a key (`Enter`, `Tab`, `Backspace`, the arrows), `{Backspace>16/}` repeats one 16 times, and `{{` types a literal `{`.
 
 ```bash
 appetize press home
@@ -75,7 +75,7 @@ appetize swipe --direction up --distance 0.25
 appetize swipe --direction left --from-test-id card --from-index 1
 ```
 
-Drag along a path by naming both ends — this is how you reorder a list or drop something on a target:
+Drag along a path by naming both ends. This is how you reorder a list or drop something on a target:
 
 ```bash
 appetize swipe --from-test-id card-3 --to-test-id archive-bin
@@ -92,18 +92,18 @@ appetize inspect --select-test-id home-feed --timeout 5000
 
 ## Dismiss the keyboard
 
-There is no keyboard-dismiss command, and tapping an inert element only clears focus if the app wired that up. Press the return key on iOS, and back on Android — while the keyboard is up, back dismisses it instead of navigating:
+There is no keyboard-dismiss command, and tapping an inert element only clears focus if the app wired that up. Press the return key on iOS, and back on Android. While the keyboard is up, back dismisses it instead of navigating:
 
 ```bash
 appetize type '{Enter}'   # iOS
 appetize press back       # Android
 ```
 
-Both leave you on the same screen with the field still focused. Confirm with `screenshot`, not `inspect` — the keyboard is a separate window and does not appear in the hierarchy `inspect` returns.
+Both leave you on the same screen with the field still focused. Confirm with `screenshot`, not `inspect`: the keyboard is a separate window and does not appear in the hierarchy `inspect` returns.
 
 ## Watch an agent do it
 
-A real Claude Code session driving a device with these commands. It inspects the screen to find its way in, taps by test id, types, screenshots to check the result, then stops the session — about 50 seconds end to end.
+A real Claude Code session driving a device with these commands. It inspects the screen to find its way in, taps by test id, types, screenshots to check the result, then stops the session, about 50 seconds end to end.
 
 {% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2FkIobeDpPbGhF18GYBkFf%2Fclaude-drives-device.mp4?alt=media&token=ce3af548-d744-481f-8ceb-9b3b4c8ddd33" %}
 

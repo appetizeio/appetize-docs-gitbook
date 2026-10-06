@@ -18,7 +18,7 @@ A PNG is written and its details printed:
 }
 ```
 
-The name is optional — it defaults to `screenshot` — and the extension is added for you. Take one after each meaningful step: a tap that "succeeded" only means the gesture was delivered, not that the app did what you expected.
+The name is optional (it defaults to `screenshot`) and the extension is added for you. Take one after each meaningful step: a tap that "succeeded" only means the gesture was delivered, not that the app did what you expected.
 
 ## Video
 

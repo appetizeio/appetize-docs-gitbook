@@ -1,9 +1,9 @@
 # Projects
 
-A Playwright [project](https://playwright.dev/docs/test-projects) is a named configuration your tests run under. With Appetize each project carries its own session `config`, so one project can be an iPhone and another a Pixel — running the same tests, or different ones.
+A Playwright [project](https://playwright.dev/docs/test-projects) is a named configuration your tests run under. With Appetize each project carries its own session `config`, so one project can be an iPhone and another a Pixel, running the same tests, or different ones.
 
 {% hint style="warning" %}
-A project's `config` **replaces** the one in the top-level `use`; it does not merge with it. If you set `buildId` at the top level only, any project that defines its own `config` fails to start with `Appetize buildId not set`. Give every project a complete config — the examples below share one with a spread.
+A project's `config` **replaces** the one in the top-level `use`; it does not merge with it. If you set `buildId` at the top level only, any project that defines its own `config` fails to start with `Appetize buildId not set`. Give every project a complete config; the examples below share one with a spread.
 {% endhint %}
 
 ## One app, two platforms

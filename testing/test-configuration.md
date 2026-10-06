@@ -4,7 +4,7 @@ description: Run your tests against multiple device configurations
 
 # Test Configuration
 
-The Appetize session configuration lives under `use.config` in `playwright.config.ts`. It accepts the same values you can set per session anywhere else — see the [JavaScript SDK configuration](https://docs.appetize.io/javascript-sdk/configuration) reference for the full list.
+The Appetize session configuration lives under `use.config` in `playwright.config.ts`. It accepts the same values you can set per session anywhere else. See the [JavaScript SDK configuration](https://docs.appetize.io/javascript-sdk/configuration) reference for the full list.
 
 {% code title="playwright.config.ts" %}
 ```typescript
