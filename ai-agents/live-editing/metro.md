@@ -90,9 +90,9 @@ appetize inspect --select-text '<something on the screen>'
 appetize screenshot after-edit
 ```
 
-<figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, the app is dark and titled Guess the roll. After a save, the background is yellow and the title is SAVED."><figcaption><p>One save. The background and the title both changed. No new build.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, the roll button is gold. After a save, the same button is blue. The rest of the screen is unchanged."><figcaption><p>One save. The button color changed. The rest of the screen stayed put.</p></figcaption></figure>
 
-![The code is on the left. The device is on the right. After the save, the screen turns yellow and the title becomes SAVED.](../../.gitbook/assets/metro-fast-refresh.mp4)
+![The button color in the code is on the left. The device is on the right. After the save, the button turns blue.](../../.gitbook/assets/metro-fast-refresh.mp4)
 
 Stop the session when you are done:
 
