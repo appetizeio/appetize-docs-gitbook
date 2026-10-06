@@ -79,7 +79,7 @@ The first launch can show a developer menu. Tap **Continue** if you see it.
 
 <figure><img src="../../.gitbook/assets/metro-developer-menu.png" alt="A developer menu with a Continue button over the app."><figcaption><p>Tap Continue, then close the menu.</p></figcaption></figure>
 
-`session start` prints a `viewerUrl`. Open it if you want to watch the screen.
+`session start` prints a `viewerUrl`. Open it in a window next to your editor to watch the device while you work.
 
 ## 4. Save, then look
 
