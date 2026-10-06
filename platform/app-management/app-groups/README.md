@@ -2,7 +2,7 @@
 
 An **App Group** is a named set of apps that Appetize installs together on the same device, in one session.
 
-Normally a session runs one build. A group runs up to ten, side by side on the same device, sharing the same state, so the apps can hand off to each other as they would on a real phone.
+Normally a session runs one build. A group runs up to ten, side by side on the same device, sharing the same state, so the apps can hand off to each other.
 
 ### When to use one
 
