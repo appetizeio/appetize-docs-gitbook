@@ -1,25 +1,25 @@
 ---
-description: The edit, look, and edit again loop while an agent is driving the app.
+description: Save a file while an agent is driving the app, and look at the same screen.
 hidden: true
 ---
 
 # AI live editing
 
-This is part of development, not a separate mode.
+This sits in the normal development loop.
 
-An agent already has the app open. It changes the code, looks at the screen, and changes the code again. For JavaScript and styles, that loop does not upload a new build.
+An agent has the app open. It changes JavaScript or a style, saves, and looks at the same screen. That save does not need a new build.
 
-1. A development build is on the device.
+1. A development build is already on the device.
 2. The agent edits a file and saves.
 3. The screen updates.
 4. The agent checks it, with `inspect` or a screenshot.
 5. It edits again.
 
-<figure><img src="../../.gitbook/assets/live-editing.svg" alt="A development server on your machine sends JavaScript to the app on Appetize through a connection. The CLI controls the device separately."><figcaption><p>The blue path is the code the agent just saved. The gray path is the agent looking at the device.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/live-editing.svg" alt="A development server on your machine sends JavaScript to the app on Appetize through a connection. The CLI controls the device separately."><figcaption><p>The blue path is the save. The gray path is the agent looking at the device.</p></figcaption></figure>
 
-The blue path is how the save reaches the app. Today that connection is [Metro](metro.md). The gray path is the CLI the agent is already using to drive the session.
+[Metro](metro.md) is the connection we have tried for React Native. The CLI is how the agent drives the session. It does not send the code.
 
-Use a development build of the app. Expo Go is not on the device, and a release build cannot pick up a new save.
+Use a development build of the app. Expo Go is not on the device, and a release build will not pick up the save.
 
 ## Connections
 
@@ -27,12 +27,10 @@ Use a development build of the app. Expo Go is not on the device, and a release 
 | --- | --- |
 | [Metro](metro.md) | Android and iOS. We have tried it on Android. |
 
-Add a row when another connection works. Leave it out until then.
+## When you still need a new build
 
-## When the loop needs a new build
+A native change needs one: a new native library, a change in app config, or an SDK upgrade. Upload that build, then go back to editing.
 
-A native change breaks the loop: a new native library, a change in app config, or an SDK upgrade. Upload a new build, then go back to editing.
+JavaScript and styles do not.
 
-JavaScript and styles do not need one.
-
-On Android the agent can install that build into the session it already has. On iOS it uploads the build and starts a new session. See [Sessions](../sessions.md).
+On Android the agent can install the new build into the session it already has. On iOS it uploads the build and starts a new session. See [Sessions](../sessions.md).
