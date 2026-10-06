@@ -90,9 +90,9 @@ appetize inspect --select-text '<something on the screen>'
 appetize screenshot after-edit
 ```
 
-<figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, the roll button is gold. After a save, the same button is blue. The rest of the screen is unchanged."><figcaption><p>One save. The button color changed. The rest of the screen stayed put.</p></figcaption></figure>
+![The editor is on the left and the viewer is on the right. The save swaps the plain die for an animated one. The die spins on each roll, and the score keeps counting.](../../.gitbook/assets/metro-fast-refresh.mp4)
 
-![The button color in the code is on the left. The device is on the right. After the save, the button turns blue.](../../.gitbook/assets/metro-fast-refresh.mp4)
+<figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, a plain die shows a question mark. After a save, the die is tilted mid-spin and the rounds count is 1."><figcaption><p>One save swapped in the animated die. The game kept its score.</p></figcaption></figure>
 
 Stop the session when you are done:
 
@@ -105,6 +105,7 @@ appetize session stop
 | What you see | What to try |
 | --- | --- |
 | Metro offers Expo Go | Stay on the development build. |
+| The device shows the Development Build launcher | Run `appetize open '<metro-url>'` again. The first open can arrive while the app is still starting. |
 | The device looks for `10.0.2.2:8081` | Open `<metro-url>`. That address is the emulator, not your computer. |
 | A blank screen | Wait until Metro says `Bundled`. The developer menu may be in the way. |
 | The app opens, then closes | The Android build needs `x86_64`. The iOS build needs to be a simulator `.app`, not an `.ipa`. |
