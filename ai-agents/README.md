@@ -1,13 +1,13 @@
 ---
 description: >-
-  Agentic mobile testing on real devices. Give an AI coding agent the Appetize
-  CLI and let it run, drive and debug your iOS and Android apps.
+  Agentic mobile testing on simulators. Give an AI coding agent the Appetize CLI
+  and let it run, drive and debug your iOS and Android apps.
 icon: terminal
 ---
 
 # AI Agents
 
-Agentic mobile development on real hardware: give an AI coding agent the Appetize CLI and let it drive your iOS or Android app.
+Agentic mobile development on simulators: give an AI coding agent the Appetize CLI and let it drive your iOS or Android app.
 
 The `appetize` CLI runs your iOS or Android app on an Appetize device and drives it from your terminal. Sessions are headless — no browser, no embed — so the same commands work on your machine and in CI.
 
@@ -32,7 +32,7 @@ An agent can take a whole task end to end — investigate, fix, verify, ship:
 * "Ship the new sign-up copy. Update it, check it on an iPhone 15 Pro and a Pixel 7, and put the screenshots on the PR."
 * "Onboarding regressed. Walk it, find where it breaks, fix it, and send me a recording of it working."
 
-Every step is a terminal command, so it loops on its own: change the code, re-run on a device, check the recording, repeat.
+Every step is a terminal command, so it loops on its own: change the code, re-run on a simulator, check the recording, repeat.
 
 ### Or drive it yourself
 
