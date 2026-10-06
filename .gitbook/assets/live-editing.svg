@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Live editing on Appetize</title>
+  <desc id="desc">JavaScript goes from the development server on your machine, through a connection option, to the development build on Appetize. The CLI controls that same device and does not carry the JavaScript.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2328; }
+    .label { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; fill: #656d76; }
+    .box-title { font-size: 18px; font-weight: 700; }
+    .box-sub { font-size: 14px; fill: #656d76; }
+    .arrow { font-size: 15px; font-weight: 700; }
+    .arrow-sub { font-size: 13px; fill: #656d76; }
+  </style>
+  <rect width="960" height="420" fill="#ffffff"/>
+
+  <text class="label" x="40" y="42">YOUR MACHINE</text>
+  <text class="label" x="700" y="42">APPETIZE</text>
+
+  <rect x="40" y="64" width="250" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text class="box-title" x="60" y="94">Editor</text>
+  <text class="box-sub" x="60" y="116">JavaScript and styling</text>
+
+  <rect x="40" y="164" width="250" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text class="box-title" x="60" y="194">Development server</text>
+  <text class="box-sub" x="60" y="216">Serves the running app</text>
+
+  <rect x="40" y="292" width="250" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text class="box-title" x="60" y="322">Appetize CLI</text>
+  <text class="box-sub" x="60" y="344">Session, taps, screenshots</text>
+
+  <rect x="680" y="128" width="240" height="148" rx="12" fill="#ddf4ff" stroke="#0969da"/>
+  <text class="box-title" x="700" y="176">Development build</text>
+  <text class="box-sub" x="700" y="202">Native app on the device</text>
+  <text class="box-sub" x="700" y="226">Loads JavaScript remotely</text>
+  <text class="box-sub" x="700" y="250">Keeps its screen state</text>
+
+  <path d="M164 136 V164" stroke="#d0d7de" stroke-width="2" fill="none"/>
+  <path d="M290 200 H430" stroke="#0969da" stroke-width="2.5" fill="none"/>
+  <path d="M430 200 H668" stroke="#0969da" stroke-width="2.5" fill="none" stroke-dasharray="7 6"/>
+  <path d="M656 192 L676 200 L656 208" fill="#0969da"/>
+  <text class="arrow" x="446" y="186" fill="#0969da">JavaScript</text>
+  <text class="arrow-sub" x="446" y="224">Connection option</text>
+  <text class="arrow-sub" x="446" y="244">Metro tunnel today</text>
+
+  <path d="M290 328 C460 328, 520 276, 668 250" stroke="#656d76" stroke-width="2.5" fill="none"/>
+  <path d="M656 258 L678 246 L662 238" fill="#656d76"/>
+  <text class="arrow" x="390" y="300" fill="#656d76">Control</text>
+</svg>

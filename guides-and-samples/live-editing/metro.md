@@ -6,12 +6,7 @@ description: >-
 
 # Metro
 
-Metro is one way to [live edit](README.md) an app on Appetize. Expo's tunnel makes the Metro server on your machine reachable from the cloud device. The CLI opens that URL in your development build.
-
-```text
-editor -> Metro -> Expo tunnel -> development build on Appetize
-CLI -----------------------> session, taps, and screenshots
-```
+Metro is one way to [live edit](README.md) an app on Appetize. In the diagram there, Metro's tunnel is the connection option: it makes the Metro server on your machine reachable from the cloud device. The CLI opens that URL in your development build.
 
 ## Before you start
 

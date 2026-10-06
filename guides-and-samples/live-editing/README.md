@@ -10,6 +10,8 @@ Appetize runs the native app. A development server on your machine serves its Ja
 
 The CLI starts the device and drives it. It does not serve JavaScript, and it does not open a tunnel to your development server. Each page in this section is one way to connect the device to that server.
 
+<figure><img src="../../.gitbook/assets/live-editing.svg" alt="Editor saves reach a development server on your machine. JavaScript crosses a connection option, Metro's tunnel today, into the development build on Appetize. The Appetize CLI reaches that same build with the session, taps, and screenshots, and does not carry the JavaScript."><figcaption><p>JavaScript crosses a connection option. The CLI only controls the device.</p></figcaption></figure>
+
 Use your own development build. Expo Go is not required, and Appetize devices do not include it. A release build cannot load a development server.
 
 ## Options
