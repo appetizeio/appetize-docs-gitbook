@@ -44,4 +44,3 @@ Every command the agent runs, you can run by hand. That is what makes an agent's
 * [Sessions](https://docs.appetize.io/ai-agents/sessions): lifecycle, logs and network traffic
 * [Automation](https://docs.appetize.io/ai-agents/automation): inspect the screen and act on it
 * [Screenshots and recordings](https://docs.appetize.io/ai-agents/screenshots-and-recordings): capture PNGs and MP4s
-* [Live editing](https://docs.appetize.io/guides-and-samples/live-editing): connect a development server without rebuilding. [Metro](https://docs.appetize.io/guides-and-samples/live-editing/metro) is the first option.

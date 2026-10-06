@@ -1,26 +1,19 @@
 ---
-description: >-
-  Connect an Expo development build on Appetize to a local Metro server through
-  Expo's tunnel, then apply JavaScript changes without rebuilding.
+description: Send JavaScript from Metro on your computer to an Appetize device.
+hidden: true
 ---
 
 # Metro
 
-Metro is one way to [live edit](README.md) an app on Appetize. In the diagram there, Metro's tunnel is the connection option: it makes the Metro server on your machine reachable from the cloud device. The CLI opens that URL in your development build.
+Metro is one way to [live edit](README.md). Your computer serves the JavaScript. A tunnel carries it to the device.
 
-## Before you start
+## 1. Make a development build
 
-* Node 22 or later, and `@appetize/cli`
-* `APPETIZE_API_TOKEN`, from [API tokens](../../account/api-tokens.md)
-* An Expo project with [`expo-dev-client`](https://docs.expo.dev/develop/development-builds/introduction/)
-* Android SDK on Linux, Windows, or macOS for an Android build
-* Xcode on macOS, or an EAS simulator build, for iOS
+This is your app, with the Expo development client in it. It is not Expo Go.
 
 ```bash
 npx expo install expo-dev-client
 ```
-
-The development profile builds an installable debug app and leaves JavaScript to Metro:
 
 ```json
 {
@@ -28,140 +21,72 @@ The development profile builds an installable debug app and leaves JavaScript to
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "android": {
-        "buildType": "apk"
-      },
-      "ios": {
-        "simulator": true
-      }
+      "android": { "buildType": "apk" },
+      "ios": { "simulator": true }
     }
   }
 }
 ```
 
-## Build and upload
-
-A debug build is required. A release build has no development client and cannot load Metro.
-
-### Android
-
-Appetize Android emulators run `x86_64`. Include that ABI. Limiting the build to it also keeps a React Native debug APK smaller:
+Android emulators on Appetize are `x86_64`, so include that ABI:
 
 ```bash
 npx expo prebuild --platform android
-cd android
-./gradlew assembleDebug -PreactNativeArchitectures=x86_64
-```
-
-Upload the APK and keep the build id it prints:
-
-```bash
+cd android && ./gradlew assembleDebug -PreactNativeArchitectures=x86_64
 appetize build upload ./android/app/build/outputs/apk/debug/app-debug.apk --wait
 ```
 
-See [Uploading Android apps](../../platform/app-management/uploading-apps/android.md).
-
-### iOS
-
-Appetize accepts an iOS Simulator `.app`, compressed as `.zip` or `.tar.gz`. Produce it with Xcode on macOS, or with EAS from any operating system. A Linux machine cannot compile it locally.
+iOS needs a simulator `.app`, zipped. Build it on a Mac, or with EAS from anywhere. Linux cannot build it.
 
 ```bash
 npx expo run:ios --configuration Debug
-```
-
-The built app is under the Xcode products directory, in `Debug-iphonesimulator`. Compress that `.app` and upload it:
-
-```bash
 zip -r MyApp.zip MyApp.app
 appetize build upload ./MyApp.zip --wait
 ```
 
-For EAS, set `ios.simulator` to `true` on the development profile, then run:
-
-```bash
-npx eas-cli@latest build --platform ios --profile development
-```
-
-See [Uploading iOS apps](../../platform/app-management/uploading-apps/ios.md).
-
-## Start Metro
-
-From the project, expose Metro through Expo's tunnel:
+## 2. Start Metro
 
 ```bash
 npx expo start --dev-client --tunnel
 ```
 
-If Expo reports that `@expo/ngrok` is missing, install it with `npx expo install @expo/ngrok` and run the command again.
+If Expo asks for `@expo/ngrok`, install it and run the command again. Leave Metro running. Copy the `exp+...` URL it prints.
 
-Leave this process running. Its development-client URL looks like this:
-
-```text
-exp+my-app://expo-development-client/?url=https%3A%2F%2Fxxxx.exp.direct
-```
-
-`my-app` is the Expo slug. Copy the whole `exp+` URL. It is already encoded.
-
-## Open it on the device
+## 3. Open that URL on the device
 
 ```bash
 appetize session start pixel7 b_a1b2c3
 appetize open 'exp+my-app://expo-development-client/?url=https%3A%2F%2Fxxxx.exp.direct'
 ```
 
-Use `iphone15pro`, or another id from `appetize device list`, for an iOS simulator build. Quote the URL so the shell does not split it.
+Use a simulator such as `iphone15pro` for an iOS build. Put quotes around the URL.
 
-Metro prints `Bundled` when the device has loaded the app. The development client can show its menu on the first launch. When **Continue** is visible, dismiss it:
+The first launch can show a developer menu. Tap **Continue** if you see it.
 
-```bash
-appetize tap --select-text Continue
-```
+<figure><img src="../../.gitbook/assets/metro-developer-menu.png" alt="A developer menu with a Continue button over the app."><figcaption><p>Tap Continue, then close the menu.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/metro-developer-menu.png" alt="The Expo development client menu covering the app, with a Continue button."><figcaption><p>The development client menu on first launch. Dismiss it before driving the app.</p></figcaption></figure>
+`session start` prints a `viewerUrl`. Open it if you want to watch the screen.
 
-Confirm the app itself is on screen:
+## 4. Save a file
 
-```bash
-appetize inspect --select-text 'Your screen title' --timeout 30000
-appetize screenshot app-loaded
-```
+Change some JavaScript or a style, and save. The device updates. The app stays open.
 
-`session start` also prints a local `viewerUrl`. Open that page to watch the device while you edit.
+<figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, the screen says Choose 1 to 6. After a save, that line says Live edit connected."><figcaption><p>The line under the title updated. Nothing was rebuilt.</p></figcaption></figure>
 
-## Edit
+![The same line updates on the device a few seconds after the file is saved.](../../.gitbook/assets/metro-fast-refresh.mp4)
 
-Save a JavaScript or `StyleSheet` change. Metro sends it through the same tunnel, and Fast Refresh applies it in the running app. The native process stays up, so screen state that Fast Refresh can preserve stays in place.
-
-<figure><img src="../../.gitbook/assets/metro-after-refresh.png" alt="The same roll remains on screen after the subtitle has changed."><figcaption><p>After a save, the subtitle has changed and the roll is still there.</p></figcaption></figure>
-
-![Fast Refresh updates the subtitle while the roll stays on screen.](../../.gitbook/assets/metro-fast-refresh.mp4)
+Stop the session when you are done:
 
 ```bash
-appetize screenshot after-edit
 appetize session stop
 ```
 
-Stop the session when you are finished. It holds the device until you do.
+## If nothing changes
 
-## Replace the Android build
-
-A running Android session prints `adbSerial`. You can install a new native build without starting over, then open the current Metro URL again:
-
-```bash
-adb connect 127.0.0.1:57275
-adb -s 127.0.0.1:57275 install -r ./android/app/build/outputs/apk/debug/app-debug.apk
-appetize open 'exp+my-app://expo-development-client/?url=https%3A%2F%2Fxxxx.exp.direct'
-```
-
-Use the serial from your own `session start` output. iOS has no equivalent install command. Upload the new simulator build and start a session against its build id.
-
-## Troubleshooting
-
-| What you see | What to do |
+| What you see | What to try |
 | --- | --- |
-| Metro offers Expo Go | Stay on the development build. The running app is your uploaded build, not Expo Go. |
-| The device tries `10.0.2.2:8081` and never bundles | The development client fell back to the emulator's own loopback address. Open the `exp+` tunnel URL printed by Metro. |
-| A blank white screen | Wait for Metro to print `Bundled`. Then inspect again. The development menu may be covering the app. |
-| The bundle loads, then the app closes | Confirm the APK contains `x86_64` and that the iOS upload is a simulator build, not an `.ipa`. |
-| JavaScript changes do not appear | Confirm the Metro process is still running and that its log shows a new bundle after the save. |
-| `APPETIZE_API_TOKEN must be set` | Export a token before uploading or starting a session. See [Getting started](../../ai-agents/getting-started.md). |
+| Metro offers Expo Go | Stay on the development build. |
+| The device looks for `10.0.2.2:8081` | Open the `exp+` URL from Metro. That address is the emulator, not your computer. |
+| A blank screen | Wait until Metro says `Bundled`. The developer menu may be in the way. |
+| The app opens, then closes | The Android build needs `x86_64`. The iOS build needs to be a simulator `.app`, not an `.ipa`. |
+| A save does nothing | Check that Metro is still running and that it printed a new bundle. |
