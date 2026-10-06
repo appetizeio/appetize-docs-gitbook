@@ -1,11 +1,11 @@
 ---
-description: Send JavaScript from Metro on your computer to an Appetize device.
+description: The Metro connection for the AI live editing loop.
 hidden: true
 ---
 
 # Metro
 
-Metro is one way to [live edit](README.md). Your computer serves the JavaScript. A tunnel carries it to the device.
+Metro is the connection for the [AI live editing](README.md) loop with React Native. The agent saves a file. Metro sends it to the device. The agent looks, then saves again.
 
 ## 1. Make a development build
 
@@ -67,9 +67,14 @@ The first launch can show a developer menu. Tap **Continue** if you see it.
 
 `session start` prints a `viewerUrl`. Open it if you want to watch the screen.
 
-## 4. Save a file
+## 4. Save, then look
 
-Change some JavaScript or a style, and save. The device updates. The app stays open.
+Change some JavaScript or a style, and save. The device updates. The app stays open, so the agent can check the same screen instead of starting over.
+
+```bash
+appetize inspect --select-text 'Your screen title'
+appetize screenshot after-edit
+```
 
 <figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, the screen says Choose 1 to 6. After a save, that line says Live edit connected."><figcaption><p>The line under the title updated. Nothing was rebuilt.</p></figcaption></figure>
 

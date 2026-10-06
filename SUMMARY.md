@@ -92,6 +92,8 @@
   * [Sessions](ai-agents/sessions.md)
   * [Automation](ai-agents/automation.md)
   * [Screenshots and recordings](ai-agents/screenshots-and-recordings.md)
+  * [AI live editing](ai-agents/live-editing/README.md)
+    * [Metro](ai-agents/live-editing/metro.md)
 * [Agentic Flows has moved](agentic-flows.md)
 * [REST API](rest-api/README.md)
   * ```yaml
@@ -128,8 +130,6 @@
   * [Common testing scenarios](guides-and-samples/common-testing-scenarios.md)
   * [Samples Repository](https://samples.appetize.io/)
   * [Handle session startup failures](guides-and-samples/handle-session-startup-failures.md)
-  * [Live editing](guides-and-samples/live-editing/README.md)
-    * [Metro](guides-and-samples/live-editing/metro.md)
 * [Deprecated](deprecated/README.md)
   * [Cross-document messages](deprecated/cross-document-messages.md)
 * [Changelog](changelog.md)
