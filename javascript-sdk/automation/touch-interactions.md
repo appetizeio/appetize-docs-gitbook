@@ -279,6 +279,18 @@ await session.tap({
 })
 ```
 
+### touch
+
+Sends one touch event at a time. The contact stays down until `up`, so a drag is `down`, then `move`, then `up`.
+
+`x` and `y` are fractions of the screen from 0 to 1, from the left and top edges. This method does not target an element.
+
+```javascript
+session.touch({ action: 'down', x: 0.5, y: 0.8 })
+session.touch({ action: 'move', x: 0.5, y: 0.2 })
+session.touch({ action: 'up', x: 0.5, y: 0.2 })
+```
+
 ## Timeouts
 
 Interactions that target an element will wait up to 10 seconds to find the element. You may lower these timeouts by passing a second parameter:

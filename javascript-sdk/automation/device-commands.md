@@ -74,6 +74,14 @@ await session.biometry({
 })
 ```
 
+### clearKeychain()
+
+Clears the entire device keychain (iOS only). Has no effect on Android.
+
+```typescript
+await session.clearKeychain()
+```
+
 ### end()
 
 Ends the session
