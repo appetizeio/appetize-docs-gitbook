@@ -1,36 +1,28 @@
 ---
-description: Save a file while an agent is driving the app, and look at the same screen.
+description: Save a file while the app is open, then look at the same screen.
 hidden: true
 ---
 
 # AI live editing
 
-This sits in the normal development loop.
+The app is already running. Save a file. The screen updates. Look, then save again.
 
-An agent has the app open. It changes JavaScript or a style, saves, and looks at the same screen. That save does not need a new build.
+That does not need a new build.
 
-1. A development build is already on the device.
-2. The agent edits a file and saves.
-3. The screen updates.
-4. The agent checks it, with `inspect` or a screenshot.
-5. It edits again.
+<figure><img src="../../.gitbook/assets/live-editing.svg" alt="A save goes from your editor, through a development server and a connection, to the app on Appetize. The CLI controls the device separately."><figcaption><p>The blue path is the save. The gray path is you, or an agent, driving the device.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/live-editing.svg" alt="A development server on your machine sends JavaScript to the app on Appetize through a connection. The CLI controls the device separately."><figcaption><p>The blue path is the save. The gray path is the agent looking at the device.</p></figcaption></figure>
+The save goes through a connection. [Metro](metro.md) is one, for React Native. The CLI starts the session and can tap the screen. It does not send the file.
 
-[Metro](metro.md) is the connection we have tried for React Native. The CLI is how the agent drives the session. It does not send the code.
-
-Use a development build of the app. Expo Go is not on the device, and a release build will not pick up the save.
+Use a development build. A release build will not pick up the save.
 
 ## Connections
 
-| Connection | Where it works |
+| Connection | For |
 | --- | --- |
-| [Metro](metro.md) | Android and iOS. We have tried it on Android. |
+| [Metro](metro.md) | React Native |
 
-## When you still need a new build
+## A new build
 
-A native change needs one: a new native library, a change in app config, or an SDK upgrade. Upload that build, then go back to editing.
+Upload a new build when the native app changes: a new native library, app config, or an SDK upgrade. Then keep editing.
 
-JavaScript and styles do not.
-
-On Android the agent can install the new build into the session it already has. On iOS it uploads the build and starts a new session. See [Sessions](../sessions.md).
+On Android you can install that build into the open session. On iOS, start a new session with the new build. See [Sessions](../sessions.md).
