@@ -1,58 +1,78 @@
 ---
 description: >-
-  A 20-minute call script for a self-hosted Appetize deployment. Connect the
-  CLI, drive the TODO app, run the same flow in Playwright, and keep the CI artifacts.
+  Connect to your self-hosted Appetize deployment, drive the sample TODO app
+  with the CLI, run the same checks in Playwright, and keep the test results.
 ---
 
-# Self-hosted live demo
+# Run the TODO app
 
-Send this page ahead of a call, then follow it on screen. It takes about 20 minutes and uses the public [TODO app](https://github.com/appetizeio/todo-app), a small Android app with no backend.
+Use the sample [TODO app](https://github.com/appetizeio/todo-app) to try your self-hosted deployment from your own machine. You connect the CLI, drive the app, run those checks in Playwright, and save the test results from CI.
 
-The customer sees three things, on their own deployment:
+Do the steps in order. Each step ends with what you should see. Stop there if it does not match.
 
-1. The CLI connects to their host and drives the app.
-2. A Playwright test does the same work through the `session` fixture.
-3. CI keeps two different outputs: the APK on Appetize, and the test report in the pipeline.
+You need three values:
 
-Self-hosted and Private Cloud look the same from here. Both are a dedicated deployment. The CLI and Playwright only need that deployment's URL and an API token. What changes is the hostname, and that the customer runs the host.
+| Value | What to put | Where you get it |
+| --- | --- | --- |
+| `APPETIZE_ENDPOINT` | `https://appetize.example.com` | The host you open in a browser for this deployment |
+| `APPETIZE_API_TOKEN` | `tok_…` | **Organization → API Tokens** on that same host |
+| `BUILD_ID` | the id returned when you upload | Step 2 |
 
-## Before the call
+Playwright and the CLI use this host. A self-hosted deployment does not use `appetize.io`.
 
-Do this on the deployment you will demo. A live upload or a first `npm install` is a bad use of the 20 minutes.
+## 1. Connect the CLI
 
-* Confirm the laptop and the CI runner can open the deployment over HTTPS, and that WebSockets are not blocked. A blank device usually means the socket never connected.
-* Create an API token on that deployment.
-* Upload [todo-app.apk](https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk) once, from the deployment's upload page or with the [direct file upload](../rest-api/v1/direct-file-uploads.md) call. If the environment cannot reach GitHub, upload the APK file from disk. Write down the `buildId`.
-* Install the CLI (`Node 22+`) and scaffold the Playwright project below, so both already run against that `buildId`.
-* Pick a device with `appetize device list --platform android`. The commands below use `pixel7`. Swap in an id that this deployment actually lists.
+Install [Node 22](https://nodejs.org/) or later, then install the CLI and point it at your deployment:
 
 ```bash
-export APPETIZE_ENDPOINT=https://appetize.customer.example
+npm install -g @appetize/cli
+
+export APPETIZE_ENDPOINT=https://appetize.example.com
 export APPETIZE_API_TOKEN=tok_xxxxxxxxxxxx
-```
 
-`APPETIZE_ENDPOINT` is the deployment's own URL. There is no separate discovery step. Playwright uses the same URL as `baseURL`.
-
-## 1. Show that the CLI is on their host (5 min)
-
-```bash
 appetize build list
-appetize device list --platform android
 ```
 
-The build list should contain the TODO app you uploaded. If it lists cloud apps, or the request never returns, the endpoint or the token is wrong. Fix that before starting a session.
+You should see a JSON list of the apps on your deployment. An empty list is fine if you have not uploaded one yet.
+
+If the command hangs or the connection is refused, this machine cannot reach `APPETIZE_ENDPOINT`. Check DNS, the certificate, and that HTTPS is allowed from your machine before you continue.
+
+## 2. Upload the sample app
+
+Download the APK:
 
 ```bash
-appetize session start pixel7 "$BUILD_ID" --session-id todo-demo
+curl -fsSL -o todo-app.apk \
+  https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk
 ```
 
-`session start` prints a local `viewerUrl`. Open it and leave it on screen. The page is the device, and input on it goes to the device, so you can point at what the next command does.
+Upload `todo-app.apk` from the upload page on your deployment. If that page cannot reach GitHub, upload a copy of the file you already have on disk.
 
-Progress is printed on stderr: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. On a first run, `downloadingApp` is the long one.
+Copy the build id from the app page. The upload API calls this field `publicKey`. It is the same value.
 
-## 2. Drive the app from the terminal (5 min)
+```bash
+export BUILD_ID=your_build_id
+appetize build list
+```
 
-The list is on screen. The title is `Todo`, and the button is `New task`. Seeded rows include `Open a task with a deep link`.
+You should see that id in the list. The app is the TODO app, package `io.appetize.todo`.
+
+## 3. Drive the app
+
+List the Android devices on your deployment and copy one id. The examples below use `pixel7`. Use an id your list actually prints.
+
+```bash
+appetize device list --platform android
+export DEVICE_ID=pixel7
+
+appetize session start "$DEVICE_ID" "$BUILD_ID" --session-id todo-demo
+```
+
+You should see the startup phases on screen, ending in `ready`: `requesting`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`. The first start is the slow one, because the device still has to download the APK. `queued` means every device slot is in use. Stop the other session, or wait.
+
+The command also prints a `viewerUrl` such as `http://127.0.0.1:52518/`. Open it. You should see the TODO list: the title is **Todo**, the button is **New task**, and one row says **Open a task with a deep link**.
+
+A blank page with a session that reached `ready` means WebSockets from your machine to the deployment are blocked. You can still continue. `inspect` and `screenshot` talk to the session directly.
 
 ```bash
 mkdir -p demo
@@ -65,27 +85,34 @@ appetize screenshot ./demo/task.png
 appetize recording stop
 ```
 
-Say this while it runs: the CLI is not a test framework. `inspect` is how you see the screen, a selector is how you act, and the PNG and MP4 are how you show what happened. The same commands are what an agent runs.
+You should get `demo/list.png`, `demo/task.png`, and `demo/todo.mp4`. The second screenshot is the overdue task. In the viewer, the **Overdue** filter is selected and that row is on screen.
 
-`recording start` needs the directory to exist already. `session stop` at the end of the call releases the device.
+`inspect` prints the text on screen. `tap` uses that text. The PNG and MP4 are the record of what the device showed. These are the same commands an agent runs.
 
-The session JSON also includes an `adbSerial`. That is a normal Android device for as long as the session lives:
+Stop the session before you run the tests. A deployment with one concurrent session cannot start the Playwright session while this one is still open.
 
 ```bash
-adb connect 127.0.0.1:57275
-adb shell am start -a android.intent.action.VIEW -d "todoapp://task/deeplink"
+appetize session stop
 ```
 
-Use the serial from this session, not the port in the example. `todoapp://task/deeplink` scrolls to the seeded task on a fresh install.
+## 4. Run the same checks in Playwright
 
-## 3. The same flow as a Playwright test (5 min)
+In an empty folder, create a Playwright project:
 
-`npm init @appetize/playwright@latest` in an empty folder writes a project whose fixture is `session`. Point it at the same host and build:
+```bash
+mkdir todo-tests
+cd todo-tests
+npm init @appetize/playwright@latest
+```
+
+Press Enter when it asks for a build id, and accept any device. You replace both answers in the next file. The command writes `playwright.config.ts` and `tests/app.spec.ts`.
+
+Replace `playwright.config.ts` with:
 
 {% code title="playwright.config.ts" %}
 ```typescript
 import { defineConfig } from '@playwright/test'
-import { AppetizeTestOptions } from '@appetize/playwright'
+import { type AppetizeTestOptions } from '@appetize/playwright'
 
 export default defineConfig<AppetizeTestOptions>({
     testDir: './tests',
@@ -98,7 +125,7 @@ export default defineConfig<AppetizeTestOptions>({
         trace: 'retain-on-failure',
         baseURL: process.env.APPETIZE_ENDPOINT,
         config: {
-            device: 'pixel7',
+            device: process.env.DEVICE_ID,
             buildId: process.env.BUILD_ID,
         },
     },
@@ -106,9 +133,11 @@ export default defineConfig<AppetizeTestOptions>({
 ```
 {% endcode %}
 
-`workers: 1` is one Appetize session. Extra workers queue once they pass the deployment's concurrency.
+`baseURL` is your deployment. If `APPETIZE_ENDPOINT` is unset, the tests open `https://appetize.io` instead. `workers: 1` keeps a single session. Add workers only up to the number of sessions your deployment allows.
 
-{% code title="tests/todo.spec.ts" %}
+Replace `tests/app.spec.ts` with the test below. Delete any other file in `tests/`. A leftover sample test still runs, and it looks for text this app does not have.
+
+{% code title="tests/app.spec.ts" %}
 ```typescript
 import { test, expect } from '@appetize/playwright'
 
@@ -130,45 +159,86 @@ test('a deep link opens a seeded task', async ({ session }) => {
 ```
 {% endcode %}
 
-Tasks persist inside a session, so `reinstallApp` puts the next test back on a fresh install. Run it headed when you want the device on screen:
+`session` is the device, in the same way `page` is the browser in a normal Playwright test. `openUrl` sends `todoapp://task/deeplink`, which this app handles by scrolling to a seeded row. Tasks stay on the device after a test, so `reinstallApp` gives the next test a fresh install.
+
+`APPETIZE_ENDPOINT`, `BUILD_ID`, and `DEVICE_ID` still need to be exported in this terminal. Then run:
 
 ```bash
 npx playwright test --headed
 ```
 
-A failure writes three attachments into `test-results/`: a screenshot, the UI hierarchy, and the session record. Open the trace with:
+You should see two passing tests. With `--headed`, the device is on screen while they run. Drop `--headed` when you want the same run without a window.
+
+Open the report:
+
+```bash
+npx playwright show-report
+```
+
+A failure writes `test-results/<test-name>/`. That folder holds a screenshot of the device, a JSON file of every element on screen, and the session record. Open the trace with:
 
 ```bash
 npx playwright show-trace test-results/<test-name>/trace.zip
 ```
 
-The hierarchy is the one to open on the call. It is the list of text actually on screen, which is what you match next. Traces include the session token. Treat them as private once the app is the customer's.
+Read the UI attachment first. It is the text that was actually on screen, which is the text the next selector should use. The trace also contains the session token, so keep the report private.
 
-## 4. Where the two artifacts go (5 min)
+## 5. Keep the results in CI
 
-Walk this job from top to bottom. Do not run it live unless the runner is already able to reach the deployment.
+Run the same project from a workflow. The job runner has to reach your deployment, the same way your machine did in step 1.
+
+Store these as secrets:
+
+| Secret | Value |
+| --- | --- |
+| `APPETIZE_ENDPOINT` | The host from step 1 |
+| `APPETIZE_API_TOKEN` | The token from step 1 |
+| `APPETIZE_API_ORIGIN` | The API host for your installation. Cloud docs use `https://api.appetize.io`. Use the host for your installation. |
+| `BUILD_ID` | The build id from step 2 |
+| `DEVICE_ID` | The device id from step 3 |
+
+This workflow does two different uploads. The `curl` step sends a new APK to your deployment and keeps the same `BUILD_ID`. The last step uploads the Playwright report to the CI run, so you can download it when a test fails.
+
+The Playwright files from step 4 are the repository root in this example: `playwright.config.ts`, `tests/app.spec.ts`, `package.json`, and `package-lock.json`.
 
 ```yaml
+name: todo
+
+on:
+  workflow_dispatch:
+
 jobs:
-  todo:
+  test:
     runs-on: ubuntu-latest
+    env:
+      APPETIZE_ENDPOINT: ${{ secrets.APPETIZE_ENDPOINT }}
+      APPETIZE_API_TOKEN: ${{ secrets.APPETIZE_API_TOKEN }}
+      APPETIZE_API_ORIGIN: ${{ secrets.APPETIZE_API_ORIGIN }}
+      BUILD_ID: ${{ secrets.BUILD_ID }}
+      DEVICE_ID: ${{ secrets.DEVICE_ID }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Upload the APK to Appetize
-        env:
-          APPETIZE_API_TOKEN: ${{ secrets.APPETIZE_API_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+
+      - name: Download the sample APK
+        run: |
+          curl -fsSL -o todo-app.apk \
+            https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk
+
+      - name: Update the app on your deployment
         run: |
           curl -fsS -X POST "$APPETIZE_API_ORIGIN/v1/apps/$BUILD_ID" \
             -H "X-API-KEY: $APPETIZE_API_TOKEN" \
-            -F "file=@app-release.apk" \
+            -F "file=@todo-app.apk" \
             -F "platform=android"
 
-      - name: Run Playwright
-        env:
-          APPETIZE_ENDPOINT: ${{ secrets.APPETIZE_ENDPOINT }}
-          APPETIZE_API_TOKEN: ${{ secrets.APPETIZE_API_TOKEN }}
-          BUILD_ID: ${{ secrets.BUILD_ID }}
+      - name: Run tests
         run: npx playwright test
 
       - name: Upload the test report
@@ -181,30 +251,20 @@ jobs:
             test-results/
 ```
 
-Two uploads, two places:
+After a run, open the job and download **playwright-results**. `playwright-report/` is the HTML report. `test-results/` holds the traces and the per-test screenshot, UI hierarchy, and session record.
 
-| Output | Where it goes | What it is for |
-| --- | --- | --- |
-| APK | The deployment, addressed by `buildId` | The app under test. Updating it is how the next run picks up a new build. |
-| `playwright-report/` and `test-results/` | The CI run, as a job artifact | The HTML report, traces, screenshots, UI hierarchy, and session record. Download these when a test fails. |
+The APK is the app under test. The report is how you tell what the test saw. Updating the APK does not store the report, and uploading the report does not change the app.
 
-The public [direct upload](../rest-api/v1/direct-file-uploads.md) examples call `https://api.appetize.io`. On a self-hosted deployment, `$APPETIZE_API_ORIGIN` is the API origin you were given for that install. It is not `api.appetize.io`.
+If the runner cannot download from GitHub, build the APK in the job, or pass in an APK you already produced, and point the `curl` upload at that file. The [direct file upload](../rest-api/v1/direct-file-uploads.md) reference uses the same request against `https://api.appetize.io`.
 
-`$BUILD_ID` in the `curl` line updates the app you already uploaded. A first upload is `POST` to `/v1/apps` with no id, and the response is the `buildId` you then store as a secret.
+## When a step does not match
 
-## If the call stalls
-
-| What you see | What to say |
+| What you see | What to check |
 | --- | --- |
-| `build list` hangs or refuses the connection | The runner cannot reach `APPETIZE_ENDPOINT`. Check DNS, TLS, and the firewall before retrying the demo. |
-| Viewer stays blank | The streaming socket is blocked. The session can still be healthy. `inspect` and `screenshot` do not need the viewer. |
-| stderr sits on `queued` | The deployment is at its concurrency limit. Stop the other session, or wait. |
-| `Element not found` | The row is off screen. `inspect` again, or `swipe --direction up`, then tap the text it prints. |
-| Deep link does nothing | The install is not fresh, or another app claimed the scheme. `reinstallApp` in Playwright, or a new session for the CLI. |
-
-## Leave this with them
-
-* This page.
-* The [TODO app](https://github.com/appetizeio/todo-app), including the deep-link table in its README.
-* [CLI getting started](../ai-agents/getting-started.md) and [Playwright getting started](../testing/getting-started.md).
-* The `buildId`, the endpoint, and where the API token is stored. Those three are the whole connection.
+| `build list` hangs or the connection is refused | DNS, the certificate, and HTTPS from this machine to `APPETIZE_ENDPOINT`. |
+| The viewer stays blank after `ready` | WebSockets from this machine to the deployment. `inspect` and `screenshot` still work. |
+| The log stays on `queued` | Another session is using the only free device. Run `appetize session stop`, then start again. |
+| `Element not found` | The row is off screen. Run `appetize inspect` again, or `appetize swipe --direction up`, and tap the text it prints. |
+| The deep link test does not show the seeded task | The app was already installed with older data. `reinstallApp` in the test puts the next run on a fresh install. |
+| Playwright opens `appetize.io` | `APPETIZE_ENDPOINT` was empty, so `baseURL` fell back to the cloud. Export it in the same terminal. |
+| The Playwright session never starts | The CLI session from step 3 is still open, or `BUILD_ID` is empty. |

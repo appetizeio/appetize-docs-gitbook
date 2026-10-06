@@ -126,7 +126,7 @@
   * [Lock Your Device to One App](guides-and-samples/lock-your-device-to-one-app.md)
   * [Test Accessibility Font Sizes](guides-and-samples/test-accessibility-font-sizes.md)
   * [Common testing scenarios](guides-and-samples/common-testing-scenarios.md)
-  * [Self-hosted live demo](guides-and-samples/self-hosted-live-demo.md)
+  * [Run the TODO app](guides-and-samples/self-hosted-live-demo.md)
   * [Samples Repository](https://samples.appetize.io/)
   * [Handle session startup failures](guides-and-samples/handle-session-startup-failures.md)
 * [Deprecated](deprecated/README.md)

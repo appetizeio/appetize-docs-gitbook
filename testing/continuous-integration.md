@@ -21,4 +21,4 @@ That archive is the HTML report, traces, screenshots, UI hierarchy, and session 
 
 Open a downloaded trace with `npx playwright show-trace`. See [Trace Viewer](trace-viewer.md).
 
-The [self-hosted live demo](../guides-and-samples/self-hosted-live-demo.md) walks the whole path on a call: upload the TODO app, drive it from the CLI, run it as a Playwright test, and keep both artifacts.
+[Run the TODO app](../guides-and-samples/self-hosted-live-demo.md) is a full walkthrough: upload the sample app to your deployment, drive it from the CLI, run it as a Playwright test, and keep the report.
