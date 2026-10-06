@@ -6,7 +6,7 @@ App Groups live on the [Apps](https://appetize.io/apps) page, under the **App Gr
 
 1. Select **Add Group**.
 2. Give the group a name.
-3. Choose its platform — iOS or Android.
+3. Choose its platform: iOS or Android.
 
 A group is fixed to one platform, so an iOS group can only ever hold iOS apps. If you need the same set of apps on both platforms, create one group per platform.
 
@@ -26,12 +26,12 @@ Each app you add is listed with a build filter, set to **Latest Build** by defau
 
 ### Choose which build each app uses
 
-**Latest Build** means the group always resolves to the newest build of that app at the moment a session starts, so a group keeps working as your team uploads new builds — you do not have to touch the group after every upload.
+**Latest Build** means the group always resolves to the newest build of that app at the moment a session starts, so a group keeps working as your team uploads new builds. You do not have to touch the group after every upload.
 
 To pin something more specific, open the build dropdown next to the app. You can narrow by:
 
-* **Version** — latest, or a specific version
-* **Tag** — any tag you apply at upload time
+* **Version:** latest, or a specific version
+* **Tag:** any tag you apply at upload time
 
 and then **Choose Build** to select an exact build.
 
@@ -45,6 +45,6 @@ Select the bin icon next to the app and confirm.
 
 ### When a filter stops resolving
 
-A filter can stop matching — the build it pinned was deleted, or no build carries the tag any more. The group shows this against the app, and you can adjust the filter to match a build again.
+A filter can stop matching: the build it pinned was deleted, or no build carries the tag any more. The group shows this against the app, and you can adjust the filter to match a build again.
 
 Resolve it before you rely on the group: a group whose filter matches nothing cannot install that app, and the session will start without it.

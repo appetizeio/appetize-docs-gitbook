@@ -8,8 +8,8 @@ appetize session start <device-id> <target>
 
 | Argument      | What it is                                                                                                                                                          |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<device-id>` | A device model — `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
-| `<target>`    | A **buildId** — the `id` from `appetize build list`. Previously called publicKey; see [Running apps](https://docs.appetize.io/platform/app-management/running-apps) |
+| `<device-id>` | A device model: `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
+| `<target>`    | A **buildId**: the `id` from `appetize build list`. Previously called publicKey; see [Running apps](https://docs.appetize.io/platform/app-management/running-apps) |
 
 ```bash
 appetize session start iphone15pro b_a1b2c3 --device-os-version 18.2
@@ -17,13 +17,13 @@ appetize session start pixel7 b_a1b2c3 --session-id checkout
 appetize session start pixel7 b_a1b2c3 --no-wait
 ```
 
-Save the session record while you watch it boot — the record goes to stdout, the progress to stderr:
+Save the session record while you watch it boot. The record goes to stdout, the progress to stderr:
 
 ```bash
 appetize session start pixel7 b_a1b2c3 > session.json
 ```
 
-Phases arrive on stderr in this order: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. Not every session shows all of them — `queued` appears only when you are waiting (for a free device, or for an account concurrency limit to clear) and `downloadingApp` only when the build still has to be fetched. A slow start tells you which of those you are waiting on.
+Phases arrive on stderr in this order: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. Not every session shows all of them. `queued` appears only when you are waiting (for a free device, or for an account concurrency limit to clear) and `downloadingApp` only when the build still has to be fetched. A slow start tells you which of those you are waiting on.
 
 `--no-wait` skips the blocking and returns the session id straight away.
 
@@ -38,7 +38,7 @@ Every session serves a small viewer page on your machine. `session start` prints
 }
 ```
 
-Open it in a browser and you see the device screen, live, while the agent works. The page is only the screen — no logs, no controls, no session details.
+Open it in a browser and you see the device screen, live, while the agent works. The page is only the screen: no logs, no controls, no session details.
 
 It is not read-only. Click and type on the page and the input goes to the device, so you can take over mid-run, fix something by hand, and let the agent carry on. One pointer at a time, and the screen needs focus before typing, so click it first.
 
@@ -49,9 +49,9 @@ No authentication: anyone with access to the machine can open that port and driv
 A few details worth knowing:
 
 * The port is assigned by the OS each run and cannot be set.
-* **One viewer at a time.** Opening the same session in a second tab leaves that tab blank — reload the first one instead.
+* **One viewer at a time.** Opening the same session in a second tab leaves that tab blank. Reload the first one instead.
 * Closing the tab does not affect the session, and the viewer closes with `session stop`.
-* With `--no-wait`, `session start` returns before the URL is known — read it from the session record instead.
+* With `--no-wait`, `session start` returns before the URL is known. Read it from the session record instead.
 
 Available since `@appetize/cli` 0.16.0.
 
@@ -92,7 +92,7 @@ jq -r 'select(.type == "response") | "\(.response.status) \(.request.method) \(.
   ~/.appetize/cli/sessions/checkout/network.jsonl
 ```
 
-Pass a url instead — `--proxy http://proxy:8080` — to route through a proxy of your own. That routes traffic without intercepting it, so nothing is captured.
+Pass a url instead (`--proxy http://proxy:8080`) to route through a proxy of your own. That routes traffic without intercepting it, so nothing is captured.
 
 {% hint style="info" %}
 Interception rewrites TLS, so an app that pins certificates may not work under it. Retry without `--proxy` if calls fail only when it is on.

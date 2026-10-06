@@ -20,7 +20,7 @@ Every test in a suite runs serially on the **same** Appetize session, for as lon
 
 A **new session** starts whenever that configuration changes. Each [project](https://docs.appetize.io/testing/projects) has its own config, so a second device or OS version means a second session; so does `test.use({ config })` inside a suite. A failing test also ends its session, and the next suite requests a new one.
 
-`workers` controls how many of those sessions run at once — **each worker holds one Appetize session**, so `workers` is effectively your concurrent session count. Projects created by `npm init @appetize/playwright` start at `workers: 1`.
+`workers` controls how many of those sessions run at once. **Each worker holds one Appetize session**, so `workers` is effectively your concurrent session count. Projects created by `npm init @appetize/playwright` start at `workers: 1`.
 
 {% code title="playwright.config.ts" %}
 ```typescript

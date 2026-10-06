@@ -47,7 +47,7 @@ The Playwright integration with Appetize provides a unified testing solution fam
 
 #### Inspector Mode
 
-Inspector Mode overlays the running app with its UI hierarchy. Hover or tap any element to see its attributes — text, `resource-id`, `class`, bounds, and whether it is clickable, enabled or scrollable — so you can pick a selector that matches what is actually on screen.
+Inspector Mode overlays the running app with its UI hierarchy. Hover or tap any element to see its attributes (text, `resource-id`, `class`, bounds, and whether it is clickable, enabled or scrollable), so you can pick a selector that matches what is actually on screen.
 
 Turn it on with **Inspect**, in the Automation Recorder tab of the Developer Tools panel, while a session is running.
 

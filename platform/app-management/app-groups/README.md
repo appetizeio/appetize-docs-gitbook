@@ -2,16 +2,16 @@
 
 An **App Group** is a named set of apps that Appetize installs together on the same device, in one session.
 
-Normally a session runs one build. A group runs up to ten, side by side on the same device, sharing the same state — so the apps can hand off to each other as they would on a real phone.
+Normally a session runs one build. A group runs up to ten, side by side on the same device, sharing the same state, so the apps can hand off to each other.
 
 ### When to use one
 
 * **A companion app alongside the app under test.** A small internal app that mints a token, seeds data or switches environment, next to the real app. This is the usual way to do [impersonation](https://docs.appetize.io/guides-and-samples/impersonation) without building the feature into your production app.
-* **App-to-app flows.** Deep links, OAuth handoffs, share sheets, "open in" — anything where the interesting behaviour is one app calling another.
+* **App-to-app flows.** Deep links, OAuth handoffs, share sheets, "open in": anything where the interesting behaviour is one app calling another.
 * **A suite in one demo.** Several products from the same family on one device, so a prospect or a new hire can move between them without restarting a session.
 * **A main app plus a debug tool.** A log viewer, a mock server UI or a QA harness that has to be on the device with the app, not beside it in a browser tab.
 
-If your apps never talk to each other, you do not need a group — run separate sessions.
+If your apps never talk to each other, you do not need a group. Run separate sessions.
 
 ### How a group works
 
@@ -27,7 +27,7 @@ Four things follow from that:
 ### What launches
 
 {% hint style="warning" %}
-A group of **two or more** apps does not launch anything. The session opens on the device home screen with every app installed, and you tap in — or tell Appetize what to launch.
+A group of **two or more** apps does not launch anything. The session opens on the device home screen with every app installed, and you tap in, or tell Appetize what to launch.
 {% endhint %}
 
 This surprises people, because a group holding a **single** app does auto-launch it. Set [`launchApp`](https://docs.appetize.io/platform/query-params-reference) to pick a starting app:
@@ -46,7 +46,7 @@ On **Android**, a `launchUrl` goes to whichever app finished installing first, w
 
 ### Using a group
 
-A group has an id of the form `ag_…`, shown as **Group ID** on the group's page. It works anywhere a build id works — an app link, an [embed](https://docs.appetize.io/platform/embedding-apps), a [share link](https://docs.appetize.io/platform/sharing-apps), the [JavaScript SDK](https://docs.appetize.io/javascript-sdk) `buildId`, and the CLI:
+A group has an id of the form `ag_…`, shown as **Group ID** on the group's page. It works anywhere a build id works: an app link, an [embed](https://docs.appetize.io/platform/embedding-apps), a [share link](https://docs.appetize.io/platform/sharing-apps), the [JavaScript SDK](https://docs.appetize.io/javascript-sdk) `buildId`, and the CLI:
 
 ```bash
 appetize session start pixel7 ag_...
@@ -56,4 +56,4 @@ Groups are created and edited in the dashboard or through the **v2 API** (`/v2/a
 
 ### Next steps
 
-* [Creating a group](https://docs.appetize.io/platform/app-management/app-groups/creating-a-group) — build it and choose which build each app uses
+* [Creating a group](https://docs.appetize.io/platform/app-management/app-groups/creating-a-group): build it and choose which build each app uses
