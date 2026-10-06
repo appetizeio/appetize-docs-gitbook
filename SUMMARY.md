@@ -128,6 +128,7 @@
   * [Common testing scenarios](guides-and-samples/common-testing-scenarios.md)
   * [Samples Repository](https://samples.appetize.io/)
   * [Handle session startup failures](guides-and-samples/handle-session-startup-failures.md)
+  * [Live edit a React Native app](guides-and-samples/live-edit-a-react-native-app.md)
 * [Deprecated](deprecated/README.md)
   * [Cross-document messages](deprecated/cross-document-messages.md)
 * [Changelog](changelog.md)

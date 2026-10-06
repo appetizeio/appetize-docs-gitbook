@@ -44,3 +44,4 @@ Every command the agent runs, you can run by hand. That is what makes an agent's
 * [Sessions](https://docs.appetize.io/ai-agents/sessions): lifecycle, logs and network traffic
 * [Automation](https://docs.appetize.io/ai-agents/automation): inspect the screen and act on it
 * [Screenshots and recordings](https://docs.appetize.io/ai-agents/screenshots-and-recordings): capture PNGs and MP4s
+* [Live edit a React Native app](https://docs.appetize.io/guides-and-samples/live-edit-a-react-native-app): connect Metro to a development build and apply JavaScript changes without rebuilding
