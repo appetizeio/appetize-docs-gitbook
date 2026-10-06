@@ -13,4 +13,4 @@ icon: book-open
 
 For additional samples with source code, visit our [Sample Repository](https://samples.appetize.io/).
 
-See [Live edit a React Native app](live-edit-a-react-native-app.md) to connect a local Metro server to a development build.
+See [Live editing](live-editing/README.md). [Metro](live-editing/metro.md) is the first way to connect a development server.
