@@ -61,6 +61,8 @@ appetize session stop
 
 `session start` prints the session as JSON: the id, the streaming host and the log paths. Everything after it acts on that session, so there is no id to pass. For anything not shown here, `appetize --help` lists every command and `appetize <command> --help` prints its flags and examples.
 
+To drive an app and keep the screenshot, follow [Test an app with the CLI](../guides-and-samples/test-with-the-cli.md).
+
 ### Environment variables
 
 | Variable             | Values          | Meaning                                          |

@@ -1,0 +1,22 @@
+{
+  "platform": "android",
+  "root": {
+    "attributes": {
+      "checked": false,
+      "class": "android.widget.TextView",
+      "clickable": false,
+      "enabled": true,
+      "focused": false,
+      "scrollable": false,
+      "selected": false,
+      "text": "Open a task with a deep link"
+    },
+    "bounds": {
+      "height": 63,
+      "width": 557,
+      "x": 168,
+      "y": 771
+    },
+    "children": []
+  }
+}
