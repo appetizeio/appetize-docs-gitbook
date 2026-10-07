@@ -248,6 +248,14 @@ Sets the biometry enrollment status (_iOS Only_)
 await session.biometryEnrollment(true/false)
 ```
 
+### clearKeychain()
+
+Clears the entire device keychain, including items that belong to other apps (_iOS Only_). Has no effect on Android.
+
+```typescript
+await session.clearKeychain()
+```
+
 ### biometry(match)
 
 Simulate a matching fingerprint (Android 8+ only) or Face ID (iOS)
