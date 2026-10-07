@@ -121,4 +121,4 @@ The agent only runs CLI commands, so you can run the same steps yourself. Each c
 | `appetize swipe --direction up` | `session.swipe({ position: { x: '50%', y: '50%' }, gesture: 'up' })` |
 | `appetize inspect --select-text 'Buy milk'` | `expect(session).toHaveElement({ attributes: { text: 'Buy milk' } })` |
 
-See [AI Agents](../ai-agents/README.md) for every CLI command.
+To list every command, run `appetize --help`. To see the flags and examples for one command, add `--help` to it, for example `appetize tap --help`. The [AI Agents](../ai-agents/README.md) docs cover the CLI in more detail.
