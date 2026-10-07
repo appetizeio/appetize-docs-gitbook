@@ -6,35 +6,32 @@ description: >-
 
 # Have an agent write Playwright tests
 
-A coding agent can write your mobile tests. With the Appetize CLI, it runs your app on a device, finds what it can select on each screen, and tries every step. Then it writes the Playwright tests and runs them until they pass.
+A coding agent can write your mobile tests. You create an API token. The agent installs the CLI, uploads the app, finds what it can select on each screen, and writes the Playwright tests.
 
 This example uses the [TODO app](https://github.com/appetizeio/todo-app) and ends with three passing tests. It works with Claude Code, Codex, Copilot, Cursor, and any other agent that runs terminal commands.
 
-{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2Fgit-blob-3a7d37ba12c2fb4e512bc23a5069fa91894defb1%2Fagent-writes-playwright-tests-v6.mp4?alt=media" %}
+![](../.gitbook/assets/agent-writes-playwright-tests-v7.mp4)
 
 The agent is on the left. The device, the code, and the passing tests are on the right.
 
-## 1. Set up
+## 1. Create a token
 
-Install Node 22 or later. Then create an empty folder for the tests:
+The agent can install the tools and build the project. It cannot create your API token.
+
+Node 22 or later needs to be available. Create a token under **Organization → API Tokens**, then export it in the environment your agent uses:
 
 ```bash
-mkdir todo-tests
-cd todo-tests
-
-npm install -g @appetize/cli
 export APPETIZE_API_TOKEN=tok_xxxxxxxxxxxx
-appetize skill install
 ```
 
-Create the token under **Organization → API Tokens**. If your Appetize URL is not `https://appetize.io`, also set `APPETIZE_ENDPOINT` to that URL.
-
-`skill install` teaches your coding agent how to start a device, inspect the screen, act through selectors, and verify the result. The agent handles the remaining project setup.
+If your Appetize URL is not `https://appetize.io`, also set `APPETIZE_ENDPOINT` to that URL.
 
 ## 2. Ask your agent
 
-Open your agent in that folder and give it the task:
+Open an empty folder in your agent and give it the task:
 
+> Install the Appetize CLI with `npm install -g @appetize/cli`, then run `appetize skill install`.
+>
 > Set up a new mobile Playwright project in this folder with `npm init @appetize/playwright@latest`. If the scaffold asks for a build id or device, accept the defaults for now.
 >
 > Download the TODO APK from `https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk`. Upload it with `appetize build upload ./todo-app.apk --wait`.
@@ -53,7 +50,7 @@ Open the `viewerUrl` the agent prints to watch the device while it works.
 
 ## 3. What the agent does
 
-1. Creates the Playwright project, uploads the APK, and puts the returned build id in the configuration.
+1. Installs the CLI and its skill, creates the Playwright project, uploads the APK, and puts the returned build id in the configuration.
 2. Starts a device and inspects each screen to find selectors and app state it can assert.
 3. Confirms each requested flow on the device, translates it into a Playwright test, and runs the suite.
 
