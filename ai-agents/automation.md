@@ -107,7 +107,7 @@ Single-quote the gesture. Double taps need `{wait=100}` between taps; Android dr
 appetize inspect --select-test-id home-feed --timeout 5000
 ```
 
-`--timeout` waits for the element and exits non-zero if it never appears, which makes it a wait primitive: it returns the moment the element is there, and fails clearly when it isn't. Every command that selects an element takes it. Sleeping guesses, and guesses are either slow or flaky.
+`--timeout` waits for the element and fails if it never appears. This is a faster and more reliable way to wait for a condition than using a sleep.
 
 ## Dismiss the keyboard
 
