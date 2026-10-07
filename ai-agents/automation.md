@@ -99,7 +99,7 @@ appetize gesture '{byText="Row 3"}>{wait=500}{byText="Row 1"}/'  # hold, then dr
 appetize gesture '{0.5,0.8}>{0.5,0.6}{0.8,0.6}{0.8,0.2}/'        # path
 ```
 
-Single-quote the gesture. Double taps need `{wait=100}` between taps. `appetize gesture --help` lists the full syntax and more examples.
+Single-quote the gesture. Double taps need `{wait=100}` between taps; Android drops faster ones. `appetize gesture --help` lists the full syntax and more examples.
 
 ## Wait for an element, don't sleep
 
@@ -107,7 +107,7 @@ Single-quote the gesture. Double taps need `{wait=100}` between taps. `appetize 
 appetize inspect --select-test-id home-feed --timeout 5000
 ```
 
-`--timeout` waits for the element and exits non-zero if it never appears, which makes it a wait primitive: it returns the moment the element is there, and fails clearly when it isn't. `tap`, `swipe` and `gesture` take it too. Sleeping guesses, and guesses are either slow or flaky.
+`--timeout` waits for the element and exits non-zero if it never appears, which makes it a wait primitive: it returns the moment the element is there, and fails clearly when it isn't. Every command that selects an element takes it. Sleeping guesses, and guesses are either slow or flaky.
 
 ## Dismiss the keyboard
 
