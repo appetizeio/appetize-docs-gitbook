@@ -41,7 +41,7 @@ Set `baseURL` to your Appetize URL when it is not `https://appetize.io`.
 
 ## 2. Add your tests
 
-Tests use the `session` fixture, which is the device. If you do not have tests yet, [Write Playwright tests with the CLI](../guides-and-samples/test-with-the-cli.md) builds three for the TODO app. Commit `playwright.config.ts`, `tests/`, `package.json`, and `package-lock.json`.
+Tests use the `session` fixture, which is the device. If you do not have tests yet, [Have an agent write Playwright tests](../guides-and-samples/test-with-the-cli.md) creates three for the TODO app. Commit `playwright.config.ts`, `tests/`, `package.json`, and `package-lock.json`.
 
 ## 3. Run the job and upload the report
 

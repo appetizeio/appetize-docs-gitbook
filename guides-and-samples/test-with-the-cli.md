@@ -1,74 +1,70 @@
 ---
 description: >-
-  Use the Appetize CLI to explore your app on a device, find selectors that
-  work, and turn them into Playwright tests.
+  Give a coding agent the Appetize CLI and have it explore your app on a
+  device, then write and run Playwright tests that pass.
 ---
 
-# Write Playwright tests with the CLI
+# Have an agent write Playwright tests
 
-Writing a mobile test is mostly finding what you can select on each screen. The CLI does that from your terminal. You start a device, inspect the screen, and try each step. Once a step works, copy it into a Playwright test.
+A coding agent can write your mobile tests. With the Appetize CLI, it runs your app on a device, finds what it can select on each screen, and tries every step. Then it writes the Playwright tests and runs them until they pass.
 
-This example uses the [TODO app](https://github.com/appetizeio/todo-app). It ends with three passing tests.
+This example uses the [TODO app](https://github.com/appetizeio/todo-app) and ends with three passing tests. It works with Claude Code, Codex, Copilot, Cursor, and any other agent that runs terminal commands.
 
 ## 1. Set up
 
-Node 22 or later.
+Node 22 or later. In a new folder:
 
 ```bash
 npm install -g @appetize/cli
 export APPETIZE_API_TOKEN=tok_xxxxxxxxxxxx
 
+npm init @appetize/playwright@latest
+appetize skill install
+```
+
+Create the token under **Organization → API Tokens**. If your Appetize URL is not `https://appetize.io`, also set `APPETIZE_ENDPOINT` to that URL.
+
+`npm init @appetize/playwright` creates the Playwright project. Press Enter at the build id prompt. You will set it in the next step. `skill install` teaches your agent the CLI.
+
+Upload the app:
+
+```bash
 curl -fsSL -o todo-app.apk \
   https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk
 appetize build upload ./todo-app.apk --wait
 ```
 
-Create the token under **Organization → API Tokens**. `build upload` prints an `id`. That is your build id.
+Copy the `id` it prints. That is your build id.
 
-If your Appetize URL is not `https://appetize.io`, also set `APPETIZE_ENDPOINT` to that URL.
+## 2. Ask your agent
 
-## 2. Explore the app
+Open your agent in that folder and give it the task:
 
-```bash
-appetize session start pixel7 YOUR_BUILD_ID
-appetize inspect
-```
+> Use the appetize CLI to explore build `YOUR_BUILD_ID` on a Pixel 7. Then write Playwright tests in `tests/` with `@appetize/playwright` for:
+>
+> - the Overdue filter shows overdue tasks
+> - `todoapp://task/deeplink` opens the seeded task
+> - `todoapp://new?title=Buy%20milk` adds a task
+>
+> Set the build id in `playwright.config.ts`. Try every step with the CLI before you write it. Run `npx playwright test` and fix the tests until they pass. Use https://docs.appetize.io/testing/writing-tests for the test API.
 
-`session start` prints a `viewerUrl`. Open it to watch the device. If the app opens on a welcome screen, run `appetize tap --select-text 'Skip'` and inspect again.
+Open the `viewerUrl` the agent prints to watch the device while it works.
 
-`inspect` writes `inspect.json`, the elements on screen right now. Read it for the text you can match. On the TODO list you will find `Todo`, `9 left`, the filters `All`, `Active`, `Overdue`, `Done`, and each task title.
+## 3. What the agent does
 
-Some things on screen are not in the tree. **New task** is visible, but it is not in `inspect.json`, so no test can tap it. The app has a deep link that adds a task instead, so the test uses that.
+1. Starts a device with `appetize session start` and runs `appetize inspect` to read what is on screen.
+2. Tries each step with `appetize tap` and `appetize open`, and checks the result with `inspect`.
+3. Writes the tests from the steps that worked, then runs them.
 
-## 3. Try each step
+Trying each step first is what makes the tests pass. On the TODO app, the agent finds:
 
-Run every step with the CLI before you write it down:
+- A fresh install opens a welcome screen, and deep links do nothing while it is up. The tests tap **Skip** first.
+- **New task** is visible but missing from the UI tree, so no test can tap it. The `todoapp://new` deep link adds the task instead.
+- The new task is added off screen at the bottom of the list. The test swipes up before it checks for it.
 
-```bash
-appetize tap --select-text 'Overdue'
-appetize inspect --select-text 'Open a task with a deep link'
+## 4. What you get
 
-appetize open 'todoapp://new?title=Buy%20milk'
-appetize inspect --select-text '10 left'
-
-appetize session stop
-```
-
-A step works when `inspect` finds the element you expect. If it says the element was not found, run `appetize inspect` without a selector and look for the text it actually shows.
-
-The new task is added at the end of the list, off screen. That is why the check uses the `10 left` counter, not the task title.
-
-## 4. Write the tests
-
-Each CLI command has a Playwright equivalent:
-
-| CLI | Playwright |
-| --- | --- |
-| `appetize tap --select-text 'Overdue'` | `session.tap({ element: { attributes: { text: 'Overdue' } } })` |
-| `appetize open 'todoapp://…'` | `session.openUrl('todoapp://…')` |
-| `appetize inspect --select-text '10 left'` | `expect(session).toHaveElement({ attributes: { text: '10 left' } })` |
-
-In a new folder, run `npm init @appetize/playwright@latest` and enter your build id. Then replace `tests/app.spec.ts`:
+This is the file an agent wrote from the prompt above:
 
 {% code title="tests/app.spec.ts" %}
 ```typescript
@@ -79,48 +75,73 @@ test.afterEach(async ({ session }) => {
 })
 
 test.beforeEach(async ({ session }) => {
-    const skip = await session.findElements({ attributes: { text: 'Skip' } }, { timeout: 5000 })
-    if (skip.length) await session.tap({ element: { attributes: { text: 'Skip' } } })
-    await expect(session).toHaveElement({ attributes: { text: 'Todo' } })
+    const skip = await session.findElements(
+        { attributes: { text: 'Skip' } },
+        { timeout: 5000 }
+    )
+    if (skip.length) {
+        await session.tap({ element: { attributes: { text: 'Skip' } } })
+    }
 })
 
-test('the Overdue filter shows overdue tasks', async ({ session }) => {
+test('Overdue filter shows overdue tasks', async ({ session }) => {
     await session.tap({ element: { attributes: { text: 'Overdue' } } })
-    await expect(session).toHaveElement({ attributes: { text: 'Open a task with a deep link' } })
+
+    await expect(session).toHaveElement({
+        attributes: { text: 'Open a task with a deep link' },
+    })
+    await expect(session).toHaveElement({
+        attributes: { text: 'Review the Q3 release notes' },
+    })
+    await expect(session).not.toHaveElement(
+        { attributes: { text: 'Send the standup summary' } },
+        { timeout: 1000 }
+    )
 })
 
-test('a deep link opens a seeded task', async ({ session }) => {
+test('todoapp://task/deeplink opens the seeded task', async ({ session }) => {
     await session.openUrl('todoapp://task/deeplink')
-    await expect(session).toHaveElement({ attributes: { text: 'Open a task with a deep link' } })
+
+    await expect(session).toHaveElement({
+        attributes: { text: 'Open a task with a deep link' },
+    })
 })
 
-test('a deep link adds a task', async ({ session }) => {
+test('todoapp://new?title=Buy%20milk adds a task', async ({ session }) => {
     await session.openUrl('todoapp://new?title=Buy%20milk')
-    await expect(session).toHaveElement({ attributes: { text: '10 left' } })
+
+    await session.swipe({
+        position: { x: '50%', y: '50%' },
+        gesture: 'up',
+    })
+
+    await expect(session).toHaveElement({
+        attributes: { text: 'Buy milk' },
+    })
 })
 ```
 {% endcode %}
 
-`reinstallApp` gives each test a fresh install, so the counter always starts at `9 left`. A fresh install sometimes opens a welcome screen first. `beforeEach` taps **Skip** when it is there.
-
-## 5. Run them
+Your agent's file will be different, but it should test the same steps. Run it yourself:
 
 ```bash
 npx playwright test
 ```
 
 ```
-  3 passed (29.5s)
+  3 passed (15.5s)
 ```
 
-To run these tests on every push, see [Run Playwright in CI](../testing/continuous-integration.md).
+To run them on every push, see [Run Playwright in CI](../testing/continuous-integration.md).
 
-## Let an agent do the exploring
+## Doing it by hand
 
-Steps 2 and 3 are what the CLI's agent skill teaches a coding agent:
+The agent only runs CLI commands, so you can run the same steps yourself. Each command maps to one Playwright call:
 
-```bash
-appetize skill install
-```
+| CLI | Playwright |
+| --- | --- |
+| `appetize tap --select-text 'Overdue'` | `session.tap({ element: { attributes: { text: 'Overdue' } } })` |
+| `appetize open 'todoapp://…'` | `session.openUrl('todoapp://…')` |
+| `appetize inspect --select-text '10 left'` | `expect(session).toHaveElement({ attributes: { text: '10 left' } })` |
 
-Then ask your agent something like: *"Explore build YOUR_BUILD_ID on a Pixel 7 with the appetize CLI, then write Playwright tests with @appetize/playwright for the Overdue filter and the deep links."* It inspects, tries each step, and writes the tests from selectors it has already confirmed. See [AI Agents](../ai-agents/README.md).
+See [AI Agents](../ai-agents/README.md) for every CLI command.
