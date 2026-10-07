@@ -1,6 +1,5 @@
 ---
 description: Use Metro and Fast Refresh so a save updates the running app.
-hidden: true
 ---
 
 # React Native

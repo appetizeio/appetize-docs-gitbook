@@ -1,6 +1,5 @@
 ---
 description: Change the code, see it on an Appetize device, and change it again.
-hidden: true
 ---
 
 # AI Development Loop
