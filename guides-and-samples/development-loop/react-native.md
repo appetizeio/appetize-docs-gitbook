@@ -22,6 +22,7 @@ appetize skill install
 
 Then paste this into Claude Code, Cursor, Codex, or another coding agent:
 
+{% code overflow="wrap" %}
 ```text
 Set up the Appetize development loop for this React Native app.
 
@@ -30,6 +31,7 @@ Set up the Appetize development loop for this React Native app.
 3. Run `appetize session start <device> <build-id>` on the device I name, or pixel7. Then run `appetize open '<exp+ URL>'`. If the Development Build launcher shows, run open again. Tap Continue if a developer menu appears. Give me the viewerUrl.
 4. Confirm the app loaded with `appetize inspect`. Then make my change, save it, and check the screen with `appetize screenshot`. Don't rebuild unless I change native code.
 ```
+{% endcode %}
 
 Then ask for changes, like "make the dice spin when it rolls." The agent saves, Metro updates the app, and the agent checks the screen.
 
