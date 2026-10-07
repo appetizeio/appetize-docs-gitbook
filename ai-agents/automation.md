@@ -93,10 +93,10 @@ appetize gesture '<syntax>' [--timeout <ms>]
 `>` presses the pointer down, `/` lifts it, and `{...}` moves it to an element or screen position, or pauses with `{wait}`:
 
 ```bash
-appetize gesture '{byText=Photo}>{wait=800}/'                     # long-press
-appetize gesture '{0.5,0.5}>/{wait=100}>/'                         # double tap
-appetize gesture '{byText="Row 3"}>{wait=500}{byText="Row 1"}/'    # hold, then drag
-appetize gesture '{0.5,0.8}>{0.5,0.6}{0.8,0.6}{0.8,0.2}/'          # path
+appetize gesture '{byText=Photo}>{wait=800}/'                    # long-press
+appetize gesture '{0.5,0.5}>/{wait=100}>/'                       # double tap
+appetize gesture '{byText="Row 3"}>{wait=500}{byText="Row 1"}/'  # hold, then drag
+appetize gesture '{0.5,0.8}>{0.5,0.6}{0.8,0.6}{0.8,0.2}/'        # path
 ```
 
 Single-quote the gesture. `appetize gesture --help` lists the full syntax and more examples.
