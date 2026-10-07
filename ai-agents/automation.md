@@ -99,7 +99,7 @@ appetize gesture '{byText="Row 3"}>{wait=500}{byText="Row 1"}/'  # hold, then dr
 appetize gesture '{0.5,0.8}>{0.5,0.6}{0.8,0.6}{0.8,0.2}/'        # path
 ```
 
-Single-quote the gesture. `appetize gesture --help` lists the full syntax and more examples.
+Single-quote the gesture. Double taps need `{wait=100}` between taps. `appetize gesture --help` lists the full syntax and more examples.
 
 ## Wait for an element, don't sleep
 
