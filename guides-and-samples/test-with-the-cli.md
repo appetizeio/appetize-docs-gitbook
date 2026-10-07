@@ -8,11 +8,7 @@ description: >-
 
 A coding agent can write your mobile tests. You create an API token. The agent installs the CLI, uploads the app, finds what it can select on each screen, and writes the Playwright tests.
 
-This example uses the [TODO app](https://github.com/appetizeio/todo-app) and ends with three passing tests. It works with Claude Code, Codex, Copilot, Cursor, and any other agent that runs terminal commands.
-
-{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2Fgit-blob-639155e600a821b8c0c5ed9d7964b0e6891c335d%2Fagent-writes-playwright-tests-v9.mp4?alt=media" %}
-
-The agent is on the left. The device, the code, and the passing tests are on the right.
+This example uses the [TODO app](https://github.com/appetizeio/todo-app). It works with Claude Code, Codex, Copilot, Cursor, and any other agent that runs terminal commands.
 
 ## 1. Create a token
 
