@@ -101,6 +101,16 @@ appetize press back       # Android
 
 Both leave you on the same screen with the field still focused. Confirm with `screenshot`, not `inspect`: the keyboard is a separate window and does not appear in the hierarchy `inspect` returns.
 
+## Clear the keychain
+
+On iOS, clear the keychain without ending the session:
+
+```bash
+appetize keychain clear
+```
+
+This removes every keychain item on the device, including items that belong to other apps, and prints `{ "cleared": true }`. The session stays up, so a signed-in app can be tested from a logged-out state without starting over. On Android the command prints the same result and changes nothing.
+
 ## Watch an agent do it
 
 A real Claude Code session driving a device with these commands. It inspects the screen to find its way in, taps by test id, types, screenshots to check the result, then stops the session, about 50 seconds end to end.
