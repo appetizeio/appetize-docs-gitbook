@@ -118,7 +118,7 @@
       * [v1](rest-api/v1/ip-blocks/v1.md)
 * [Guides & Samples](guides-and-samples/README.md)
   * [Development loop](guides-and-samples/development-loop/README.md)
-    * [Metro](guides-and-samples/development-loop/metro.md)
+    * [React Native](guides-and-samples/development-loop/react-native.md)
   * [Test with the TalkBack Screen Reader](guides-and-samples/test-with-the-talkback-screen-reader.md)
   * [Impersonation](guides-and-samples/impersonation.md)
   * [Automate Sign-in Flow](guides-and-samples/automate-sign-in-flow.md)

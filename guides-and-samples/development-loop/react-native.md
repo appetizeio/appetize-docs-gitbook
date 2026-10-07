@@ -1,11 +1,11 @@
 ---
-description: Connect a React Native app on Appetize to Metro.
+description: Use Metro and Fast Refresh so a save updates the running app.
 hidden: true
 ---
 
-# Metro
+# React Native
 
-Use Metro when the app is React Native. A save arrives through Fast Refresh, so the app keeps its state.
+Use Metro and Fast Refresh so a save updates the running app and keeps its state.
 
 The agent runs on the left. The CLI's viewer is on the right.
 
