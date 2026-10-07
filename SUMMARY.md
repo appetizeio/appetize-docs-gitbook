@@ -126,7 +126,7 @@
   * [Lock Your Device to One App](guides-and-samples/lock-your-device-to-one-app.md)
   * [Test Accessibility Font Sizes](guides-and-samples/test-accessibility-font-sizes.md)
   * [Common testing scenarios](guides-and-samples/common-testing-scenarios.md)
-  * [Test an app with the CLI](guides-and-samples/test-with-the-cli.md)
+  * [Write Playwright tests with the CLI](guides-and-samples/test-with-the-cli.md)
   * [Samples Repository](https://samples.appetize.io/)
   * [Handle session startup failures](guides-and-samples/handle-session-startup-failures.md)
 * [Deprecated](deprecated/README.md)

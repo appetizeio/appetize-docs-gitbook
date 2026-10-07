@@ -1,77 +1,126 @@
 ---
 description: >-
-  Start a device with the Appetize CLI, drive the app, and save the screenshot
-  and recording that show the check passed.
+  Use the Appetize CLI to explore your app on a device, find selectors that
+  work, and turn them into Playwright tests.
 ---
 
-# Test an app with the CLI
+# Write Playwright tests with the CLI
 
-The CLI starts a device and drives your app from the terminal. You use it to perform a check and keep the screenshot and recording.
+Writing a mobile test is mostly finding what you can select on each screen. The CLI does that from your terminal. You start a device, inspect the screen, and try each step. Once a step works, copy it into a Playwright test.
 
-This example uses the [TODO app](https://github.com/appetizeio/todo-app). The same commands work for your own build.
+This example uses the [TODO app](https://github.com/appetizeio/todo-app). It ends with three passing tests.
 
-## 1. Install and sign in
+## 1. Set up
 
 Node 22 or later.
 
 ```bash
 npm install -g @appetize/cli
 export APPETIZE_API_TOKEN=tok_xxxxxxxxxxxx
-```
 
-Create the token under **Organization → API Tokens**. When your Appetize URL is not `https://appetize.io`, set it too:
-
-```bash
-export APPETIZE_ENDPOINT=https://appetize.example.com
-```
-
-## 2. Upload the app
-
-```bash
 curl -fsSL -o todo-app.apk \
   https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk
-
 appetize build upload ./todo-app.apk --wait
 ```
 
-The command prints an `id`. That is the build id you pass to `session start`. If the app is already uploaded, copy the id from `appetize build list` instead.
+Create the token under **Organization → API Tokens**. `build upload` prints an `id`. That is your build id.
 
-## 3. Start a device
+If your Appetize URL is not `https://appetize.io`, also set `APPETIZE_ENDPOINT` to that URL.
+
+## 2. Explore the app
 
 ```bash
-appetize device list --platform android
-appetize session start pixel7 YOUR_BUILD_ID --session-id todo
+appetize session start pixel7 YOUR_BUILD_ID
+appetize inspect
 ```
 
-Use a device id from the list. `pixel7` is a common one.
+`session start` prints a `viewerUrl`. Open it to watch the device. If the app opens on a welcome screen, run `appetize tap --select-text 'Skip'` and inspect again.
 
-You should see the phases end in `ready`, then a `viewerUrl` such as `http://127.0.0.1:52518/`. Open it.
+`inspect` writes `inspect.json`, the elements on screen right now. Read it for the text you can match. On the TODO list you will find `Todo`, `9 left`, the filters `All`, `Active`, `Overdue`, `Done`, and each task title.
 
-The first launch shows a welcome screen. Dismiss it:
+Some things on screen are not in the tree. **New task** is visible, but it is not in `inspect.json`, so no test can tap it. The app has a deep link that adds a task instead, so the test uses that.
 
-```bash
-appetize tap --select-text 'Skip'
-```
+## 3. Try each step
 
-You should see the TODO list. The title is **Todo**.
-
-## 4. Run the check
-
-This check opens a deep link and confirms the seeded task is on screen.
+Run every step with the CLI before you write it down:
 
 ```bash
-mkdir -p demo
-appetize open 'todoapp://task/deeplink'
-appetize inspect --select-text 'Open a task with a deep link' --pretty
-appetize screenshot ./demo/task.png
-appetize recording start ./demo/todo
-appetize tap --select-text 'All'
-appetize recording stop
+appetize tap --select-text 'Overdue'
+appetize inspect --select-text 'Open a task with a deep link'
+
+appetize open 'todoapp://new?title=Buy%20milk'
+appetize inspect --select-text '10 left'
+
 appetize session stop
 ```
 
-You should get `demo/task.png` and `demo/todo.mp4`. The screenshot shows the row **Open a task with a deep link**. `inspect` is how you see that text. `tap` and `open` are how you act. The PNG and MP4 are what you keep.
+A step works when `inspect` finds the element you expect. If it says the element was not found, run `appetize inspect` without a selector and look for the text it actually shows.
 
-If inspect says the element was not found, run `appetize inspect` with no selector and use the text it prints.
+The new task is added at the end of the list, off screen. That is why the check uses the `10 left` counter, not the task title.
 
-`session stop` releases the device.
+## 4. Write the tests
+
+Each CLI command has a Playwright equivalent:
+
+| CLI | Playwright |
+| --- | --- |
+| `appetize tap --select-text 'Overdue'` | `session.tap({ element: { attributes: { text: 'Overdue' } } })` |
+| `appetize open 'todoapp://…'` | `session.openUrl('todoapp://…')` |
+| `appetize inspect --select-text '10 left'` | `expect(session).toHaveElement({ attributes: { text: '10 left' } })` |
+
+In a new folder, run `npm init @appetize/playwright@latest` and enter your build id. Then replace `tests/app.spec.ts`:
+
+{% code title="tests/app.spec.ts" %}
+```typescript
+import { test, expect } from '@appetize/playwright'
+
+test.afterEach(async ({ session }) => {
+    await session.reinstallApp()
+})
+
+test.beforeEach(async ({ session }) => {
+    const skip = await session.findElements({ attributes: { text: 'Skip' } }, { timeout: 5000 })
+    if (skip.length) await session.tap({ element: { attributes: { text: 'Skip' } } })
+    await expect(session).toHaveElement({ attributes: { text: 'Todo' } })
+})
+
+test('the Overdue filter shows overdue tasks', async ({ session }) => {
+    await session.tap({ element: { attributes: { text: 'Overdue' } } })
+    await expect(session).toHaveElement({ attributes: { text: 'Open a task with a deep link' } })
+})
+
+test('a deep link opens a seeded task', async ({ session }) => {
+    await session.openUrl('todoapp://task/deeplink')
+    await expect(session).toHaveElement({ attributes: { text: 'Open a task with a deep link' } })
+})
+
+test('a deep link adds a task', async ({ session }) => {
+    await session.openUrl('todoapp://new?title=Buy%20milk')
+    await expect(session).toHaveElement({ attributes: { text: '10 left' } })
+})
+```
+{% endcode %}
+
+`reinstallApp` gives each test a fresh install, so the counter always starts at `9 left`. A fresh install sometimes opens a welcome screen first. `beforeEach` taps **Skip** when it is there.
+
+## 5. Run them
+
+```bash
+npx playwright test
+```
+
+```
+  3 passed (29.5s)
+```
+
+To run these tests on every push, see [Run Playwright in CI](../testing/continuous-integration.md).
+
+## Let an agent do the exploring
+
+Steps 2 and 3 are what the CLI's agent skill teaches a coding agent:
+
+```bash
+appetize skill install
+```
+
+Then ask your agent something like: *"Explore build YOUR_BUILD_ID on a Pixel 7 with the appetize CLI, then write Playwright tests with @appetize/playwright for the Overdue filter and the deep links."* It inspects, tries each step, and writes the tests from selectors it has already confirmed. See [AI Agents](../ai-agents/README.md).

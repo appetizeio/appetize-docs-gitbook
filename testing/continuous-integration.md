@@ -39,25 +39,9 @@ export default defineConfig<AppetizeTestOptions>({
 
 Set `baseURL` to your Appetize URL when it is not `https://appetize.io`.
 
-## 2. Write the test with the session fixture
+## 2. Add your tests
 
-`session` is the device. The first launch shows a welcome screen, so the test taps **Skip**, opens a deep link, and checks that a seeded row is on screen.
-
-{% code title="tests/app.spec.ts" %}
-```typescript
-import { test, expect } from '@appetize/playwright'
-
-test('a deep link opens a seeded task', async ({ session }) => {
-    await session.tap({ element: { attributes: { text: 'Skip' } } })
-    await session.openUrl('todoapp://task/deeplink')
-    await expect(session).toHaveElement({
-        attributes: { text: 'Open a task with a deep link' },
-    })
-})
-```
-{% endcode %}
-
-Create the project with `npm init @appetize/playwright@latest` if you do not have one yet. See [Getting Started](getting-started.md).
+Tests use the `session` fixture, which is the device. If you do not have tests yet, [Write Playwright tests with the CLI](../guides-and-samples/test-with-the-cli.md) builds three for the TODO app. Commit `playwright.config.ts`, `tests/`, `package.json`, and `package-lock.json`.
 
 ## 3. Run the job and upload the report
 
