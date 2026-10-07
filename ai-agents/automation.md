@@ -82,13 +82,32 @@ appetize swipe --from-test-id card-3 --to-test-id archive-bin
 appetize swipe --from-text 'Drag me' --from-y 0.9 --to-test-id drop-zone
 ```
 
+## Gesture
+
+`tap` and `swipe` cover single taps, scrolls and straight drags. For a long-press, a double tap, a hold before dragging, or a path through several points, play a gesture:
+
+```bash
+appetize gesture '<syntax>' [--timeout <ms>]
+```
+
+`>` presses the pointer down, `/` lifts it, and `{...}` moves it to an element or screen position, or pauses with `{wait}`:
+
+```bash
+appetize gesture '{byText=Photo}>{wait=800}/'                    # long-press
+appetize gesture '{0.5,0.5}>/{wait=100}>/'                       # double tap
+appetize gesture '{byText="Row 3"}>{wait=500}{byText="Row 1"}/'  # hold, then drag
+appetize gesture '{0.5,0.8}>{0.5,0.6}{0.8,0.6}{0.8,0.2}/'        # path
+```
+
+Single-quote the gesture. Double taps need `{wait=100}` between taps; Android drops faster ones. `appetize gesture --help` lists the full syntax and more examples.
+
 ## Wait for an element, don't sleep
 
 ```bash
 appetize inspect --select-test-id home-feed --timeout 5000
 ```
 
-`--timeout` waits for the element and exits non-zero if it never appears, which makes it a wait primitive: it returns the moment the element is there, and fails clearly when it isn't. `tap` and `swipe` take it too. Sleeping guesses, and guesses are either slow or flaky.
+`--timeout` waits for the element and exits non-zero if it never appears, which makes it a wait primitive: it returns the moment the element is there, and fails clearly when it isn't. Every command that selects an element takes it. Sleeping guesses, and guesses are either slow or flaky.
 
 ## Dismiss the keyboard
 

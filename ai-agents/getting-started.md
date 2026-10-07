@@ -56,6 +56,7 @@ appetize session start pixel7 b_a1b2c3
 appetize inspect                          # what is on screen
 appetize tap --select-text 'Log in'
 appetize screenshot after-login
+appetize gesture '{byText=Photo}>{wait=800}/'
 appetize session stop
 ```
 
