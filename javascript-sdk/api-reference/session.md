@@ -118,25 +118,24 @@ await session.swipe({ element: { attributes: { text: 'OK' } }, gesture: 'up' })
 | options.timeout?    | `number`                                                                                       | If an element is provided, the amount of time to wait for it to appear in ms (defaults 10s)       |
 | options.matchIndex? | `number`                                                                                       | If multiple elements match the element selector, select the nth one                               |
 
-### touch({ action, x, y })
+### touch
 
-Sends a single touch event straight to the device. Unlike `tap` and `swipe`, the contact stays down until you send `up`, so a press-and-hold drag is a `down`, then one or more `move` events, then `up`.
+The v2 client's touch API. The contact stays down until `up`, so a press-and-hold drag is `down`, then one or more `move` events, then `up`.
 
 `x` and `y` are fractions of the screen from 0 to 1, measured from the left and top edges.
 
 ```typescript
-session.touch({ action: 'down', x: 0.5, y: 0.8 })
-session.touch({ action: 'move', x: 0.5, y: 0.2 })
-session.touch({ action: 'up', x: 0.5, y: 0.2 })
+session.touch.down(0.5, 0.8)
+session.touch.move(0.5, 0.2)
+session.touch.up(0.5, 0.2)
 ```
 
 **Parameters**
 
-| Name   | Type                         | Description                                              |
-| ------ | ---------------------------- | -------------------------------------------------------- |
-| action | `"down" \| "move" \| "up"`   | The touch phase                                          |
-| x      | `number`                     | Horizontal position as a fraction (0-1) from the left edge |
-| y      | `number`                     | Vertical position as a fraction (0-1) from the top edge  |
+| Name | Type     | Description                                                |
+| ---- | -------- | ---------------------------------------------------------- |
+| x    | `number` | Horizontal position as a fraction (0-1) from the left edge |
+| y    | `number` | Vertical position as a fraction (0-1) from the top edge    |
 
 ### type(text)
 
