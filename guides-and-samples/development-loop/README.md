@@ -5,8 +5,6 @@ hidden: true
 
 # Development loop
 
-Change the code. See it on an Appetize device. Change it again.
-
 You can run the loop, or an agent can run the same steps.
 
 <figure><img src="../../.gitbook/assets/development-loop.svg" alt="A change reaches the app on Appetize by hot reload, with no build, or by a new build installed on the device. The CLI controls the device separately."><figcaption><p>A change reaches the app in one of two ways. The CLI drives the device. It does not carry the change.</p></figcaption></figure>
