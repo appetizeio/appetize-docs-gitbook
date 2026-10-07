@@ -9,7 +9,7 @@ Use Metro and Fast Refresh so a save updates the running app and keeps its state
 
 The agent runs on the left. The CLI's viewer is on the right.
 
-{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@b69d4722a004220915fb2f37d360fdaba5380e84/.gitbook/assets/development-loop.mp4" %}
+{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@31d9ddde859d8f6c6b729e485190673ba535ea29/.gitbook/assets/development-loop.mp4" %}
 
 ## 1. Upload a development build
 
