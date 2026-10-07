@@ -92,8 +92,6 @@
   * [Sessions](ai-agents/sessions.md)
   * [Automation](ai-agents/automation.md)
   * [Screenshots and recordings](ai-agents/screenshots-and-recordings.md)
-  * [AI live editing](ai-agents/live-editing/README.md)
-    * [Metro](ai-agents/live-editing/metro.md)
 * [Agentic Flows has moved](agentic-flows.md)
 * [REST API](rest-api/README.md)
   * ```yaml
@@ -119,6 +117,8 @@
     * [IP Blocks](rest-api/v1/ip-blocks/README.md)
       * [v1](rest-api/v1/ip-blocks/v1.md)
 * [Guides & Samples](guides-and-samples/README.md)
+  * [Live editing](guides-and-samples/live-editing/README.md)
+    * [Metro](guides-and-samples/live-editing/metro.md)
   * [Test with the TalkBack Screen Reader](guides-and-samples/test-with-the-talkback-screen-reader.md)
   * [Impersonation](guides-and-samples/impersonation.md)
   * [Automate Sign-in Flow](guides-and-samples/automate-sign-in-flow.md)
