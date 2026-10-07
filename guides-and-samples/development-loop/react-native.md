@@ -6,10 +6,6 @@ description: Use Metro and Fast Refresh so a save updates the running app.
 
 Use Metro and Fast Refresh so a save updates the running app and keeps its state. An agent can set this up from one prompt.
 
-The agent runs on the left. The CLI's viewer is on the right.
-
-{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@f135b5ec91a00984858d586f9aca4c7cb6c0a860/.gitbook/assets/development-loop.mp4" %}
-
 ## Ask your agent
 
 Install the CLI and its agent skill first:
