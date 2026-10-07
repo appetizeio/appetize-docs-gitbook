@@ -117,7 +117,7 @@
     * [IP Blocks](rest-api/v1/ip-blocks/README.md)
       * [v1](rest-api/v1/ip-blocks/v1.md)
 * [Guides & Samples](guides-and-samples/README.md)
-  * [Development loop](guides-and-samples/development-loop/README.md)
+  * [AI Development Loop](guides-and-samples/development-loop/README.md)
     * [React Native](guides-and-samples/development-loop/react-native.md)
   * [Test with the TalkBack Screen Reader](guides-and-samples/test-with-the-talkback-screen-reader.md)
   * [Impersonation](guides-and-samples/impersonation.md)

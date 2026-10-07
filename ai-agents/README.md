@@ -32,7 +32,7 @@ An agent can take a whole task end to end. Investigate, fix, verify, ship:
 * "Ship the new sign-up copy. Update it, check it on an iPhone 15 Pro and a Pixel 7, and put the screenshots on the PR."
 * "Onboarding regressed. Walk it, find where it breaks, fix it, and send me a recording of it working."
 
-Every step is a terminal command, so it loops on its own: change the code, re-run on a simulator, check the recording, repeat. A save can also update the running app, with no rebuild. See [Development loop](https://docs.appetize.io/guides-and-samples/development-loop).
+Every step is a terminal command, so it loops on its own: change the code, re-run on a simulator, check the recording, repeat. A save can also update the running app, with no rebuild. See [AI Development Loop](https://docs.appetize.io/guides-and-samples/development-loop).
 
 ### Or drive it yourself
 
@@ -44,4 +44,4 @@ Every command the agent runs, you can run by hand. That is what makes an agent's
 * [Sessions](https://docs.appetize.io/ai-agents/sessions): lifecycle, logs and network traffic
 * [Automation](https://docs.appetize.io/ai-agents/automation): inspect the screen and act on it
 * [Screenshots and recordings](https://docs.appetize.io/ai-agents/screenshots-and-recordings): capture PNGs and MP4s
-* [Development loop](https://docs.appetize.io/guides-and-samples/development-loop): save, look, and edit again while the app stays open
+* [AI Development Loop](https://docs.appetize.io/guides-and-samples/development-loop): save, look, and edit again while the app stays open

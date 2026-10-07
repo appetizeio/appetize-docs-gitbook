@@ -3,7 +3,7 @@ description: Change the code, see it on an Appetize device, and change it again.
 hidden: true
 ---
 
-# Development loop
+# AI Development Loop
 
 You can run the loop, or an agent can run the same steps.
 
