@@ -10,57 +10,54 @@ A coding agent can write your mobile tests. With the Appetize CLI, it runs your 
 
 This example uses the [TODO app](https://github.com/appetizeio/todo-app) and ends with three passing tests. It works with Claude Code, Codex, Copilot, Cursor, and any other agent that runs terminal commands.
 
-{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2Fgit-blob-ed5155bebabe46f32e63afe5e1412d26569bf66e%2Fagent-writes-playwright-tests-v5.mp4?alt=media" %}
+![](../.gitbook/assets/agent-writes-playwright-tests-v6.mp4)
 
 The agent is on the left. The device, the code, and the passing tests are on the right.
 
 ## 1. Set up
 
-Node 22 or later. In a new folder:
+Install Node 22 or later. Then create an empty folder for the tests:
 
 ```bash
+mkdir todo-tests
+cd todo-tests
+
 npm install -g @appetize/cli
 export APPETIZE_API_TOKEN=tok_xxxxxxxxxxxx
-
-npm init @appetize/playwright@latest
 appetize skill install
 ```
 
 Create the token under **Organization → API Tokens**. If your Appetize URL is not `https://appetize.io`, also set `APPETIZE_ENDPOINT` to that URL.
 
-`npm init @appetize/playwright` creates the Playwright project. Press Enter at the build id prompt. You will set it in the next step. `skill install` teaches your agent the CLI.
-
-Upload the app:
-
-```bash
-curl -fsSL -o todo-app.apk \
-  https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk
-appetize build upload ./todo-app.apk --wait
-```
-
-Copy the `id` it prints. That is your build id.
+`skill install` teaches your coding agent how to start a device, inspect the screen, act through selectors, and verify the result. The agent handles the remaining project setup.
 
 ## 2. Ask your agent
 
 Open your agent in that folder and give it the task:
 
-> Use the appetize CLI to explore build `YOUR_BUILD_ID` on a Pixel 7. Then write Playwright tests in `tests/` with `@appetize/playwright` for:
+> Set up a new mobile Playwright project in this folder with `npm init @appetize/playwright@latest`. If the scaffold asks for a build id or device, accept the defaults for now.
+>
+> Download the TODO APK from `https://github.com/appetizeio/todo-app/releases/latest/download/todo-app.apk`. Upload it with `appetize build upload ./todo-app.apk --wait`.
+>
+> In `playwright.config.ts`, set `use.baseURL` to `process.env.APPETIZE_ENDPOINT || 'https://appetize.io'`. Set `use.config.buildId` to the uploaded build id and `use.config.device` to `pixel7`.
+>
+> Use the appetize CLI to explore that build on a Pixel 7. Then write Playwright tests in `tests/` with `@appetize/playwright` for:
 >
 > - the Overdue filter shows overdue tasks
 > - `todoapp://task/deeplink` opens the seeded task
 > - `todoapp://new?title=Buy%20milk` adds a task
 >
-> Set the build id in `playwright.config.ts`. Try every step with the CLI before you write it. Run `npx playwright test` and fix the tests until they pass. Use https://docs.appetize.io/testing/writing-tests for the test API.
+> Confirm each flow on the device before translating it into a test. Run `npx playwright test` and fix the tests until they pass. Use https://docs.appetize.io/testing/writing-tests for the test API.
 
 Open the `viewerUrl` the agent prints to watch the device while it works.
 
 ## 3. What the agent does
 
-1. Starts a device with `appetize session start` and runs `appetize inspect` to read what is on screen.
-2. Tries each step with `appetize tap` and `appetize open`, and checks the result with `inspect`.
-3. Writes the tests from the steps that worked, then runs them.
+1. Creates the Playwright project, uploads the APK, and puts the returned build id in the configuration.
+2. Starts a device and inspects each screen to find selectors and app state it can assert.
+3. Confirms each requested flow on the device, translates it into a Playwright test, and runs the suite.
 
-Trying each step first is what makes the tests pass. On the TODO app, the agent finds:
+Exploring the running app changes how the tests are written. On the TODO app, the agent discovers:
 
 - A fresh install opens a welcome screen, and deep links do nothing while it is up. The tests tap **Skip** first.
 - **New task** is visible but missing from the UI tree, so no test can tap it. The `todoapp://new` deep link adds the task instead.
@@ -68,7 +65,7 @@ Trying each step first is what makes the tests pass. On the TODO app, the agent 
 
 ## 4. What you get
 
-This is the file an agent wrote from the prompt above:
+A resulting test file can look like this:
 
 {% code title="tests/app.spec.ts" %}
 ```typescript
@@ -133,8 +130,8 @@ npx playwright test
 ```
 
 ```
-  3 passed (15.5s)
-```
+  3 passed
+``
 
 To run them on every push, see [Run Playwright in CI](../testing/continuous-integration.md).
 
