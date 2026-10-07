@@ -5,7 +5,7 @@ hidden: true
 
 # Metro
 
-Use Metro when the app is React Native.
+Use Metro when the app is React Native. A save arrives through Fast Refresh, so the app keeps its state.
 
 The agent runs on the left. The CLI's viewer is on the right.
 
