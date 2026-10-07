@@ -9,7 +9,7 @@ Use Metro when the app is React Native.
 
 The agent runs on the left. The CLI's viewer is on the right.
 
-{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@e637ace41870b69c635bce2d1f7cf1a23a346fdf/.gitbook/assets/agentic-previewing.mp4" %}
+{% embed url="https://cdn.jsdelivr.net/gh/appetizeio/appetize-docs-gitbook@b69d4722a004220915fb2f37d360fdaba5380e84/.gitbook/assets/development-loop.mp4" %}
 
 ## 1. Upload a development build
 
