@@ -58,7 +58,7 @@ Save a file. The screen updates and the app stays open.
 
 ![VS Code on the left, the device on the right. The save swaps a still dice for an animated one, and the next rolls spin.](../../.gitbook/assets/metro-fast-refresh.mp4)
 
-<figure><img src="../../.gitbook/assets/metro-live-change.png" alt="Before, the dice is still. After the save, it spins on a roll."><figcaption><p>After the save, the dice spins. Nothing was rebuilt.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/metro-dice-swap.png" alt="Before, the dice is still. After the save, it spins on a roll."><figcaption><p>After the save, the dice spins. Nothing was rebuilt.</p></figcaption></figure>
 
 ```bash
 appetize session stop

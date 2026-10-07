@@ -3,13 +3,13 @@ description: The development loop. Save while the app is open, then look at the 
 hidden: true
 ---
 
-# Live editing
+# Preview Changes Without Rebuilding
 
 The app is already running. Save a file. The screen updates. Look, then save again.
 
 That is the development loop. You do it, or an agent does the same steps. It does not need a new build.
 
-<figure><img src="../../.gitbook/assets/live-editing.svg" alt="A save goes from your editor, through a development server and a connection, to the app on Appetize. The CLI controls the device separately."><figcaption><p>The blue path is the save. The gray path is you, or an agent, driving the device.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/preview-changes.svg" alt="A save goes from your editor, through a development server and a connection, to the app on Appetize. The CLI controls the device separately."><figcaption><p>The blue path is the save. The gray path is you, or an agent, driving the device.</p></figcaption></figure>
 
 The save goes through a connection. [Metro](metro.md) is one, for React Native. The CLI starts the session and can tap the screen. It does not send the file.
 

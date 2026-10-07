@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
-  <title id="title">Live editing on Appetize</title>
+  <title id="title">Preview changes on Appetize</title>
   <desc id="desc">A save on your machine goes through a connection to the development build on Appetize. The CLI controls that same device and does not carry the save.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2328; }
