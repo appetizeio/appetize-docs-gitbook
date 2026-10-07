@@ -10,7 +10,7 @@ A coding agent can write your mobile tests. With the Appetize CLI, it runs your 
 
 This example uses the [TODO app](https://github.com/appetizeio/todo-app) and ends with three passing tests. It works with Claude Code, Codex, Copilot, Cursor, and any other agent that runs terminal commands.
 
-![](../.gitbook/assets/agent-writes-playwright-tests-v5.mp4)
+{% embed url="https://2147444700-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MJUveBCJfn0GR8-hlqi%2Fuploads%2Fgit-blob-ed5155bebabe46f32e63afe5e1412d26569bf66e%2Fagent-writes-playwright-tests-v5.mp4?alt=media" %}
 
 The agent is on the left. The device, the code, and the passing tests are on the right.
 
