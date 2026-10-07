@@ -142,6 +142,7 @@ The agent only runs CLI commands, so you can run the same steps yourself. Each c
 | --- | --- |
 | `appetize tap --select-text 'Overdue'` | `session.tap({ element: { attributes: { text: 'Overdue' } } })` |
 | `appetize open 'todoapp://…'` | `session.openUrl('todoapp://…')` |
-| `appetize inspect --select-text '10 left'` | `expect(session).toHaveElement({ attributes: { text: '10 left' } })` |
+| `appetize swipe --direction up` | `session.swipe({ position: { x: '50%', y: '50%' }, gesture: 'up' })` |
+| `appetize inspect --select-text 'Buy milk'` | `expect(session).toHaveElement({ attributes: { text: 'Buy milk' } })` |
 
 See [AI Agents](../ai-agents/README.md) for every CLI command.
