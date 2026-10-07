@@ -1,30 +1,28 @@
 ---
-description: Save while the app is open, then look at the same screen.
+description: Change the code, see it on an Appetize device, and change it again.
 hidden: true
 ---
 
 # Development loop
 
-The app is already running on Appetize. Save a file. The screen updates. Look, then save again.
+Change the code. See it on an Appetize device. Change it again.
 
-An agent does the same steps. It does not need a new build.
+You can run the loop, or an agent can run the same steps.
 
-The update is hot reloading. React Native calls it Fast Refresh, and it keeps the app's state.
+<figure><img src="../../.gitbook/assets/development-loop.svg" alt="A change reaches the app on Appetize by hot reload, with no build, or by a new build installed on the device. The CLI controls the device separately."><figcaption><p>A change reaches the app in one of two ways. The CLI drives the device. It does not carry the change.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/development-loop.svg" alt="A save goes from your editor, through a development server and a connection, to the app on Appetize. The CLI controls the device separately."><figcaption><p>The blue path is the save. The gray path is you, or an agent, driving the device.</p></figcaption></figure>
+## Hot reload
 
-The CLI starts the session and can tap the screen. It does not send the file.
-
-Use a development build. A release build will not pick up the save.
+Use this for code a development server sends to the app, such as React Native JavaScript. The change shows up without a build, and the app keeps its state. The app on the device must be a development build.
 
 ## A new build
 
-Upload a new build when the native app changes: a new native library, app config, or an SDK upgrade. Then keep editing.
+Use this for native code, a new native library, or app config. Build the app again, then put it on the device.
 
-On Android you can install that build into the open session. On iOS, start a new session with the new build. See [Sessions](../../ai-agents/sessions.md).
+On Android, install it into the open session with `adb install`. See [adb](../../ai-agents/sessions.md#adb). On iOS, start a new session with the new build.
 
 ## Guides
 
 Pick the guide for your app.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>React Native</td><td>Use Metro and Fast Refresh so a save updates the running app.</td><td><a href="react-native.md">react-native.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>React Native</td><td>Hot reload with Metro and Fast Refresh. No build for JavaScript changes.</td><td><a href="react-native.md">react-native.md</a></td></tr></tbody></table>

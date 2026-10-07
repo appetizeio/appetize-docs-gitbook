@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
   <title id="title">The development loop on Appetize</title>
-  <desc id="desc">A save on your machine goes through a connection to the development build on Appetize. The CLI controls that same device and does not carry the save.</desc>
+  <desc id="desc">A change on your machine reaches the app on Appetize in one of two ways: hot reload with no build, or a new build installed on the device. The CLI controls the same device and does not carry the change.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2328; }
     .label { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; fill: #656d76; }
@@ -9,38 +9,35 @@
     .arrow { font-size: 15px; font-weight: 700; }
     .arrow-sub { font-size: 13px; fill: #656d76; }
   </style>
-  <rect width="960" height="420" fill="#ffffff"/>
+  <rect width="960" height="440" fill="#ffffff"/>
 
   <text class="label" x="40" y="42">YOUR MACHINE</text>
-  <text class="label" x="700" y="42">APPETIZE</text>
+  <text class="label" x="680" y="42">APPETIZE</text>
 
-  <rect x="40" y="64" width="250" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
-  <text class="box-title" x="60" y="94">Editor</text>
-  <text class="box-sub" x="60" y="116">Your changes</text>
+  <rect x="40" y="118" width="230" height="84" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text class="box-title" x="60" y="152">Your change</text>
+  <text class="box-sub" x="60" y="176">From you or an agent</text>
 
-  <rect x="40" y="164" width="250" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
-  <text class="box-title" x="60" y="194">Development server</text>
-  <text class="box-sub" x="60" y="216">Serves the running app</text>
+  <rect x="40" y="320" width="230" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text class="box-title" x="60" y="350">Appetize CLI</text>
+  <text class="box-sub" x="60" y="372">Session, taps, screenshots</text>
 
-  <rect x="40" y="292" width="250" height="72" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
-  <text class="box-title" x="60" y="322">Appetize CLI</text>
-  <text class="box-sub" x="60" y="344">Session, taps, screenshots</text>
+  <rect x="680" y="96" width="240" height="128" rx="12" fill="#ddf4ff" stroke="#0969da"/>
+  <text class="box-title" x="700" y="140">The app</text>
+  <text class="box-sub" x="700" y="166">Running on the device</text>
+  <text class="box-sub" x="700" y="190">Shows the change</text>
 
-  <rect x="680" y="128" width="240" height="148" rx="12" fill="#ddf4ff" stroke="#0969da"/>
-  <text class="box-title" x="700" y="176">Development build</text>
-  <text class="box-sub" x="700" y="202">The app on the device</text>
-  <text class="box-sub" x="700" y="226">Picks up each save</text>
-  <text class="box-sub" x="700" y="250">Keeps its screen</text>
+  <path d="M270 140 C390 140, 470 120, 668 126" stroke="#0969da" stroke-width="2.5" fill="none"/>
+  <path d="M656 118 L677 126 L656 134" fill="#0969da"/>
+  <text class="arrow" x="400" y="104" style="fill:#0969da">Hot reload</text>
+  <text class="arrow-sub" x="400" y="150">No build. Keeps the app's state.</text>
 
-  <path d="M164 136 V164" stroke="#d0d7de" stroke-width="2" fill="none"/>
-  <path d="M290 200 H430" stroke="#0969da" stroke-width="2.5" fill="none"/>
-  <path d="M430 200 H668" stroke="#0969da" stroke-width="2.5" fill="none" stroke-dasharray="7 6"/>
-  <path d="M656 192 L676 200 L656 208" fill="#0969da"/>
-  <text class="arrow" x="446" y="186" fill="#0969da">Your save</text>
-  <text class="arrow-sub" x="446" y="224">A connection</text>
-  <text class="arrow-sub" x="446" y="244">Metro is one</text>
+  <path d="M270 184 C390 184, 470 210, 668 198" stroke="#8250df" stroke-width="2.5" fill="none" stroke-dasharray="7 6"/>
+  <path d="M656 190 L677 198 L656 206" fill="#8250df"/>
+  <text class="arrow" x="400" y="232" style="fill:#8250df">New build</text>
+  <text class="arrow-sub" x="400" y="254">For native code. Install it on the device.</text>
 
-  <path d="M290 328 C460 328, 520 276, 668 250" stroke="#656d76" stroke-width="2.5" fill="none"/>
-  <path d="M656 258 L678 246 L662 238" fill="#656d76"/>
-  <text class="arrow" x="390" y="300" fill="#656d76">Control</text>
+  <path d="M270 356 C470 356, 560 300, 760 236" stroke="#656d76" stroke-width="2.5" fill="none"/>
+  <path d="M746 238 L766 232 L754 250" fill="#656d76"/>
+  <text class="arrow" x="330" y="338" style="fill:#656d76">Control</text>
 </svg>
