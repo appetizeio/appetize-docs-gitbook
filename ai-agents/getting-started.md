@@ -62,6 +62,8 @@ appetize session stop
 
 `session start` prints the session as JSON: the id, the streaming host and the log paths. Everything after it acts on that session, so there is no id to pass. For anything not shown here, `appetize --help` lists every command and `appetize <command> --help` prints its flags and examples.
 
+To have your agent write Playwright tests from what it finds, see [Have an agent write Playwright tests](../guides-and-samples/test-with-the-cli.md).
+
 ### Environment variables
 
 | Variable             | Values          | Meaning                                          |
