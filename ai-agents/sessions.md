@@ -8,11 +8,11 @@ appetize session start <device-id> <target>
 
 | Argument      | What it is                                                                                                                                                          |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<device-id>` | A device model: `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
+| `<device-id>` | A device model: `pixel7`, `ipadair4thgeneration`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
 | `<target>`    | A **buildId**: the `id` from `appetize build list`. Previously called publicKey; see [Running apps](https://docs.appetize.io/platform/app-management/running-apps) |
 
 ```bash
-appetize session start iphone15pro b_a1b2c3 --device-os-version 18.2
+appetize session start ipadair4thgeneration b_a1b2c3 --device-os-version 18.2
 appetize session start pixel7 b_a1b2c3 --session-id checkout
 appetize session start pixel7 b_a1b2c3 --no-wait
 ```

@@ -11,7 +11,7 @@ The Appetize session configuration lives under `use.config` in `playwright.confi
 use: {
     config: {
         buildId: '<your build id>',
-        device: 'iphone15pro',
+        device: 'ipadair4thgeneration',
         osVersion: '18.2',
         language: 'fr',
     },
@@ -60,9 +60,9 @@ test('my test', async ({ session, config }) => {
 You can also use it to skip tests:
 
 ```javascript
-test.describe('iOS 16 features', () => {
-    // skip suite if osVersion is less than 16
-    test.skip(({ config }) => parseInt(config.osVersion) < 16);
+test.describe('iOS 18 features', () => {
+    // skip suite if osVersion is less than 18
+    test.skip(({ config }) => parseInt(config.osVersion) < 18);
 
     test('some feature', async ({ session }) => { /* ... */ })
 })

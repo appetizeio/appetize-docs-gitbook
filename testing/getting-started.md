@@ -56,7 +56,7 @@ export default defineConfig<AppetizeTestOptions>({
 
         // Appetize session configuration
         config: {
-            device: 'iphone16promax',
+            device: 'ipadair4thgeneration',
             buildId: 'demo',
         },
     },

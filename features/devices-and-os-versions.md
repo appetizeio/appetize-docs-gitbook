@@ -19,23 +19,9 @@ If possible, we recommend indicating only the major version of an Operating Syst
 | Device            | Device Identifier           | Operating System Versions    |
 | ----------------- | --------------------------- | ---------------------------- |
 | **iOS**           |                             |                              |
-| iPhone 8          | iphone8                     | 15.5, 16.2                   |
-| iPhone 8 Plus     | iphone8plus                 | 15.5, 16.2                   |
-| iPhone 11 Pro     | iphone11pro                 | 15.5, 16.2, 17.2, 18.2, 26.0 |
-| iPhone 12         | iphone12                    | 15.5, 16.2, 17.2, 18.2, 26.0 |
-| iPhone 13 Pro     | iphone13pro                 | 15.5, 16.2, 17.2, 18.2       |
-| iPhone 13 Pro Max | iphone13promax              | 15.5, 16.2, 17.2, 18.2, 26.0 |
-| iPhone 14 Pro     | iphone14pro                 | 16.2, 17.2, 18.2, 26.0       |
-| iPhone 14 Pro Max | iphone14promax              | 16.2, 17.2, 18.2, 26.0       |
-| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.2, 26.0             |
-| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.2, 26.0             |
-| iPhone 16 Pro     | iphone16pro                 | 18.2, 26.0                   |
-| iPhone 16 Pro Max | iphone16promax              | 18.2, 26.0                   |
-| iPhone 17 Pro     | iphone17pro                 | 26.0                         |
-| iPhone 17 Pro Max | iphone17promax              | 26.0                         |
-| iPad Air          | ipadair4thgeneration        | 15.5, 16.2, 17.2, 18.2, 26.0 |
-| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 15.5, 16.2, 17.2, 18.2, 26.0 |
-| iPad              | ipad9thgeneration           | 15.5, 16.2, 17.2, 18.2       |
+| iPad Air          | ipadair4thgeneration        | 17.2, 18.2, 26.0             |
+| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 17.2, 18.2, 26.0             |
+| iPad              | ipad9thgeneration           | 17.2, 18.2                   |
 | iPad Mini         | ipadmini6thgeneration       | 18.2, 26.0                   |
 | **Android**       |                             |                              |
 | Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0         |
@@ -65,7 +51,7 @@ A dynamic, up-to-date list of all the devices and operating systems we support c
 ## Usage
 
 {% hint style="warning" %}
-Usage in our JavaScript SDK or query parameters require the device identifier e.g. `iphone8plus` or `ipadair4thgeneration`
+Usage in our JavaScript SDK or query parameters require the device identifier e.g. `ipadair4thgeneration` or `ipad9thgeneration`
 {% endhint %}
 
 ### With Query Parameters

@@ -54,7 +54,7 @@ In order to take screenshots of the device session, you will need to make use of
 For illustrative purposes, lets imagine the following requirements:
 
 * 1 iOS App
-  * 7 devices (e.g. iPhone 14 Pro on iOS 16, iPhone 12 on iOS 15 etc.)
+  * 7 devices (e.g. iPad Air on iOS 18, iPad on iOS 17 etc.)
   * 4 Features/Screens
   * 3 Languages (English, German and French)
 * 1 Android App
@@ -79,14 +79,14 @@ const config = {
              */
             devices: [
                 {
-                    displayName: "iPhone 14 Pro",
-                    device: "iphone14pro",
-                    osVersion: "16.2",
+                    displayName: "iPad Air",
+                    device: "ipadair4thgeneration",
+                    osVersion: "18.2",
                 },
                 {
-                    displayName: "iPhone 12",
-                    device: "iphone12",
-                    osVersion: "15",
+                    displayName: "iPad",
+                    device: "ipad9thgeneration",
+                    osVersion: "17.2",
                 }
                 // and more devices ...
             ],

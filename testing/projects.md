@@ -1,6 +1,6 @@
 # Projects
 
-A Playwright [project](https://playwright.dev/docs/test-projects) is a named configuration your tests run under. With Appetize each project carries its own session `config`, so one project can be an iPhone and another a Pixel, running the same tests, or different ones.
+A Playwright [project](https://playwright.dev/docs/test-projects) is a named configuration your tests run under. With Appetize each project carries its own session `config`, so one project can be an iPad and another a Pixel, running the same tests, or different ones.
 
 {% hint style="warning" %}
 A project's `config` **replaces** the one in the top-level `use`; it does not merge with it. If you set `buildId` at the top level only, any project that defines its own `config` fails to start with `Appetize buildId not set`. Give every project a complete config; the examples below share one with a spread.
@@ -8,7 +8,7 @@ A project's `config` **replaces** the one in the top-level `use`; it does not me
 
 ## One app, two platforms
 
-Tests in `tests/ios` run on an iPhone, tests in `tests/android` run on a Pixel.
+Tests in `tests/ios` run on an iPad, tests in `tests/android` run on a Pixel.
 
 {% code title="playwright.config.ts" %}
 ```typescript
@@ -28,7 +28,7 @@ export default defineConfig<AppetizeTestOptions>({
         {
             name: 'ios',
             testDir: './tests/ios',
-            use: { config: { ...app, device: 'iphone15pro' } },
+            use: { config: { ...app, device: 'ipadair4thgeneration' } },
         },
         {
             name: 'android',
@@ -55,7 +55,7 @@ projects: [
     {
         name: 'ios',
         testDir: './tests/ios',
-        use: { config: { buildId: '<ios build id>', device: 'iphone15pro' } },
+        use: { config: { buildId: '<ios build id>', device: 'ipadair4thgeneration' } },
     },
     {
         name: 'android',
@@ -81,7 +81,7 @@ projects: [
 The same shape covers OS versions. See [Devices & OS Versions](https://docs.appetize.io/features/devices-and-os-versions) for the versions each device offers.
 
 ```typescript
-const app = { buildId: '<your build id>', device: 'iphone15pro' };
+const app = { buildId: '<your build id>', device: 'ipadair4thgeneration' };
 
 projects: [
     { name: 'ios-18', use: { config: { ...app, osVersion: '18.2' } } },
@@ -123,7 +123,7 @@ The resolved config for the current project is available as a test argument, whi
 import { test, expect } from '@appetize/playwright'
 
 test('platform specific', async ({ session, config }) => {
-    if (config.device.startsWith('iphone')) {
+    if (config.device.startsWith('ipad')) {
         // iOS only behaviour
     }
 })

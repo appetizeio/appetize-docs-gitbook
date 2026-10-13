@@ -49,12 +49,12 @@ layout:
 
 ## September 2025
 
-### iOS 26, iPhone 17 Support, and a New Automation Engine
+### iOS 26 Support and a New Automation Engine
 
-<figure><img src=".gitbook/assets/image (70).png" alt="iOS 26 &#x26; iPhone 17 devices added"><figcaption><p>iOS 26 &#x26; iPhone 17 devices added</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (70).png" alt="iOS 26 devices added"><figcaption><p>iOS 26 devices added</p></figcaption></figure>
 
 * **New Features**
-  * Added support for **iOS 26** and the latest **iPhone 17** and **iPhone 17 Pro Max** devices
+  * Added support for **iOS 26**
   *   Launched a new **automation engine**
 
       * Faster, more reliable, and built to support modern declarative frameworks like SwiftUI, Compose, Flutter and more.
@@ -161,15 +161,15 @@ layout:
 
 ## November 2024
 
-### iOS 18 & iPhone 16 Pro/Max Support
+### iOS 18 Support
 
-<figure><img src=".gitbook/assets/product-devices-noround.png" alt=""><figcaption><p>iOS 18 and iPhone 16 Pro/Max support has been added</p></figcaption></figure>
+<figure><img src=".gitbook/assets/product-devices-noround.png" alt=""><figcaption><p>iOS 18 support has been added</p></figcaption></figure>
 
 * **New Features**:
-  * Support for **iOS 18** and **iPhone 16** **Pro/Max** devices.
+  * Support for **iOS 18**.
   * Improved **Organization Settings** UI with clearer section names and options.
   * **Stripe** checkout flow added for credit card updates.
-  * Updated default devices to **iPhone 14 Pro** and **Pixel 7**.
+  * Updated default devices to **Pixel 7**.
 * **Bug fixes & Improvements**:
   * Fixed **video rotation** issues on Chrome 130.
   * Fixed session parameters and **configuration** handling in consecutive sessions.
