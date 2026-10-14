@@ -19,22 +19,22 @@ If possible, we recommend indicating only the major version of an Operating Syst
 | Device            | Device Identifier           | Operating System Versions    |
 | ----------------- | --------------------------- | ---------------------------- |
 | **iOS**           |                             |                              |
-| iPhone 11 Pro     | iphone11pro                 | 17.2, 18.2, 26.0             |
-| iPhone 12         | iphone12                    | 17.2, 18.2, 26.0             |
-| iPhone 13 Pro     | iphone13pro                 | 17.2, 18.2                   |
-| iPhone 13 Pro Max | iphone13promax              | 17.2, 18.2, 26.0             |
-| iPhone 14 Pro     | iphone14pro                 | 17.2, 18.2, 26.0             |
-| iPhone 14 Pro Max | iphone14promax              | 17.2, 18.2, 26.0             |
-| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.2, 26.0             |
-| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.2, 26.0             |
-| iPhone 16 Pro     | iphone16pro                 | 18.2, 26.0                   |
-| iPhone 16 Pro Max | iphone16promax              | 18.2, 26.0                   |
-| iPhone 17 Pro     | iphone17pro                 | 26.0                         |
-| iPhone 17 Pro Max | iphone17promax              | 26.0                         |
-| iPad Air          | ipadair4thgeneration        | 17.2, 18.2, 26.0             |
-| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 17.2, 18.2, 26.0             |
-| iPad              | ipad9thgeneration           | 17.2, 18.2                   |
-| iPad Mini         | ipadmini6thgeneration       | 18.2, 26.0                   |
+| iPhone 11 Pro     | iphone11pro                 | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 12         | iphone12                    | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 13 Pro     | iphone13pro                 | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 13 Pro Max | iphone13promax              | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 14 Pro     | iphone14pro                 | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 14 Pro Max | iphone14promax              | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 15 Pro     | iphone15pro                 | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 15 Pro Max | iphone15promax              | 17.2, 18.2, 26.0, 27.2       |
+| iPhone 16 Pro     | iphone16pro                 | 18.2, 26.0, 27.2             |
+| iPhone 16 Pro Max | iphone16promax              | 18.2, 26.0, 27.2             |
+| iPhone 17 Pro     | iphone17pro                 | 26.0, 27.2                   |
+| iPhone 17 Pro Max | iphone17promax              | 26.0, 27.2                   |
+| iPad Air          | ipadair4thgeneration        | 17.2, 18.2, 26.0, 27.2       |
+| iPad Pro 12.9"    | ipadpro129inch5thgeneration | 17.2, 18.2, 26.0, 27.2       |
+| iPad              | ipad9thgeneration           | 17.2, 18.2, 26.0, 27.2       |
+| iPad Mini         | ipadmini6thgeneration       | 18.2, 26.0, 27.2             |
 | **Android**       |                             |                              |
 | Nexus 5           | nexus5                      | 8.1, 9.0, 10.0, 11.0         |
 | Pixel 4           | pixel4                      | 10.0, 11.0, 12.0             |
