@@ -1601,12 +1601,12 @@ paths:
               example: |
                 [
                    {
-                       "id": "ipadair4thgeneration",
+                       "id": "iphone15promax",
                        "platform": "ios",
                        "osVersions": [
-                           "18.2"
+                           "17.0"
                        ],
-                       "name": "iPad Air"
+                       "name": "iPhone 15 Pro Max"
                    },
                    {
                        "id": "pixel6pro",
@@ -1628,11 +1628,11 @@ paths:
                       description: >-
                         ID of the device (ie. for device selection in url
                         params).
-                      example: ipadair4thgeneration
+                      example: iphone15promax
                     name:
                       type: string
                       description: Name of the device
-                      example: iPad Air
+                      example: iPhone 15 Pro Max
                     platform:
                       type: string
                       enum:

@@ -11,7 +11,7 @@ You can configure the client to change the device, OS version, app, and various 
 
 ```javascript
 await client.setConfig({
-    device: 'ipadair4thgeneration',
+    device: 'iphone11pro',
     osVersion: '18.2'
 })
 ```
@@ -20,7 +20,7 @@ Additionally, you can provide these when starting a session programmatically:
 
 ```javascript
 const session = await client.startSession({
-    device: 'ipadair4thgeneration',
+    device: 'iphone11pro',
     osVersion: '18.2'
 })
 ```

@@ -29,7 +29,7 @@ Node 22 or later is required. Confirm the install with `appetize --version`.
 An agent can take a whole task end to end. Investigate, fix, verify, ship:
 
 * "Take this crash log. Validate it, use the app and network logs to find the root cause, fix it, test it and ship it."
-* "Ship the new sign-up copy. Update it, check it on an iPad Air and a Pixel 7, and put the screenshots on the PR."
+* "Ship the new sign-up copy. Update it, check it on an iPhone 15 Pro and a Pixel 7, and put the screenshots on the PR."
 * "Onboarding regressed. Walk it, find where it breaks, fix it, and send me a recording of it working."
 
 Every step is a terminal command, so it loops on its own: change the code, re-run on a simulator, check the recording, repeat. A save can also update the running app, with no rebuild. See [AI Development Loop](https://docs.appetize.io/guides-and-samples/development-loop).

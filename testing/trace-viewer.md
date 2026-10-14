@@ -55,7 +55,7 @@ When a selector fails, `ui` is usually the quickest fix: it is the list of what 
 {
   "path": "https://<device>.appetize.io",
   "token": "<session token>",
-  "config": { "device": "ipadair4thgeneration", "osVersion": "26.0", "platform": "ios" }
+  "config": { "device": "iphone17pro", "osVersion": "26.0", "platform": "ios" }
 }
 ```
 

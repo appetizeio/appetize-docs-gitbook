@@ -11,7 +11,7 @@ The Appetize session configuration lives under `use.config` in `playwright.confi
 use: {
     config: {
         buildId: '<your build id>',
-        device: 'ipadair4thgeneration',
+        device: 'iphone15pro',
         osVersion: '18.2',
         language: 'fr',
     },

@@ -73,7 +73,7 @@ appetize session start <device> <build-id>
 appetize open '<metro-url>'
 ```
 
-`<device>` comes from `appetize device list`, such as `pixel7` or `ipadair4thgeneration`.
+`<device>` comes from `appetize device list`, such as `pixel7` or `iphone15pro`.
 
 If the Development Build launcher shows, run `open` again. Tap **Continue** if a developer menu appears.
 

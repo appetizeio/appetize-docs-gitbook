@@ -35,7 +35,7 @@ Reserve the combinations your team opens most often, and enough of each to cover
 To request a reserved device through Appetize, you need to provide specific information.
 
 * **buildId:** Application build identifier (previously known as publicKey).
-* **deviceType:** The device that is going to be reserved. e.g., ipadair4thgeneration.
+* **deviceType:** The device that is going to be reserved. e.g., iphone14pro.
 * **OSVersion:** The operating system version for the device. e.g., 17.2.
 
 See [Devices & OS Versions](../devices-and-os-versions.md) for possible device combinations.
