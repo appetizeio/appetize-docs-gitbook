@@ -39,7 +39,7 @@ For Private Cloud embeds, use `data-appetize-url` on the iframe instead of `src`
 const client = await window.appetize.getClient('#my_iframe', {
     buildId: '{buildId|publicKey}',
     device: 'iphone11pro',
-    osVersion: '15.0'
+    osVersion: '18.2'
     ...
 })
 ```

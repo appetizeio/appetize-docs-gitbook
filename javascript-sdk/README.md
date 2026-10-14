@@ -58,7 +58,7 @@ This will return an Appetize client instance with the initial [configuration](co
 const client = await window.appetize.getClient("#appetize", {    
     buildId: '{buildId|publicKey}',
     device: 'iphone13pro',
-    osVersion: '15.0'
+    osVersion: '18.2'
     ...
 })
 ```
