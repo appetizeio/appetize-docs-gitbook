@@ -3,24 +3,27 @@
 A session is one device running one app. `session start` requests the device, waits for it to boot, and leaves a background daemon holding it open until you stop it.
 
 ```bash
-appetize session start <device-id> <target>
+appetize session start <device-id> --target <target>
 ```
 
-| Argument      | What it is                                                                                                                                                          |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<device-id>` | A device model: `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
-| `<target>`    | A **buildId**: the `id` from `appetize build list`. Previously called publicKey; see [Running apps](https://docs.appetize.io/platform/app-management/running-apps) |
+| Argument            | What it is                                                                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `<device-id>`       | A device model: `pixel7`, `iphone15pro`. From `appetize device list` or [`GET /v2/service/devices`](https://docs.appetize.io/rest-api/service)                     |
+| `--target <target>` | A **buildId**: the `id` from `appetize build list`. Previously called publicKey; see [Running apps](https://docs.appetize.io/platform/app-management/running-apps) |
+
+Leave out `--target` to start a device with no app installed. That needs `APPETIZE_API_TOKEN`, as the session is billed to the token's account.
 
 ```bash
-appetize session start iphone15pro b_a1b2c3 --device-os-version 18.2
-appetize session start pixel7 b_a1b2c3 --session-id checkout
-appetize session start pixel7 b_a1b2c3 --no-wait
+appetize session start iphone15pro --target b_a1b2c3 --device-os-version 18.2
+appetize session start pixel7 --target b_a1b2c3 --session-id checkout
+appetize session start pixel7 --target b_a1b2c3 --no-wait
+appetize session start pixel7 --launch-url https://appetize.io
 ```
 
 Save the session record while you watch it boot. The record goes to stdout, the progress to stderr:
 
 ```bash
-appetize session start pixel7 b_a1b2c3 > session.json
+appetize session start pixel7 --target b_a1b2c3 > session.json
 ```
 
 Phases arrive on stderr in this order: `requesting`, `queued`, `starting`, `downloadingApp`, `installingApp`, `launchingApp`, `ready`. Not every session shows all of them. `queued` appears only when you are waiting (for a free device, or for an account concurrency limit to clear) and `downloadingApp` only when the build still has to be fetched. A slow start tells you which of those you are waiting on.
@@ -55,6 +58,60 @@ A few details worth knowing:
 
 Available since `@appetize/cli` 0.16.0.
 
+## Device settings
+
+Set the device up before the session starts instead of changing it afterwards:
+
+| Flag                                | Sets                                                                                     |
+| ----------------------------------- | ---------------------------------------------------------------------------------------- |
+| `--device-os-version`               | The OS version: `18.2`, or `18` for the latest 18.x                                      |
+| `--device-orientation`              | `portrait`, `landscapeLeft`, `landscapeRight` or `upsideDown`                            |
+| `--device-locale`                   | A BCP 47 tag: `fr-CA`                                                                    |
+| `--device-timezone`                 | An IANA timezone: `America/Toronto`                                                      |
+| `--device-location <lat>,<lng>`     | The GPS location: `43.65,-79.38`                                                         |
+| `--device-appearance`               | `light` or `dark`                                                                        |
+| `--device-font-size`                | `xs`, `s`, `m`, `l`, `xl`, `xxl` or `xxxl`                                               |
+| `--device-ios-keyboards`            | iOS only. A keyboard layout such as `en_US@sw=QWERTY`; repeat the flag for more than one |
+| `--no-device-ios-autocorrect`       | iOS only. Keeps autocorrect off, which is already the default                            |
+| `--no-device-android-soft-keyboard` | Android only. Hides the on-screen keyboard                                               |
+| `--device-android-shell`            | Android only. An adb shell command to run at start. Needs `--target`                     |
+
+```bash
+appetize session start iphone15pro --target b_a1b2c3 --device-orientation landscapeLeft --device-appearance dark
+appetize session start pixel7 --target b_a1b2c3 --device-locale fr-CA --device-timezone America/Toronto
+```
+
+A location with a negative latitude needs an `=`, because the CLI reads a leading `-` as the start of another flag:
+
+```bash
+appetize session start pixel7 --target b_a1b2c3 --device-location=-33.87,151.21
+```
+
+## Launch options
+
+| Flag                        | Does                                                                                            |
+| --------------------------- | ----------------------------------------------------------------------------------------------- |
+| `--launch-url`              | Opens a URL once the session is ready. Works with no target                                     |
+| `--launch-app <id>`         | An app id to launch instead of the target app. Needs `--target`                                 |
+| `--no-launch-app`           | Starts the session without launching the app. Needs `--target`                                  |
+| `--launch-params key=value` | Passes a parameter to the app at launch; repeat the flag for more. Needs `--target`             |
+| `--launch-permissions`      | `grant` gives the app every permission it asks for. Needs `--target`                            |
+| `--launch-ios-args`         | iOS only. An argument passed to the app, at most 20; repeat the flag for more. Needs `--target` |
+
+`--launch-params` reads each value as JSON when it is valid JSON and as plain text otherwise. `debug=true` is a boolean, `retries=3` a number and `name=Ada` a string. Quote the pair to keep a number-like value a string, or to pass a list:
+
+```bash
+appetize session start pixel7 --target b_a1b2c3 --launch-params debug=true --launch-params retries=3
+appetize session start pixel7 --target b_a1b2c3 --launch-params 'zip="90210"'
+appetize session start pixel7 --target b_a1b2c3 --launch-params 'tags=["beta","qa"]'
+```
+
+Here `zip` reaches the app as a string, not the number 90210. A `--launch-ios-args` value starting with `-` needs an `=`, like `--launch-ios-args=-FeatureX`.
+
+`--launch-params` and `--launch-ios-args` have nothing to apply to when `--no-launch-app` is set.
+
+Invalid flags fail before a device is requested, each named in the error, including with `--no-wait`.
+
 ## Naming and picking a session
 
 Each session gets a three-word id such as `tidy-pandas-jump`, or the one you pass to `--session-id`. Other commands act on the only running session, so you rarely pass anything:
@@ -84,7 +141,7 @@ tail -f ~/.appetize/cli/sessions/checkout/device.log.jsonl
 `--proxy` intercepts the app's traffic and captures it to `logs.network`, one JSON event per request, response and error:
 
 ```bash
-appetize session start pixel7 b_a1b2c3 --proxy --session-id checkout
+appetize session start pixel7 --target b_a1b2c3 --proxy --session-id checkout
 ```
 
 ```bash
