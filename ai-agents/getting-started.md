@@ -52,7 +52,7 @@ The same commands, by hand:
 appetize --help                           # every command; add --help to any of them
 appetize device list --platform android   # device ids and their OS versions
 appetize build list                       # your builds; each id is a target
-appetize session start pixel7 b_a1b2c3
+appetize session start pixel7 --target b_a1b2c3
 appetize inspect                          # what is on screen
 appetize tap --select-text 'Log in'
 appetize screenshot after-login
