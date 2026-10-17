@@ -23,7 +23,7 @@ Set up the Appetize AI development loop for this React Native app.
 
 1. Install expo-dev-client if it is missing. Build a development build: an Android x86_64 debug APK, or on a Mac a zipped iOS simulator .app. Upload it with `appetize build upload <file> --wait` and keep the build id.
 2. Start Metro in the background with `npx expo start --dev-client --tunnel`. Copy the exp+ URL it prints.
-3. Run `appetize session start <device> <build-id>` on the device I name, or pixel7. Then run `appetize open '<exp+ URL>'`. If the Development Build launcher shows, run open again. Tap Continue if a developer menu appears. Give me the viewerUrl.
+3. Run `appetize session start <device> --target <build-id>` on the device I name, or pixel7. Then run `appetize open '<exp+ URL>'`. If the Development Build launcher shows, run open again. Tap Continue if a developer menu appears. Give me the viewerUrl.
 4. Confirm the app loaded with `appetize inspect`. Then make my change, save it, and check the screen with `appetize screenshot`. Don't rebuild unless I change native code.
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ Copy the `exp+` URL it prints. That is `<metro-url>`.
 ### 3. Open the app
 
 ```bash
-appetize session start <device> <build-id>
+appetize session start <device> --target <build-id>
 appetize open '<metro-url>'
 ```
 
