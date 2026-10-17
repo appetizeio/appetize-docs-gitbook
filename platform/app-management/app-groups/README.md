@@ -49,7 +49,7 @@ On **Android**, a `launchUrl` goes to whichever app finished installing first, w
 A group has an id of the form `ag_…`, shown as **Group ID** on the group's page. It works anywhere a build id works: an app link, an [embed](https://docs.appetize.io/platform/embedding-apps), a [share link](https://docs.appetize.io/platform/sharing-apps), the [JavaScript SDK](https://docs.appetize.io/javascript-sdk) `buildId`, and the CLI:
 
 ```bash
-appetize session start pixel7 ag_...
+appetize session start pixel7 --target ag_...
 ```
 
 Groups are created and edited in the dashboard or through the **v2 API** (`/v2/app-groups`); the v1 API can read a group but not change one.
