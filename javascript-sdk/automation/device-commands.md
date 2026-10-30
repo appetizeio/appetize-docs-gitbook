@@ -190,6 +190,14 @@ await session.rotate('left')
 await session.rotate('right')
 ```
 
+### fold()
+
+Sets the hinge state of a foldable device, such as the iPhone Duo, to `closed`, `partiallyOpen` or `fullyOpen`.
+
+```typescript
+await session.fold('partiallyOpen')
+```
+
 ### screenshot()
 
 Takes a screenshot of the device and returns the data as a buffer.

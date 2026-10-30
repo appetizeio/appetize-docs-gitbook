@@ -131,6 +131,12 @@ For more information see [ADB tunnel](../features/advanced-features/android/adb-
 
 Automatically grant all required app permissions. [See Auto-grant permissions](../features/auto-grant-permissions.md).
 
+### hinge
+
+`"closed" | "partiallyOpen" | "fullyOpen"`
+
+Sets the hinge state of a foldable device, such as the iPhone Duo. Ignored on other devices. Defaults to `closed`.
+
 ### hidePasswords
 
 `boolean`
