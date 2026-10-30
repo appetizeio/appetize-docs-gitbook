@@ -144,7 +144,7 @@ await session.keypress('Backspace')
 ```
 {% endhint %}
 
-### keypress(character, options)
+### keypress(key, options)
 
 Sends a single key press to the device
 
@@ -157,7 +157,7 @@ await session.keypress("a")
 | Name           | Type      | Description                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | -------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | key            | `string`  | <p>Key to send to the device ('a', 'b', etc.)</p><p>Also accepts text-editing <strong>keys:</strong> <code>Backspace</code><br><br>And hardware keys:<br><code>HOME</code><br><strong>Android Only:</strong><br><code>VOLUME_UP</code><br><code>VOLUME_DOWN</code><br><code>ANDROID_KEYCODE_MENU</code><br><code>LOCK_SCREEN</code><br><code>UNLOCK_SCREEN</code><br><strong>iOS Only:</strong><br><code>TOGGLE_SCREEN_LOCK</code></p> |
-| options.shift? | `boolean` |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| options.shift? | `boolean` | If `true`, keys will be capitalised by simulating the Shift key being pressed                                                                                                                                                                                                                                                                                                                                                          |
 
 ### setAppearance(appearance)
 
