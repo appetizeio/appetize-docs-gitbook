@@ -19,7 +19,6 @@ See [Configuration](../../configuration.md) for more information.
 | disableVirtualKeyboard?  | boolean                  |
 | enableAdb?               | boolean                  |
 | grantPermissions?        | boolean                  |
-| hidePasswords?           | boolean                  |
 | iosKeyboard?             | string                   |
 | iosAutocorrect?          | string                   |
 | language?                | string                   |

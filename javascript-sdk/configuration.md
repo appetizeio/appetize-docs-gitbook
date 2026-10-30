@@ -131,12 +131,6 @@ For more information see [ADB tunnel](../features/advanced-features/android/adb-
 
 Automatically grant all required app permissions. [See Auto-grant permissions](../features/auto-grant-permissions.md).
 
-### hidePasswords
-
-`boolean`
-
-(Android only) Hide password visibility when typing.
-
 ### iosKeyboard
 
 `string`
