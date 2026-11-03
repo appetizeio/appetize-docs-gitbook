@@ -31,7 +31,7 @@ layout:
 
 ### **New API Token Management Page**
 
-<figure><img src=".gitbook/assets/image (72).png" alt=""><figcaption><p>New API Token Management Page</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (79).png" alt=""><figcaption><p>New API Token Management Page</p></figcaption></figure>
 
 * **New Features**
   *   Released the new [**API Token Management**](https://appetize.io/organization/api-tokens) page
@@ -51,7 +51,7 @@ layout:
 
 ### iOS 26, iPhone 17 Support, and a New Automation Engine
 
-<figure><img src=".gitbook/assets/image (70).png" alt="iOS 26 &#x26; iPhone 17 devices added"><figcaption><p>iOS 26 &#x26; iPhone 17 devices added</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (77).png" alt="iOS 26 &#x26; iPhone 17 devices added"><figcaption><p>iOS 26 &#x26; iPhone 17 devices added</p></figcaption></figure>
 
 * **New Features**
   * Added support for **iOS 26** and the latest **iPhone 17** and **iPhone 17 Pro Max** devices
@@ -72,7 +72,7 @@ layout:
 
 ### Session History View and Android 16 Support
 
-<figure><img src=".gitbook/assets/image (69).png" alt="Picture of the new Session History View"><figcaption><p>New Session History View</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (76).png" alt="Picture of the new Session History View"><figcaption><p>New Session History View</p></figcaption></figure>
 
 * **New Features**
   * Released the new [**Session History**](https://appetize.io/sessions) view
@@ -206,7 +206,7 @@ layout:
 
 ### New App Dashboard
 
-<figure><img src=".gitbook/assets/image (67).png" alt="New App Dashboard: Streamlined to find the right apps faster"><figcaption><p>New App Dashboard: Streamlined to find the right apps faster</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (74).png" alt="New App Dashboard: Streamlined to find the right apps faster"><figcaption><p>New App Dashboard: Streamlined to find the right apps faster</p></figcaption></figure>
 
 * **Enhanced App Organization**:\
   Apps are now organized by their unique application identifier. See our [App Dashboard documentation](https://docs.appetize.io/platform/app-management/listing-apps) for more info.

@@ -9,7 +9,7 @@ icon: play
 
 ## Features
 
-<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption><p>App page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (90).png" alt=""><figcaption><p>App page</p></figcaption></figure>
 
 Appetize provides an out-of-the-box App page that provides easy access to:
 
@@ -33,10 +33,10 @@ Appetize provides an out-of-the-box App page that provides easy access to:
     * Save screenshots
     * Toggle soft keyboard
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Device Toolbar</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>Device Toolbar</p></figcaption></figure>
 * Support for all [Query Parameters](../query-params-reference.md) to fully customize your experience.
 
-<figure><img src="../../.gitbook/assets/image (84).png" alt=""><figcaption><p>Easily switch devices, enable debugging features and more.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption><p>Easily switch devices, enable debugging features and more.</p></figcaption></figure>
 
 ## Accessing your App Page
 

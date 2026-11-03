@@ -15,7 +15,7 @@ The easiest way to find your external share link is by going to your [Apps](http
 
 Currently, `Share` will share a specific build of your application. Soon, we will introduce new sharing features that will allow you to share the latest build without changing the URL.
 
-<figure><img src="../.gitbook/assets/image (19).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
 
 ## App Identifier
 

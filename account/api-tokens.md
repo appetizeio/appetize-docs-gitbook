@@ -9,7 +9,7 @@ description: >-
 You can manage your organization's API tokens by navigating to [**Organization → API Tokens**](https://appetize.io/organization/api-tokens)
 
 {% hint style="warning" %}
-Tokens belong to the organization, not to individual users.&#x20;
+Tokens belong to the organization, not to individual users.
 
 If a user who generated a token is removed from the organization, the token continues to work.
 {% endhint %}
@@ -30,20 +30,20 @@ You will be asked to provide:
 
 Select **Generate Token** to create it.
 
-<figure><img src="../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
 After the token is created:
 
 * The full token appears once. Copy and save it securely, because it cannot be viewed again.
 * All organization admins will receive an email with the creator, the time it was generated, and an obfuscated version of the token.
 
-<figure><img src="../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
 ## Viewing Tokens
 
-<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 Admins can view all API Tokens in the organization. Each token displays:
 
@@ -54,7 +54,7 @@ Admins can view all API Tokens in the organization. Each token displays:
 * **Last used**\
   Indicates the most recent time the token authenticated a request.
 * **Created by**\
-  Shows who originally generated the token.&#x20;
+  Shows who originally generated the token.
 * **Role**\
   Indicates whether the token was created with Developer or Admin privileges.
 * **Delete icon**\

@@ -19,7 +19,7 @@ The easiest way to find your embed link is by going to your [Apps](https://appet
 
 Currently, `Share` will share a specific build of your application. Soon, we will introduce new sharing features that will allow you to share the latest build without changing the URL.
 
-<figure><img src="../.gitbook/assets/image (17).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt="" width="386"><figcaption><p>Example Share dialog</p></figcaption></figure>
 
 {% hint style="info" %}
 You can customize and test out all the [Query Parameters](query-params-reference.md) on your [App Page](app-management/running-apps.md) before switching out the `app` link with an `embed` link.
