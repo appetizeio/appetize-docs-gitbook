@@ -8,4 +8,4 @@ site:
       path: appetize-io-docs
       default: true
       content:
-        directory: ./appetize-io-docs
+        directory: ./
