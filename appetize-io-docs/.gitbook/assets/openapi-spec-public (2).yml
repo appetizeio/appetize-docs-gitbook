@@ -1,0 +1,2506 @@
+openapi: 3.0.3
+info:
+  title: Appetize V2 API Reference
+  description: >-
+    Seamlessly integrate Appetize into your CI/CD pipeline or automate tasks by
+    making use of our REST API.
+  contact:
+    email: hello@appetize.io
+  version: '2'
+servers:
+  - url: https://api.appetize.io
+security:
+  - jwt: []
+  - apiToken: []
+paths:
+  /v2/app-groups:
+    get:
+      summary: List App Groups
+      tags:
+        - App Groups
+      description: List all app groups in the account, with associated metadata.
+      operationId: listAppGroups
+      parameters:
+        - in: query
+          name: page
+          description: The page number of results
+          example: 1
+          schema:
+            type: integer
+        - in: query
+          name: limit
+          description: The number of results to return per page
+          example: 10
+          schema:
+            type: integer
+        - in: query
+          name: search
+          description: The search term to filter by
+          example: My App
+          schema:
+            type: string
+        - in: query
+          name: platform
+          description: The platform to filter by
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+          example: ios
+        - in: query
+          name: created
+          description: The created date to filter by
+          schema:
+            type: string
+            format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        - in: query
+          name: updated
+          description: The updated date to filter by,
+          schema:
+            type: string
+            format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/AppGroupCollection'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Create App Group
+      tags:
+        - App Groups
+      description: Create a new app group.
+      operationId: createAppGroup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadAppGroup'
+      responses:
+        '201':
+          description: App Group created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppGroup'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/app-groups/{appGroupId}:
+    get:
+      summary: Get App Group
+      tags:
+        - App Groups
+      description: Get an app group by its unique identifier.
+      operationId: getAppGroup
+      parameters:
+        - in: path
+          name: appGroupId
+          description: The unique identifier for the app group.
+          required: true
+          schema:
+            type: string
+          example: ag_nbf3wn4d
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppGroup'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      summary: Update App Group
+      tags:
+        - App Groups
+      description: Update an app group by its unique identifier.
+      operationId: updateAppGroup
+      parameters:
+        - in: path
+          name: appGroupId
+          description: The unique identifier for the app group.
+          required: true
+          schema:
+            type: string
+          example: ag_nbf3wn4d
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadAppGroup'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppGroup'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete App Group
+      tags:
+        - App Groups
+      description: Delete an app group by its unique identifier.
+      operationId: deleteAppGroup
+      parameters:
+        - in: path
+          name: appGroupId
+          description: The unique identifier for the app group.
+          required: true
+          schema:
+            type: string
+          example: ag_nbf3wn4d
+      responses:
+        '204':
+          description: App Group deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/apps:
+    get:
+      summary: List Apps
+      tags:
+        - Apps
+      description: List all apps in the account, with associated metadata.
+      operationId: listApps
+      parameters:
+        - in: query
+          name: page
+          description: The page number of results
+          example: 1
+          schema:
+            type: integer
+        - in: query
+          name: limit
+          description: The number of results to return per page
+          example: 10
+          schema:
+            type: integer
+        - in: query
+          name: search
+          description: The search term to filter by, example "My App".
+          example: My App
+          schema:
+            type: string
+        - in: query
+          name: platform
+          description: The platform to filter by
+          example: android
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+            example: ios
+        - in: query
+          name: appId
+          description: >-
+            The unique identifier for an app to filter by. On Android this is
+            the package name, on iOS this is the bundle identifier.
+          example: org.acme.acmeapp
+          schema:
+            type: string
+        - in: query
+          name: versionName
+          description: >-
+            The version name to filter by, example "1.0.0". This is the
+            CFBundleShortVersionString on iOS and versionName on Android.
+          example: 1.0.0
+          schema:
+            type: string
+        - in: query
+          name: buildNumber
+          description: >-
+            The build number to filter by, example "1", this is the versionCode
+            on Android and CFBundleVersion on iOS.
+          example: 1
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: note
+          description: The notes to filter by, example "This is a note".
+          example: This is a note
+          schema:
+            type: string
+        - in: query
+          name: tags
+          description: The tags to filter by, example "tag1,tag2".
+          example: tag1,tag2
+          schema:
+            type: string
+        - in: query
+          name: disabled
+          description: The disabled status to filter by, example "true".
+          example: 'true'
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/AppCollection'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/apps/{platform}/{appId}:
+    get:
+      summary: Get App
+      tags:
+        - Apps
+      description: Get an app by its unique identifier.
+      operationId: getApp
+      parameters:
+        - in: path
+          name: appId
+          description: >-
+            The unique identifier for the app. On Android this is the package
+            name, on iOS this is the bundle identifier.
+          required: true
+          example: org.acme.acmeapp
+          schema:
+            type: string
+        - in: path
+          name: platform
+          description: The platform to filter by
+          example: android
+          required: true
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+            example: android
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/App'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete App
+      tags:
+        - Apps
+      description: Delete an app by its app identifier. This removes all associated builds.
+      operationId: deleteApp
+      parameters:
+        - in: path
+          name: appId
+          description: >-
+            The unique identifier for the app. On Android this is the package
+            name, on iOS this is the bundle identifier.
+          required: true
+          example: org.acme.acmeapp
+          schema:
+            type: string
+        - in: path
+          name: platform
+          description: The platform to filter by
+          required: true
+          example: android
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+            example: android
+      responses:
+        '204':
+          description: App deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                  "message": "Not Found"
+                }
+  /v2/apps/{platform}/{appId}/versions:
+    get:
+      summary: List All Versions for a given App
+      tags:
+        - Apps
+        - Versions
+      description: >-
+        List all version names of a given app. The default paging limit is 1000
+        items per page.
+      operationId: listAppVersions
+      parameters:
+        - in: path
+          name: platform
+          description: The platform to filter by
+          required: true
+          example: android
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+            example: android
+        - in: path
+          name: appId
+          description: >-
+            The unique identifier for the app. On Android this is the package
+            name, on iOS this is the bundle identifier.
+          required: true
+          example: org.acme.acmeapp
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: The page number of results
+          example: 1
+          schema:
+            type: integer
+        - in: query
+          name: limit
+          description: The number of items to return per page
+          example: 100
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/AppVersionCollection'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/apps/{platform}/{appId}/tags:
+    get:
+      summary: List All Tags for a given App
+      tags:
+        - Apps
+        - Tags
+      description: >-
+        List all tags of a given app. The default paging limit is 1000 items per
+        page.
+      operationId: listAppTags
+      parameters:
+        - in: path
+          name: platform
+          description: The platform to filter by
+          required: true
+          example: android
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+            example: android
+        - in: path
+          name: appId
+          description: >-
+            The unique identifier for the app. On Android this is the package
+            name, on iOS this is the bundle identifier.
+          required: true
+          example: org.acme.acmeapp
+          schema:
+            type: string
+        - in: query
+          name: page
+          description: The page number of results
+          example: 1
+          schema:
+            type: integer
+        - in: query
+          name: limit
+          description: The number of items to return per page
+          example: 100
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/TagCollection'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/apps/{platform}/{appId}/builds:
+    get:
+      summary: List All Builds for a given App
+      tags:
+        - App Builds
+      description: >-
+        List all builds for a given app, with associated metadata. The default
+        paging limit is 100 items per page.
+      operationId: listBuilds
+      parameters:
+        - in: path
+          name: platform
+          description: The platform of the app. Either ios or android
+          required: true
+          example: ios
+          schema:
+            type: string
+        - in: path
+          name: appId
+          description: >-
+            The unique identifier for the app. On Android this is the package
+            name, on iOS this is the bundle identifier.
+          required: true
+          example: com.sample.appId
+          schema:
+            type: string
+        - in: query
+          name: versionName
+          description: The version name to filter by, example "1.0.0".
+          example: 1.0.0
+          schema:
+            type: string
+        - in: query
+          name: buildNumber
+          description: >-
+            The build number to filter by, example "1". This is the versionCode
+            on Android and CFBundleVersion on iOS.
+          example: '1'
+          schema:
+            type: string
+        - in: query
+          name: tags
+          description: The tags to filter by, example "tag1,tag2".
+          example: tag1,tag2
+          schema:
+            type: string
+        - in: query
+          name: latest
+          description: >-
+            Only return the latest version if more than one version matches the
+            filter.
+          example: true
+          schema:
+            type: boolean
+        - in: query
+          name: page
+          description: The index of the desired page
+          example: 1
+          schema:
+            type: number
+        - in: query
+          name: limit
+          description: The number of items to return per page
+          example: 10
+          schema:
+            type: number
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/BuildCollection'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/builds/{buildId}:
+    get:
+      summary: Get a specific build by its unique identifier.
+      tags:
+        - Builds
+      description: Get a specific build by its unique identifier.
+      operationId: getBuild
+      parameters:
+        - name: buildId
+          in: path
+          required: true
+          description: Unique identifier for the build.
+          example: 42fra5cruvn7fuwv673ikaujqe
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Build not found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Build not found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      summary: Updates an existing build.
+      tags:
+        - Builds
+      description: Update a build by its unique identifier.
+      operationId: updateBuild
+      parameters:
+        - in: path
+          name: buildId
+          description: The unique identifier for the build.
+          required: true
+          schema:
+            type: string
+          example: b_zxico23n890adf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadBuild'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete Build
+      tags:
+        - Builds
+      description: Delete a build by its unique identifier.
+      operationId: deleteBuild
+      parameters:
+        - in: path
+          name: buildId
+          description: The unique identifier for the build.
+          required: true
+          schema:
+            type: string
+          example: b_zxico23n890adf
+      responses:
+        '204':
+          description: Build deleted
+          content:
+            application/json:
+              example: {}
+              schema:
+                type: object
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not Matching Build Found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/builds:
+    post:
+      tags:
+        - Builds
+      summary: Upload a new build
+      description: >-
+        Upload a new build to Appetize. This will create a new app if one does
+        not already exist, or update an existing app with a new build
+        version.<br/><br/> You can upload a file via a url (application/json),
+        or submit your file directly (multipart/form).<br/><br/>Note that the
+        build's metadata (ie. appId) is updated asynchronously after the request
+        completes.
+      security:
+        - jwt: []
+        - apiToken: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              allOf:
+                - type: object
+                  required:
+                    - url
+                    - platform
+                  properties:
+                    url:
+                      type: string
+                      example: https://example.com/some_app.apk
+                      description: >-
+                        A publicly accessible link to your .zip, .tar.gz, or
+                        .apk file.
+                    platform:
+                      type: string
+                      enum:
+                        - ios
+                        - android
+                      example: android
+                      description: Platform the app targets.
+                    tags:
+                      type: array
+                      example:
+                        - beta
+                      default: []
+                      items:
+                        type: string
+                      description: >-
+                        Tags for this specific build. Useful for identifying &
+                        filtering a certain build. You can add up to 20 tags,
+                        each with up to 20 characters.
+          multipart/form:
+            schema:
+              allOf:
+                - type: object
+                  required:
+                    - file
+                    - platform
+                  properties:
+                    file:
+                      type: string
+                      format: binary
+                      example: android-app.apk
+                      description: The app file to upload.
+                    platform:
+                      type: string
+                      enum:
+                        - ios
+                        - android
+                      example: android
+                      description: Platform the app targets ('ios' or 'android').
+                    tags:
+                      type: string
+                      example:
+                        - latest
+                        - beta
+                      format: array
+                      description: >-
+                        String representing an array of strings. Tags for this
+                        specific build. Useful for identifying & filtering a
+                        certain build. Ie. ['latest', 'beta']<br/><br/>You can
+                        add up to 20 tags, each with up to 20 characters.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    required:
+                      - id
+                      - created
+                    properties:
+                      id:
+                        type: string
+                        example: b_f7zjgmmchdbr6htrpfsr6o4iky
+                        description: Unique identifier for the build.
+                      created:
+                        description: The date the build was created.
+                        type: string
+                        format: date-time
+                        example: '2020-01-01T00:00:00.000Z'
+                      createdBy:
+                        description: The user who created the build.
+                        type: string
+                        example: user@appetize.io
+                      updated:
+                        description: The date the build was last updated.
+                        type: string
+                        format: date-time
+                        example: '2020-01-01T00:00:00.000Z'
+                      updatedBy:
+                        description: The user who last updated the build.
+                        type: string
+                        example: user@appetize.io
+                      note:
+                        type: string
+                        example: Some note
+                        description: >-
+                          A note for your own purposes, will appear on your
+                          management dashboard.
+                      tags:
+                        description: The tags associated with the app version.
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          - tag1
+                          - tag2
+        '400':
+          description: Invalid request body
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Url must have http or https protocol"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      summary: Get builds
+      tags:
+        - Builds
+      description: >-
+        List all builds in the account, with associated metadata. The default
+        page size is 100 items
+      operationId: listAllBuilds
+      parameters:
+        - in: query
+          name: appId
+          schema:
+            type: string
+          description: >-
+            The unique identifier for the app build. On Android this is the
+            package name, on iOS this is the bundle identifier.
+          example: com.sample.appId
+        - in: query
+          name: buildId
+          description: The unique identifier for the build.
+          schema:
+            type: string
+          example: 42fra5cruvn7fuwv673ikaujqe
+        - in: query
+          name: platform
+          description: The platform the app targets.
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+          example: ios
+        - in: query
+          name: buildNumber
+          description: >-
+            The build number, as specified by the build. In Android this is the
+            versionCode, in iOS this is the CFBundleVersion.
+          schema:
+            type: integer
+            format: int32
+          example: 1
+        - in: query
+          name: versionName
+          description: >-
+            The version name, as specified by the build. In Android this is the
+            versionName, in iOS this is the CFBundleShortVersionString.
+          schema:
+            type: string
+          example: 1.0.0
+        - in: query
+          name: tags
+          description: The tags to filter by. Comma separated
+          schema:
+            type: string
+          example: tag1,tag2
+        - in: query
+          name: limit
+          description: The number of items to return. Default is 100.
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+            maximum: 200
+          example: 100
+        - in: query
+          name: pageNumber
+          description: The page number to return. Default is 1.
+          example: 1
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/BuildCollection'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Bad Request"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Not found"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/reports/usage/summary:
+    get:
+      tags:
+        - Reports
+      summary: Get usage report summary
+      description: >-
+        Gets a usage summary of all sessions for your account, including the
+        number of sessions and their durations. Query parameters can be used for
+        fine-tuned reports.
+      security:
+        - jwt: []
+        - apiToken: []
+      parameters:
+        - name: groupByDate
+          in: query
+          description: >-
+            Group sessions with a certain date range. You can also group by a
+            custom number of days by passing `${int}d`.
+          required: true
+          example: 7d
+          schema:
+            type: string
+            enum:
+              - day
+              - week
+              - month
+              - all
+              - ${int}d
+        - name: dateAnchor
+          in: query
+          description: >-
+            Must only be included if using a custom groupByDate number. Anchors
+            the groupByDate to a custom UTC date.
+          required: false
+          example: '2023-01-01'
+          schema:
+            type: string
+            format: date
+        - name: buildId
+          in: query
+          description: >-
+            If set, only sessions for the given buildId will be included in the
+            report.
+          required: false
+          example: b_k5h7avnbeedjbkm2cwuorlis7m
+          schema:
+            type: string
+            default: all
+        - name: startDate
+          in: query
+          description: The start date of the report (UTC time & inclusive).
+          required: false
+          example: '2023-01-01'
+          schema:
+            type: string
+            format: date
+            default: 12 months prior to today
+        - name: endDate
+          in: query
+          description: The end date of the report (UTC time & inclusive).
+          required: false
+          example: '2023-02-01'
+          schema:
+            type: string
+            format: date
+            default: today
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: |
+                {
+                  "data": [
+                    {
+                      "startDate": "2023-07-30",
+                      "endDate": "2023-07-30",
+                      "buildId": "b_k5h7avnbeedjbkm2cwuorlis7m",
+                      "numSessions": 117,
+                      "minutes": 312.975,
+                      "platform": "android",
+                      "name_latest": "Wikipedia",
+                      "appId_latest": "org.wikipedia",
+                      "note_latest": "This is the Wikipedia app"
+                    },
+                    {
+                      "startDate": "2023-07-30",
+                      "endDate": "2023-07-30",
+                      "buildId": "ag_k5h7avnbeedjbkm2cwuorlis7m",
+                      "numSessions": 25,
+                      "minutes": 55.2,
+                      "platform": "android",
+                      "name_latest": "My App Group",
+                      "note_latest": "App group with multiple apps"
+                    },
+                    {
+                      "startDate": "2023-07-30",
+                      "endDate": "2023-07-30",
+                      "buildId": "standalone_k5h7avnbeedjbkm2cwuorlis7m",
+                      "numSessions": 3,
+                      "minutes": 19.12
+                    }
+                  ]
+                }
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - startDate
+                        - endDate
+                        - numSessions
+                        - minutes
+                      properties:
+                        startDate:
+                          description: Start date of this session grouping.
+                          type: string
+                          format: date
+                          example: 2023-07-30T00:00:00.000Z
+                        endDate:
+                          description: End date of this session grouping.
+                          type: string
+                          format: date
+                          example: 2023-07-30T00:00:00.000Z
+                        buildId:
+                          description: >-
+                            BuildId of the grouped sessions. Alternatively the
+                            standalone or app group id.
+                          type: string
+                          example: b_k5h7avnbeedjbkm2cwuorlis7m
+                        numSessions:
+                          description: Number of grouped sessions.
+                          type: number
+                          example: 117
+                        minutes:
+                          description: Sum of minutes from the grouped sessions.
+                          type: number
+                          example: 312.975
+                        platform:
+                          description: Platform used for the grouped sessions.
+                          type: string
+                          enum:
+                            - ios
+                            - android
+                          example: android
+                        name_latest:
+                          description: >-
+                            Name of app or app group if the grouping was
+                            performed on an app or app group.
+                          type: string
+                          example: Wikipedia
+                        appId_latest:
+                          description: appId if the grouping was performed on an app.
+                          type: string
+                          example: org.wikipedia
+                        note_latest:
+                          description: Note on the app or app group.
+                          type: string
+                          example: This is the Wikipedia app
+                        day:
+                          description: Date of the grouping. Included when groupByDate=day.
+                          type: string
+                          format: date
+                          example: 2023-07-30T00:00:00.000Z
+                        week:
+                          description: >-
+                            Week of the grouping. Included when
+                            groupByDate=week.
+                          type: string
+                          example: 2023w2
+                        month:
+                          description: >-
+                            Month of the grouping. Included when
+                            groupByDate=month.
+                          type: string
+                          format: date
+                          example: 2023-07-01T00:00:00.000Z
+            text/csv:
+              example: >
+                startDate,endDate,buildId,numSessions,minutes,platform,name_latest,appId_latest,note_latest
+
+                2023-01-05,2023-03-05,b_k5h7avnbeedjbkm2cwuorlis7m,7,243,ios,Wikipedia,Wikipedia,org.wikipedia,This
+                is the Wikipedia app
+              schema:
+                type: string
+                description: Same properties as the JSON response, only in csv format.
+        '400':
+          description: Invalid query parameters
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "dateAnchor must be defined when using groupByDate='${int}d'"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '406':
+          description: Unsupported Accept header
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Accept header must include application/json, text/csv, or be empty."
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/reports/usage/concurrency:
+    get:
+      tags:
+        - Reports
+      summary: Get report on concurrent usage
+      description: >-
+        Gets the maximum number of concurrent sessions over time periods. Query
+        parameters can be used for fine-tuned reports.
+      security:
+        - jwt: []
+        - apiToken: []
+      parameters:
+        - name: platform
+          in: query
+          description: >-
+            If set, only sessions for the given platform will be included in the
+            report.
+          required: false
+          example: both
+          schema:
+            type: string
+            default: both
+            enum:
+              - ios
+              - android
+              - both
+        - name: startDate
+          in: query
+          description: The start date of the report (UTC time & inclusive).
+          required: false
+          example: '2023-01-01'
+          schema:
+            type: string
+            format: date
+            default: 3 months prior to today
+        - name: endDate
+          in: query
+          description: The end date of the report (UTC time & inclusive).
+          required: false
+          example: '2023-02-01'
+          schema:
+            type: string
+            format: date
+            default: today
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: |
+                {
+                  "data": [
+                      {
+                        maxConcurrent: 2,
+                        startDate: '2023-01-05',
+                        endDate: '2023-03-05',
+                        platform: 'android',
+                    },
+                    {
+                        maxConcurrent: 4,
+                        startDate: '2023-01-05',
+                        endDate: '2023-03-05',
+                        platform: 'ios',
+                    }
+                  ]
+                }
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - maxConcurrent
+                        - startDate
+                        - endDate
+                      properties:
+                        startDate:
+                          description: Start date of this session grouping.
+                          type: string
+                          format: date
+                          example: 2023-01-05T00:00:00.000Z
+                        endDate:
+                          description: End date of this session grouping.
+                          type: string
+                          format: date
+                          example: 2023-03-05T00:00:00.000Z
+                        maxConcurrent:
+                          description: >-
+                            Maximum number of concurrent sessions in this
+                            period.
+                          type: number
+                          example: 4
+                        platform:
+                          description: Platform that the sessions were ran on.
+                          type: string
+                          enum:
+                            - ios
+                            - android
+                          example: android
+            text/csv:
+              example: |
+                maxConcurrent,startDate,endDate,platform
+                2,2023-01-05,2023-03-05,android
+                4,2023-01-05,2023-03-05,ios
+              schema:
+                type: string
+                description: Same properties as the JSON response, only in csv format.
+        '400':
+          description: Invalid query parameters
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "dateAnchor must be defined when using groupByDate='${int}d'"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '406':
+          description: Unsupported Accept header
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Accept header must include application/json, text/csv, or be empty."
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/reports/accounts:
+    get:
+      tags:
+        - Reports
+      summary: Get report on accounts
+      description: >-
+        Gets a report containing useful information about an account. E.g. the
+        number of users associated with it
+      security:
+        - jwt: []
+        - apiToken: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: |
+                {
+                  "numUsers": 1,
+                }
+              schema:
+                type: object
+                required:
+                  - numUsers
+                properties:
+                  numUsers:
+                    description: Number of users associated with the account.
+                    type: number
+                    example: 1
+  /v2/service/ips:
+    get:
+      tags:
+        - Service
+      summary: Get IP blocks
+      description: >-
+        Get IP blocks for Appetize streaming servers. These are the IPs from
+        which your running apps will be making network calls. Use the IP blocks
+        to whitelist access to your backend if it is not public.
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: |
+                {
+                    "ipv4": [
+                        "63.135.170.0/24",
+                        "66.55.157.0/24",
+                        "66.185.22.0/24",
+                        "73.15.222.0/24",
+                        "95.141.32.0/21"
+                    ]
+                }
+              schema:
+                type: object
+                properties:
+                  ipv4:
+                    description: List of ipv4 blocks.
+                    example:
+                      - 63.135.170.0/24
+                      - 66.55.157.0/24
+                    type: array
+                    items:
+                      type: string
+  /v2/service/devices:
+    get:
+      tags:
+        - Service
+      summary: Get available devices
+      description: Get the list of available devices and operating systems.
+      security: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: |
+                [
+                   {
+                       "id": "iphone15promax",
+                       "platform": "ios",
+                       "osVersions": [
+                           "17.0"
+                       ],
+                       "name": "iPhone 15 Pro Max"
+                   },
+                   {
+                       "id": "pixel6pro",
+                       "platform": "android",
+                       "osVersions": [
+                           "12.0",
+                           "13.0"
+                       ],
+                       "name": "Pixel 6 Pro"
+                   }
+                ]
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: >-
+                        ID of the device (ie. for device selection in url
+                        params).
+                      example: iphone15promax
+                    name:
+                      type: string
+                      description: Name of the device
+                      example: iPhone 15 Pro Max
+                    platform:
+                      type: string
+                      enum:
+                        - ios
+                        - android
+                      description: OS that the device runs.
+                      example: ios
+                    osVersions:
+                      type: array
+                      items:
+                        type: string
+                      description: Array of os versions.
+                      example:
+                        - '12.0'
+                        - '13.0'
+  /v2/sessions:
+    get:
+      tags:
+        - Sessions
+      summary: Get sessions
+      description: Gets sessions. Query parameters can be used for filtering sessions.
+      security:
+        - jwt: []
+        - apiToken: []
+      parameters:
+        - name: startDate
+          in: query
+          description: The start date of the report (UTC time & inclusive).
+          required: true
+          example: '2023-01-01'
+          schema:
+            type: string
+            format: date
+            default: 12 months prior to today
+        - name: buildId
+          in: query
+          description: >-
+            If set, only sessions for the given buildId will be included in the
+            report.
+          example: b_k5h7avnbeedjbkm2cwuorlis7m
+          required: false
+          schema:
+            type: string
+            default: all
+        - name: endDate
+          in: query
+          description: The end date of the report (UTC time & inclusive).
+          required: false
+          example: '2023-02-01'
+          schema:
+            type: string
+            format: date
+            default: today
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: |
+                {
+                  "data": [
+                    {
+                      "buildId": "b_f7zjgmmchdbr6htrpfsr6o4iky",
+                      "sessionRequested": "2023-10-12 15:26:25.499",
+                      "startTime": "2023-10-12 15:26:25.511",
+                      "userConnected": "2023-10-12 15:26:25.939",
+                      "frameTime": "2023-10-12 15:26:30.533",
+                      "appLaunchTime": "2023-10-12 15:26:30.377",
+                      "endTime": "2023-10-12 15:27:38.845",
+                      "closeTime": "2023-10-12 15:27:49.345",
+                      "sessionLengthMilliseconds": 83834,
+                      "sessionLengthSeconds": 83.834,
+                      "sessionLengthMinutes": 1.3972333333333333,
+                      "referrer": "https://appetize.io/app/f7zjgmmchdbr6htrpfsr6o4iky?device=pixel4&osVersion=11.0&scale=75",
+                      "referrerHostname": "appetize.io",
+                      "token": "f61ad58ab600579080fafb966e852134c2e9153e8d8c9a90269301d35cb80a1f",
+                      "clientLanguage": "en-US,en;q=0.9,fr;q=0.8",
+                      "clientUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+                      "versionCode": 1,
+                      "deviceType": "pixel4",
+                      "osVersion": "11.0",
+                      "rotation": 0,
+                      "debug": false,
+                      "warmSession": false,
+                      "queued": false,
+                      "noVideo": false,
+                      "location": [],
+                      "appetizeUser": "user@email.com"
+                    }
+                  ]
+                }
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Session'
+            text/csv:
+              example: >
+                buildId,sessionRequested,startTime,userConnected,frameTime,appLaunchTime,endTime,closeTime,sessionLengthMilliseconds,sessionLengthSeconds,sessionLengthMinutes,referrer,referrerHostname,token,clientLanguage,clientUserAgent,versionCode,deviceType,osVersion,rotation,debug,warmSession,queued,noVideo,location,appetizeUser
+
+                b_f7zjgmmchdbr6htrpfsr6o4iky,2023-10-12 15:26:25.499,2023-10-12
+                15:26:25.511,2023-10-12 15:26:25.939,2023-10-12
+                15:26:30.533,2023-10-12 15:26:30.377,2023-10-12
+                15:27:38.845,2023-10-12
+                15:27:49.345,83834,83.834,1.3972333333333333,https://appetize.io/app/f7zjgmmchdbr6htrpfsr6o4iky?device=pixel4&osVersion=11.0&scale=75,appetize.io,f61ad58ab600579080fafb966e852134c2e9153e8d8c9a90269301d35cb80a1f,142.188.51.43,"en-US,en;q=0.9,fr;q=0.8","Mozilla/5.0
+                (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+                like Gecko) Chrome/118.0.0.0
+                Safari/537.36",1,pixel4,11.0,0,,,,,[],user@email.com
+              schema:
+                type: string
+                description: Same properties as the JSON response, only in csv format.
+        '400':
+          description: Invalid query parameters
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "startDate cannot be after endDate"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+        '406':
+          description: Unsupported Accept header
+          content:
+            application/json:
+              example: |
+                {
+                    "message": "Accept header must include application/json, text/csv, or be empty."
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v2/tags:
+    get:
+      summary: List Tags
+      tags:
+        - Tags
+      description: >-
+        List all tags in the account, that is currently assigned to a build. The
+        default paging limit is 1000 items per page.
+      operationId: listTags
+      parameters:
+        - in: query
+          name: pageNumber
+          description: The index of the desired page
+          example: 1
+          schema:
+            type: number
+        - in: query
+          name: limit
+          description: The number of items to return per page
+          example: 10
+          schema:
+            type: number
+        - in: query
+          name: search
+          description: The search term to filter by, example "My Tag".
+          example: My Tag
+          schema:
+            type: string
+        - in: query
+          name: platform
+          description: The platform to filter by
+          example: ios
+          schema:
+            type: string
+            enum:
+              - ios
+              - android
+            example: ios
+        - in: query
+          name: appId
+          description: >-
+            The unique identifier for an app to filter by. On Android this is
+            the package name, on iOS this is the bundle identifier.
+          example: com.sample.appId
+          schema:
+            type: string
+        - in: query
+          name: buildId
+          description: The unique identifier for the build.
+          example: b_eeWohT2piec0
+          schema:
+            type: string
+            example: android
+        - in: query
+          name: buildNumber
+          example: 1
+          description: >-
+            The build number, as specified by the app. In Android this is the
+            versionCode, in iOS this is the CFBundleVersion.
+          schema:
+            type: string
+            format: int32
+        - in: query
+          name: versionName
+          example: 1.0.0
+          description: The version name to filter by, example "1.0.0".
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Pagination'
+                  - $ref: '#/components/schemas/TagCollection'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              example: |
+                {
+                "message": "Unauthorized"
+                }
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    AppGroup:
+      type: object
+      required:
+        - id
+        - platform
+        - created
+        - createdBy
+        - apps
+        - resolvedBuilds
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the App Group.
+          example: ag_utueteiSee9u
+        name:
+          type: string
+          description: The name of the App Group.
+          example: My App Group
+        platform:
+          type: string
+          enum:
+            - ios
+            - android
+          example: ios
+        created:
+          description: The date the app-group was created.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        updated:
+          description: The date the app-group was last updated.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        createdBy:
+          description: The user who created the app group.
+          type: string
+          example: user@appetize.io
+        updatedBy:
+          description: The user who last updated the app.
+          type: string
+          example: user@appetize.io
+        lastPlayed:
+          description: The time the app group was last played.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/BuildQuery'
+        resolvedBuilds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResolvedBuild'
+    AppGroupCollection:
+      type: object
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppGroup'
+    ResolvedBuild:
+      type: object
+      nullable: true
+      allOf:
+        - $ref: '#/components/schemas/Build'
+    UploadAppGroup:
+      type: object
+      required:
+        - platform
+        - apps
+      properties:
+        name:
+          type: string
+          description: The name of the App Group.
+          example: My App Group
+        platform:
+          type: string
+          enum:
+            - ios
+            - android
+          example: ios
+        apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/BuildQuery'
+    BuildQuery:
+      type: object
+      minProperties: 1
+      properties:
+        buildId:
+          type: string
+          description: The unique identifier for the build.
+          example: b_eeWohT2piec0
+        appId:
+          type: string
+          description: The unique identifier for the app.
+          example: com.sample.appId
+        versionName:
+          type: string
+          description: >-
+            The version name, as specified by the app. In Android this is the
+            versionName, in iOS this is the CFBundleShortVersionString.
+          example: 1.0.0
+        buildNumber:
+          type: string
+          description: >-
+            The build number, as specified by the app. In Android this is the
+            versionCode, in iOS this is the CFBundleVersion.
+          example: 1
+        tags:
+          type: array
+          example:
+            - latest
+            - beta
+          default: []
+          items:
+            type: string
+    App:
+      type: object
+      required:
+        - appId
+        - latestBuild
+        - platform
+        - created
+        - createdBy
+        - updated
+        - updatedBy
+      properties:
+        appId:
+          type: string
+          description: >-
+            The unique identifier for the app. On Android this is the package
+            name, on iOS this is the bundle identifier.
+          example: com.sample.appId
+        name:
+          type: string
+          description: The latest app name, as specified by the latest version.
+          example: My App
+        iconUrl:
+          type: string
+          description: The latest app icon, as specified by the latest version.
+          format: uri
+          example: https://appetize.io/images/icon.png
+        latestBuild:
+          description: >-
+            The latest build number for the app determined by its latest version
+            and build number
+          allOf:
+            - $ref: '#/components/schemas/Build'
+        platform:
+          type: string
+          enum:
+            - ios
+            - android
+          example: ios
+        created:
+          description: The date the app was created.
+          type: string
+          format: date-time
+          example: '2024-01-16T23:51:35.269Z'
+        createdBy:
+          description: The user who created the app.
+          type: string
+          example: user@appetize.io
+        updated:
+          description: The date the app was last updated.
+          type: string
+          format: date-time
+          example: '2024-01-16T23:51:35.269Z'
+        updatedBy:
+          description: The user who last updated the app.
+          type: string
+          example: user@appetize.io
+        lastPlayed:
+          description: The time the app was last played.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+    BuildCollection:
+      type: object
+      properties:
+        builds:
+          description: A collection of builds.
+          type: array
+          items:
+            $ref: '#/components/schemas/Build'
+    AppCollection:
+      type: object
+      properties:
+        apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/App'
+    AppVersionCollection:
+      type: object
+      required:
+        - versions
+      properties:
+        versions:
+          type: array
+          items:
+            type: string
+            example: 1.0.0
+    TagCollection:
+      type: object
+      properties:
+        tags:
+          type: array
+          items:
+            type: string
+            example: tag1
+    BuildQuery1:
+      type: object
+      required:
+        - buildId
+        - appId
+        - versionName
+        - buildNumber
+      properties:
+        buildId:
+          type: string
+          description: The unique identifier for the build.
+          example: b_eeWohT2piec0
+        appId:
+          type: string
+          description: The unique identifier for the app.
+          example: com.sample.appId
+        versionName:
+          type: string
+          description: >-
+            The version name, as specified by the app. In Android this is the
+            versionName, in iOS this is the CFBundleShortVersionString.
+          example: 1.0.0
+        buildNumber:
+          type: integer
+          description: >-
+            The build number, as specified by the app. In Android this is the
+            versionCode, in iOS this is the CFBundleVersion.
+          format: int32
+          example: 1
+        tags:
+          type: string
+          example: tag1,tag2
+    Build:
+      type: object
+      required:
+        - id
+        - created
+      properties:
+        id:
+          type: string
+          description: The unique identifier for the build.
+          example: b_eeWohT2piec0
+        appId:
+          type: string
+          description: >-
+            The unique identifier for the app build. On Android this is the
+            package name, on iOS this is the bundle identifier.
+          example: com.sample.appId
+        platform:
+          type: string
+          enum:
+            - ios
+            - android
+          example: ios
+        name:
+          description: >-
+            The app name, as specified by the specific build. This is the
+            CFBundleDisplayName on iOS and the application label on Android.
+          type: string
+          example: My App
+        iconUrl:
+          description: The app icon, as specified by the specific build.
+          type: string
+          format: uri
+          example: https://appetize.io/images/icon.png
+        versionName:
+          description: >-
+            The version name, as specified by the build. In Android this is the
+            versionName, in iOS this is the CFBundleShortVersionString.
+          type: string
+          example: 1.0.0
+        buildNumber:
+          description: >-
+            The build number, as specified by the build. In Android this is the
+            versionCode, in iOS this is the CFBundleVersion.
+          type: string
+          example: '1'
+        tags:
+          description: The tags associated with the app version.
+          type: array
+          items:
+            type: string
+          example:
+            - tag1
+            - tag2
+        note:
+          description: The note associated with the app version.
+          type: string
+          example: This is a note
+        created:
+          description: The date the build was created.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        createdBy:
+          description: The user who created the build.
+          type: string
+          example: user@appetize.io
+        updated:
+          description: The date the build was last updated.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        updatedBy:
+          description: The user who last updated the build.
+          type: string
+          example: user@appetize.io
+        lastPlayed:
+          description: The time the build was last played.
+          type: string
+          format: date-time
+          example: '2020-01-01T00:00:00.000Z'
+        metadata:
+          description: The platform specific metadata associated with the build.
+          oneOf:
+            - type: object
+              properties:
+                android:
+                  $ref: '#/components/schemas/AndroidMetadata'
+            - type: object
+              properties:
+                ios:
+                  $ref: '#/components/schemas/IosMetadata'
+    AndroidMetadata:
+      type: object
+      properties:
+        packageName:
+          type: string
+          example: com.sample.appId
+        name:
+          type: string
+          example: My App
+        versionName:
+          type: string
+          example: 1.0.0
+        versionCode:
+          type: integer
+          format: int64
+          example: 22
+        minSDKVersion:
+          type: integer
+          format: int32
+          example: 23
+        targetSDKVersion:
+          type: integer
+          format: int32
+          example: 33
+        architectures:
+          type: array
+          example:
+            - arm64
+          items:
+            type: string
+            example: arm64
+        permissions:
+          type: array
+          example:
+            - android.permission.INTERNET
+          items:
+            type: string
+            example: android.permission.VIBRATE
+        localizations:
+          type: array
+          example:
+            - en
+            - de
+            - it
+          items:
+            type: string
+            example: en
+    IosMetadata:
+      type: object
+      properties:
+        CFBundleId:
+          type: string
+          example: com.sample.appId
+        CFBundleName:
+          type: string
+          example: My App
+        CFBundleDisplayName:
+          type: string
+          example: My App
+        MinimumOSVersion:
+          type: string
+          example: '12.0'
+        DTPlatformName:
+          type: string
+          example: iphoneos
+        CFBundleVersion:
+          type: string
+          example: 1.0.0
+        CFBundleShortVersionString:
+          type: string
+          example: 1.0.0
+        CFBundleSupportedPlatforms:
+          type: array
+          example:
+            - iphoneos
+          items:
+            type: string
+            example: iphoneos
+        UIRequiredDeviceCapabilities:
+          type: array
+          example:
+            - arm64
+          items:
+            type: string
+            example: arm64
+        DTSDKName:
+          type: string
+          example: iphoneos14.0
+        UsageDescriptions:
+          type: object
+          additionalProperties:
+            anyOf:
+              - type: string
+              - type: object
+                additionalProperties:
+                  type: string
+          example:
+            NSLocationUsageDescription: Get article recommendations based on your location
+            NSPhotoLibraryUsageDescription: Save photos from Wikipedia to your photo library
+            NSLocationTemporaryUsageDescriptionDictionary:
+              LocationUse: Precise location is needed for article recommendations
+        UISupportedInterfaceOrientations:
+          type: array
+          example:
+            - UIInterfaceOrientationPortrait
+          items:
+            type: string
+            example: UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientationsIpad:
+          type: array
+          example:
+            - UIInterfaceOrientationLandscapeLeft
+          items:
+            type: string
+            example: UIInterfaceOrientationLandscapeLeft
+        CFBundleURLTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CfBundleUrlType'
+        Localizations:
+          type: array
+          example:
+            - en
+            - de
+            - it
+          items:
+            type: string
+            example: en
+        Frameworks:
+          type: array
+          example:
+            - WMF
+          items:
+            type: string
+            example: WMF
+    CfBundleUrlType:
+      type: object
+      properties:
+        CFBundleURLName:
+          type: string
+          example: org.wikimedia.wikipedia
+        CFBundleURLSchemes:
+          type: array
+          example:
+            - wikipedia
+          items:
+            type: string
+            example: wikipedia
+    UploadBuildCommon:
+      type: object
+      properties:
+        tags:
+          type: array
+          example:
+            - latest
+            - beta
+          default: []
+          items:
+            type: string
+          description: >-
+            Tags for this specific build. Useful for identifying & filtering a
+            certain build. You can add up to 20 tags, each with up to 20
+            characters.
+        note:
+          type: string
+          example: Some note
+          description: >-
+            A note for your own purposes, will appear on your management
+            dashboard.
+    UploadBuildMultipart:
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+          example: android-app.apk
+          description: The app file to upload.
+    UploadBuildUrl:
+      type: object
+      properties:
+        url:
+          type: string
+          example: https://example.com/some_app.apk
+          description: A publicly accessible link to your .zip, .tar.gz, or .apk file.
+    UploadBuild:
+      allOf:
+        - $ref: '#/components/schemas/UploadBuildCommon'
+        - oneOf:
+            - $ref: '#/components/schemas/UploadBuildUrl'
+            - $ref: '#/components/schemas/UploadBuildMultipart'
+    Error:
+      type: object
+      properties:
+        message:
+          description: Error message.
+          type: string
+    CountResult:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 25
+    Pagination:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+          example: 25
+        nextPage:
+          type: number
+          nullable: true
+          format: int32
+          example: 2
+    Session:
+      type: object
+      properties:
+        buildId:
+          type: string
+          example: b_f7zjgmmchdbr6htrpfsr6o4iky
+        sessionRequested:
+          type: string
+          format: date-time
+          example: 2023-10-12T15:26:25.499Z
+        startTime:
+          type: string
+          format: date-time
+          example: 2023-10-12T15:26:25.511Z
+        userConnected:
+          type: string
+          format: date-time
+          example: 2023-10-12T15:26:25.939Z
+        frameTime:
+          type: string
+          format: date-time
+          example: 2023-10-12T15:26:30.533Z
+        endTime:
+          type: string
+          format: date-time
+          example: 2023-10-12T15:27:38.845Z
+        closeTime:
+          type: string
+          format: date-time
+          example: 2023-10-12T15:27:49.345Z
+        sessionLengthMilliseconds:
+          type: number
+          example: 83834
+        sessionLengthSeconds:
+          type: number
+          example: 83.834
+        sessionLengthMinutes:
+          type: number
+          example: 1.3972333333333333
+        referrer:
+          type: string
+          example: https://appetize.io/app/f7zjgmmchdbr6htrpfsr6o4iky
+        referrerHostname:
+          type: string
+          example: appetize.io
+        token:
+          type: string
+          example: f61ad58ab600579080fafb966e852134c2e9153e8d8c9a90269301d35cb80b1f
+        clientLanguage:
+          type: string
+          example: en-US,en;q=0.9,fr;q=0.8
+        clientUserAgent:
+          type: string
+          example: >-
+            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+            (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+        versionCode:
+          type: number
+          example: 1
+        deviceType:
+          type: string
+          example: pixel4
+        osVersion:
+          type: string
+          example: '11.0'
+        rotation:
+          type: number
+          example: 0
+        debug:
+          type: boolean
+          example: false
+        warmSession:
+          type: boolean
+          example: false
+        queued:
+          type: boolean
+          example: false
+        noVideo:
+          type: boolean
+          example: false
+        location:
+          type: array
+          example:
+            - 1
+            - 2
+          items:
+            type: number
+        appetizeUser:
+          type: string
+          example: example@email.com
+  securitySchemes:
+    jwt:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiToken:
+      type: http
+      scheme: basic
