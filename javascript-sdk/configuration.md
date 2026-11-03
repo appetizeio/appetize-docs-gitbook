@@ -137,6 +137,12 @@ Automatically grant all required app permissions. [See Auto-grant permissions](.
 
 (Android only) Hide password visibility when typing.
 
+### hinge
+
+`"closed" | "partiallyOpen" | "fullyOpen"`
+
+Sets the hinge state of a foldable device, such as the iPhone Duo. Ignored on other devices. Defaults to `closed`.
+
 ### iosKeyboard
 
 `string`
