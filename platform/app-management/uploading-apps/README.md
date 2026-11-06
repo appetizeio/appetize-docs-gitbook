@@ -46,7 +46,7 @@ In some instances, you might want to explicitly update a particular app build. T
 4. Go to **Settings**.
 5. Navigate to "**Update build**"
 
-![](<../../../.gitbook/assets/image (4).png>)
+<img src="../../../.gitbook/assets/image (11).png" alt="" data-size="original">
 {% endhint %}
 
 ### With CI/CD and Third-Party Integrations

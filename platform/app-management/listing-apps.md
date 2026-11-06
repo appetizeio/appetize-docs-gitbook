@@ -2,7 +2,6 @@
 description: >-
   Organize your apps effortlessly with Appetize's App Dashboard and Groups,
   enabling seamless app management and access.
-icon: grid-horizontal
 ---
 
 # App Dashboard
@@ -151,12 +150,12 @@ To remove any of the added applications, simply click on the trash bin icon next
 
 If a build filter specified in an App Group can no longer be found or resolved, this information will appear at the bottom of the App Group. You can then remove or adjust the filter to find a new matching build.
 
-<figure><img src="../../.gitbook/assets/image (57).png" alt="" width="563"><figcaption><p>App Build Filter not found example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (64).png" alt="" width="563"><figcaption><p>App Build Filter not found example</p></figcaption></figure>
 
 ### Playing and embedding your App Group
 
 Once you have added all the applications to the group, you can use the group in the same way that you would have used the individual applications (e.g. play, embed etc.). You can view all your App Groups on the [App Group Dashboard](https://appetize.io/app-groups).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 111554.png" alt=""><figcaption><p> App Group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-03-21 111554.png" alt=""><figcaption><p>App Group</p></figcaption></figure>
 
 [^1]: The **latest build** refers to the most recent version of your app on Android, identified by the [versionCode](https://developer.android.com/studio/publish/versioning#versioningsettings) , and on iOS, by the [CFBundleShortVersionString](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring) and [CFBundleVersion](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion).

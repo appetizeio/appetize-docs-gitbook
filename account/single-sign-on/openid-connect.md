@@ -6,7 +6,7 @@ _Every SSO provider is a little bit different. Please_ [_contact us_](mailto:hel
 
 ## Check authorization server groups scope
 
-Check the "scopes" configuration of your authorization server, and verify there is a scope called `groups`. If not, add a scope named `groups`.&#x20;
+Check the "scopes" configuration of your authorization server, and verify there is a scope called `groups`. If not, add a scope named `groups`.
 
 <figure><img src="../../.gitbook/assets/okta-add-groups-scope.png" alt=""><figcaption><p>OKTA add groups scope example. In Security -> API -> Authorization servers -> Choose Server -> Scopes</p></figcaption></figure>
 
@@ -36,7 +36,7 @@ The following example shows how to pass through groups with prefix appetize\_\* 
 
 1\. We will need the "**Client ID**" and "**Client secret**" for the app you just created.
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt="Example Credentials to provide to Appetize.io"><figcaption><p>Credentials to provide to Appetize.io</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt="Example Credentials to provide to Appetize.io"><figcaption><p>Credentials to provide to Appetize.io</p></figcaption></figure>
 
 2\. We will also need your **Metadata URI**, often called "Discovery URL". For example: [https://dev-548472.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server](https://dev-548472.oktapreview.com/oauth2/default/.well-known/oauth-authorization-server)
 

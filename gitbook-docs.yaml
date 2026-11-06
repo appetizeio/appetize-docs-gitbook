@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Appetize.io Docs
+  structure:
+    - type: space
+      key: space-1
+      title: Appetize.io Docs
+      path: appetize-io-docs
+      default: true
+      content:
+        directory: ./

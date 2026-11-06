@@ -12,7 +12,7 @@ description: >-
 
 Select **Build** -> **Build APK(s)** -> **Build APK(s)** or **Build** -> **Generated Signed APK** (and following the prompts)
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (2) (1).png" alt="" width="563"><figcaption><p>Building with Android Studio</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt="" width="563"><figcaption><p>Building with Android Studio</p></figcaption></figure>
 
 Once the build is complete you can locate the `.apk` file by selecting `locate` in the dialog that appears
 
@@ -40,7 +40,7 @@ Once the build is complete you can locate the `.apk` file by navigating to
 
 ## Converting AAB to APK or APKs
 
-Appetize currently supports the `.apk` format and also accepts `.apks` (APK Set archive) files for upload. In order to get your application to work with Appetize you will need to convert your `aab` to an `apk`  or `apks` by making use of the [`bundletool`](https://developer.android.com/tools/bundletool) provided by Google.
+Appetize currently supports the `.apk` format and also accepts `.apks` (APK Set archive) files for upload. In order to get your application to work with Appetize you will need to convert your `aab` to an `apk` or `apks` by making use of the [`bundletool`](https://developer.android.com/tools/bundletool) provided by Google.
 
 #### Generate Universal APK Set archive
 

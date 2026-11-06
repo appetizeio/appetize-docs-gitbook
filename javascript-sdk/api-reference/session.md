@@ -55,6 +55,20 @@ await session.rotate('right')
 | --------- | ------------------- | ----------------------- |
 | direction | `"left" \| "right"` | The direction to rotate |
 
+### fold()
+
+Sets the hinge state of a foldable device, such as the iPhone Duo. Resolves once the device has folded. Rejects on a device that is not foldable.
+
+```typescript
+await session.fold('fullyOpen')
+```
+
+**Parameters**
+
+| Name  | Type                                         | Description            |
+| ----- | -------------------------------------------- | ---------------------- |
+| hinge | `"closed" \| "partiallyOpen" \| "fullyOpen"` | The hinge state to set |
+
 ### screenshot(format)
 
 Takes a screenshot of the device and returns the data

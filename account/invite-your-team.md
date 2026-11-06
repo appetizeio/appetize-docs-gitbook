@@ -8,7 +8,7 @@ description: >-
 
 ## Username and Password
 
-Appetize supports regular  username and password logins by _default_. As an admin user, you can invite users and manage roles directly from the [**Organization → Team Management**](https://appetize.io/organization/team) page.
+Appetize supports regular username and password logins by _default_. As an admin user, you can invite users and manage roles directly from the [**Organization → Team Management**](https://appetize.io/organization/team) page.
 
 ### Inviting Users
 
@@ -17,15 +17,13 @@ Appetize supports regular  username and password logins by _default_. As an admi
    * Enter **multiple email addresses** in one field to assign them all the same role.
    *   Or click **+ Add More** to add separate email groups with different roles.<br>
 
-       <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Invite new members section</p></figcaption></figure>
+       <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Invite new members section</p></figcaption></figure>
 3. Use the dropdown next to each email group to assign a role:
    * **Viewer** – Can only run uploaded apps.
    * **Developer** – Upload apps and manage app settings.
    *   **Admin** – View account page, edit billing, manage users, and change account settings.<br>
 
-       <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>User Roles Drop-down</p></figcaption></figure>
-
-
+       <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>User Roles Drop-down</p></figcaption></figure>
 4. Click **Send Invites** to send all invitations at once.
 
 {% hint style="info" %}
@@ -46,11 +44,11 @@ After users accept their invitations, you can update their roles or remove them 
 | Developer | Upload apps and manage app settings                                        |
 | Viewer    | Can only run uploaded apps                                                 |
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Adjust user roles and remove users from your Team Management page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Adjust user roles and remove users from your Team Management page</p></figcaption></figure>
 
 ## Single Sign-On (SSO)
 
-On our Enterprise plans, you can take advantage of our Single Sign-On (SSO) integrations for seamless user management on Appetize. Visit our [documentation](single-sign-on.md) for more details.
+On our Enterprise plans, you can take advantage of our Single Sign-On (SSO) integrations for seamless user management on Appetize. Visit our [documentation](single-sign-on/) for more details.
 
 {% hint style="info" %}
 Roles for SSO users are managed through your identity provider. You do not need to assign or update them manually in Appetize.

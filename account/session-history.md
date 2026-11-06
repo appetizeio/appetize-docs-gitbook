@@ -9,13 +9,13 @@ description: >-
 
 You can access [Session History](https://appetize.io/sessions) directly from the application sidebar:
 
-<figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption><p>Session History in application sidebar</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption><p>Session History in application sidebar</p></figcaption></figure>
 
 ***
 
 ## **Session List**
 
-<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
 
 The list displays recent sessions with the newest session at the top.
 
@@ -30,7 +30,7 @@ Session History includes several filters to help you narrow the list of sessions
 
 #### **Search**
 
-<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption><p>Search Field</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (85).png" alt=""><figcaption><p>Search Field</p></figcaption></figure>
 
 Use the search field to quickly find sessions by:
 
@@ -40,7 +40,7 @@ Use the search field to quickly find sessions by:
 
 #### **Date Range**
 
-<figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption><p>Date Range Picker</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption><p>Date Range Picker</p></figcaption></figure>
 
 Select a start and end date to focus on sessions from a specific period.\
 The range is inclusive and supports selecting any period allowed by the interface.
@@ -69,7 +69,7 @@ The exported file includes all visible columns along with additional session fie
 
 ## **Session Details**
 
-<figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption><p>Session Detail Row</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption><p>Session Detail Row</p></figcaption></figure>
 
 Each session row includes key information that helps you understand the context of the session:
 
@@ -80,7 +80,7 @@ Each session row includes key information that helps you understand the context 
 * **Device and OS**\
   The device model and operating system used during the session.
 * **Date**\
-  When the session took place.&#x20;
+  When the session took place.
 * **Queue time**\
   How long the session waited before starting.
 * **Duration**\
