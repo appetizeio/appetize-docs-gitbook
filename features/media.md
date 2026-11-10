@@ -14,14 +14,8 @@ The maximum file size for uploading media is **50 MB**.
 
 | Platform | Supported File Types     |
 | -------- | ------------------------ |
-| Android  | All file types           |
+| Android  | PNG, JPEG, JPG, GIF, MP4 |
 | iOS      | PNG, JPEG, JPG, GIF, MP4 |
-
-{% hint style="warning" %}
-Files outside of these formats will not be processed on iOS simulators.
-{% endhint %}
-
-The [CLI](../ai-agents/getting-started.md) accepts PNG, JPEG, JPG, GIF and MP4 on both platforms.
 
 ## With App Page
 
