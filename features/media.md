@@ -21,6 +21,8 @@ The maximum file size for uploading media is **50 MB**.
 Files outside of these formats will not be processed on iOS simulators.
 {% endhint %}
 
+The [CLI](../ai-agents/getting-started.md) accepts PNG, JPEG, JPG, GIF and MP4 on both platforms.
+
 ## With App Page
 
 The [App Page](../platform/app-management/running-apps.md#accessing-your-app-page) provides an **Upload File** button on the device toolbar during active sessions, allowing you to upload media files directly to the device’s photo library.
@@ -34,3 +36,14 @@ Appetize’s [JavaScript SDK](../javascript-sdk/) offers a convenient [addMedia]
 ```typescript
 await session.addMedia(file)
 ```
+
+## With the CLI
+
+The [CLI](../ai-agents/getting-started.md) adds a photo or video to the device's gallery under its file name:
+
+```bash
+appetize media add photo.png
+appetize media add ./clips/demo.mp4
+```
+
+It prints nothing on success, and fails with the server's message for any other file type or a file over 50 MB.
