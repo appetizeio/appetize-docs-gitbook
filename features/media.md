@@ -45,5 +45,3 @@ The [CLI](../ai-agents/getting-started.md) adds a photo or video to the device's
 appetize media add photo.png
 appetize media add ./clips/demo.mp4
 ```
-
-It prints nothing on success, and fails with the server's message for any other file type or a file over 50 MB.
