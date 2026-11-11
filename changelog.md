@@ -29,7 +29,7 @@ layout:
 
 ## November 2026
 
-### Network Intercept Certificate, Add Media and Automation Updates
+### New Automation Commands, Add Media and Network Intercept Updates
 
 * **New Features**
   * New automation commands: terminate an app, wait for the screen to settle before inspecting or taking screenshots, and wait for elements to be checked, disabled, focused or selected
