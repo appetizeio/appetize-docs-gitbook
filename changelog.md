@@ -29,18 +29,12 @@ layout:
 
 ## November 2026
 
-### Network Intercept Certificate, Add Media and Automation Updates
+### New Network Intercept Certificate and Automation Commands
 
 * **New Features**
   * New automation commands: terminate an app, wait for the screen to settle before inspecting or taking screenshots, and wait for elements to be checked, disabled, focused or selected
-  * Files added with [**Add Media**](https://docs.appetize.io/features/media) now keep their original name
-* **Bug Fixes and Improvements**
+* **Improvements**
   * New root certificate for the [**Network Traffic Monitor**](https://docs.appetize.io/features/network-traffic-monitor), trusted on iOS simulators and in Chrome on Android 13–17
-  * iOS font size now applies across the whole device, including when changed mid-session
-  * More reliable app launch, restart and reinstall during automation
-  * Screen readers now announce sign-in and session history errors, and app icons have text alternatives
-  * Fixed a crash in the device keyboard handler on Safari and iOS browsers
-  * Fixed a crash that could occur in the device toolbar during a session
 
 ## October 2026
 
@@ -53,35 +47,23 @@ layout:
   * The [**Device Sandbox**](https://docs.appetize.io/platform/standalone-device) can now be started with API tokens, and sandbox sessions appear in Session History and usage reports
   * New **Get started** checklist for new users
   * New automation commands for biometrics, app lifecycle (launch, restart, reinstall, clear state), device settings, shake, and screenshots cropped to an element
-* **Bug Fixes and Improvements**
+* **Improvements**
   * Clearer app compatibility checks: iOS apps without an ARM build are flagged before the session starts, and the OS picker explains why a device can't run the app
   * Accessibility improvements across the dashboard, including keyboard access, focus styling, labelled form fields and screen-reader-friendly dialogs
-  * Custom devices now use a modern device frame
-  * iOS sessions no longer start on the lock screen
-  * Android apps without a launcher activity can now be installed
   * Password visibility is now always hidden on Android, so the `hidePasswords` parameter is no longer needed and is ignored
-  * More consistent v2 API pagination and validation errors
-  * Embedded sessions now log warnings to the browser console instead of showing toasts
   * **iOS 15.5** and **iOS 16.2** have been retired, as they are not supported by the latest Xcode
 
 ## September 2026
 
-### International Keyboards, SSO Improvements and Faster iOS Startup
+### International Keyboards, iOS Timezone and Faster iOS Startup
 
 * **New Features**
-  * Characters a US keyboard can't produce (for example Å, Ä and Ö on a Swedish layout) are now typed correctly
+  * Characters a US keyboard can't produce (for example Å, Ä and Ö on a Swedish layout) can now be typed
   * Set the device [timezone](https://docs.appetize.io/platform/query-params-reference) on iOS
-  * Map identity provider groups to Appetize roles with [**Single Sign-On**](https://docs.appetize.io/account/single-sign-on)
   * New automation commands to open URLs and deep links, clear the keychain, clear app state, and perform custom gestures
-* **Bug Fixes and Improvements**
+* **Improvements**
   * Faster iOS session startup
-  * Improved OpenID Connect support, including identity providers without a userinfo endpoint
-  * Fixed IdP-initiated SAML login, and all stored IdP certificates are now accepted to make certificate rotation easier
   * All users now see the new dashboard pages, and old links redirect automatically
-  * Log out and account settings are combined into a single account menu
-  * Signup and password reset confirmations now offer to resend the email
-  * Fixed Android app icons sometimes being extracted incorrectly
-  * Fixed client connections occasionally being dropped during long sessions
 
 ## August 2026
 
@@ -96,11 +78,9 @@ layout:
   * New automation commands to inspect the view hierarchy, type key sequences, swipe and tap with selectors, and press Android Back. These power the [**Appetize CLI for AI agents**](https://docs.appetize.io/ai-agents)
   * App logs, network capture and the [ADB tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be turned on mid-session
   * New first-run experience on the Apps page with two ways to start your first session
-* **Bug Fixes and Improvements**
+* **Improvements**
   * Taps and swipes now reset the [session inactivity timeout](https://docs.appetize.io/platform/session-inactivity-timeout)
-  * Redesigned registration page, and expired links can send a new one
-  * Clearer SSO error page with reason codes
-  * Sessions fall back to an available device if the requested one can't start
+  * Redesigned registration page
 
 ## July 2026
 
@@ -109,22 +89,9 @@ layout:
 * **New Features**
   * Restrict which domains can embed your apps, with blocked embeds recorded in audit events
   * Tap on-screen elements by their text in automation
-* **Bug Fixes and Improvements**
+* **Improvements**
   * Supported browsers are now Chrome, Edge and Firefox 111+ and Safari 17+
   * `GET /v2/invite-tokens` no longer returns raw tokens. Delete invites with `DELETE /v2/invite-tokens/{username}`
-  * Sessions with a language set now start faster
-  * Fixed changing the language during a session
-  * Fixed searches containing emoji
-
-## June 2026
-
-### Embed Sign-In and Security Improvements
-
-* **Bug Fixes and Improvements**
-  * Signing in from an embed now works when the browser blocks third-party cookies
-  * Changing your password now signs you out of your other sessions
-  * Updated Maestro to v2.6.0 and the Android 15 WebView
-  * Server-side MP4 screen recording and the `screenRecording` session option have been removed
 
 ## May 2026
 
@@ -132,13 +99,8 @@ layout:
 
 * **New Features**
   * Added [**audio streaming**](https://docs.appetize.io/features/audio) for Android sessions, toggled from the configuration menu or with `?audio=true`
-  * Added support for the MS ADFS WS-2005 email claim in SAML
-* **Bug Fixes and Improvements**
+* **Improvements**
   * JavaScript SDK 1.7.0 with a smaller bundle size
-  * iOS archives without a `.app` folder are now accepted
-  * Fixed `POST /v1/apps` not saving `timeLimit` and `maxConcurrent`
-  * Fixed iOS language settings not always applying
-  * Deleted apps are now removed from storage after a retention period
 
 ## April 2026
 
@@ -149,11 +111,8 @@ layout:
   * Switch between light and dark appearance during a session
   * Set the device [timezone](https://docs.appetize.io/platform/query-params-reference) on Android
   * The build view now shows file size and code signatures
-  * SAML single sign-on now supports Microsoft Entra ID (Azure AD) groups
-* **Bug Fixes and Improvements**
+* **Improvements**
   * Clearer error messages when an app fails to install
-  * Unpacked iOS apps can now be uploaded
-  * `platform` is now case-insensitive in the v1 API
 
 ## March 2026
 
@@ -164,13 +123,9 @@ layout:
   * Set the session frame rate at launch
   * Support for composed key input, such as accented characters typed with dead keys
   * Disable built-in apps on Android
-* **Bug Fixes and Improvements**
-  * Keypresses no longer leak to the host page, and paste is fixed
+* **Improvements**
   * iOS deep links are trusted automatically when `grantPermissions` is set
-  * Supports iOS apps that declare `UIRequiredDeviceCapabilities` as a dictionary
   * Redesigned **Tap to Start** button
-  * Fixed the `appearance` parameter
-  * The Android emulator now recovers automatically when the video stream stalls
 
 ## February 2026
 
@@ -180,29 +135,10 @@ layout:
   * Set the device font size at launch or during a session, on both iOS and Android
   * Android immersive mode and auto-rotate support
   * Set app permissions without launching the app
-* **Bug Fixes and Improvements**
+* **Improvements**
   * JavaScript SDK 1.6.0
-  * "Access Denied" messages now show the blocked IP address
   * Higher v2 API rate limits
-  * Inviting someone who already has an account now applies the roles you chose
-  * Clearer errors from Maestro automation, and more reliable language changes on Android
   * Refreshed Developer Tools design
-  * **Action needed for SAML:** the default SAML issuer changed from `appetize-saml` to `appetizeio-saml`
-
-## January 2026
-
-### Rebuilt Single Sign-On
-
-* **New Features**
-  * Rebuilt [**SAML and OpenID Connect single sign-on**](https://docs.appetize.io/account/single-sign-on). When SSO is set up, password login and password changes are turned off. Existing SSO URLs keep working
-* **Bug Fixes and Improvements**
-  * SAML now requires signed assertions and responses by default
-  * SSO logins now last the full 12 hours
-  * Fixed device rotation issues on iOS and Android
-  * Improved automation reliability, including long press on iOS and element matching
-  * The Android 15 recorder can now see elements inside WebViews
-  * Invoices now show refunded and partially refunded statuses
-  * Fixed dates on apps, app groups and API tokens, and app versions now sort correctly
 
 ## November 2025
 
