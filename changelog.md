@@ -29,12 +29,14 @@ layout:
 
 ## November 2026
 
-### New Network Intercept Certificate and Automation Commands
+### Network Intercept Certificate, Add Media and Automation Updates
 
 * **New Features**
   * New automation commands: terminate an app, wait for the screen to settle before inspecting or taking screenshots, and wait for elements to be checked, disabled, focused or selected
-* **Improvements**
+  * Files added with [**Add Media**](https://docs.appetize.io/features/media) now keep their original name
+* **Bug Fixes and Improvements**
   * New root certificate for the [**Network Traffic Monitor**](https://docs.appetize.io/features/network-traffic-monitor), trusted on iOS simulators and in Chrome on Android 13–17
+  * iOS font size now applies across the whole device, including when changed mid-session
 
 ## October 2026
 
@@ -47,7 +49,7 @@ layout:
   * The [**Device Sandbox**](https://docs.appetize.io/platform/standalone-device) can now be started with API tokens, and sandbox sessions appear in Session History and usage reports
   * New **Get started** checklist for new users
   * New automation commands for biometrics, app lifecycle (launch, restart, reinstall, clear state), device settings, shake, and screenshots cropped to an element
-* **Improvements**
+* **Bug Fixes and Improvements**
   * Clearer app compatibility checks: iOS apps without an ARM build are flagged before the session starts, and the OS picker explains why a device can't run the app
   * Accessibility improvements across the dashboard, including keyboard access, focus styling, labelled form fields and screen-reader-friendly dialogs
   * Password visibility is now always hidden on Android, so the `hidePasswords` parameter is no longer needed and is ignored
@@ -55,13 +57,13 @@ layout:
 
 ## September 2026
 
-### International Keyboards, iOS Timezone and Faster iOS Startup
+### International Keyboards and Faster iOS Startup
 
 * **New Features**
-  * Characters a US keyboard can't produce (for example Å, Ä and Ö on a Swedish layout) can now be typed
+  * Characters a US keyboard can't produce (for example Å, Ä and Ö on a Swedish layout) are now typed correctly
   * Set the device [timezone](https://docs.appetize.io/platform/query-params-reference) on iOS
   * New automation commands to open URLs and deep links, clear the keychain, clear app state, and perform custom gestures
-* **Improvements**
+* **Bug Fixes and Improvements**
   * Faster iOS session startup
   * All users now see the new dashboard pages, and old links redirect automatically
 
@@ -77,10 +79,8 @@ layout:
   * [**Access Rules**](https://docs.appetize.io/account/access-rules) now show where each rule applies
   * New automation commands to inspect the view hierarchy, type key sequences, swipe and tap with selectors, and press Android Back. These power the [**Appetize CLI for AI agents**](https://docs.appetize.io/ai-agents)
   * App logs, network capture and the [ADB tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be turned on mid-session
-  * New first-run experience on the Apps page with two ways to start your first session
-* **Improvements**
+* **Bug Fixes and Improvements**
   * Taps and swipes now reset the [session inactivity timeout](https://docs.appetize.io/platform/session-inactivity-timeout)
-  * Redesigned registration page
 
 ## July 2026
 
@@ -89,9 +89,18 @@ layout:
 * **New Features**
   * Restrict which domains can embed your apps, with blocked embeds recorded in audit events
   * Tap on-screen elements by their text in automation
-* **Improvements**
+* **Bug Fixes and Improvements**
   * Supported browsers are now Chrome, Edge and Firefox 111+ and Safari 17+
   * `GET /v2/invite-tokens` no longer returns raw tokens. Delete invites with `DELETE /v2/invite-tokens/{username}`
+
+## June 2026
+
+### Embed Sign-In and Security Improvements
+
+* **Bug Fixes and Improvements**
+  * Signing in from an embed now works when the browser blocks third-party cookies
+  * Changing your password now signs you out of your other sessions
+  * Server-side MP4 screen recording and the `screenRecording` session option have been removed
 
 ## May 2026
 
@@ -99,7 +108,7 @@ layout:
 
 * **New Features**
   * Added [**audio streaming**](https://docs.appetize.io/features/audio) for Android sessions, toggled from the configuration menu or with `?audio=true`
-* **Improvements**
+* **Bug Fixes and Improvements**
   * JavaScript SDK 1.7.0 with a smaller bundle size
 
 ## April 2026
@@ -111,7 +120,7 @@ layout:
   * Switch between light and dark appearance during a session
   * Set the device [timezone](https://docs.appetize.io/platform/query-params-reference) on Android
   * The build view now shows file size and code signatures
-* **Improvements**
+* **Bug Fixes and Improvements**
   * Clearer error messages when an app fails to install
 
 ## March 2026
@@ -123,9 +132,8 @@ layout:
   * Set the session frame rate at launch
   * Support for composed key input, such as accented characters typed with dead keys
   * Disable built-in apps on Android
-* **Improvements**
+* **Bug Fixes and Improvements**
   * iOS deep links are trusted automatically when `grantPermissions` is set
-  * Redesigned **Tap to Start** button
 
 ## February 2026
 
@@ -135,10 +143,9 @@ layout:
   * Set the device font size at launch or during a session, on both iOS and Android
   * Android immersive mode and auto-rotate support
   * Set app permissions without launching the app
-* **Improvements**
+* **Bug Fixes and Improvements**
   * JavaScript SDK 1.6.0
   * Higher v2 API rate limits
-  * Refreshed Developer Tools design
 
 ## November 2025
 
