@@ -46,7 +46,7 @@ layout:
   * Added support for **iOS 27** and the **iPhone 18 Pro** and **iPhone 18 Pro Max** devices
   * Added the foldable **iPhone Duo**
     * Fold and unfold the device from the toolbar, or set the starting state with the [`hinge`](https://docs.appetize.io/platform/query-params-reference) parameter
-  * The [**Device Sandbox**](https://docs.appetize.io/platform/standalone-device) can now be started with API tokens, and sandbox sessions appear in Session History and usage reports
+  * [**Device Sandbox**](https://docs.appetize.io/platform/standalone-device) sessions now appear in Session History and usage reports
   * New **Get started** checklist for new users
   * New automation commands for biometrics, app lifecycle (launch, restart, reinstall, clear state), device settings, shake, and screenshots cropped to an element
 * **Bug Fixes and Improvements**
@@ -65,7 +65,6 @@ layout:
   * New automation commands to open URLs and deep links, clear the keychain, clear app state, and perform custom gestures
 * **Bug Fixes and Improvements**
   * Faster iOS session startup
-  * All users now see the new dashboard pages, and old links redirect automatically
 
 ## August 2026
 
@@ -79,8 +78,6 @@ layout:
   * [**Access Rules**](https://docs.appetize.io/account/access-rules) now show where each rule applies
   * New automation commands to inspect the view hierarchy, type key sequences, swipe and tap with selectors, and press Android Back. These power the [**Appetize CLI for AI agents**](https://docs.appetize.io/ai-agents)
   * App logs, network capture and the [ADB tunnel](https://docs.appetize.io/features/advanced-features/android/adb-tunnel) can now be turned on mid-session
-* **Bug Fixes and Improvements**
-  * Taps and swipes now reset the [session inactivity timeout](https://docs.appetize.io/platform/session-inactivity-timeout)
 
 ## July 2026
 
@@ -108,8 +105,6 @@ layout:
 
 * **New Features**
   * Added [**audio streaming**](https://docs.appetize.io/features/audio) for Android sessions, toggled from the configuration menu or with `?audio=true`
-* **Bug Fixes and Improvements**
-  * JavaScript SDK 1.7.0 with a smaller bundle size
 
 ## April 2026
 
@@ -125,10 +120,9 @@ layout:
 
 ## March 2026
 
-### Landscape on iOS, Frame Rate Control and Better Keyboard Input
+### Frame Rate Control and Better Keyboard Input
 
 * **New Features**
-  * Landscape orientation on iOS
   * Set the session frame rate at launch
   * Support for composed key input, such as accented characters typed with dead keys
   * Disable built-in apps on Android
@@ -144,7 +138,6 @@ layout:
   * Android immersive mode and auto-rotate support
   * Set app permissions without launching the app
 * **Bug Fixes and Improvements**
-  * JavaScript SDK 1.6.0
   * Higher v2 API rate limits
 
 ## November 2025
