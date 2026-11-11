@@ -35,7 +35,7 @@ layout:
   * New automation commands: terminate an app, wait for the screen to settle before inspecting or taking screenshots, and wait for elements to be checked, disabled, focused or selected
   * Files added with [**Add Media**](https://docs.appetize.io/features/media) now keep their original name
 * **Bug Fixes and Improvements**
-  * New root certificate for the [**Network Traffic Monitor**](https://docs.appetize.io/features/network-traffic-monitor), trusted on iOS simulators and in Chrome on Android 13–17
+  * New root certificate for the [**Network Traffic Monitor**](https://docs.appetize.io/features/network-traffic-monitor)
   * iOS font size now applies across the whole device, including when changed mid-session
 
 ## October 2026
@@ -71,9 +71,9 @@ layout:
 ### Session Defaults, Android 17 and Pixel 11
 
 * **New Features**
-  * Released the new [**Session Defaults**](https://docs.appetize.io/account/session-defaults) page
+  *   Released the new [**Session Defaults**](https://docs.appetize.io/account/session-defaults) page
 
-    Set organization-wide defaults for devices, behavior, audio, proxy, permissions and session time limits
+      Set organization-wide defaults for devices, behavior, audio, proxy, permissions and session time limits
   * Added support for **Android 17** and the **Pixel 11 Pro** and **Pixel 11 Pro XL** devices
   * [**Access Rules**](https://docs.appetize.io/account/access-rules) now show where each rule applies
   * New automation commands to inspect the view hierarchy, type key sequences, swipe and tap with selectors, and press Android Back. These power the [**Appetize CLI for AI agents**](https://docs.appetize.io/ai-agents)
@@ -88,7 +88,6 @@ layout:
   * Tap on-screen elements by their text in automation
 * **Bug Fixes and Improvements**
   * Supported browsers are now Chrome, Edge and Firefox 111+ and Safari 17+
-  * `GET /v2/invite-tokens` no longer returns raw tokens. Delete invites with `DELETE /v2/invite-tokens/{username}`
 
 ## June 2026
 
