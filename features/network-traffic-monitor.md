@@ -96,7 +96,7 @@ When using Appetize’s **Network Intercept Proxy** to monitor **HTTPS traffic**
 2. **Add Appetize's proxy's** SHA-256 hash to the list of trusted certificates in the app:
 
 ```
-RNgAjJJXM4cdpieGhVEqa813muPE2imOWGQpFzwI63E=
+AdkDvVf78C0y1PB9FfUT1leyZQKE+dfNp6qJW3aUGXE=
 ```
 
 By doing so, the app will trust the proxy’s certificate and allow secure HTTPS traffic monitoring.
@@ -105,4 +105,4 @@ By doing so, the app will trust the proxy’s certificate and allow secure HTTPS
 If your app uses third-party libraries that also make HTTPS requests, those libraries might not be aware of the SHA-256 hash you add. In such cases, you may need to update the library’s certificate pinning or trust settings as well.
 {% endhint %}
 
-> **Note:**&#x20;
+> **Note:**
