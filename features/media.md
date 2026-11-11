@@ -14,12 +14,8 @@ The maximum file size for uploading media is **50 MB**.
 
 | Platform | Supported File Types     |
 | -------- | ------------------------ |
-| Android  | All file types           |
+| Android  | PNG, JPEG, JPG, GIF, MP4 |
 | iOS      | PNG, JPEG, JPG, GIF, MP4 |
-
-{% hint style="warning" %}
-Files outside of these formats will not be processed on iOS simulators.
-{% endhint %}
 
 ## With App Page
 
@@ -33,4 +29,13 @@ Appetize’s [JavaScript SDK](../javascript-sdk/) offers a convenient [addMedia]
 
 ```typescript
 await session.addMedia(file)
+```
+
+## With the CLI
+
+The [CLI](../ai-agents/getting-started.md) adds a photo or video to the device's gallery under its file name:
+
+```bash
+appetize media add photo.png
+appetize media add ./clips/demo.mp4
 ```
